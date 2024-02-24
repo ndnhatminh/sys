@@ -1,0 +1,1 @@
+docker logs RecSys-Service-Grader;

@@ -1,0 +1,20 @@
+Thực hiện theo thứ tự:
+
+- clone project này ra khi chấm 1 BTL mới
+- Copy các file như sau vào các mục:
+ + (điền sau)
+ +
+
+node . instruction/instruction-file.txt 
+
+[bỏ] export.py
+[bỏ - đã viết code trong prepare-submissions.py] copy file from folder "submissions" to "submissions-asn-1"
+
+prepare-submissions.py
+
+compile.py
+
+[bỏ - run trong jupyter] run.py
+
+[bỏ - run by jupyter] report.py
+copy folder "my_report" to other folder

@@ -1,0 +1,2622 @@
+[2023-03-06 04:20:07 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/06-03-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8a5f87a1f0>
+  on_reload: <function OnReload.on_reload at 0x7f8a5f87a310>
+  when_ready: <function WhenReady.when_ready at 0x7f8a5f87a430>
+  pre_fork: <function Prefork.pre_fork at 0x7f8a5f87a550>
+  post_fork: <function Postfork.post_fork at 0x7f8a5f87a670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8a5f87a790>
+  worker_int: <function WorkerInt.worker_int at 0x7f8a5f87a8b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8a5f87a9d0>
+  pre_exec: <function PreExec.pre_exec at 0x7f8a5f87aaf0>
+  pre_request: <function PreRequest.pre_request at 0x7f8a5f87ac10>
+  post_request: <function PostRequest.post_request at 0x7f8a5f87aca0>
+  child_exit: <function ChildExit.child_exit at 0x7f8a5f87adc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8a5f87aee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8a5f888040>
+  on_exit: <function OnExit.on_exit at 0x7f8a5f888160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-03-06 04:20:07 +0000] [7] [INFO] Starting gunicorn 20.1.0
+[2023-03-06 04:20:07 +0000] [7] [DEBUG] Arbiter booted
+[2023-03-06 04:20:07 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2023-03-06 04:20:07 +0000] [7] [INFO] Using worker: sync
+[2023-03-06 04:20:07 +0000] [9] [INFO] Booting worker with pid: 9
+[2023-03-06 04:20:07 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-03-06 04:20:07 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-03-06 04:20:07 +0000] [7] [DEBUG] 3 workers
+[2023-03-06 04:20:15 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:21:59 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:22:04 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:24:33 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:26:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:27:20 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:27:28 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:29:48 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:31:11 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:31:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:31:39 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:32:25 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:35:28 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:37:17 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:38:40 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:40:34 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 04:43:49 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:44:19 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 04:45:10 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 04:45:25 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:45:45 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:46:19 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 04:51:08 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 04:52:04 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:55:11 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 04:56:25 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 04:56:57 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:00:19 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:02:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:03:45 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 05:04:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:04:25 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:05:22 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:05:28 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:09:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:12:02 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:14:02 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:16:03 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:18:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:20:24 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:22:42 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 05:24:10 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 05:24:51 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:25:52 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:29:13 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 05:32:03 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:34:46 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 05:35:25 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:36:05 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 05:40:42 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:42:01 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 05:42:08 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:44:03 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 05:44:47 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:44:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:47:07 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 05:47:36 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:49:30 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:51:55 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:55:58 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 05:55:58 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:56:05 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 05:56:38 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:03:31 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:03:36 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:03:45 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:03:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:05:20 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:06:50 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:07:36 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:07:39 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:12:11 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:12:54 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:13:03 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:13:07 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:13:47 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:14:03 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:15:59 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:20:30 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:20:33 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:20:35 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:20:38 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:20:47 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:20:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:21:32 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:21:51 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:21:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:21:52 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:23:47 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:24:00 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:26:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:26:17 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:26:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:26:17 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:31:11 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:32:45 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:34:07 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:34:07 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:38:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:40:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:41:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:42:02 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:46:17 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:46:48 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:47:18 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:48:58 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:49:24 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 06:49:53 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:52:26 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:52:51 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:55:24 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:56:03 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:56:17 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:56:59 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:57:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:57:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 06:58:46 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 06:59:12 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 07:00:15 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 07:02:32 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 07:02:54 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 07:03:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 07:03:11 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 07:05:04 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 07:05:39 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 07:07:13 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 07:07:16 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 07:08:09 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 07:08:14 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 07:11:57 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 07:12:59 +0000] [11] [DEBUG] POST /api/grader
+Exception in thread Thread-43:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 41, in runOneFolder_v2
+    writeToFile(abs_file_run_error, result)
+  File "/app/grading_app/utils/path.py", line 17, in writeToFile
+    f.write(contents)
+OSError: [Errno 28] No space left on device
+[2023-03-06 09:11:15 +0000] [8] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/06-03-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f3fbb7011f0>
+  on_reload: <function OnReload.on_reload at 0x7f3fbb701310>
+  when_ready: <function WhenReady.when_ready at 0x7f3fbb701430>
+  pre_fork: <function Prefork.pre_fork at 0x7f3fbb701550>
+  post_fork: <function Postfork.post_fork at 0x7f3fbb701670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f3fbb701790>
+  worker_int: <function WorkerInt.worker_int at 0x7f3fbb7018b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f3fbb7019d0>
+  pre_exec: <function PreExec.pre_exec at 0x7f3fbb701af0>
+  pre_request: <function PreRequest.pre_request at 0x7f3fbb701c10>
+  post_request: <function PostRequest.post_request at 0x7f3fbb701ca0>
+  child_exit: <function ChildExit.child_exit at 0x7f3fbb701dc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f3fbb701ee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f3fbb70f040>
+  on_exit: <function OnExit.on_exit at 0x7f3fbb70f160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-03-06 09:11:15 +0000] [8] [INFO] Starting gunicorn 20.1.0
+[2023-03-06 09:11:15 +0000] [8] [DEBUG] Arbiter booted
+[2023-03-06 09:11:15 +0000] [8] [INFO] Listening at: http://0.0.0.0:5003 (8)
+[2023-03-06 09:11:15 +0000] [8] [INFO] Using worker: sync
+[2023-03-06 09:11:15 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-03-06 09:11:15 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-03-06 09:11:15 +0000] [12] [INFO] Booting worker with pid: 12
+[2023-03-06 09:11:15 +0000] [8] [DEBUG] 3 workers
+[2023-03-06 09:11:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:11:24 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:12:49 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:15:10 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:15:17 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 09:16:57 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:20:06 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:20:38 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:21:45 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:28:24 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:29:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:29:31 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:29:39 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:34:11 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:35:16 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:35:32 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:35:48 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:41:18 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:43:58 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 09:44:10 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:45:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 09:45:15 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 221, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 73, in prepareOneSubmission
+    shutil.copytree(src, dst, dirs_exist_ok=True)
+  File "/usr/lib/python3.8/shutil.py", line 557, in copytree
+    return _copytree(entries=entries, src=src, dst=dst, symlinks=symlinks,
+  File "/usr/lib/python3.8/shutil.py", line 513, in _copytree
+    raise Error(errors)
+shutil.Error: [('/app/support-files/testcases-fileinput/1017/tc1017_merlin_pack', "/app/grading_app/temp/grad_sub/[['20230306_094515_2211523_knight.h', './files/submissions/20230306_094515_2211523_knight.h'], ['20230306_094515_2211523_knight.cpp', './files/submissions/20230306_094515_2211523_knight.cpp']]/tc1017_merlin_pack", '[Errno 2] No such file or directory')]
+[2023-03-06 09:47:46 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 09:51:00 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:51:00 +0000] [11] [DEBUG] POST /api/grader
+Exception in thread Thread-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: "/app/grading_app/temp/grad_sub/[['20230306_095100_2211523_knight.h', './files/submissions/20230306_095100_2211523_knight.h'], ['20230306_095100_2211523_knight.cpp', './files/submissions/20230306_095100_2211523_knight.cpp']]/output1001"
+[2023-03-06 09:51:44 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 09:52:19 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:53:25 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:55:48 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:57:52 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 09:57:52 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: "/app/grading_app/temp/grad_sub/[['20230306_095752_2211139_knight.h', './files/submissions/20230306_095752_2211139_knight.h'], ['20230306_095752_2211139_knight.cpp', './files/submissions/20230306_095752_2211139_knight.cpp']]/output1001"
+[2023-03-06 09:58:30 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 09:58:46 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 09:59:35 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:00:18 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:02:29 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:03:26 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:05:27 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:06:55 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:08:07 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:08:54 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:10:02 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:10:03 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:10:54 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:10:55 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:11:25 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:11:53 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:13:09 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:15:57 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:17:04 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:17:35 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:21:26 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:21:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:23:50 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:25:05 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:25:11 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:25:32 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:26:02 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:26:18 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:27:40 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:28:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:28:32 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:28:39 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:29:24 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:29:47 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:29:52 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:30:10 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:32:30 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:33:35 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:33:39 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:35:19 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:35:30 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:36:26 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:36:40 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:37:37 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:39:22 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:39:27 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:39:45 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:40:11 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:40:44 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:41:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:42:14 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:42:42 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:44:03 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:44:19 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:44:41 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:44:46 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:44:47 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:45:45 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:47:43 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:50:19 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:50:57 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:51:01 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:51:04 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:52:14 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:52:32 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:53:16 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:53:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:53:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 10:54:03 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:55:16 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:57:00 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 10:57:38 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:58:48 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:59:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 10:59:22 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:00:54 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:02:11 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:02:21 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:03:02 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:03:04 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:03:17 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:03:52 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:04:02 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:04:29 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:04:42 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:05:32 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:07:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:07:21 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:09:34 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:10:26 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:10:40 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:11:32 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:12:27 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:12:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:12:54 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:14:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:15:42 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:17:16 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:19:56 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:23:54 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:27:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:28:15 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:28:16 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:28:20 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:31:50 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:33:16 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:34:36 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:36:34 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:37:02 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:37:36 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:45:27 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:47:08 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:47:11 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 11:49:44 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:50:12 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:50:29 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:50:58 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:53:45 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 11:54:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:56:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 11:59:01 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:01:18 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 12:03:10 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:03:32 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:03:33 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:04:51 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:07:47 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:07:47 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:08:10 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:08:36 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:10:11 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 12:10:56 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:12:01 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:13:06 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 12:13:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:14:16 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:15:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:16:02 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:16:12 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 12:16:29 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:16:56 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 12:17:58 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 12:19:37 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:20:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:21:35 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:22:51 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:24:33 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:26:14 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:26:53 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:29:42 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:30:35 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:31:30 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:34:51 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:34:57 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:35:37 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:35:52 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:37:03 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:37:23 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:38:02 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:38:30 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:40:50 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:43:28 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 12:48:05 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:48:09 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 12:48:27 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:49:58 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:51:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:52:25 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:54:34 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:54:43 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:56:07 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:56:48 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:57:06 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:57:11 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:58:42 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 12:59:48 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 12:59:51 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:00:52 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:01:42 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:01:58 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:03:25 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:04:48 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:04:55 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:06:48 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:06:58 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:07:04 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:07:32 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:08:10 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:08:25 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:08:37 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:08:52 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:08:55 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:10:09 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:10:12 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:10:19 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:11:19 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:12:54 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:14:18 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:16:00 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:17:17 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:18:42 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:20:20 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:21:03 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:23:29 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:24:11 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:24:56 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:25:54 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:26:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:28:35 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:28:54 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:29:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:29:19 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:29:48 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:30:07 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:30:11 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:30:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:30:47 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:31:40 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:32:27 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:32:30 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:33:33 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:33:40 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:34:49 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:35:20 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:35:35 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:35:53 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:35:57 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:36:26 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:36:32 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:36:34 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:36:34 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:37:14 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:37:24 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:38:10 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:39:05 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:39:08 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:39:57 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:40:08 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:43:02 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:45:35 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:46:53 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:47:48 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:49:20 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:50:43 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 13:51:45 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:53:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:55:28 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:55:33 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:55:39 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:55:56 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 13:55:56 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:57:04 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:57:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 13:58:51 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 14:00:02 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 14:00:49 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 14:01:19 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 14:01:29 +0000] [11] [DEBUG] POST /api/grader
+Exception in thread Thread-97:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 41, in runOneFolder_v2
+    writeToFile(abs_file_run_error, result)
+  File "/app/grading_app/utils/path.py", line 17, in writeToFile
+    f.write(contents)
+OSError: [Errno 28] No space left on device
+[2023-03-06 14:57:37 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 14:58:53 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 14:58:56 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 14:59:16 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 14:59:24 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 14:59:44 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:01:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:02:26 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:03:34 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:04:28 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:05:20 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:05:40 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:07:11 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:07:27 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:07:30 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:07:38 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:09:11 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:09:31 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:10:32 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:10:48 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:11:36 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:12:31 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:12:31 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:13:18 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:13:42 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:13:46 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:14:17 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:14:40 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:14:56 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:16:04 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:18:01 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:18:13 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:18:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:19:27 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:19:37 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:20:10 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:21:24 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:22:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:22:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:23:55 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:23:55 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:24:42 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:24:51 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:25:20 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:25:27 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:25:30 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:29:31 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:29:43 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:30:04 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:30:04 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:30:10 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:30:39 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:33:05 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:34:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:35:01 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:35:21 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:36:25 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:38:59 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:39:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:39:21 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:40:22 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:41:18 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:41:27 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:43:19 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:43:44 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:46:27 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:46:41 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 15:46:50 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:48:05 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:48:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 15:49:18 +0000] [9] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/06-03-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f3a54cdf1f0>
+  on_reload: <function OnReload.on_reload at 0x7f3a54cdf310>
+  when_ready: <function WhenReady.when_ready at 0x7f3a54cdf430>
+  pre_fork: <function Prefork.pre_fork at 0x7f3a54cdf550>
+  post_fork: <function Postfork.post_fork at 0x7f3a54cdf670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f3a54cdf790>
+  worker_int: <function WorkerInt.worker_int at 0x7f3a54cdf8b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f3a54cdf9d0>
+  pre_exec: <function PreExec.pre_exec at 0x7f3a54cdfaf0>
+  pre_request: <function PreRequest.pre_request at 0x7f3a54cdfc10>
+  post_request: <function PostRequest.post_request at 0x7f3a54cdfca0>
+  child_exit: <function ChildExit.child_exit at 0x7f3a54cdfdc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f3a54cdfee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f3a54ced040>
+  on_exit: <function OnExit.on_exit at 0x7f3a54ced160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-03-06 15:49:18 +0000] [9] [INFO] Starting gunicorn 20.1.0
+[2023-03-06 15:49:18 +0000] [9] [DEBUG] Arbiter booted
+[2023-03-06 15:49:18 +0000] [9] [INFO] Listening at: http://0.0.0.0:5003 (9)
+[2023-03-06 15:49:18 +0000] [9] [INFO] Using worker: sync
+[2023-03-06 15:49:18 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-03-06 15:49:18 +0000] [12] [INFO] Booting worker with pid: 12
+[2023-03-06 15:49:18 +0000] [13] [INFO] Booting worker with pid: 13
+[2023-03-06 15:49:18 +0000] [9] [DEBUG] 3 workers
+[2023-03-06 15:49:39 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:49:58 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 15:50:03 +0000] [13] [DEBUG] POST /api/grader
+[2023-03-06 15:50:24 +0000] [13] [DEBUG] POST /api/grader
+[2023-03-06 15:50:27 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 41, in runOneFolder_v2
+    writeToFile(abs_file_run_error, result)
+  File "/app/grading_app/utils/path.py", line 16, in writeToFile
+    f = open(abs_directory, 'w', errors='ignore')
+FileNotFoundError: [Errno 2] No such file or directory: "/app/grading_app/temp/grad_sub/[['20230306_155024_2212880_knight.h', './files/submissions/20230306_155024_2212880_knight.h'], ['20230306_155024_2212880_knight.cpp', './files/submissions/20230306_155024_2212880_knight.cpp']]/run_error1109"
+[2023-03-06 15:50:38 +0000] [13] [DEBUG] POST /api/grader
+[2023-03-06 15:51:27 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 16:10:45 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/06-03-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f070ad111f0>
+  on_reload: <function OnReload.on_reload at 0x7f070ad11310>
+  when_ready: <function WhenReady.when_ready at 0x7f070ad11430>
+  pre_fork: <function Prefork.pre_fork at 0x7f070ad11550>
+  post_fork: <function Postfork.post_fork at 0x7f070ad11670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f070ad11790>
+  worker_int: <function WorkerInt.worker_int at 0x7f070ad118b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f070ad119d0>
+  pre_exec: <function PreExec.pre_exec at 0x7f070ad11af0>
+  pre_request: <function PreRequest.pre_request at 0x7f070ad11c10>
+  post_request: <function PostRequest.post_request at 0x7f070ad11ca0>
+  child_exit: <function ChildExit.child_exit at 0x7f070ad11dc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f070ad11ee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f070ad1f040>
+  on_exit: <function OnExit.on_exit at 0x7f070ad1f160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-03-06 16:10:45 +0000] [7] [INFO] Starting gunicorn 20.1.0
+[2023-03-06 16:10:45 +0000] [7] [DEBUG] Arbiter booted
+[2023-03-06 16:10:45 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2023-03-06 16:10:45 +0000] [7] [INFO] Using worker: sync
+[2023-03-06 16:10:45 +0000] [9] [INFO] Booting worker with pid: 9
+[2023-03-06 16:10:45 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-03-06 16:10:46 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-03-06 16:10:46 +0000] [7] [DEBUG] 3 workers
+[2023-03-06 16:11:43 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 16:11:49 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 16:12:37 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 16:12:54 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 221, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 59, in prepareOneSubmission
+    assert(False)
+AssertionError
+[2023-03-06 16:12:54 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 16:13:18 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 16:13:40 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 16:16:00 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 16:16:04 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 16:16:10 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 16:17:31 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 16:18:01 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 16:18:05 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 16:18:50 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 17:21:46 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/06-03-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb526ece1f0>
+  on_reload: <function OnReload.on_reload at 0x7fb526ece310>
+  when_ready: <function WhenReady.when_ready at 0x7fb526ece430>
+  pre_fork: <function Prefork.pre_fork at 0x7fb526ece550>
+  post_fork: <function Postfork.post_fork at 0x7fb526ece670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb526ece790>
+  worker_int: <function WorkerInt.worker_int at 0x7fb526ece8b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb526ece9d0>
+  pre_exec: <function PreExec.pre_exec at 0x7fb526eceaf0>
+  pre_request: <function PreRequest.pre_request at 0x7fb526ecec10>
+  post_request: <function PostRequest.post_request at 0x7fb526ececa0>
+  child_exit: <function ChildExit.child_exit at 0x7fb526ecedc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb526eceee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb526edc040>
+  on_exit: <function OnExit.on_exit at 0x7fb526edc160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-03-06 17:21:46 +0000] [7] [INFO] Starting gunicorn 20.1.0
+[2023-03-06 17:21:46 +0000] [7] [DEBUG] Arbiter booted
+[2023-03-06 17:21:46 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2023-03-06 17:21:46 +0000] [7] [INFO] Using worker: sync
+[2023-03-06 17:21:46 +0000] [9] [INFO] Booting worker with pid: 9
+[2023-03-06 17:21:46 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-03-06 17:21:46 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-03-06 17:21:46 +0000] [7] [DEBUG] 3 workers
+[2023-03-06 17:22:43 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 17:23:40 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 17:24:32 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 17:26:51 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 17:26:54 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 17:27:02 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 17:31:01 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 17:32:56 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 17:34:08 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 17:34:47 +0000] [9] [DEBUG] POST /api/grader
+[2023-03-06 17:38:28 +0000] [8] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/06-03-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f47b1ab71f0>
+  on_reload: <function OnReload.on_reload at 0x7f47b1ab7310>
+  when_ready: <function WhenReady.when_ready at 0x7f47b1ab7430>
+  pre_fork: <function Prefork.pre_fork at 0x7f47b1ab7550>
+  post_fork: <function Postfork.post_fork at 0x7f47b1ab7670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f47b1ab7790>
+  worker_int: <function WorkerInt.worker_int at 0x7f47b1ab78b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f47b1ab79d0>
+  pre_exec: <function PreExec.pre_exec at 0x7f47b1ab7af0>
+  pre_request: <function PreRequest.pre_request at 0x7f47b1ab7c10>
+  post_request: <function PostRequest.post_request at 0x7f47b1ab7ca0>
+  child_exit: <function ChildExit.child_exit at 0x7f47b1ab7dc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f47b1ab7ee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f47b1ac5040>
+  on_exit: <function OnExit.on_exit at 0x7f47b1ac5160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-03-06 17:38:28 +0000] [8] [INFO] Starting gunicorn 20.1.0
+[2023-03-06 17:38:28 +0000] [8] [DEBUG] Arbiter booted
+[2023-03-06 17:38:28 +0000] [8] [INFO] Listening at: http://0.0.0.0:5003 (8)
+[2023-03-06 17:38:28 +0000] [8] [INFO] Using worker: sync
+[2023-03-06 17:38:28 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-03-06 17:38:28 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-03-06 17:38:28 +0000] [8] [DEBUG] 3 workers
+[2023-03-06 17:38:28 +0000] [12] [INFO] Booting worker with pid: 12
+[2023-03-06 17:39:07 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 17:39:12 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 17:39:16 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1001_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-06 17:39:55 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 17:40:58 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 17:42:32 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 17:48:23 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 17:49:03 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 17:50:00 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 17:50:57 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 17:51:21 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 17:54:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 17:56:29 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-5:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1001_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-06 17:57:10 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 17:57:50 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 17:58:22 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 17:59:11 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 17:59:27 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 18:03:03 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 18:21:02 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 18:24:33 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 18:28:41 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 18:33:45 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 18:34:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 18:35:29 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 18:35:40 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 18:37:27 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 18:40:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 18:48:15 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 18:55:05 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 18:58:02 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 19:02:15 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 19:23:56 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 19:29:27 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 19:37:46 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 19:48:21 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 19:56:07 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 19:59:40 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 20:01:55 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 20:02:48 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 20:06:13 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 20:13:11 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 20:29:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 20:33:18 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 20:35:19 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 20:40:26 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 20:41:13 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 20:42:46 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 21:38:54 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:11:19 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:12:18 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:18:48 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:20:37 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:23:15 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:23:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:24:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:24:53 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 23:29:09 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:32:38 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:33:07 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 23:34:18 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-21:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1074_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-06 23:34:30 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:35:05 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:39:01 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 23:39:14 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:40:35 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 23:41:29 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:41:35 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 23:41:42 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:42:03 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 23:42:30 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 23:43:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:43:27 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:44:58 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:44:59 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 23:46:00 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:49:03 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-06 23:49:33 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:49:56 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:53:30 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-06 23:53:33 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:55:30 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:56:23 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:57:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-06 23:58:02 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:02:42 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:03:56 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:05:36 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:05:39 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:05:40 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:07:49 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:09:21 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:09:58 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:10:17 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:13:34 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:14:06 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:14:37 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:14:44 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:14:55 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:15:58 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:16:13 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:16:56 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:17:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:17:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:17:36 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:20:47 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:20:59 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:21:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:21:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:22:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:23:51 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:24:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:24:34 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:25:14 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:25:25 +0000] [11] [DEBUG] POST /api/grader
+Exception in thread Thread-40:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1088_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 00:26:22 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:26:37 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:27:11 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:27:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:28:33 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:29:08 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:29:09 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:30:09 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:30:33 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:31:51 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:32:23 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:32:34 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:33:34 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:33:53 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:33:58 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:34:37 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:34:37 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:34:49 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-47:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1088_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 00:35:04 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:35:34 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:37:19 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:37:21 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:37:40 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:37:59 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:39:14 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:39:16 +0000] [11] [DEBUG] POST /api/grader
+Exception in thread Thread-41:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1074_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 00:39:26 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:39:35 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:39:38 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:40:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:40:24 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:41:20 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:42:01 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:42:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:42:38 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:43:39 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:44:00 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:45:29 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:45:36 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:46:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:46:08 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:48:32 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:48:37 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:48:59 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:49:13 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:49:45 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:52:04 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:53:25 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:53:45 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:54:21 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:55:13 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 00:55:32 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:55:36 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 00:56:27 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 00:58:45 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:02:32 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:03:43 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:04:11 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:04:16 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:04:20 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:04:27 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:04:39 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:04:40 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:04:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:04:42 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-61:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1088_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 01:04:55 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:04:55 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:05:23 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:05:36 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:05:53 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:06:16 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:06:40 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:07:18 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:07:56 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:11:09 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:11:44 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:12:26 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:12:32 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:14:06 +0000] [11] [DEBUG] POST /api/grader
+Exception in thread Thread-74:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1088_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 01:15:00 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:15:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:15:25 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:15:32 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:15:55 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:16:10 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:17:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:18:46 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:20:47 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:22:47 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:24:04 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:26:08 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:26:27 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:26:40 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:27:14 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:27:49 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:28:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:28:10 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-61:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1075_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 01:29:22 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:30:56 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-62:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1088_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 01:31:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:31:44 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:31:59 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:32:22 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:33:13 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:33:43 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:34:05 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:34:21 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:35:59 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:36:01 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:36:05 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:37:13 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:37:26 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:37:34 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:37:38 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-71:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1109_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 01:38:09 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:38:13 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-72:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1081_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 01:38:30 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:39:33 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:39:36 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:40:39 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:40:39 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:40:48 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:41:05 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:41:07 +0000] [11] [DEBUG] POST /api/grader
+Exception in thread Thread-89:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1109_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 01:41:34 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:41:56 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:44:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:44:20 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:44:25 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:44:30 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-76:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1085_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 01:44:43 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:45:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:46:04 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:46:05 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:46:07 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:46:35 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:46:56 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:47:55 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:48:05 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:48:49 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:48:58 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:49:01 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:51:22 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:51:38 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:54:00 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:54:06 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:54:16 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:54:28 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:55:18 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:56:13 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:56:15 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:56:47 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 01:58:09 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 01:59:07 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:59:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 01:59:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:00:00 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:00:10 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:00:50 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:01:00 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:01:13 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:02:18 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:02:49 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:03:04 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:04:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:04:36 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:05:50 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:06:36 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:07:02 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:08:52 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:09:20 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:09:49 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:10:13 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:10:42 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:10:49 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:11:26 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:11:34 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:11:50 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:12:07 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:12:33 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:13:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:13:45 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:14:06 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:14:56 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:15:59 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:15:59 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:16:12 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:16:19 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:16:36 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:16:47 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:17:49 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:18:59 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:19:05 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:21:12 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:21:21 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:21:28 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:24:05 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:24:40 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:25:02 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:25:19 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:25:27 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:27:43 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:27:58 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:30:17 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:31:45 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:31:50 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:33:55 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:34:05 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-106:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1088_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 02:34:29 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:34:41 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:36:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:36:51 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:37:27 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:38:58 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:39:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:39:18 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:39:37 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:40:40 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:41:15 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:41:15 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:42:40 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:45:19 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:46:02 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:46:02 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:46:41 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:47:13 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:47:43 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:48:31 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:48:32 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:48:58 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:49:04 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:49:13 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:51:28 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:51:43 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:52:57 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:53:58 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:54:35 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 02:55:57 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:56:01 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 02:56:13 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 02:59:10 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:00:46 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:01:17 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:01:33 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:01:52 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:03:14 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:04:25 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:04:42 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:04:52 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:04:53 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:05:25 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:07:54 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:08:21 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:10:16 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:10:52 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:12:23 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:12:57 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:13:04 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:13:26 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:13:27 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:13:56 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:14:04 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:14:44 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:15:06 +0000] [11] [DEBUG] POST /api/grader
+Exception in thread Thread-138:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1048_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 03:16:10 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:16:28 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:16:38 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:17:06 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:18:09 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:19:26 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:20:00 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:20:02 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:20:43 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:22:15 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:22:43 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:23:24 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-118:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1109_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 03:24:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:24:06 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-145:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1109_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 03:24:30 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:24:56 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:24:59 +0000] [11] [DEBUG] POST /api/grader
+Exception in thread Thread-147:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1048_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 03:25:44 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:26:01 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:26:05 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:26:27 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:26:33 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-121:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1074_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 03:28:50 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:29:39 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-123:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1088_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 03:30:18 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:30:54 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:31:03 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:32:22 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:33:20 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:34:07 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:34:24 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:34:43 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:35:07 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:35:21 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:35:26 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:36:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:36:32 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:36:44 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:39:46 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:43:17 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:43:33 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:44:00 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:44:18 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:44:37 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:45:09 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-136:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1074_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 03:47:09 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:48:07 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:48:34 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:49:28 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:49:57 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:50:05 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:52:02 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:54:23 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:59:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 03:59:15 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 03:59:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 03:59:33 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-138:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1074_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 04:04:44 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:05:27 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:06:02 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:06:40 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:07:16 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:09:05 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:10:39 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:13:24 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:13:53 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:19:32 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:19:39 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:21:02 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:23:44 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:27:37 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 04:32:52 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 04:33:12 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 04:34:11 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 04:34:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:34:35 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:36:40 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:39:23 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:41:04 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:41:12 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 04:41:12 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:41:14 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:41:39 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 04:44:10 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:45:03 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:45:10 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:45:45 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:45:51 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 04:47:17 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:48:03 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:49:24 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:49:37 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:50:17 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:50:20 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 04:55:56 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 04:57:24 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 05:03:09 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:03:44 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 05:05:18 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:05:54 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:07:24 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 05:07:27 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:08:06 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:08:25 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:08:57 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:09:34 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 05:11:31 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 05:11:42 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:12:09 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:12:12 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 05:12:39 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:14:34 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 05:14:55 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:15:38 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:16:17 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:16:22 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-184:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1088_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 05:16:37 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:16:44 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 05:17:15 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:21:12 +0000] [10] [DEBUG] POST /api/grader
+[2023-03-07 05:24:55 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:27:53 +0000] [12] [DEBUG] POST /api/grader
+[2023-03-07 05:29:56 +0000] [11] [DEBUG] POST /api/grader
+[2023-03-07 05:30:13 +0000] [12] [DEBUG] POST /api/grader
+Exception in thread Thread-157:
+Traceback (most recent call last):
+  File "/app/grading_app/utils/command.py", line 24, in runWithTimeout
+    result = subprocess.check_output(command, timeout=timelimit, cwd=abs_directory, stderr=subprocess.STDOUT, shell=False).decode('utf-8')
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1869, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.8/subprocess.py", line 1072, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['./main', 'tc1109_input']' timed out after 5 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 226, in gradeOneSubmission
+    runOneFolder_v2(
+  File "/app/grading_app/utils/run.py", line 31, in runOneFolder_v2
+    success, result = runWithTimeout(
+  File "/app/grading_app/utils/command.py", line 32, in runWithTimeout
+    result += '\nTime limit exceeds.'
+UnboundLocalError: local variable 'result' referenced before assignment
+[2023-03-07 05:34:01 +0000] [12] [DEBUG] POST /api/grader

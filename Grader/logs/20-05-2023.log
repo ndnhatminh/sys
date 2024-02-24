@@ -1,0 +1,3461 @@
+[2023-05-20 05:17:57 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/20-05-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f7f2fa781f0>
+  on_reload: <function OnReload.on_reload at 0x7f7f2fa78310>
+  when_ready: <function WhenReady.when_ready at 0x7f7f2fa78430>
+  pre_fork: <function Prefork.pre_fork at 0x7f7f2fa78550>
+  post_fork: <function Postfork.post_fork at 0x7f7f2fa78670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f7f2fa78790>
+  worker_int: <function WorkerInt.worker_int at 0x7f7f2fa788b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f7f2fa789d0>
+  pre_exec: <function PreExec.pre_exec at 0x7f7f2fa78af0>
+  pre_request: <function PreRequest.pre_request at 0x7f7f2fa78c10>
+  post_request: <function PostRequest.post_request at 0x7f7f2fa78ca0>
+  child_exit: <function ChildExit.child_exit at 0x7f7f2fa78dc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f7f2fa78ee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f7f2fa86040>
+  on_exit: <function OnExit.on_exit at 0x7f7f2fa86160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-05-20 05:17:57 +0000] [7] [INFO] Starting gunicorn 20.1.0
+[2023-05-20 05:17:57 +0000] [7] [DEBUG] Arbiter booted
+[2023-05-20 05:17:57 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2023-05-20 05:17:57 +0000] [7] [INFO] Using worker: sync
+[2023-05-20 05:17:57 +0000] [9] [INFO] Booting worker with pid: 9
+[2023-05-20 05:17:58 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-05-20 05:17:58 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-05-20 05:17:58 +0000] [7] [DEBUG] 3 workers
+[2023-05-20 05:18:25 +0000] [11] [DEBUG] POST /api/grader
+2212971: start grading
+2212971: graded
+[2023-05-20 05:21:52 +0000] [11] [DEBUG] POST /api/grader
+2110559: start grading
+2110559: graded
+[2023-05-20 05:22:05 +0000] [11] [DEBUG] POST /api/grader
+2210437: start grading
+2210437: graded
+[2023-05-20 05:27:01 +0000] [11] [DEBUG] POST /api/grader
+2213287: start grading
+2213287: graded
+[2023-05-20 05:28:09 +0000] [9] [DEBUG] POST /api/grader
+2250016: start grading
+2250016: graded
+[2023-05-20 05:29:55 +0000] [10] [DEBUG] POST /api/grader
+2213242: start grading
+2213242: graded
+[2023-05-20 05:30:02 +0000] [9] [DEBUG] POST /api/grader
+2252229: start grading
+2252229: graded
+[2023-05-20 05:31:50 +0000] [9] [DEBUG] POST /api/grader
+2210437: start grading
+[2023-05-20 05:31:52 +0000] [10] [DEBUG] POST /api/grader
+2252346: start grading
+2210437: graded
+2252346: graded
+[2023-05-20 05:32:18 +0000] [9] [DEBUG] POST /api/grader
+2210319: start grading
+2210319: graded
+[2023-05-20 05:34:20 +0000] [9] [DEBUG] POST /api/grader
+2252229: start grading
+2252229: graded
+[2023-05-20 05:35:33 +0000] [10] [DEBUG] POST /api/grader
+2210935: start grading
+2210935: graded
+[2023-05-20 05:37:02 +0000] [11] [DEBUG] POST /api/grader
+2252280: start grading
+2252280: graded
+[2023-05-20 05:39:05 +0000] [10] [DEBUG] POST /api/grader
+2213242: start grading
+2213242: graded
+[2023-05-20 05:39:15 +0000] [9] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-20 05:39:35 +0000] [11] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-20 05:39:45 +0000] [9] [DEBUG] POST /api/grader
+2252229: start grading
+2252229: graded
+[2023-05-20 05:40:25 +0000] [11] [DEBUG] POST /api/grader
+2213129: start grading
+2213129: graded
+[2023-05-20 05:40:38 +0000] [9] [DEBUG] POST /api/grader
+2211561: start grading
+2211561: graded
+[2023-05-20 05:41:02 +0000] [9] [DEBUG] POST /api/grader
+2210522: start grading
+2210522: graded
+[2023-05-20 05:41:55 +0000] [11] [DEBUG] POST /api/grader
+2252346: start grading
+[2023-05-20 05:41:55 +0000] [9] [DEBUG] POST /api/grader
+2213982: start grading
+2252346: graded
+2213982: graded
+[2023-05-20 05:42:24 +0000] [10] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-20 05:42:47 +0000] [9] [DEBUG] POST /api/grader
+2210105: start grading
+2210105: graded
+[2023-05-20 05:43:02 +0000] [11] [DEBUG] POST /api/grader
+2212779: start grading
+2212779: graded
+[2023-05-20 05:46:04 +0000] [11] [DEBUG] POST /api/grader
+2210935: start grading
+2210935: graded
+[2023-05-20 05:46:20 +0000] [10] [DEBUG] POST /api/grader
+2211605: start grading
+2211605: graded
+[2023-05-20 05:46:41 +0000] [10] [DEBUG] POST /api/grader
+2212878: start grading
+2212878: graded
+[2023-05-20 05:47:50 +0000] [11] [DEBUG] POST /api/grader
+2211848: start grading
+2211848: graded
+[2023-05-20 05:49:13 +0000] [10] [DEBUG] POST /api/grader
+2212971: start grading
+2212971: graded
+[2023-05-20 05:49:44 +0000] [9] [DEBUG] POST /api/grader
+2210053: start grading
+2210053: graded
+[2023-05-20 05:51:46 +0000] [9] [DEBUG] POST /api/grader
+2211648: start grading
+2211648: graded
+[2023-05-20 05:52:01 +0000] [11] [DEBUG] POST /api/grader
+2213261: start grading
+2213261: graded
+[2023-05-20 05:52:49 +0000] [8] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/20-05-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f3c795f21f0>
+  on_reload: <function OnReload.on_reload at 0x7f3c795f2310>
+  when_ready: <function WhenReady.when_ready at 0x7f3c795f2430>
+  pre_fork: <function Prefork.pre_fork at 0x7f3c795f2550>
+  post_fork: <function Postfork.post_fork at 0x7f3c795f2670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f3c795f2790>
+  worker_int: <function WorkerInt.worker_int at 0x7f3c795f28b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f3c795f29d0>
+  pre_exec: <function PreExec.pre_exec at 0x7f3c795f2af0>
+  pre_request: <function PreRequest.pre_request at 0x7f3c795f2c10>
+  post_request: <function PostRequest.post_request at 0x7f3c795f2ca0>
+  child_exit: <function ChildExit.child_exit at 0x7f3c795f2dc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f3c795f2ee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f3c79600040>
+  on_exit: <function OnExit.on_exit at 0x7f3c79600160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-05-20 05:52:49 +0000] [8] [INFO] Starting gunicorn 20.1.0
+[2023-05-20 05:52:49 +0000] [8] [DEBUG] Arbiter booted
+[2023-05-20 05:52:49 +0000] [8] [INFO] Listening at: http://0.0.0.0:5003 (8)
+[2023-05-20 05:52:49 +0000] [8] [INFO] Using worker: sync
+[2023-05-20 05:52:49 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-05-20 05:52:49 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-05-20 05:52:49 +0000] [12] [INFO] Booting worker with pid: 12
+[2023-05-20 05:52:49 +0000] [8] [DEBUG] 3 workers
+[2023-05-20 05:53:25 +0000] [11] [DEBUG] POST /api/grader
+2213287: start grading
+2213287: graded
+[2023-05-20 05:53:55 +0000] [11] [DEBUG] POST /api/grader
+2212971: start grading
+2212971: graded
+[2023-05-20 05:54:00 +0000] [12] [DEBUG] POST /api/grader
+2213278: start grading
+2213278: graded
+[2023-05-20 05:54:33 +0000] [12] [DEBUG] POST /api/grader
+2252734: start grading
+2252734: graded
+[2023-05-20 05:54:50 +0000] [12] [DEBUG] POST /api/grader
+2211430: start grading
+[2023-05-20 05:54:54 +0000] [10] [DEBUG] POST /api/grader
+2252938: start grading
+2211430: graded
+2252938: graded
+[2023-05-20 05:55:17 +0000] [12] [DEBUG] POST /api/grader
+2210509: start grading
+2210509: graded
+[2023-05-20 05:55:57 +0000] [11] [DEBUG] POST /api/grader
+2210509: start grading
+2210509: graded
+[2023-05-20 05:56:56 +0000] [12] [DEBUG] POST /api/grader
+2212612: start grading
+2212612: graded
+[2023-05-20 05:59:48 +0000] [11] [DEBUG] POST /api/grader
+2211561: start grading
+2211561: graded
+[2023-05-20 06:00:34 +0000] [11] [DEBUG] POST /api/grader
+2211486: start grading
+2211486: graded
+[2023-05-20 06:01:08 +0000] [12] [DEBUG] POST /api/grader
+2110559: start grading
+2110559: graded
+[2023-05-20 06:03:39 +0000] [10] [DEBUG] POST /api/grader
+2210935: start grading
+2210935: graded
+[2023-05-20 06:06:28 +0000] [12] [DEBUG] POST /api/grader
+2211583: start grading
+2211583: graded
+[2023-05-20 06:07:48 +0000] [12] [DEBUG] POST /api/grader
+2252854: start grading
+[2023-05-20 06:07:48 +0000] [11] [DEBUG] POST /api/grader
+2211605: start grading
+2252854: graded
+2211605: graded
+[2023-05-20 06:08:41 +0000] [11] [DEBUG] POST /api/grader
+2213428: start grading
+2213428: graded
+[2023-05-20 06:10:05 +0000] [11] [DEBUG] POST /api/grader
+2252223: start grading
+[2023-05-20 06:10:08 +0000] [12] [DEBUG] POST /api/grader
+2212932: start grading
+2252223: graded
+2212932: graded
+[2023-05-20 06:10:22 +0000] [10] [DEBUG] POST /api/grader
+2210053: start grading
+2210053: graded
+[2023-05-20 06:13:21 +0000] [10] [DEBUG] POST /api/grader
+2212629: start grading
+2212629: graded
+[2023-05-20 06:13:37 +0000] [10] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-20 06:14:01 +0000] [11] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-20 06:14:12 +0000] [12] [DEBUG] POST /api/grader
+2252154: start grading
+2252154: graded
+[2023-05-20 06:16:54 +0000] [10] [DEBUG] POST /api/grader
+2210332: start grading
+2210332: graded
+[2023-05-20 06:16:58 +0000] [12] [DEBUG] POST /api/grader
+2252100: start grading
+2252100: graded
+[2023-05-20 06:19:10 +0000] [12] [DEBUG] POST /api/grader
+2211756: start grading
+[2023-05-20 06:19:10 +0000] [12] [DEBUG] POST /api/grader
+2252061: start grading
+2252061: graded
+2211756: graded
+[2023-05-20 06:21:01 +0000] [11] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 06:21:14 +0000] [12] [DEBUG] POST /api/grader
+2211795: start grading
+2211795: graded
+[2023-05-20 06:22:31 +0000] [10] [DEBUG] POST /api/grader
+2211795: start grading
+2211795: graded
+[2023-05-20 06:22:39 +0000] [12] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-20 06:22:54 +0000] [10] [DEBUG] POST /api/grader
+2212564: start grading
+2212564: graded
+[2023-05-20 06:23:48 +0000] [11] [DEBUG] POST /api/grader
+2213506: start grading
+2213506: graded
+[2023-05-20 06:24:05 +0000] [11] [DEBUG] POST /api/grader
+2213467: start grading
+2213467: graded
+[2023-05-20 06:24:29 +0000] [11] [DEBUG] POST /api/grader
+2213061: start grading
+2213061: graded
+[2023-05-20 06:25:26 +0000] [12] [DEBUG] POST /api/grader
+2210238: start grading
+2210238: graded
+[2023-05-20 06:25:42 +0000] [11] [DEBUG] POST /api/grader
+2211946: start grading
+2211946: graded
+[2023-05-20 06:25:58 +0000] [11] [DEBUG] POST /api/grader
+2213526: start grading
+2213526: graded
+[2023-05-20 06:27:10 +0000] [11] [DEBUG] POST /api/grader
+2213526: start grading
+2213526: graded
+[2023-05-20 06:27:19 +0000] [12] [DEBUG] POST /api/grader
+2211848: start grading
+2211848: graded
+[2023-05-20 06:28:00 +0000] [10] [DEBUG] POST /api/grader
+2213214: start grading
+2213214: graded
+[2023-05-20 06:28:46 +0000] [10] [DEBUG] POST /api/grader
+2210535: start grading
+[2023-05-20 06:28:47 +0000] [11] [DEBUG] POST /api/grader
+2210535: start grading
+2210535: graded
+Exception in thread Thread-17:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 38, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 232, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2210535/output1001'
+[2023-05-20 06:29:02 +0000] [10] [DEBUG] POST /api/grader
+2211235: start grading
+2211235: graded
+[2023-05-20 06:29:06 +0000] [10] [DEBUG] POST /api/grader
+2212878: start grading
+2212878: graded
+[2023-05-20 06:29:40 +0000] [10] [DEBUG] POST /api/grader
+2213785: start grading
+2213785: graded
+[2023-05-20 06:31:25 +0000] [11] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 06:32:10 +0000] [11] [DEBUG] POST /api/grader
+2212878: start grading
+2212878: graded
+[2023-05-20 06:32:42 +0000] [10] [DEBUG] POST /api/grader
+2213982: start grading
+2213982: graded
+[2023-05-20 06:36:01 +0000] [10] [DEBUG] POST /api/grader
+2210535: start grading
+2210535: graded
+[2023-05-20 06:38:10 +0000] [10] [DEBUG] POST /api/grader
+2213059: start grading
+2213059: graded
+[2023-05-20 06:40:28 +0000] [11] [DEBUG] POST /api/grader
+2110826: start grading
+2110826: graded
+[2023-05-20 06:40:59 +0000] [12] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-20 06:42:24 +0000] [10] [DEBUG] POST /api/grader
+2213261: start grading
+2213261: graded
+[2023-05-20 06:42:34 +0000] [12] [DEBUG] POST /api/grader
+2110826: start grading
+2110826: graded
+[2023-05-20 06:42:43 +0000] [11] [DEBUG] POST /api/grader
+2210754: start grading
+2210754: graded
+[2023-05-20 06:43:21 +0000] [10] [DEBUG] POST /api/grader
+2210754: start grading
+2210754: graded
+[2023-05-20 06:44:01 +0000] [10] [DEBUG] POST /api/grader
+2210573: start grading
+2210573: graded
+[2023-05-20 06:45:30 +0000] [10] [DEBUG] POST /api/grader
+2252097: start grading
+2252097: graded
+[2023-05-20 06:47:28 +0000] [12] [DEBUG] POST /api/grader
+2212157: start grading
+2212157: graded
+[2023-05-20 06:48:02 +0000] [10] [DEBUG] POST /api/grader
+2212548: start grading
+2212548: graded
+[2023-05-20 06:48:34 +0000] [10] [DEBUG] POST /api/grader
+2210850: start grading
+2210850: graded
+[2023-05-20 06:48:50 +0000] [11] [DEBUG] POST /api/grader
+2212362: start grading
+2212362: graded
+[2023-05-20 06:51:14 +0000] [10] [DEBUG] POST /api/grader
+2213491: start grading
+2213491: graded
+[2023-05-20 06:52:34 +0000] [10] [DEBUG] POST /api/grader
+2210446: start grading
+2210446: graded
+[2023-05-20 06:55:50 +0000] [11] [DEBUG] POST /api/grader
+2213467: start grading
+2213467: graded
+[2023-05-20 07:00:40 +0000] [10] [DEBUG] POST /api/grader
+2210118: start grading
+2210118: graded
+[2023-05-20 07:08:30 +0000] [12] [DEBUG] POST /api/grader
+2211740: start grading
+2211740: graded
+[2023-05-20 07:10:33 +0000] [12] [DEBUG] POST /api/grader
+2252685: start grading
+[2023-05-20 07:10:35 +0000] [10] [DEBUG] POST /api/grader
+2211271: start grading
+2211271: graded
+2252685: graded
+[2023-05-20 07:13:13 +0000] [10] [DEBUG] POST /api/grader
+2213467: start grading
+2213467: graded
+[2023-05-20 07:13:37 +0000] [10] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 07:14:41 +0000] [11] [DEBUG] POST /api/grader
+2211724: start grading
+2211724: graded
+[2023-05-20 07:17:18 +0000] [10] [DEBUG] POST /api/grader
+2212576: start grading
+2212576: graded
+[2023-05-20 07:19:02 +0000] [12] [DEBUG] POST /api/grader
+2252059: start grading
+2252059: graded
+[2023-05-20 07:20:22 +0000] [12] [DEBUG] POST /api/grader
+2210244: start grading
+2210244: graded
+[2023-05-20 07:20:47 +0000] [10] [DEBUG] POST /api/grader
+2210762: start grading
+2210762: graded
+[2023-05-20 07:23:13 +0000] [12] [DEBUG] POST /api/grader
+2252264: start grading
+2252264: graded
+[2023-05-20 07:23:54 +0000] [12] [DEBUG] POST /api/grader
+2211672: start grading
+2211672: graded
+[2023-05-20 07:27:03 +0000] [12] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-20 07:27:28 +0000] [10] [DEBUG] POST /api/grader
+2252002: start grading
+2252002: graded
+[2023-05-20 07:27:43 +0000] [12] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-20 07:28:00 +0000] [10] [DEBUG] POST /api/grader
+2210569: start grading
+2210569: graded
+[2023-05-20 07:28:54 +0000] [12] [DEBUG] POST /api/grader
+2211724: start grading
+2211724: graded
+[2023-05-20 07:30:43 +0000] [11] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 07:31:30 +0000] [10] [DEBUG] POST /api/grader
+2213218: start grading
+2213218: graded
+[2023-05-20 07:31:53 +0000] [10] [DEBUG] POST /api/grader
+2213218: start grading
+2213218: graded
+[2023-05-20 07:33:39 +0000] [12] [DEBUG] POST /api/grader
+2211672: start grading
+2211672: graded
+[2023-05-20 07:34:02 +0000] [10] [DEBUG] POST /api/grader
+2211648: start grading
+2211648: graded
+[2023-05-20 07:35:41 +0000] [11] [DEBUG] POST /api/grader
+2213129: start grading
+2213129: graded
+[2023-05-20 07:37:55 +0000] [10] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 07:39:13 +0000] [10] [DEBUG] POST /api/grader
+2252647: start grading
+2252647: graded
+[2023-05-20 07:39:18 +0000] [11] [DEBUG] POST /api/grader
+2252362: start grading
+2252362: graded
+[2023-05-20 07:39:47 +0000] [10] [DEBUG] POST /api/grader
+2212263: start grading
+2212263: graded
+[2023-05-20 07:39:54 +0000] [12] [DEBUG] POST /api/grader
+2210105: start grading
+2210105: graded
+[2023-05-20 07:40:42 +0000] [10] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 07:42:58 +0000] [11] [DEBUG] POST /api/grader
+2212088: start grading
+2212088: graded
+[2023-05-20 07:43:11 +0000] [12] [DEBUG] POST /api/grader
+2210209: start grading
+2210209: graded
+[2023-05-20 07:43:58 +0000] [10] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 07:44:21 +0000] [10] [DEBUG] POST /api/grader
+2252297: start grading
+2252297: graded
+[2023-05-20 07:45:52 +0000] [10] [DEBUG] POST /api/grader
+2252297: start grading
+2252297: graded
+[2023-05-20 07:47:07 +0000] [12] [DEBUG] POST /api/grader
+2252168: start grading
+2252168: graded
+[2023-05-20 07:47:48 +0000] [11] [DEBUG] POST /api/grader
+2252297: start grading
+2252297: graded
+[2023-05-20 07:48:03 +0000] [10] [DEBUG] POST /api/grader
+2111056: start grading
+2111056: graded
+[2023-05-20 07:49:04 +0000] [12] [DEBUG] POST /api/grader
+2213915: start grading
+2213915: graded
+[2023-05-20 07:50:24 +0000] [12] [DEBUG] POST /api/grader
+2211709: start grading
+2211709: graded
+[2023-05-20 07:51:14 +0000] [11] [DEBUG] POST /api/grader
+2213915: start grading
+2213915: graded
+[2023-05-20 07:51:34 +0000] [11] [DEBUG] POST /api/grader
+2252658: start grading
+2252658: graded
+[2023-05-20 07:52:39 +0000] [11] [DEBUG] POST /api/grader
+2212962: start grading
+2212962: graded
+[2023-05-20 07:54:01 +0000] [10] [DEBUG] POST /api/grader
+2252362: start grading
+2252362: graded
+[2023-05-20 07:57:15 +0000] [10] [DEBUG] POST /api/grader
+2213656: start grading
+2213656: graded
+[2023-05-20 07:57:24 +0000] [12] [DEBUG] POST /api/grader
+2210850: start grading
+2210850: graded
+[2023-05-20 08:06:26 +0000] [10] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-20 08:16:38 +0000] [12] [DEBUG] POST /api/grader
+2211467: start grading
+2211467: graded
+[2023-05-20 08:17:32 +0000] [10] [DEBUG] POST /api/grader
+2210118: start grading
+2210118: graded
+[2023-05-20 08:20:44 +0000] [11] [DEBUG] POST /api/grader
+2153077: start grading
+2153077: graded
+[2023-05-20 08:21:13 +0000] [10] [DEBUG] POST /api/grader
+2213045: start grading
+2213045: graded
+[2023-05-20 08:21:28 +0000] [10] [DEBUG] POST /api/grader
+2211821: start grading
+2211821: graded
+[2023-05-20 08:23:32 +0000] [10] [DEBUG] POST /api/grader
+2211605: start grading
+2211605: graded
+[2023-05-20 08:23:43 +0000] [10] [DEBUG] POST /api/grader
+2015025: start grading
+2015025: graded
+[2023-05-20 08:25:34 +0000] [11] [DEBUG] POST /api/grader
+2210192: start grading
+2210192: graded
+[2023-05-20 08:27:49 +0000] [12] [DEBUG] POST /api/grader
+2212779: start grading
+2212779: graded
+[2023-05-20 08:30:10 +0000] [12] [DEBUG] POST /api/grader
+2211830: start grading
+2211830: graded
+[2023-05-20 08:31:21 +0000] [10] [DEBUG] POST /api/grader
+2213132: start grading
+2213132: graded
+[2023-05-20 08:31:45 +0000] [10] [DEBUG] POST /api/grader
+2252189: start grading
+[2023-05-20 08:31:49 +0000] [10] [DEBUG] POST /api/grader
+2211621: start grading
+2252189: graded
+2211621: graded
+[2023-05-20 08:33:36 +0000] [10] [DEBUG] POST /api/grader
+2213187: start grading
+2213187: graded
+[2023-05-20 08:34:39 +0000] [10] [DEBUG] POST /api/grader
+2211807: start grading
+2211807: graded
+[2023-05-20 08:35:19 +0000] [10] [DEBUG] POST /api/grader
+2210319: start grading
+2210319: graded
+[2023-05-20 08:38:01 +0000] [10] [DEBUG] POST /api/grader
+2252355: start grading
+2252355: graded
+[2023-05-20 08:38:24 +0000] [11] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 08:38:48 +0000] [10] [DEBUG] POST /api/grader
+2212804: start grading
+2212804: graded
+[2023-05-20 08:39:06 +0000] [12] [DEBUG] POST /api/grader
+2211368: start grading
+2211368: graded
+[2023-05-20 08:39:33 +0000] [11] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 08:43:08 +0000] [12] [DEBUG] POST /api/grader
+2252635: start grading
+2252635: graded
+[2023-05-20 08:43:40 +0000] [10] [DEBUG] POST /api/grader
+2210381: start grading
+2210381: graded
+[2023-05-20 08:50:34 +0000] [12] [DEBUG] POST /api/grader
+2252282: start grading
+2252282: graded
+[2023-05-20 08:50:44 +0000] [11] [DEBUG] POST /api/grader
+2114605: start grading
+2114605: graded
+[2023-05-20 08:56:26 +0000] [11] [DEBUG] POST /api/grader
+2211844: start grading
+2211844: graded
+[2023-05-20 08:58:43 +0000] [11] [DEBUG] POST /api/grader
+2210118: start grading
+2210118: graded
+[2023-05-20 08:59:15 +0000] [12] [DEBUG] POST /api/grader
+2212412: start grading
+2212412: graded
+[2023-05-20 09:00:11 +0000] [10] [DEBUG] POST /api/grader
+2211635: start grading
+2211635: graded
+[2023-05-20 09:02:21 +0000] [12] [DEBUG] POST /api/grader
+2252662: start grading
+2252662: graded
+[2023-05-20 09:07:04 +0000] [11] [DEBUG] POST /api/grader
+1752241: start grading
+1752241: graded
+[2023-05-20 09:10:28 +0000] [12] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-20 09:14:00 +0000] [11] [DEBUG] POST /api/grader
+2213001: start grading
+[2023-05-20 09:14:03 +0000] [11] [DEBUG] POST /api/grader
+2210768: start grading
+[2023-05-20 09:14:05 +0000] [11] [DEBUG] POST /api/grader
+1915030: start grading
+2213001: graded
+2210768: graded
+1915030: graded
+[2023-05-20 09:18:03 +0000] [12] [DEBUG] POST /api/grader
+2252060: start grading
+2252060: graded
+[2023-05-20 09:20:05 +0000] [12] [DEBUG] POST /api/grader
+2210517: start grading
+2210517: graded
+[2023-05-20 09:22:35 +0000] [11] [DEBUG] POST /api/grader
+2210812: start grading
+2210812: graded
+[2023-05-20 09:25:12 +0000] [11] [DEBUG] POST /api/grader
+2211632: start grading
+2211632: graded
+[2023-05-20 09:25:25 +0000] [12] [DEBUG] POST /api/grader
+2210917: start grading
+2210917: graded
+[2023-05-20 09:26:53 +0000] [11] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-20 09:31:22 +0000] [11] [DEBUG] POST /api/grader
+2211331: start grading
+2211331: graded
+[2023-05-20 09:38:02 +0000] [12] [DEBUG] POST /api/grader
+2210812: start grading
+2210812: graded
+[2023-05-20 09:38:25 +0000] [12] [DEBUG] POST /api/grader
+2212413: start grading
+2212413: graded
+[2023-05-20 09:43:04 +0000] [12] [DEBUG] POST /api/grader
+2212495: start grading
+[2023-05-20 09:43:08 +0000] [10] [DEBUG] POST /api/grader
+2211185: start grading
+2212495: graded
+2211185: graded
+[2023-05-20 09:48:00 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:11)
+[2023-05-20 09:48:00 +0000] [11] [INFO] Worker exiting (pid: 11)
+[2023-05-20 09:48:00 +0000] [25456] [INFO] Booting worker with pid: 25456
+[2023-05-20 09:48:07 +0000] [12] [DEBUG] POST /api/grader
+2213506: start grading
+[2023-05-20 09:48:07 +0000] [12] [DEBUG] POST /api/grader
+2213506: start grading
+Exception in thread Thread-52:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 38, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 222, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 73, in prepareOneSubmission
+    shutil.copytree(src, dst, dirs_exist_ok=True)
+  File "/usr/lib/python3.8/shutil.py", line 557, in copytree
+    return _copytree(entries=entries, src=src, dst=dst, symlinks=symlinks,
+  File "/usr/lib/python3.8/shutil.py", line 513, in _copytree
+    raise Error(errors)
+shutil.Error: [('/app/support-files/testcases-fileinput/2008/tc2008_armyknights', '/app/grading_app/temp/grad_sub/2213506/tc2008_armyknights', '[Errno 2] No such file or directory')]
+2213506: graded
+[2023-05-20 09:50:53 +0000] [12] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-20 09:54:14 +0000] [12] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-20 09:54:53 +0000] [25456] [DEBUG] POST /api/grader
+2252493: start grading
+2252493: graded
+[2023-05-20 09:58:09 +0000] [10] [DEBUG] POST /api/grader
+2252381: start grading
+2252381: graded
+[2023-05-20 09:58:20 +0000] [25456] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-20 09:59:33 +0000] [10] [DEBUG] POST /api/grader
+2212651: start grading
+2212651: graded
+[2023-05-20 10:07:31 +0000] [10] [DEBUG] POST /api/grader
+2211298: start grading
+2211298: graded
+[2023-05-20 10:12:22 +0000] [25456] [DEBUG] POST /api/grader
+2052992: start grading
+2052992: graded
+[2023-05-20 10:13:07 +0000] [25456] [DEBUG] POST /api/grader
+2052992: start grading
+2052992: graded
+[2023-05-20 10:14:26 +0000] [25456] [DEBUG] POST /api/grader
+2212651: start grading
+2212651: graded
+[2023-05-20 10:14:32 +0000] [25456] [DEBUG] POST /api/grader
+2212318: start grading
+2212318: graded
+[2023-05-20 10:15:13 +0000] [10] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-20 10:18:41 +0000] [10] [DEBUG] POST /api/grader
+2252314: start grading
+2252314: graded
+[2023-05-20 10:19:25 +0000] [12] [DEBUG] POST /api/grader
+2252314: start grading
+2252314: graded
+[2023-05-20 10:20:20 +0000] [10] [DEBUG] POST /api/grader
+2210318: start grading
+2210318: graded
+[2023-05-20 10:22:12 +0000] [10] [DEBUG] POST /api/grader
+2212416: start grading
+2212416: graded
+[2023-05-20 10:25:26 +0000] [12] [DEBUG] POST /api/grader
+2210961: start grading
+2210961: graded
+[2023-05-20 10:27:36 +0000] [25456] [DEBUG] POST /api/grader
+2252378: start grading
+2252378: graded
+[2023-05-20 10:27:45 +0000] [12] [DEBUG] POST /api/grader
+2252378: start grading
+2252378: graded
+[2023-05-20 10:30:02 +0000] [12] [DEBUG] POST /api/grader
+2212781: start grading
+2212781: graded
+[2023-05-20 10:33:33 +0000] [12] [DEBUG] POST /api/grader
+2213500: start grading
+2213500: graded
+[2023-05-20 10:45:42 +0000] [10] [DEBUG] POST /api/grader
+2252895: start grading
+2252895: graded
+[2023-05-20 10:46:39 +0000] [12] [DEBUG] POST /api/grader
+2213248: start grading
+2213248: graded
+[2023-05-20 10:52:03 +0000] [25456] [DEBUG] POST /api/grader
+2210078: start grading
+2210078: graded
+[2023-05-20 10:52:14 +0000] [25456] [DEBUG] POST /api/grader
+2211254: start grading
+2211254: graded
+[2023-05-20 10:52:23 +0000] [12] [DEBUG] POST /api/grader
+2210078: start grading
+2210078: graded
+[2023-05-20 10:53:01 +0000] [10] [DEBUG] POST /api/grader
+2210443: start grading
+2210443: graded
+[2023-05-20 10:53:11 +0000] [10] [DEBUG] POST /api/grader
+2210078: start grading
+2210078: graded
+[2023-05-20 10:53:22 +0000] [10] [DEBUG] POST /api/grader
+2213250: start grading
+2213250: graded
+[2023-05-20 10:53:55 +0000] [25456] [DEBUG] POST /api/grader
+2213248: start grading
+2213248: graded
+[2023-05-20 10:55:52 +0000] [12] [DEBUG] POST /api/grader
+2252895: start grading
+2252895: graded
+[2023-05-20 10:56:54 +0000] [25456] [DEBUG] POST /api/grader
+2213426: start grading
+2213426: graded
+[2023-05-20 10:58:27 +0000] [25456] [DEBUG] POST /api/grader
+2213356: start grading
+2213356: graded
+[2023-05-20 10:59:21 +0000] [25456] [DEBUG] POST /api/grader
+2213964: start grading
+2213964: graded
+[2023-05-20 11:12:05 +0000] [25456] [DEBUG] POST /api/grader
+2211570: start grading
+2211570: graded
+[2023-05-20 11:12:12 +0000] [12] [DEBUG] POST /api/grader
+2211527: start grading
+2211527: graded
+[2023-05-20 11:22:39 +0000] [10] [DEBUG] POST /api/grader
+2212611: start grading
+2212611: graded
+[2023-05-20 11:33:21 +0000] [10] [DEBUG] POST /api/grader
+2152406: start grading
+2152406: graded
+[2023-05-20 11:38:39 +0000] [10] [DEBUG] Invalid request from ip=45.227.254.55: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-20 11:45:01 +0000] [10] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 11:53:52 +0000] [10] [DEBUG] POST /api/grader
+2212971: start grading
+2212971: graded
+[2023-05-20 11:56:25 +0000] [10] [DEBUG] POST /api/grader
+2252556: start grading
+2252556: graded
+[2023-05-20 11:58:28 +0000] [10] [DEBUG] POST /api/grader
+2211422: start grading
+2211422: graded
+[2023-05-20 11:58:34 +0000] [25456] [DEBUG] POST /api/grader
+2210254: start grading
+2210254: graded
+[2023-05-20 11:59:22 +0000] [25456] [DEBUG] POST /api/grader
+2252152: start grading
+2252152: graded
+[2023-05-20 12:00:30 +0000] [12] [DEBUG] POST /api/grader
+2210683: start grading
+2210683: graded
+[2023-05-20 12:08:37 +0000] [12] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 12:11:35 +0000] [12] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 12:13:25 +0000] [12] [DEBUG] POST /api/grader
+2211777: start grading
+2211777: graded
+[2023-05-20 12:15:06 +0000] [12] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 12:16:02 +0000] [12] [DEBUG] POST /api/grader
+2212971: start grading
+2212971: graded
+[2023-05-20 12:18:39 +0000] [25456] [DEBUG] POST /api/grader
+2210109: start grading
+2210109: graded
+[2023-05-20 12:19:21 +0000] [25456] [DEBUG] POST /api/grader
+2210671: start grading
+2210671: graded
+[2023-05-20 12:20:42 +0000] [12] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 12:20:51 +0000] [12] [DEBUG] POST /api/grader
+2211777: start grading
+2211777: graded
+[2023-05-20 12:23:05 +0000] [10] [DEBUG] POST /api/grader
+2211777: start grading
+2211777: graded
+[2023-05-20 12:24:38 +0000] [25456] [DEBUG] POST /api/grader
+2211303: start grading
+2211303: graded
+[2023-05-20 12:29:04 +0000] [12] [DEBUG] POST /api/grader
+2211777: start grading
+2211777: graded
+[2023-05-20 12:30:30 +0000] [10] [DEBUG] POST /api/grader
+2211322: start grading
+2211322: graded
+[2023-05-20 12:35:12 +0000] [10] [DEBUG] POST /api/grader
+2252419: start grading
+2252419: graded
+[2023-05-20 12:38:47 +0000] [12] [DEBUG] POST /api/grader
+2252346: start grading
+2252346: graded
+[2023-05-20 12:39:18 +0000] [10] [DEBUG] POST /api/grader
+2212388: start grading
+2212388: graded
+[2023-05-20 12:44:48 +0000] [25456] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 12:53:34 +0000] [10] [DEBUG] POST /api/grader
+2211522: start grading
+2211522: graded
+[2023-05-20 12:53:39 +0000] [12] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 12:56:46 +0000] [10] [DEBUG] POST /api/grader
+2220035: start grading
+2220035: graded
+[2023-05-20 12:57:39 +0000] [10] [DEBUG] POST /api/grader
+2211777: start grading
+2211777: graded
+[2023-05-20 12:58:33 +0000] [10] [DEBUG] POST /api/grader
+2211522: start grading
+2211522: graded
+[2023-05-20 12:58:42 +0000] [25456] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-20 12:59:02 +0000] [10] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-20 12:59:53 +0000] [25456] [DEBUG] POST /api/grader
+2212798: start grading
+2212798: graded
+[2023-05-20 13:00:43 +0000] [25456] [DEBUG] POST /api/grader
+2213111: start grading
+2213111: graded
+[2023-05-20 13:03:17 +0000] [25456] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 13:08:10 +0000] [25456] [DEBUG] POST /api/grader
+2213307: start grading
+2213307: graded
+[2023-05-20 13:17:13 +0000] [25456] [DEBUG] POST /api/grader
+2250016: start grading
+[2023-05-20 13:17:20 +0000] [10] [DEBUG] POST /api/grader
+2211721: start grading
+2250016: graded
+2211721: graded
+[2023-05-20 13:20:57 +0000] [10] [DEBUG] POST /api/grader
+2212135: start grading
+2212135: graded
+[2023-05-20 13:22:47 +0000] [10] [DEBUG] POST /api/grader
+2213682: start grading
+2213682: graded
+[2023-05-20 13:23:24 +0000] [12] [DEBUG] POST /api/grader
+2210077: start grading
+2210077: graded
+[2023-05-20 13:24:10 +0000] [12] [DEBUG] POST /api/grader
+2152226: start grading
+2152226: graded
+[2023-05-20 13:25:46 +0000] [10] [DEBUG] POST /api/grader
+2211595: start grading
+2211595: graded
+[2023-05-20 13:27:31 +0000] [25456] [DEBUG] POST /api/grader
+2252898: start grading
+2252898: graded
+[2023-05-20 13:29:33 +0000] [12] [DEBUG] POST /api/grader
+2252444: start grading
+2252444: graded
+[2023-05-20 13:31:23 +0000] [12] [DEBUG] POST /api/grader
+2152226: start grading
+2152226: graded
+[2023-05-20 13:36:26 +0000] [10] [DEBUG] POST /api/grader
+2210305: start grading
+2210305: graded
+[2023-05-20 13:36:49 +0000] [12] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 13:46:42 +0000] [10] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 13:47:45 +0000] [10] [DEBUG] POST /api/grader
+2250016: start grading
+2250016: graded
+[2023-05-20 13:52:47 +0000] [12] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 13:58:05 +0000] [25456] [DEBUG] POST /api/grader
+2212854: start grading
+2212854: graded
+[2023-05-20 14:09:58 +0000] [25456] [DEBUG] POST /api/grader
+2212059: start grading
+2212059: graded
+[2023-05-20 14:13:57 +0000] [10] [DEBUG] POST /api/grader
+2252742: start grading
+2252742: graded
+[2023-05-20 14:18:00 +0000] [12] [DEBUG] POST /api/grader
+2212163: start grading
+2212163: graded
+[2023-05-20 14:19:28 +0000] [12] [DEBUG] POST /api/grader
+2210077: start grading
+2210077: graded
+[2023-05-20 14:22:24 +0000] [10] [DEBUG] POST /api/grader
+2252757: start grading
+2252757: graded
+[2023-05-20 14:24:40 +0000] [25456] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 14:38:54 +0000] [12] [DEBUG] POST /api/grader
+2213572: start grading
+2213572: graded
+[2023-05-20 14:40:01 +0000] [25456] [DEBUG] POST /api/grader
+2213572: start grading
+2213572: graded
+[2023-05-20 14:44:24 +0000] [25456] [DEBUG] POST /api/grader
+2252742: start grading
+2252742: graded
+[2023-05-20 14:44:53 +0000] [25456] [DEBUG] POST /api/grader
+2252377: start grading
+[2023-05-20 14:44:56 +0000] [12] [DEBUG] POST /api/grader
+2115319: start grading
+2252377: graded
+2115319: graded
+[2023-05-20 14:45:29 +0000] [10] [DEBUG] POST /api/grader
+2250009: start grading
+2250009: graded
+[2023-05-20 14:45:43 +0000] [10] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 14:47:18 +0000] [12] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 14:47:58 +0000] [12] [DEBUG] POST /api/grader
+2250009: start grading
+2250009: graded
+[2023-05-20 14:50:29 +0000] [12] [DEBUG] POST /api/grader
+2252742: start grading
+2252742: graded
+[2023-05-20 14:55:24 +0000] [12] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 15:04:58 +0000] [10] [DEBUG] POST /api/grader
+2252742: start grading
+2252742: graded
+[2023-05-20 15:06:54 +0000] [12] [DEBUG] POST /api/grader
+2052589: start grading
+2052589: graded
+[2023-05-20 15:10:17 +0000] [12] [DEBUG] POST /api/grader
+2213287: start grading
+2213287: graded
+[2023-05-20 15:14:55 +0000] [25456] [DEBUG] POST /api/grader
+2052589: start grading
+2052589: graded
+[2023-05-20 15:18:25 +0000] [10] [DEBUG] POST /api/grader
+1915831: start grading
+1915831: graded
+[2023-05-20 15:20:13 +0000] [10] [DEBUG] POST /api/grader
+2213061: start grading
+2213061: graded
+[2023-05-20 15:28:22 +0000] [10] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 15:33:50 +0000] [10] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 15:36:34 +0000] [12] [DEBUG] POST /api/grader
+2252853: start grading
+2252853: graded
+[2023-05-20 15:38:08 +0000] [12] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 15:43:02 +0000] [10] [DEBUG] POST /api/grader
+2212472: start grading
+2212472: graded
+[2023-05-20 15:43:33 +0000] [12] [DEBUG] POST /api/grader
+2252853: start grading
+2252853: graded
+[2023-05-20 15:48:15 +0000] [12] [DEBUG] POST /api/grader
+2211111: start grading
+2211111: graded
+[2023-05-20 15:48:35 +0000] [25456] [DEBUG] POST /api/grader
+2213307: start grading
+2213307: graded
+[2023-05-20 16:09:01 +0000] [25456] [DEBUG] POST /api/grader
+1915831: start grading
+1915831: graded
+[2023-05-20 16:10:04 +0000] [25456] [DEBUG] POST /api/grader
+2213867: start grading
+2213867: graded
+[2023-05-20 16:10:15 +0000] [10] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-20 16:10:36 +0000] [25456] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 16:11:38 +0000] [10] [DEBUG] POST /api/grader
+2252711: start grading
+[2023-05-20 16:11:39 +0000] [25456] [DEBUG] POST /api/grader
+1915831: start grading
+2252711: graded
+1915831: graded
+[2023-05-20 16:14:18 +0000] [10] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-20 16:14:45 +0000] [12] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 16:16:23 +0000] [10] [DEBUG] POST /api/grader
+2252410: start grading
+2252410: graded
+[2023-05-20 16:18:57 +0000] [12] [DEBUG] POST /api/grader
+2213568: start grading
+2213568: graded
+[2023-05-20 16:19:29 +0000] [10] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 16:19:50 +0000] [25456] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-20 16:21:16 +0000] [25456] [DEBUG] POST /api/grader
+1915831: start grading
+1915831: graded
+[2023-05-20 16:23:14 +0000] [12] [DEBUG] POST /api/grader
+1915831: start grading
+1915831: graded
+[2023-05-20 16:24:29 +0000] [10] [DEBUG] POST /api/grader
+1914729: start grading
+1914729: graded
+[2023-05-20 16:30:20 +0000] [25456] [DEBUG] POST /api/grader
+1915831: start grading
+1915831: graded
+[2023-05-20 16:30:38 +0000] [10] [DEBUG] POST /api/grader
+2213867: start grading
+2213867: graded
+[2023-05-20 16:30:53 +0000] [25456] [DEBUG] POST /api/grader
+2252410: start grading
+2252410: graded
+[2023-05-20 16:34:35 +0000] [12] [DEBUG] POST /api/grader
+2211180: start grading
+2211180: graded
+[2023-05-20 16:35:59 +0000] [10] [DEBUG] POST /api/grader
+2212700: start grading
+2212700: graded
+[2023-05-20 16:37:50 +0000] [10] [DEBUG] POST /api/grader
+2252711: start grading
+[2023-05-20 16:37:51 +0000] [12] [DEBUG] POST /api/grader
+2252410: start grading
+2252711: graded
+2252410: graded
+[2023-05-20 16:44:07 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:12)
+[2023-05-20 16:44:07 +0000] [12] [INFO] Worker exiting (pid: 12)
+[2023-05-20 16:44:07 +0000] [48196] [INFO] Booting worker with pid: 48196
+[2023-05-20 16:44:15 +0000] [10] [DEBUG] POST /api/grader
+2210882: start grading
+2210882: graded
+[2023-05-20 16:46:36 +0000] [10] [DEBUG] POST /api/grader
+2252410: start grading
+2252410: graded
+[2023-05-20 16:50:01 +0000] [25456] [DEBUG] POST /api/grader
+2053427: start grading
+2053427: graded
+[2023-05-20 16:52:14 +0000] [48196] [DEBUG] POST /api/grader
+2212288: start grading
+2212288: graded
+[2023-05-20 16:53:20 +0000] [10] [DEBUG] POST /api/grader
+2211254: start grading
+2211254: graded
+[2023-05-20 17:00:14 +0000] [25456] [DEBUG] POST /api/grader
+2212700: start grading
+2212700: graded
+[2023-05-20 17:08:14 +0000] [25456] [DEBUG] POST /api/grader
+2211235: start grading
+2211235: graded
+[2023-05-20 17:10:12 +0000] [48196] [DEBUG] POST /api/grader
+2210794: start grading
+2210794: graded
+[2023-05-20 17:15:43 +0000] [48196] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-20 17:20:43 +0000] [48196] [DEBUG] POST /api/grader
+2213282: start grading
+2213282: graded
+[2023-05-20 17:21:29 +0000] [48196] [DEBUG] POST /api/grader
+2252666: start grading
+2252666: graded
+[2023-05-20 17:22:52 +0000] [10] [DEBUG] POST /api/grader
+2212700: start grading
+2212700: graded
+[2023-05-20 17:27:14 +0000] [48196] [DEBUG] POST /api/grader
+2212700: start grading
+2212700: graded
+[2023-05-20 17:42:17 +0000] [10] [DEBUG] POST /api/grader
+1952410: start grading
+1952410: graded
+[2023-05-20 17:43:37 +0000] [25456] [DEBUG] POST /api/grader
+2152815: start grading
+2152815: graded
+[2023-05-20 17:50:50 +0000] [48196] [DEBUG] POST /api/grader
+2252564: start grading
+2252564: graded
+[2023-05-20 17:51:33 +0000] [25456] [DEBUG] POST /api/grader
+2152815: start grading
+2152815: graded
+[2023-05-20 17:53:12 +0000] [25456] [DEBUG] POST /api/grader
+1952410: start grading
+1952410: graded
+[2023-05-20 17:54:56 +0000] [48196] [DEBUG] POST /api/grader
+2252936: start grading
+2252936: graded
+[2023-05-20 18:01:23 +0000] [25456] [DEBUG] POST /api/grader
+2152815: start grading
+2152815: graded
+[2023-05-20 18:06:19 +0000] [25456] [DEBUG] POST /api/grader
+1952410: start grading
+1952410: graded
+[2023-05-20 18:07:32 +0000] [25456] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-20 18:08:43 +0000] [10] [DEBUG] POST /api/grader
+2211235: start grading
+2211235: graded
+[2023-05-20 18:09:18 +0000] [10] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP request line: ''
+[2023-05-20 18:09:18 +0000] [25456] [DEBUG] GET /
+[2023-05-20 18:09:18 +0000] [48196] [DEBUG] OPTIONS /
+[2023-05-20 18:09:18 +0000] [48196] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'RTSP/1.0'
+[2023-05-20 18:09:23 +0000] [48196] [DEBUG] Ignored premature client disconnection. No more data after: b'\x80\x00\x00(r\xfe\x1d\x13\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86\xa0\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2023-05-20 18:09:28 +0000] [48196] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03'
+[2023-05-20 18:09:28 +0000] [10] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP request line: 'HELP'
+[2023-05-20 18:09:33 +0000] [25456] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2023-05-20 18:09:38 +0000] [25456] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-05-20 18:09:43 +0000] [25456] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00qj\x81n0\x81k\xa1\x03\x02\x01\x05\xa2\x03\x02\x01\n\xa4\x81^0\\\xa0\x07\x03\x05\x00P\x80\x00\x10\xa2\x04\x1b\x02NM\xa3\x170\x15\xa0\x03\x02\x01\x00\xa1\x0e0\x0c\x1b\x06krbtgt\x1b\x02NM\xa5\x11\x18\x0f19700101000000Z\xa7\x06\x02\x04\x1f\x1e\xb9\xd9\xa8\x170\x15\x02\x01\x12\x02\x01\x11\x02\x01\x10\x02\x01\x17\x02\x01\x01\x02\x01\x03\x02\x01\x02'
+[2023-05-20 18:09:48 +0000] [10] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00\xa4\xffSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00'
+[2023-05-20 18:09:53 +0000] [48196] [DEBUG] Ignored premature client disconnection. No more data after: b'l\x00\x0b\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2023-05-20 18:09:53 +0000] [10] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'SIP/2.0'
+[2023-05-20 18:10:09 +0000] [10] [DEBUG] Ignored premature client disconnection. No more data after: b'\x0e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00bbbb0100000001'
+[2023-05-20 18:10:09 +0000] [10] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-05-20 18:10:09 +0000] [48196] [DEBUG] Closing connection. 
+[2023-05-20 18:10:09 +0000] [25456] [DEBUG] Closing connection. 
+[2023-05-20 18:10:20 +0000] [10] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-05-20 18:10:32 +0000] [10] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2023-05-20 18:19:35 +0000] [25456] [DEBUG] POST /api/grader
+2252495: start grading
+2252495: graded
+[2023-05-20 18:35:28 +0000] [25456] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-20 18:58:06 +0000] [48196] [DEBUG] POST /api/grader
+2152815: start grading
+2152815: graded
+[2023-05-20 19:13:50 +0000] [48196] [DEBUG] POST /api/grader
+2213765: start grading
+2213765: graded
+[2023-05-20 19:18:05 +0000] [48196] [DEBUG] POST /api/grader
+2152815: start grading
+2152815: graded
+[2023-05-20 21:18:43 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:10)
+[2023-05-20 21:18:43 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2023-05-20 21:18:44 +0000] [52650] [INFO] Booting worker with pid: 52650
+[2023-05-20 21:25:49 +0000] [52650] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-05-20 21:54:36 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:25456)
+[2023-05-20 21:54:36 +0000] [25456] [INFO] Worker exiting (pid: 25456)
+[2023-05-20 21:54:36 +0000] [52652] [INFO] Booting worker with pid: 52652
+[2023-05-20 22:33:28 +0000] [48196] [DEBUG] POST /api/grader
+2212700: start grading
+2212700: graded
+[2023-05-20 23:05:05 +0000] [48196] [DEBUG] POST /api/grader
+2212548: start grading
+2212548: graded
+[2023-05-21 00:12:26 +0000] [52652] [DEBUG] POST /api/grader
+2252485: start grading
+2252485: graded
+[2023-05-21 00:15:11 +0000] [52652] [DEBUG] POST /api/grader
+2212700: start grading
+2212700: graded
+[2023-05-21 00:15:39 +0000] [52650] [DEBUG] POST /api/grader
+2110826: start grading
+2110826: graded
+[2023-05-21 00:17:02 +0000] [52650] [DEBUG] POST /api/grader
+2110826: start grading
+2110826: graded
+[2023-05-21 00:22:57 +0000] [52650] [DEBUG] POST /api/grader
+2252485: start grading
+2252485: graded
+[2023-05-21 00:34:57 +0000] [52650] [DEBUG] POST /api/grader
+2252113: start grading
+2252113: graded
+[2023-05-21 00:49:17 +0000] [52652] [DEBUG] POST /api/grader
+2211583: start grading
+2211583: graded
+[2023-05-21 00:58:10 +0000] [48196] [DEBUG] POST /api/grader
+1914847: start grading
+1914847: graded
+[2023-05-21 01:28:48 +0000] [52650] [DEBUG] GET /
+[2023-05-21 01:30:19 +0000] [48196] [DEBUG] POST /api/grader
+2252612: start grading
+2252612: graded
+[2023-05-21 01:34:00 +0000] [48196] [DEBUG] POST /api/grader
+2053161: start grading
+2053161: graded
+[2023-05-21 01:34:26 +0000] [52650] [DEBUG] POST /api/grader
+2210277: start grading
+2210277: graded
+[2023-05-21 01:36:30 +0000] [52650] [DEBUG] POST /api/grader
+2252658: start grading
+2252658: graded
+[2023-05-21 01:38:29 +0000] [52652] [DEBUG] POST /api/grader
+2211694: start grading
+2211694: graded
+[2023-05-21 01:45:39 +0000] [48196] [DEBUG] POST /api/grader
+2252937: start grading
+2252937: graded
+[2023-05-21 01:49:47 +0000] [52652] [DEBUG] POST /api/grader
+2210077: start grading
+2210077: graded
+[2023-05-21 01:50:02 +0000] [48196] [DEBUG] POST /api/grader
+2053161: start grading
+2053161: graded
+[2023-05-21 01:54:22 +0000] [52652] [DEBUG] POST /api/grader
+2252011: start grading
+2252011: graded
+[2023-05-21 02:02:58 +0000] [48196] [DEBUG] POST /api/grader
+2211894: start grading
+2211894: graded
+[2023-05-21 02:06:07 +0000] [52650] [DEBUG] POST /api/grader
+2053161: start grading
+2053161: graded
+[2023-05-21 02:19:25 +0000] [52652] [DEBUG] POST /api/grader
+2211093: start grading
+2211093: graded
+[2023-05-21 02:21:19 +0000] [52652] [DEBUG] POST /api/grader
+2252023: start grading
+2252023: graded
+[2023-05-21 02:23:37 +0000] [52650] [DEBUG] POST /api/grader
+2211383: start grading
+2211383: graded
+[2023-05-21 02:27:21 +0000] [52652] [DEBUG] POST /api/grader
+2211337: start grading
+2211337: graded
+[2023-05-21 02:27:33 +0000] [48196] [DEBUG] POST /api/grader
+2210134: start grading
+2210134: graded
+[2023-05-21 02:29:43 +0000] [52652] [DEBUG] POST /api/grader
+2252229: start grading
+[2023-05-21 02:29:47 +0000] [48196] [DEBUG] POST /api/grader
+2210205: start grading
+2252229: graded
+2210205: graded
+[2023-05-21 02:34:13 +0000] [52650] [DEBUG] POST /api/grader
+2252061: start grading
+2252061: graded
+[2023-05-21 02:39:03 +0000] [52652] [DEBUG] POST /api/grader
+2252061: start grading
+2252061: graded
+[2023-05-21 02:48:00 +0000] [52650] [DEBUG] POST /api/grader
+2252019: start grading
+2252019: graded
+[2023-05-21 02:50:26 +0000] [48196] [DEBUG] POST /api/grader
+2212971: start grading
+2212971: graded
+[2023-05-21 02:51:55 +0000] [48196] [DEBUG] POST /api/grader
+2212971: start grading
+2212971: graded
+[2023-05-21 03:06:17 +0000] [52652] [DEBUG] POST /api/grader
+2252341: start grading
+2252341: graded
+[2023-05-21 03:07:03 +0000] [52650] [DEBUG] POST /api/grader
+2252341: start grading
+2252341: graded
+[2023-05-21 03:19:08 +0000] [48196] [DEBUG] POST /api/grader
+2211651: start grading
+2211651: graded
+[2023-05-21 03:29:23 +0000] [52652] [DEBUG] POST /api/grader
+2152242: start grading
+2152242: graded
+[2023-05-21 03:38:38 +0000] [52652] [DEBUG] POST /api/grader
+2212063: start grading
+2212063: graded
+[2023-05-21 03:46:32 +0000] [52652] [DEBUG] POST /api/grader
+2210055: start grading
+2210055: graded
+[2023-05-21 03:49:09 +0000] [52652] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-21 03:49:33 +0000] [52652] [DEBUG] POST /api/grader
+2212610: start grading
+2212610: graded
+[2023-05-21 03:53:06 +0000] [52652] [DEBUG] POST /api/grader
+2252757: start grading
+2252757: graded
+[2023-05-21 03:55:14 +0000] [52652] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-21 03:56:16 +0000] [48196] [DEBUG] POST /api/grader
+2252410: start grading
+2252410: graded
+[2023-05-21 03:56:52 +0000] [52650] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-21 03:58:03 +0000] [52652] [DEBUG] POST /api/grader
+2210207: start grading
+[2023-05-21 03:58:04 +0000] [48196] [DEBUG] POST /api/grader
+2252461: start grading
+2210207: graded
+2252461: graded
+[2023-05-21 04:07:48 +0000] [52650] [DEBUG] POST /api/grader
+2211378: start grading
+2211378: graded
+[2023-05-21 04:14:44 +0000] [48196] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-21 04:16:01 +0000] [52650] [DEBUG] POST /api/grader
+2211651: start grading
+2211651: graded
+[2023-05-21 04:17:23 +0000] [52650] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-21 04:18:05 +0000] [48196] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-21 04:20:33 +0000] [48196] [DEBUG] POST /api/grader
+2015025: start grading
+2015025: graded
+[2023-05-21 04:21:50 +0000] [48196] [DEBUG] POST /api/grader
+2111860: start grading
+2111860: graded
+[2023-05-21 04:25:14 +0000] [52652] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-21 04:25:49 +0000] [52650] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-21 04:26:38 +0000] [48196] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-21 04:27:57 +0000] [52652] [DEBUG] POST /api/grader
+2210244: start grading
+2210244: graded
+[2023-05-21 04:29:22 +0000] [48196] [DEBUG] POST /api/grader
+2210517: start grading
+2210517: graded
+[2023-05-21 04:30:18 +0000] [48196] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-21 04:30:27 +0000] [52652] [DEBUG] POST /api/grader
+2212700: start grading
+2212700: graded
+[2023-05-21 04:30:48 +0000] [52650] [DEBUG] POST /api/grader
+2211194: start grading
+2211194: graded
+[2023-05-21 04:31:19 +0000] [52652] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-21 04:31:57 +0000] [52652] [DEBUG] POST /api/grader
+2111860: start grading
+2111860: graded
+[2023-05-21 04:32:51 +0000] [52652] [DEBUG] POST /api/grader
+2252711: start grading
+2252711: graded
+[2023-05-21 04:35:54 +0000] [52652] [DEBUG] POST /api/grader
+2211194: start grading
+[2023-05-21 04:35:55 +0000] [52652] [DEBUG] POST /api/grader
+1852312: start grading
+2211194: graded
+1852312: graded
+[2023-05-21 04:40:52 +0000] [48196] [DEBUG] POST /api/grader
+2111860: start grading
+2111860: graded
+[2023-05-21 04:41:03 +0000] [52650] [DEBUG] POST /api/grader
+2252154: start grading
+2252154: graded
+[2023-05-21 04:51:44 +0000] [52650] [DEBUG] POST /api/grader
+2211218: start grading
+2211218: graded
+[2023-05-21 05:00:59 +0000] [52650] [DEBUG] POST /api/grader
+2252461: start grading
+2252461: graded
+[2023-05-21 05:04:47 +0000] [48196] [DEBUG] POST /api/grader
+2152242: start grading
+2152242: graded
+[2023-05-21 05:10:07 +0000] [52652] [DEBUG] POST /api/grader
+2252461: start grading
+2252461: graded
+[2023-05-21 05:10:42 +0000] [48196] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-21 05:11:05 +0000] [48196] [DEBUG] POST /api/grader
+1952410: start grading
+1952410: graded
+[2023-05-21 05:15:16 +0000] [48196] [DEBUG] POST /api/grader
+2211078: start grading
+2211078: graded
+[2023-05-21 05:20:24 +0000] [52650] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-21 05:26:30 +0000] [52652] [DEBUG] POST /api/grader
+2252461: start grading
+2252461: graded
+[2023-05-21 05:28:00 +0000] [48196] [DEBUG] POST /api/grader
+2211218: start grading
+2211218: graded
+[2023-05-21 05:28:37 +0000] [52652] [DEBUG] POST /api/grader
+2210238: start grading
+2210238: graded
+[2023-05-21 05:37:43 +0000] [48196] [DEBUG] POST /api/grader
+2252461: start grading
+2252461: graded
+[2023-05-21 05:44:02 +0000] [48196] [DEBUG] POST /api/grader
+1952410: start grading
+1952410: graded
+[2023-05-21 05:46:24 +0000] [48196] [DEBUG] POST /api/grader
+1952410: start grading
+1952410: graded
+[2023-05-21 05:48:03 +0000] [48196] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-21 05:51:02 +0000] [52650] [DEBUG] POST /api/grader
+1952410: start grading
+1952410: graded
+[2023-05-21 05:51:37 +0000] [48196] [DEBUG] POST /api/grader
+2252378: start grading
+[2023-05-21 05:51:42 +0000] [48196] [DEBUG] POST /api/grader
+2252521: start grading
+2252378: graded
+2252521: graded
+[2023-05-21 05:52:02 +0000] [52650] [DEBUG] POST /api/grader
+2053586: start grading
+2053586: graded
+[2023-05-21 05:52:13 +0000] [52650] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-21 05:56:44 +0000] [52650] [DEBUG] POST /api/grader
+2015036: start grading
+2015036: graded
+[2023-05-21 06:09:40 +0000] [52652] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-21 06:11:21 +0000] [52652] [DEBUG] POST /api/grader
+2210736: start grading
+2210736: graded
+[2023-05-21 06:11:29 +0000] [52650] [DEBUG] POST /api/grader
+2252378: start grading
+2252378: graded
+[2023-05-21 06:14:10 +0000] [48196] [DEBUG] POST /api/grader
+2252280: start grading
+2252280: graded
+[2023-05-21 06:17:05 +0000] [52652] [DEBUG] POST /api/grader
+2153437: start grading
+2153437: graded
+[2023-05-21 06:19:31 +0000] [48196] [DEBUG] POST /api/grader
+2252685: start grading
+[2023-05-21 06:19:34 +0000] [52652] [DEBUG] POST /api/grader
+2110416: start grading
+2252685: graded
+2110416: graded
+[2023-05-21 06:21:50 +0000] [52650] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-21 06:23:55 +0000] [52652] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-21 06:27:33 +0000] [52650] [DEBUG] POST /api/grader
+2115373: start grading
+2115373: graded
+[2023-05-21 06:31:30 +0000] [52650] [DEBUG] POST /api/grader
+2210118: start grading
+2210118: graded
+[2023-05-21 06:33:56 +0000] [52650] [DEBUG] POST /api/grader
+2211218: start grading
+2211218: graded
+[2023-05-21 06:34:17 +0000] [48196] [DEBUG] POST /api/grader
+2211294: start grading
+2211294: graded
+[2023-05-21 06:34:34 +0000] [52652] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-21 06:37:49 +0000] [48196] [DEBUG] POST /api/grader
+2152815: start grading
+2152815: graded
+[2023-05-21 06:38:31 +0000] [48196] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-21 06:39:55 +0000] [48196] [DEBUG] POST /api/grader
+2211294: start grading
+[2023-05-21 06:40:00 +0000] [52652] [DEBUG] POST /api/grader
+2252586: start grading
+2211294: graded
+2252586: graded
+[2023-05-21 06:41:07 +0000] [52652] [DEBUG] POST /api/grader
+2252586: start grading
+2252586: graded
+[2023-05-21 06:44:14 +0000] [48196] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-21 06:45:59 +0000] [48196] [DEBUG] POST /api/grader
+2213214: start grading
+2213214: graded
+[2023-05-21 06:46:39 +0000] [48196] [DEBUG] POST /api/grader
+2211035: start grading
+2211035: graded
+[2023-05-21 06:48:13 +0000] [52650] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-21 06:49:52 +0000] [52650] [DEBUG] POST /api/grader
+2233167: start grading
+2233167: graded
+[2023-05-21 06:53:05 +0000] [48196] [DEBUG] POST /api/grader
+2233167: start grading
+2233167: graded
+[2023-05-21 06:59:54 +0000] [52652] [DEBUG] POST /api/grader
+2211479: start grading
+[2023-05-21 06:59:55 +0000] [52650] [DEBUG] POST /api/grader
+2212257: start grading
+2211479: graded
+2212257: graded
+[2023-05-21 07:00:30 +0000] [52652] [DEBUG] POST /api/grader
+2212918: start grading
+2212918: graded
+[2023-05-21 07:04:04 +0000] [48196] [DEBUG] POST /api/grader
+2210783: start grading
+2210783: graded
+[2023-05-21 07:07:08 +0000] [52650] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 07:13:14 +0000] [48196] [DEBUG] POST /api/grader
+2210118: start grading
+2210118: graded
+[2023-05-21 07:15:16 +0000] [52650] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 07:16:10 +0000] [52650] [DEBUG] POST /api/grader
+2211254: start grading
+[2023-05-21 07:16:12 +0000] [48196] [DEBUG] POST /api/grader
+2211402: start grading
+2211254: graded
+2211402: graded
+[2023-05-21 07:25:21 +0000] [52652] [DEBUG] POST /api/grader
+2212075: start grading
+2212075: graded
+[2023-05-21 07:25:57 +0000] [52650] [DEBUG] POST /api/grader
+2211035: start grading
+2211035: graded
+[2023-05-21 07:26:21 +0000] [52652] [DEBUG] POST /api/grader
+2213061: start grading
+2213061: graded
+[2023-05-21 07:29:22 +0000] [48196] [DEBUG] POST /api/grader
+2211509: start grading
+[2023-05-21 07:29:24 +0000] [52650] [DEBUG] POST /api/grader
+2210589: start grading
+2211509: graded
+2210589: graded
+[2023-05-21 07:29:53 +0000] [52652] [DEBUG] POST /api/grader
+2212703: start grading
+2212703: graded
+[2023-05-21 07:30:06 +0000] [48196] [DEBUG] POST /api/grader
+2211479: start grading
+[2023-05-21 07:30:10 +0000] [52650] [DEBUG] POST /api/grader
+2252045: start grading
+2211479: graded
+2252045: graded
+[2023-05-21 07:39:50 +0000] [52650] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 07:41:11 +0000] [48196] [DEBUG] POST /api/grader
+2252361: start grading
+2252361: graded
+[2023-05-21 07:41:39 +0000] [48196] [DEBUG] POST /api/grader
+2252377: start grading
+2252377: graded
+[2023-05-21 07:42:00 +0000] [48196] [DEBUG] POST /api/grader
+2153538: start grading
+2153538: graded
+[2023-05-21 07:43:40 +0000] [52650] [DEBUG] POST /api/grader
+2153538: start grading
+[2023-05-21 07:43:43 +0000] [48196] [DEBUG] POST /api/grader
+2211479: start grading
+2211479: graded
+2153538: graded
+[2023-05-21 07:47:52 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 07:48:37 +0000] [52652] [DEBUG] POST /api/grader
+2110934: start grading
+2110934: graded
+[2023-05-21 07:48:57 +0000] [52650] [DEBUG] POST /api/grader
+2153538: start grading
+2153538: graded
+[2023-05-21 07:49:21 +0000] [48196] [DEBUG] POST /api/grader
+2210264: start grading
+2210264: graded
+[2023-05-21 07:50:08 +0000] [48196] [DEBUG] POST /api/grader
+2211035: start grading
+2211035: graded
+[2023-05-21 07:53:19 +0000] [48196] [DEBUG] POST /api/grader
+2252881: start grading
+2252881: graded
+[2023-05-21 07:54:31 +0000] [52652] [DEBUG] POST /api/grader
+2210517: start grading
+2210517: graded
+[2023-05-21 07:55:57 +0000] [52652] [DEBUG] POST /api/grader
+2212698: start grading
+2212698: graded
+[2023-05-21 07:56:39 +0000] [52652] [DEBUG] POST /api/grader
+2252377: start grading
+2252377: graded
+[2023-05-21 07:56:44 +0000] [52650] [DEBUG] POST /api/grader
+2210371: start grading
+2210371: graded
+[2023-05-21 07:57:11 +0000] [52652] [DEBUG] POST /api/grader
+2210413: start grading
+2210413: graded
+[2023-05-21 07:57:36 +0000] [52652] [DEBUG] POST /api/grader
+2210736: start grading
+2210736: graded
+[2023-05-21 08:05:50 +0000] [52652] [DEBUG] POST /api/grader
+2252881: start grading
+2252881: graded
+[2023-05-21 08:06:46 +0000] [48196] [DEBUG] POST /api/grader
+2210413: start grading
+2210413: graded
+[2023-05-21 08:08:56 +0000] [52650] [DEBUG] POST /api/grader
+2212085: start grading
+2212085: graded
+[2023-05-21 08:13:35 +0000] [48196] [DEBUG] POST /api/grader
+2252881: start grading
+2252881: graded
+[2023-05-21 08:13:41 +0000] [52650] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 08:19:11 +0000] [52650] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-21 08:19:58 +0000] [48196] [DEBUG] POST /api/grader
+2252215: start grading
+[2023-05-21 08:20:02 +0000] [48196] [DEBUG] POST /api/grader
+2210736: start grading
+2252215: graded
+2210736: graded
+[2023-05-21 08:21:11 +0000] [48196] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-21 08:23:40 +0000] [52650] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-21 08:24:31 +0000] [52650] [DEBUG] POST /api/grader
+2252881: start grading
+2252881: graded
+[2023-05-21 08:25:27 +0000] [52650] [DEBUG] POST /api/grader
+2210264: start grading
+2210264: graded
+[2023-05-21 08:28:20 +0000] [52650] [DEBUG] POST /api/grader
+2210077: start grading
+2210077: graded
+[2023-05-21 08:28:44 +0000] [48196] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-21 08:34:14 +0000] [48196] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-21 08:34:46 +0000] [48196] [DEBUG] POST /api/grader
+2210077: start grading
+2210077: graded
+[2023-05-21 08:46:11 +0000] [48196] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-21 08:46:58 +0000] [52652] [DEBUG] POST /api/grader
+2212495: start grading
+2212495: graded
+[2023-05-21 08:48:52 +0000] [52652] [DEBUG] POST /api/grader
+2210633: start grading
+2210633: graded
+[2023-05-21 08:52:38 +0000] [52650] [DEBUG] POST /api/grader
+2210736: start grading
+2210736: graded
+[2023-05-21 08:54:23 +0000] [52650] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-21 08:55:24 +0000] [48196] [DEBUG] POST /api/grader
+2015036: start grading
+2015036: graded
+[2023-05-21 08:56:06 +0000] [52652] [DEBUG] POST /api/grader
+2212698: start grading
+2212698: graded
+[2023-05-21 08:58:31 +0000] [52652] [DEBUG] POST /api/grader
+2210319: start grading
+2210319: graded
+[2023-05-21 09:05:54 +0000] [52650] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 09:07:41 +0000] [52650] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 09:08:41 +0000] [52652] [DEBUG] POST /api/grader
+2252416: start grading
+2252416: graded
+[2023-05-21 09:12:17 +0000] [52652] [DEBUG] POST /api/grader
+2212478: start grading
+2212478: graded
+[2023-05-21 09:14:02 +0000] [52650] [DEBUG] POST /api/grader
+2213467: start grading
+2213467: graded
+[2023-05-21 09:15:49 +0000] [52650] [DEBUG] POST /api/grader
+1852312: start grading
+1852312: graded
+[2023-05-21 09:18:38 +0000] [52650] [DEBUG] POST /api/grader
+2211402: start grading
+[2023-05-21 09:18:43 +0000] [48196] [DEBUG] POST /api/grader
+2213278: start grading
+2211402: graded
+2213278: graded
+[2023-05-21 09:19:34 +0000] [52650] [DEBUG] POST /api/grader
+1915030: start grading
+1915030: graded
+[2023-05-21 09:20:45 +0000] [48196] [DEBUG] POST /api/grader
+2213545: start grading
+2213545: graded
+[2023-05-21 09:21:49 +0000] [52650] [DEBUG] POST /api/grader
+1852312: start grading
+1852312: graded
+[2023-05-21 09:23:00 +0000] [52652] [DEBUG] POST /api/grader
+2212478: start grading
+2212478: graded
+[2023-05-21 09:23:13 +0000] [52650] [DEBUG] POST /api/grader
+2212801: start grading
+2212801: graded
+[2023-05-21 09:23:25 +0000] [52652] [DEBUG] POST /api/grader
+2212085: start grading
+2212085: graded
+[2023-05-21 09:24:33 +0000] [52652] [DEBUG] POST /api/grader
+2213467: start grading
+2213467: graded
+[2023-05-21 09:28:29 +0000] [52652] [DEBUG] POST /api/grader
+1852312: start grading
+1852312: graded
+[2023-05-21 09:28:41 +0000] [52652] [DEBUG] POST /api/grader
+2211402: start grading
+2211402: graded
+[2023-05-21 09:30:42 +0000] [52652] [DEBUG] POST /api/grader
+2250008: start grading
+2250008: graded
+[2023-05-21 09:32:10 +0000] [48196] [DEBUG] POST /api/grader
+2110922: start grading
+2110922: graded
+[2023-05-21 09:36:40 +0000] [52650] [DEBUG] POST /api/grader
+2252362: start grading
+2252362: graded
+[2023-05-21 09:40:09 +0000] [52652] [DEBUG] POST /api/grader
+2210413: start grading
+2210413: graded
+[2023-05-21 09:41:01 +0000] [52652] [DEBUG] Invalid request from ip=80.66.88.31: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-21 09:41:20 +0000] [52652] [DEBUG] POST /api/grader
+2211479: start grading
+2211479: graded
+[2023-05-21 09:41:57 +0000] [52652] [DEBUG] POST /api/grader
+2114831: start grading
+2114831: graded
+[2023-05-21 09:42:28 +0000] [52652] [DEBUG] POST /api/grader
+2212478: start grading
+2212478: graded
+[2023-05-21 09:42:54 +0000] [48196] [DEBUG] POST /api/grader
+2252881: start grading
+2252881: graded
+[2023-05-21 09:45:38 +0000] [52650] [DEBUG] POST /api/grader
+2252654: start grading
+2252654: graded
+[2023-05-21 09:45:44 +0000] [52650] [DEBUG] POST /api/grader
+2252822: start grading
+2252822: graded
+[2023-05-21 09:49:53 +0000] [52650] [DEBUG] POST /api/grader
+1852502: start grading
+1852502: graded
+[2023-05-21 09:50:41 +0000] [48196] [DEBUG] POST /api/grader
+2252822: start grading
+2252822: graded
+[2023-05-21 09:52:32 +0000] [52650] [DEBUG] POST /api/grader
+2252697: start grading
+2252697: graded
+[2023-05-21 09:54:57 +0000] [48196] [DEBUG] POST /api/grader
+2252145: start grading
+2252145: graded
+[2023-05-21 09:58:38 +0000] [52650] [DEBUG] POST /api/grader
+2211479: start grading
+2211479: graded
+[2023-05-21 09:58:45 +0000] [48196] [DEBUG] POST /api/grader
+2252697: start grading
+2252697: graded
+[2023-05-21 10:00:05 +0000] [52652] [DEBUG] POST /api/grader
+2210736: start grading
+2210736: graded
+[2023-05-21 10:00:23 +0000] [52650] [DEBUG] POST /api/grader
+2210737: start grading
+2210737: graded
+[2023-05-21 10:00:44 +0000] [52650] [DEBUG] POST /api/grader
+2210736: start grading
+2210736: graded
+[2023-05-21 10:00:54 +0000] [52650] [DEBUG] POST /api/grader
+2252145: start grading
+2252145: graded
+[2023-05-21 10:01:03 +0000] [52652] [DEBUG] POST /api/grader
+2211479: start grading
+2211479: graded
+[2023-05-21 10:02:44 +0000] [48196] [DEBUG] POST /api/grader
+2252697: start grading
+2252697: graded
+[2023-05-21 10:06:59 +0000] [52652] [DEBUG] POST /api/grader
+2212478: start grading
+2212478: graded
+[2023-05-21 10:08:47 +0000] [48196] [DEBUG] POST /api/grader
+2212741: start grading
+2212741: graded
+[2023-05-21 10:10:14 +0000] [48196] [DEBUG] POST /api/grader
+2252410: start grading
+2252410: graded
+[2023-05-21 10:11:02 +0000] [48196] [DEBUG] POST /api/grader
+2210184: start grading
+2210184: graded
+[2023-05-21 10:12:11 +0000] [52650] [DEBUG] POST /api/grader
+2252508: start grading
+2252508: graded
+[2023-05-21 10:12:44 +0000] [48196] [DEBUG] POST /api/grader
+2211614: start grading
+2211614: graded
+[2023-05-21 10:17:01 +0000] [52652] [DEBUG] POST /api/grader
+2252410: start grading
+2252410: graded
+[2023-05-21 10:17:39 +0000] [52650] [DEBUG] POST /api/grader
+2252453: start grading
+2252453: graded
+[2023-05-21 10:18:31 +0000] [52652] [DEBUG] POST /api/grader
+2210238: start grading
+2210238: graded
+[2023-05-21 10:19:24 +0000] [52652] [DEBUG] POST /api/grader
+2252410: start grading
+2252410: graded
+[2023-05-21 10:19:54 +0000] [52652] [DEBUG] POST /api/grader
+2252822: start grading
+2252822: graded
+[2023-05-21 10:20:39 +0000] [52652] [DEBUG] POST /api/grader
+2252444: start grading
+2252444: graded
+[2023-05-21 10:23:58 +0000] [48196] [DEBUG] POST /api/grader
+2211479: start grading
+[2023-05-21 10:23:58 +0000] [52652] [DEBUG] POST /api/grader
+2252410: start grading
+2252410: graded
+2211479: graded
+[2023-05-21 10:24:11 +0000] [52652] [DEBUG] POST /api/grader
+2252881: start grading
+2252881: graded
+[2023-05-21 10:24:44 +0000] [52652] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:25:35 +0000] [52650] [DEBUG] POST /api/grader
+2213184: start grading
+2213184: graded
+[2023-05-21 10:27:03 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:28:41 +0000] [52652] [DEBUG] POST /api/grader
+2252362: start grading
+[2023-05-21 10:28:43 +0000] [52650] [DEBUG] POST /api/grader
+2212257: start grading
+2252362: graded
+2212257: graded
+[2023-05-21 10:29:05 +0000] [52650] [DEBUG] POST /api/grader
+2211561: start grading
+2211561: graded
+[2023-05-21 10:29:49 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:30:44 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:31:08 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:34:25 +0000] [52650] [DEBUG] POST /api/grader
+2211862: start grading
+2211862: graded
+[2023-05-21 10:34:49 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:36:01 +0000] [52650] [DEBUG] POST /api/grader
+2252881: start grading
+2252881: graded
+[2023-05-21 10:38:10 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:38:16 +0000] [48196] [DEBUG] POST /api/grader
+2211561: start grading
+2211561: graded
+[2023-05-21 10:39:39 +0000] [52652] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:41:21 +0000] [48196] [DEBUG] POST /api/grader
+2211909: start grading
+2211909: graded
+[2023-05-21 10:48:18 +0000] [52650] [DEBUG] POST /api/grader
+2212478: start grading
+2212478: graded
+[2023-05-21 10:50:05 +0000] [52650] [DEBUG] POST /api/grader
+2211561: start grading
+2211561: graded
+[2023-05-21 10:50:32 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:51:40 +0000] [52650] [DEBUG] POST /api/grader
+2115287: start grading
+2115287: graded
+[2023-05-21 10:53:16 +0000] [48196] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 10:54:01 +0000] [52650] [DEBUG] POST /api/grader
+2252145: start grading
+2252145: graded
+[2023-05-21 11:05:59 +0000] [48196] [DEBUG] POST /api/grader
+2210238: start grading
+[2023-05-21 11:06:05 +0000] [52650] [DEBUG] POST /api/grader
+2015036: start grading
+2210238: graded
+[2023-05-21 11:06:07 +0000] [52652] [DEBUG] POST /api/grader
+2213313: start grading
+2015036: graded
+2213313: graded
+[2023-05-21 11:09:51 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 11:12:34 +0000] [52650] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 11:12:40 +0000] [52650] [DEBUG] POST /api/grader
+2252142: start grading
+2252142: graded
+[2023-05-21 11:12:52 +0000] [48196] [DEBUG] POST /api/grader
+2211287: start grading
+2211287: graded
+[2023-05-21 11:13:53 +0000] [52650] [DEBUG] POST /api/grader
+2213656: start grading
+2213656: graded
+[2023-05-21 11:14:56 +0000] [52650] [DEBUG] POST /api/grader
+2211614: start grading
+2211614: graded
+[2023-05-21 11:18:11 +0000] [52652] [DEBUG] POST /api/grader
+2210736: start grading
+2210736: graded
+[2023-05-21 11:18:32 +0000] [52652] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 11:18:45 +0000] [52650] [DEBUG] POST /api/grader
+2210736: start grading
+2210736: graded
+[2023-05-21 11:19:02 +0000] [52650] [DEBUG] POST /api/grader
+2250008: start grading
+2250008: graded
+[2023-05-21 11:20:14 +0000] [52650] [DEBUG] POST /api/grader
+2252362: start grading
+2252362: graded
+[2023-05-21 11:20:53 +0000] [52652] [DEBUG] POST /api/grader
+2211015: start grading
+2211015: graded
+[2023-05-21 11:24:24 +0000] [48196] [DEBUG] POST /api/grader
+2210413: start grading
+2210413: graded
+[2023-05-21 11:28:37 +0000] [48196] [DEBUG] POST /api/grader
+2210517: start grading
+2210517: graded
+[2023-05-21 11:42:25 +0000] [48196] [DEBUG] POST /api/grader
+2213313: start grading
+2213313: graded
+[2023-05-21 11:42:54 +0000] [48196] [DEBUG] POST /api/grader
+2211035: start grading
+2211035: graded
+[2023-05-21 11:44:08 +0000] [48196] [DEBUG] POST /api/grader
+2015036: start grading
+2015036: graded
+[2023-05-21 11:50:03 +0000] [48196] [DEBUG] POST /api/grader
+2252731: start grading
+2252731: graded
+[2023-05-21 11:52:54 +0000] [48196] [DEBUG] POST /api/grader
+2053048: start grading
+2053048: graded
+[2023-05-21 11:56:28 +0000] [52650] [DEBUG] POST /api/grader
+2152242: start grading
+2152242: graded
+[2023-05-21 11:59:39 +0000] [52650] [DEBUG] POST /api/grader
+2252731: start grading
+2252731: graded
+[2023-05-21 12:00:11 +0000] [48196] [DEBUG] POST /api/grader
+2053155: start grading
+2053155: graded
+[2023-05-21 12:11:07 +0000] [52652] [DEBUG] POST /api/grader
+2152242: start grading
+2152242: graded
+[2023-05-21 12:11:14 +0000] [52650] [DEBUG] POST /api/grader
+2210783: start grading
+2210783: graded
+[2023-05-21 12:11:29 +0000] [52652] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 12:11:51 +0000] [52650] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 12:12:09 +0000] [52652] [DEBUG] POST /api/grader
+2152242: start grading
+2152242: graded
+[2023-05-21 12:12:31 +0000] [52652] [DEBUG] POST /api/grader
+2252486: start grading
+2252486: graded
+[2023-05-21 12:17:45 +0000] [48196] [DEBUG] POST /api/grader
+2213455: start grading
+2213455: graded
+[2023-05-21 12:18:11 +0000] [48196] [DEBUG] POST /api/grader
+2210573: start grading
+2210573: graded
+[2023-05-21 12:21:49 +0000] [52652] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 12:23:09 +0000] [52652] [DEBUG] POST /api/grader
+2252486: start grading
+2252486: graded
+[2023-05-21 12:32:39 +0000] [52650] [DEBUG] POST /api/grader
+2213357: start grading
+2213357: graded
+[2023-05-21 12:37:34 +0000] [52650] [DEBUG] POST /api/grader
+2252486: start grading
+2252486: graded
+[2023-05-21 12:39:04 +0000] [52650] [DEBUG] POST /api/grader
+2252486: start grading
+2252486: graded
+[2023-05-21 12:39:32 +0000] [48196] [DEBUG] POST /api/grader
+2252378: start grading
+[2023-05-21 12:39:35 +0000] [52652] [DEBUG] POST /api/grader
+2111637: start grading
+2252378: graded
+2111637: graded
+[2023-05-21 12:40:38 +0000] [52650] [DEBUG] POST /api/grader
+2252486: start grading
+2252486: graded
+[2023-05-21 12:43:03 +0000] [52652] [DEBUG] POST /api/grader
+2252781: start grading
+2252781: graded
+[2023-05-21 12:45:09 +0000] [48196] [DEBUG] POST /api/grader
+2252377: start grading
+2252377: graded
+[2023-05-21 12:47:21 +0000] [48196] [DEBUG] POST /api/grader
+2250016: start grading
+2250016: graded
+[2023-05-21 12:48:59 +0000] [52650] [DEBUG] POST /api/grader
+2252377: start grading
+2252377: graded
+[2023-05-21 12:53:55 +0000] [48196] [DEBUG] POST /api/grader
+2212413: start grading
+2212413: graded
+[2023-05-21 12:57:32 +0000] [52652] [DEBUG] POST /api/grader
+2053161: start grading
+2053161: graded
+[2023-05-21 13:04:02 +0000] [52652] [DEBUG] POST /api/grader
+2213455: start grading
+2213455: graded
+[2023-05-21 13:06:48 +0000] [52650] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 13:08:03 +0000] [52652] [DEBUG] POST /api/grader
+2210238: start grading
+[2023-05-21 13:08:04 +0000] [52650] [DEBUG] POST /api/grader
+2211795: start grading
+2210238: graded
+2211795: graded
+[2023-05-21 13:09:08 +0000] [52650] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 13:10:17 +0000] [52652] [DEBUG] POST /api/grader
+2210522: start grading
+[2023-05-21 13:10:19 +0000] [48196] [DEBUG] POST /api/grader
+2053161: start grading
+2210522: graded
+2053161: graded
+[2023-05-21 13:11:10 +0000] [52650] [DEBUG] POST /api/grader
+2252006: start grading
+2252006: graded
+[2023-05-21 13:11:53 +0000] [52652] [DEBUG] POST /api/grader
+2252403: start grading
+2252403: graded
+[2023-05-21 13:12:15 +0000] [52650] [DEBUG] POST /api/grader
+2212413: start grading
+2212413: graded
+[2023-05-21 13:12:44 +0000] [52650] [DEBUG] POST /api/grader
+2211479: start grading
+2211479: graded
+[2023-05-21 13:13:21 +0000] [52650] [DEBUG] POST /api/grader
+2233171: start grading
+2233171: graded
+[2023-05-21 13:15:37 +0000] [48196] [DEBUG] POST /api/grader
+2211402: start grading
+2211402: graded
+[2023-05-21 13:18:03 +0000] [52650] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 13:22:47 +0000] [52652] [DEBUG] POST /api/grader
+2233171: start grading
+2233171: graded
+[2023-05-21 13:24:39 +0000] [52650] [DEBUG] POST /api/grader
+2211402: start grading
+2211402: graded
+[2023-05-21 13:25:16 +0000] [52652] [DEBUG] POST /api/grader
+2211599: start grading
+2211599: graded
+[2023-05-21 13:31:02 +0000] [52650] [DEBUG] POST /api/grader
+2212822: start grading
+2212822: graded
+[2023-05-21 13:32:52 +0000] [52650] [DEBUG] POST /api/grader
+2211129: start grading
+2211129: graded
+[2023-05-21 13:34:55 +0000] [52650] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-21 13:35:27 +0000] [48196] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 13:36:04 +0000] [52652] [DEBUG] POST /api/grader
+2252154: start grading
+2252154: graded
+[2023-05-21 13:36:17 +0000] [48196] [DEBUG] POST /api/grader
+2210427: start grading
+2210427: graded
+[2023-05-21 13:38:01 +0000] [48196] [DEBUG] POST /api/grader
+2212760: start grading
+2212760: graded
+[2023-05-21 13:39:04 +0000] [48196] [DEBUG] POST /api/grader
+2210446: start grading
+2210446: graded
+[2023-05-21 13:39:19 +0000] [52650] [DEBUG] POST /api/grader
+2210783: start grading
+2210783: graded
+[2023-05-21 13:40:23 +0000] [52650] [DEBUG] POST /api/grader
+2252339: start grading
+2252339: graded
+[2023-05-21 13:43:33 +0000] [52650] [DEBUG] POST /api/grader
+2212352: start grading
+[2023-05-21 13:43:38 +0000] [48196] [DEBUG] POST /api/grader
+2210458: start grading
+2212352: graded
+2210458: graded
+[2023-05-21 13:44:30 +0000] [52650] [DEBUG] POST /api/grader
+2212364: start grading
+2212364: graded
+[2023-05-21 13:46:53 +0000] [52650] [DEBUG] POST /api/grader
+2252697: start grading
+2252697: graded
+[2023-05-21 13:52:16 +0000] [52650] [DEBUG] POST /api/grader
+2210783: start grading
+[2023-05-21 13:52:22 +0000] [52652] [DEBUG] POST /api/grader
+2252362: start grading
+2210783: graded
+2252362: graded
+[2023-05-21 13:53:13 +0000] [48196] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 13:54:49 +0000] [52652] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 13:55:05 +0000] [52652] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 13:56:09 +0000] [52652] [DEBUG] POST /api/grader
+2115287: start grading
+2115287: graded
+[2023-05-21 13:58:55 +0000] [52650] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 13:59:35 +0000] [52652] [DEBUG] POST /api/grader
+2252149: start grading
+2252149: graded
+[2023-05-21 14:04:41 +0000] [52652] [DEBUG] POST /api/grader
+2252486: start grading
+2252486: graded
+[2023-05-21 14:04:51 +0000] [52650] [DEBUG] POST /api/grader
+2213795: start grading
+2213795: graded
+[2023-05-21 14:11:24 +0000] [52652] [DEBUG] POST /api/grader
+2252339: start grading
+2252339: graded
+[2023-05-21 14:12:06 +0000] [52650] [DEBUG] POST /api/grader
+2252717: start grading
+2252717: graded
+[2023-05-21 14:12:46 +0000] [52650] [DEBUG] POST /api/grader
+2210783: start grading
+2210783: graded
+[2023-05-21 14:15:11 +0000] [52650] [DEBUG] POST /api/grader
+2213506: start grading
+[2023-05-21 14:15:12 +0000] [52652] [DEBUG] POST /api/grader
+2252100: start grading
+2213506: graded
+2252100: graded
+[2023-05-21 14:16:26 +0000] [48196] [DEBUG] POST /api/grader
+2210846: start grading
+2210846: graded
+[2023-05-21 14:19:33 +0000] [52650] [DEBUG] POST /api/grader
+2213255: start grading
+2213255: graded
+[2023-05-21 14:21:10 +0000] [48196] [DEBUG] POST /api/grader
+2213287: start grading
+2213287: graded
+[2023-05-21 14:21:31 +0000] [52650] [DEBUG] POST /api/grader
+2211254: start grading
+2211254: graded
+[2023-05-21 14:21:58 +0000] [52652] [DEBUG] POST /api/grader
+2210238: start grading
+2210238: graded
+[2023-05-21 14:24:29 +0000] [52650] [DEBUG] POST /api/grader
+2153077: start grading
+2153077: graded
+[2023-05-21 14:24:47 +0000] [52652] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 14:25:34 +0000] [48196] [DEBUG] POST /api/grader
+2210846: start grading
+2210846: graded
+[2023-05-21 14:26:07 +0000] [52652] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 14:26:32 +0000] [48196] [DEBUG] POST /api/grader
+2211254: start grading
+2211254: graded
+[2023-05-21 14:30:28 +0000] [52650] [DEBUG] POST /api/grader
+2210512: start grading
+2210512: graded
+[2023-05-21 14:30:36 +0000] [52652] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-21 14:31:43 +0000] [48196] [DEBUG] POST /api/grader
+2252685: start grading
+2252685: graded
+[2023-05-21 14:34:43 +0000] [52652] [DEBUG] POST /api/grader
+2153077: start grading
+2153077: graded
+[2023-05-21 14:37:42 +0000] [52652] [DEBUG] POST /api/grader
+2210238: start grading
+2210238: graded
+[2023-05-21 14:38:00 +0000] [52650] [DEBUG] POST /api/grader
+2212700: start grading
+2212700: graded
+[2023-05-21 14:39:10 +0000] [52652] [DEBUG] POST /api/grader
+2210846: start grading
+2210846: graded
+[2023-05-21 14:39:15 +0000] [48196] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 14:39:29 +0000] [52650] [DEBUG] POST /api/grader
+2211917: start grading
+2211917: graded
+[2023-05-21 14:41:53 +0000] [48196] [DEBUG] POST /api/grader
+2210238: start grading
+[2023-05-21 14:41:59 +0000] [52650] [DEBUG] POST /api/grader
+2153077: start grading
+2210238: graded
+2153077: graded
+[2023-05-21 14:43:05 +0000] [48196] [DEBUG] POST /api/grader
+2211595: start grading
+2211595: graded
+[2023-05-21 14:43:12 +0000] [52652] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 14:44:14 +0000] [52652] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 14:44:46 +0000] [52652] [DEBUG] POST /api/grader
+2115232: start grading
+2115232: graded
+[2023-05-21 14:45:10 +0000] [52652] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 14:45:33 +0000] [48196] [DEBUG] POST /api/grader
+2115287: start grading
+2115287: graded
+[2023-05-21 14:45:39 +0000] [48196] [DEBUG] POST /api/grader
+2252493: start grading
+[2023-05-21 14:45:42 +0000] [52650] [DEBUG] POST /api/grader
+2153077: start grading
+2252493: graded
+2153077: graded
+[2023-05-21 14:45:48 +0000] [48196] [DEBUG] POST /api/grader
+2211743: start grading
+2211743: graded
+[2023-05-21 14:45:55 +0000] [52650] [DEBUG] POST /api/grader
+2252493: start grading
+2252493: graded
+[2023-05-21 14:46:40 +0000] [52650] [DEBUG] POST /api/grader
+2213117: start grading
+2213117: graded
+[2023-05-21 14:48:48 +0000] [52650] [DEBUG] POST /api/grader
+2211479: start grading
+2211479: graded
+[2023-05-21 14:49:24 +0000] [48196] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 14:54:20 +0000] [48196] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 14:59:51 +0000] [52652] [DEBUG] POST /api/grader
+2212257: start grading
+2212257: graded
+[2023-05-21 15:05:28 +0000] [48196] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 15:06:55 +0000] [48196] [DEBUG] POST /api/grader
+2213705: start grading
+2213705: graded
+[2023-05-21 15:07:13 +0000] [52650] [DEBUG] POST /api/grader
+2213705: start grading
+[2023-05-21 15:07:14 +0000] [48196] [DEBUG] POST /api/grader
+2212527: start grading
+2213705: graded
+2212527: graded
+[2023-05-21 15:08:53 +0000] [52652] [DEBUG] POST /api/grader
+2153077: start grading
+2153077: graded
+[2023-05-21 15:09:42 +0000] [48196] [DEBUG] POST /api/grader
+2252697: start grading
+2252697: graded
+[2023-05-21 15:11:08 +0000] [52650] [DEBUG] POST /api/grader
+2211402: start grading
+2211402: graded
+[2023-05-21 15:11:16 +0000] [52652] [DEBUG] POST /api/grader
+2211235: start grading
+2211235: graded
+[2023-05-21 15:15:09 +0000] [52652] [DEBUG] POST /api/grader
+2111056: start grading
+2111056: graded
+[2023-05-21 15:16:28 +0000] [52650] [DEBUG] POST /api/grader
+2153077: start grading
+2153077: graded
+[2023-05-21 15:17:45 +0000] [52650] [DEBUG] POST /api/grader
+2111056: start grading
+2111056: graded
+[2023-05-21 15:19:57 +0000] [52652] [DEBUG] POST /api/grader
+2212801: start grading
+2212801: graded
+[2023-05-21 15:21:05 +0000] [52652] [DEBUG] POST /api/grader
+2213467: start grading
+2213467: graded
+[2023-05-21 15:21:26 +0000] [52650] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 15:23:11 +0000] [52652] [DEBUG] POST /api/grader
+2111056: start grading
+2111056: graded
+[2023-05-21 15:23:32 +0000] [48196] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 15:23:57 +0000] [48196] [DEBUG] POST /api/grader
+2211237: start grading
+2211237: graded
+[2023-05-21 15:24:05 +0000] [48196] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 15:25:14 +0000] [48196] [DEBUG] POST /api/grader
+2252116: start grading
+2252116: graded
+[2023-05-21 15:26:49 +0000] [52650] [DEBUG] POST /api/grader
+2211402: start grading
+2211402: graded
+[2023-05-21 15:30:30 +0000] [48196] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 15:30:55 +0000] [48196] [DEBUG] POST /api/grader
+2213467: start grading
+2213467: graded
+[2023-05-21 15:31:35 +0000] [52650] [DEBUG] POST /api/grader
+2211219: start grading
+2211219: graded
+[2023-05-21 15:32:15 +0000] [48196] [DEBUG] POST /api/grader
+2210512: start grading
+2210512: graded
+[2023-05-21 15:32:38 +0000] [52650] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 15:33:45 +0000] [52650] [DEBUG] POST /api/grader
+2211402: start grading
+2211402: graded
+[2023-05-21 15:35:03 +0000] [52650] [DEBUG] POST /api/grader
+2014874: start grading
+2014874: graded
+[2023-05-21 15:35:33 +0000] [52650] [DEBUG] POST /api/grader
+2211254: start grading
+2211254: graded
+[2023-05-21 15:37:08 +0000] [52652] [DEBUG] POST /api/grader
+2211402: start grading
+2211402: graded
+[2023-05-21 15:38:39 +0000] [52652] [DEBUG] POST /api/grader
+2252006: start grading
+[2023-05-21 15:38:39 +0000] [52650] [DEBUG] POST /api/grader
+2210512: start grading
+2252006: graded
+2210512: graded
+[2023-05-21 15:39:12 +0000] [48196] [DEBUG] POST /api/grader
+2210512: start grading
+2210512: graded
+[2023-05-21 15:39:46 +0000] [52650] [DEBUG] POST /api/grader
+2252001: start grading
+2252001: graded
+[2023-05-21 15:39:52 +0000] [48196] [DEBUG] POST /api/grader
+2252652: start grading
+[2023-05-21 15:39:55 +0000] [52650] [DEBUG] POST /api/grader
+2252362: start grading
+2252652: graded
+2252362: graded
+[2023-05-21 15:41:07 +0000] [52650] [DEBUG] POST /api/grader
+2210063: start grading
+2210063: graded
+[2023-05-21 15:42:45 +0000] [52650] [DEBUG] POST /api/grader
+2212287: start grading
+2212287: graded
+[2023-05-21 15:43:13 +0000] [52650] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 15:45:06 +0000] [52650] [DEBUG] POST /api/grader
+2114831: start grading
+[2023-05-21 15:45:07 +0000] [52652] [DEBUG] POST /api/grader
+2211219: start grading
+2114831: graded
+2211219: graded
+[2023-05-21 15:45:25 +0000] [52650] [DEBUG] POST /api/grader
+2211873: start grading
+2211873: graded
+[2023-05-21 15:46:06 +0000] [52652] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-21 15:47:10 +0000] [48196] [DEBUG] POST /api/grader
+2212257: start grading
+2212257: graded
+[2023-05-21 15:47:50 +0000] [48196] [DEBUG] POST /api/grader
+2252060: start grading
+[2023-05-21 15:47:55 +0000] [52650] [DEBUG] POST /api/grader
+2252625: start grading
+2252060: graded
+2252625: graded
+[2023-05-21 15:48:11 +0000] [48196] [DEBUG] POST /api/grader
+2211565: start grading
+2211565: graded
+[2023-05-21 15:48:44 +0000] [52652] [DEBUG] POST /api/grader
+2252006: start grading
+2252006: graded
+[2023-05-21 15:49:33 +0000] [48196] [DEBUG] POST /api/grader
+2211254: start grading
+2211254: graded
+[2023-05-21 15:50:16 +0000] [48196] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 15:51:47 +0000] [48196] [DEBUG] POST /api/grader
+2211581: start grading
+2211581: graded
+[2023-05-21 15:55:51 +0000] [48196] [DEBUG] POST /api/grader
+2252091: start grading
+[2023-05-21 15:55:53 +0000] [52652] [DEBUG] POST /api/grader
+2213012: start grading
+2252091: graded
+2213012: graded
+[2023-05-21 15:56:47 +0000] [48196] [DEBUG] POST /api/grader
+2213061: start grading
+2213061: graded
+[2023-05-21 15:57:10 +0000] [52650] [DEBUG] POST /api/grader
+2053586: start grading
+2053586: graded
+[2023-05-21 15:58:08 +0000] [52650] [DEBUG] POST /api/grader
+2212700: start grading
+2212700: graded
+[2023-05-21 15:58:16 +0000] [52652] [DEBUG] POST /api/grader
+2114831: start grading
+[2023-05-21 15:58:21 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:48196)
+[2023-05-21 15:58:21 +0000] [48196] [INFO] Worker exiting (pid: 48196)
+2114831: graded
+[2023-05-21 15:58:21 +0000] [121804] [INFO] Booting worker with pid: 121804
+[2023-05-21 15:58:25 +0000] [52652] [DEBUG] POST /api/grader
+2213061: start grading
+2213061: graded
+[2023-05-21 15:59:03 +0000] [52650] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 15:59:46 +0000] [52650] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 16:07:56 +0000] [52650] [DEBUG] POST /api/grader
+2212257: start grading
+[2023-05-21 16:08:00 +0000] [52652] [DEBUG] POST /api/grader
+2211219: start grading
+2212257: graded
+2211219: graded
+[2023-05-21 16:09:27 +0000] [121804] [DEBUG] POST /api/grader
+2214014: start grading
+2214014: graded
+[2023-05-21 16:10:25 +0000] [121804] [DEBUG] POST /api/grader
+2211294: start grading
+2211294: graded
+[2023-05-21 16:12:06 +0000] [121804] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 16:12:23 +0000] [52652] [DEBUG] POST /api/grader
+2252385: start grading
+2252385: graded
+[2023-05-21 16:14:10 +0000] [121804] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 16:15:04 +0000] [121804] [DEBUG] POST /api/grader
+2252355: start grading
+2252355: graded
+[2023-05-21 16:16:07 +0000] [121804] [DEBUG] POST /api/grader
+2053586: start grading
+2053586: graded
+[2023-05-21 16:16:18 +0000] [52650] [DEBUG] POST /api/grader
+2210783: start grading
+2210783: graded
+[2023-05-21 16:16:52 +0000] [121804] [DEBUG] POST /api/grader
+2210512: start grading
+2210512: graded
+[2023-05-21 16:18:14 +0000] [121804] [DEBUG] POST /api/grader
+2252006: start grading
+2252006: graded
+[2023-05-21 16:18:41 +0000] [121804] [DEBUG] POST /api/grader
+2211219: start grading
+2211219: graded
+[2023-05-21 16:20:19 +0000] [121804] [DEBUG] POST /api/grader
+2210517: start grading
+2210517: graded
+[2023-05-21 16:20:56 +0000] [52652] [DEBUG] POST /api/grader
+2211294: start grading
+2211294: graded
+[2023-05-21 16:21:20 +0000] [52652] [DEBUG] POST /api/grader
+2252410: start grading
+[2023-05-21 16:21:33 +0000] [52650] [DEBUG] POST /api/grader
+2210626: start grading
+2210626: graded
+2252410: graded
+[2023-05-21 16:22:47 +0000] [52652] [DEBUG] POST /api/grader
+2210783: start grading
+2210783: graded
+[2023-05-21 16:23:07 +0000] [121804] [DEBUG] POST /api/grader
+2210207: start grading
+2210207: graded
+[2023-05-21 16:24:38 +0000] [52652] [DEBUG] POST /api/grader
+2210070: start grading
+2210070: graded
+[2023-05-21 16:24:45 +0000] [52650] [DEBUG] POST /api/grader
+2210078: start grading
+2210078: graded
+[2023-05-21 16:24:58 +0000] [52652] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 16:26:28 +0000] [121804] [DEBUG] POST /api/grader
+2210794: start grading
+[2023-05-21 16:26:28 +0000] [52652] [DEBUG] POST /api/grader
+2252410: start grading
+2210794: graded
+[2023-05-21 16:26:46 +0000] [52650] [DEBUG] POST /api/grader
+2211257: start grading
+[2023-05-21 16:26:49 +0000] [52652] [DEBUG] POST /api/grader
+2212285: start grading
+2211257: graded
+2212285: graded
+2252410: graded
+[2023-05-21 16:27:16 +0000] [52650] [DEBUG] POST /api/grader
+2211219: start grading
+2211219: graded
+[2023-05-21 16:27:57 +0000] [121804] [DEBUG] POST /api/grader
+2252006: start grading
+2252006: graded
+[2023-05-21 16:28:24 +0000] [52650] [DEBUG] POST /api/grader
+2211219: start grading
+2211219: graded
+[2023-05-21 16:29:32 +0000] [52652] [DEBUG] POST /api/grader
+2210783: start grading
+2210783: graded
+[2023-05-21 16:30:45 +0000] [52652] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 16:31:05 +0000] [52652] [DEBUG] POST /api/grader
+2210266: start grading
+2210266: graded
+[2023-05-21 16:31:36 +0000] [52652] [DEBUG] POST /api/grader
+2210573: start grading
+2210573: graded
+[2023-05-21 16:33:59 +0000] [121804] [DEBUG] POST /api/grader
+2252045: start grading
+[2023-05-21 16:34:02 +0000] [52650] [DEBUG] POST /api/grader
+2252045: start grading
+Exception in thread Thread-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 38, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 232, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2252045/output1001'
+2252045: graded
+[2023-05-21 16:35:40 +0000] [52650] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 16:37:52 +0000] [52650] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 16:38:01 +0000] [121804] [DEBUG] POST /api/grader
+2210626: start grading
+2210626: graded
+[2023-05-21 16:39:16 +0000] [52650] [DEBUG] POST /api/grader
+2252006: start grading
+2252006: graded
+[2023-05-21 16:40:54 +0000] [52652] [DEBUG] POST /api/grader
+2252006: start grading
+2252006: graded
+[2023-05-21 16:40:59 +0000] [121804] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-21 16:41:33 +0000] [121804] [DEBUG] POST /api/grader
+2210626: start grading
+2210626: graded
+[2023-05-21 16:42:53 +0000] [52650] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 16:43:00 +0000] [52650] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 16:43:30 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:121804)
+[2023-05-21 16:43:30 +0000] [121804] [INFO] Worker exiting (pid: 121804)
+[2023-05-21 16:43:30 +0000] [129279] [INFO] Booting worker with pid: 129279
+[2023-05-21 16:44:16 +0000] [129279] [DEBUG] POST /api/grader
+2213106: start grading
+2213106: graded
+[2023-05-21 16:45:19 +0000] [129279] [DEBUG] POST /api/grader
+2252385: start grading
+2252385: graded
+[2023-05-21 16:45:59 +0000] [52652] [DEBUG] POST /api/grader
+2252652: start grading
+2252652: graded
+[2023-05-21 16:46:52 +0000] [52650] [DEBUG] POST /api/grader
+2213001: start grading
+2213001: graded
+[2023-05-21 16:47:53 +0000] [52652] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-21 16:49:39 +0000] [52652] [DEBUG] POST /api/grader
+2252500: start grading
+2252500: graded
+[2023-05-21 16:49:55 +0000] [52652] [DEBUG] POST /api/grader
+2252006: start grading
+2252006: graded
+[2023-05-21 16:50:10 +0000] [52650] [DEBUG] POST /api/grader
+2153077: start grading
+2153077: graded
+[2023-05-21 16:50:53 +0000] [52650] [DEBUG] POST /api/grader
+2211254: start grading
+2211254: graded
+[2023-05-21 16:51:19 +0000] [52650] [DEBUG] POST /api/grader
+2252612: start grading
+2252612: graded
+[2023-05-21 16:53:01 +0000] [52650] [DEBUG] POST /api/grader
+2252385: start grading
+2252385: graded
+[2023-05-21 16:56:11 +0000] [52650] [DEBUG] POST /api/grader
+2153077: start grading
+2153077: graded
+[2023-05-21 16:57:30 +0000] [52650] [DEBUG] POST /api/grader
+2211219: start grading
+[2023-05-21 16:57:32 +0000] [129279] [DEBUG] POST /api/grader
+2252120: start grading
+2211219: graded
+2252120: graded
+[2023-05-21 16:58:00 +0000] [52650] [DEBUG] POST /api/grader
+2153077: start grading
+2153077: graded
+[2023-05-21 17:01:51 +0000] [52650] [DEBUG] Invalid request from ip=91.191.209.202: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-21 17:55:50 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:52650)
+[2023-05-21 17:55:50 +0000] [52650] [INFO] Worker exiting (pid: 52650)
+[2023-05-21 17:55:50 +0000] [131663] [INFO] Booting worker with pid: 131663
+[2023-05-21 21:16:12 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:52652)
+[2023-05-21 21:16:12 +0000] [52652] [INFO] Worker exiting (pid: 52652)
+[2023-05-21 21:16:12 +0000] [131665] [INFO] Booting worker with pid: 131665
+[2023-05-22 01:22:47 +0000] [131665] [DEBUG] Invalid request from ip=194.165.16.78: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-22 03:01:10 +0000] [131663] [DEBUG] GET /
+[2023-05-22 03:05:23 +0000] [131663] [DEBUG] GET /
+[2023-05-22 07:19:46 +0000] [131665] [DEBUG] POST /api/grader
+2014739: start grading
+[2023-05-22 07:19:50 +0000] [131663] [DEBUG] POST /api/grader
+2252807: start grading
+2014739: graded
+2252807: graded
+[2023-05-22 10:32:43 +0000] [131665] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-05-22 12:52:52 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:129279)
+[2023-05-22 12:52:52 +0000] [129279] [INFO] Worker exiting (pid: 129279)
+[2023-05-22 12:52:52 +0000] [131985] [INFO] Booting worker with pid: 131985
+[2023-05-22 12:56:06 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131663)
+[2023-05-22 12:56:06 +0000] [131663] [INFO] Worker exiting (pid: 131663)
+[2023-05-22 12:56:06 +0000] [131987] [INFO] Booting worker with pid: 131987
+[2023-05-22 16:45:19 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131987)
+[2023-05-22 16:45:19 +0000] [131987] [INFO] Worker exiting (pid: 131987)
+[2023-05-22 16:45:19 +0000] [131989] [INFO] Booting worker with pid: 131989
+[2023-05-22 19:30:41 +0000] [131985] [DEBUG] Invalid request from ip=194.165.16.10: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-23 05:07:54 +0000] [131665] [DEBUG] Ignoring connection reset
+[2023-05-23 05:07:57 +0000] [131989] [DEBUG] Ignoring connection reset
+[2023-05-23 05:07:59 +0000] [131985] [DEBUG] GET /
+[2023-05-23 05:07:59 +0000] [131989] [DEBUG] GET /
+[2023-05-23 05:07:59 +0000] [131665] [DEBUG] PRI *
+[2023-05-23 05:08:44 +0000] [131989] [DEBUG] GET /
+[2023-05-23 07:55:25 +0000] [131665] [DEBUG] Closing connection. 
+[2023-05-23 16:43:33 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131665)
+[2023-05-23 16:43:33 +0000] [131665] [INFO] Worker exiting (pid: 131665)
+[2023-05-23 16:43:33 +0000] [131991] [INFO] Booting worker with pid: 131991
+[2023-05-23 22:25:29 +0000] [131991] [DEBUG] Ignoring connection reset
+[2023-05-23 22:25:30 +0000] [131985] [DEBUG] GET /
+[2023-05-23 22:25:30 +0000] [131989] [DEBUG] GET /
+[2023-05-23 22:25:30 +0000] [131991] [DEBUG] GET /version
+[2023-05-23 22:25:31 +0000] [131989] [DEBUG] GET /.vscode/sftp.json
+[2023-05-23 22:25:31 +0000] [131989] [DEBUG] GET /about
+[2023-05-23 22:25:32 +0000] [131989] [DEBUG] GET /debug/default/view
+[2023-05-23 22:25:32 +0000] [131989] [DEBUG] GET /v2/_catalog
+[2023-05-23 22:25:33 +0000] [131991] [DEBUG] GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+[2023-05-23 22:25:33 +0000] [131985] [DEBUG] GET /server-status
+[2023-05-23 22:25:34 +0000] [131991] [DEBUG] GET /login.action
+[2023-05-23 22:25:34 +0000] [131985] [DEBUG] GET /_all_dbs
+[2023-05-23 22:25:35 +0000] [131989] [DEBUG] GET /.DS_Store
+[2023-05-23 22:25:35 +0000] [131985] [DEBUG] GET /.env
+[2023-05-23 22:25:35 +0000] [131989] [DEBUG] GET /.git/config
+[2023-05-23 22:25:36 +0000] [131989] [DEBUG] GET /s/135313e2734323e29353e2933313/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties
+[2023-05-23 22:25:36 +0000] [131989] [DEBUG] GET /config.json
+[2023-05-23 22:25:37 +0000] [131991] [DEBUG] GET /telescope/requests
+[2023-05-23 22:25:37 +0000] [131985] [DEBUG] GET /
+[2023-05-24 05:02:46 +0000] [131985] [DEBUG] GET /
+[2023-05-24 16:40:24 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131991)
+[2023-05-24 16:40:24 +0000] [131991] [INFO] Worker exiting (pid: 131991)
+[2023-05-24 16:40:24 +0000] [131993] [INFO] Booting worker with pid: 131993
+[2023-05-24 17:02:28 +0000] [131985] [DEBUG] Ignoring connection reset
+[2023-05-24 17:02:28 +0000] [131989] [DEBUG] GET /
+[2023-05-24 18:43:31 +0000] [131993] [DEBUG] Ignored premature client disconnection. No more data after: b'\n'
+[2023-05-24 18:43:39 +0000] [131993] [DEBUG] Closing connection. 
+[2023-05-24 18:43:55 +0000] [131993] [DEBUG] Closing connection. 
+[2023-05-24 19:27:08 +0000] [131993] [DEBUG] GET /
+[2023-05-24 22:19:54 +0000] [131989] [DEBUG] GET /
+[2023-05-24 22:19:54 +0000] [131989] [DEBUG] PRI *
+[2023-05-24 23:14:24 +0000] [131989] [DEBUG] GET /
+[2023-05-25 00:23:02 +0000] [131989] [DEBUG] Ignoring connection reset
+[2023-05-25 00:23:12 +0000] [131993] [DEBUG] GET /
+[2023-05-25 00:23:47 +0000] [131989] [DEBUG] GET /
+[2023-05-25 00:23:54 +0000] [131989] [DEBUG] GET /
+[2023-05-25 00:58:43 +0000] [131993] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-05-25 02:23:36 +0000] [131989] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x00\xca\x01\x00\x00\xc6\x03\x03Y\x04\x0b@\xb5\x8f\x8aD'\xcf\xf2!\xbd\x8e\xcf\xf3%\xa0Kg\x91\r\x08\xeb\xf4\xb3\xa9ccb\x8b\x14\x00\x00h\xcc\x14\xcc\x13\xc0/\xc0+\xc00\xc0,\xc0\x11\xc0\x07\xc0'\xc0#\xc0\x13\xc0\t\xc0(\xc0$\xc0\x14\xc0\n\xcc\x15\x00\x9e\x00\x9f\x00g\x00k\x003\x009\x00\x9c\x00\x9d\x00\x05\x00\x04\x00<\x00=\x00/\x005\xc0\x12\x00\x16\x00\n\x00\x03\x00\x08\x00\x06\x00\x14\x00\x11\x00\x19\x00\x17\x002\xc0\x08\x00\x12\x00\x13\x00\x15\x008\x00@\x00f\x00j\x00\xa2\x00\xa3\x01\x00\x005\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\x08\x00\x06\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x0c\x00\n\x04\x01\x04\x03\x02\x01\x02\x03\x02\x02\xff\x01\x00\x01\x00\x00\x0f\x00\x01\x01"
+[2023-05-25 16:44:42 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131985)
+[2023-05-25 16:44:42 +0000] [131985] [INFO] Worker exiting (pid: 131985)
+[2023-05-25 16:44:42 +0000] [131995] [INFO] Booting worker with pid: 131995
+[2023-05-25 17:09:50 +0000] [131995] [DEBUG] Invalid request from ip=194.165.16.78: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-25 19:12:48 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131993)
+[2023-05-25 19:12:48 +0000] [131993] [INFO] Worker exiting (pid: 131993)
+[2023-05-25 19:12:48 +0000] [131997] [INFO] Booting worker with pid: 131997
+[2023-05-25 23:53:24 +0000] [131995] [DEBUG] Closing connection. 
+[2023-05-26 09:56:14 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131989)
+[2023-05-26 09:56:14 +0000] [131989] [INFO] Worker exiting (pid: 131989)
+[2023-05-26 09:56:14 +0000] [131999] [INFO] Booting worker with pid: 131999
+[2023-05-26 12:22:41 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131997)
+[2023-05-26 12:22:41 +0000] [131997] [INFO] Worker exiting (pid: 131997)
+[2023-05-26 12:22:41 +0000] [132001] [INFO] Booting worker with pid: 132001
+[2023-05-26 13:17:08 +0000] [131999] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-05-26 15:58:55 +0000] [131995] [DEBUG] Invalid request from ip=45.227.254.55: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-26 18:41:30 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132001)
+[2023-05-26 18:41:30 +0000] [132001] [INFO] Worker exiting (pid: 132001)
+[2023-05-26 18:41:30 +0000] [132003] [INFO] Booting worker with pid: 132003
+[2023-05-26 22:18:25 +0000] [131995] [DEBUG] GET /
+[2023-05-26 22:18:25 +0000] [131995] [DEBUG] PRI *
+[2023-05-26 23:46:32 +0000] [131999] [DEBUG] Ignoring connection reset
+[2023-05-27 00:18:04 +0000] [132003] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-05-27 01:00:30 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131995)
+[2023-05-27 01:00:30 +0000] [131995] [INFO] Worker exiting (pid: 131995)
+[2023-05-27 01:00:30 +0000] [132005] [INFO] Booting worker with pid: 132005
+[2023-05-27 01:33:47 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:131999)
+[2023-05-27 01:33:47 +0000] [131999] [INFO] Worker exiting (pid: 131999)
+[2023-05-27 01:33:47 +0000] [132007] [INFO] Booting worker with pid: 132007
+[2023-05-27 14:26:56 +0000] [132007] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-05-27 16:55:40 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132003)
+[2023-05-27 16:55:40 +0000] [132003] [INFO] Worker exiting (pid: 132003)
+[2023-05-27 16:55:40 +0000] [132009] [INFO] Booting worker with pid: 132009
+[2023-05-27 19:34:30 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132009)
+[2023-05-27 19:34:30 +0000] [132009] [INFO] Worker exiting (pid: 132009)
+[2023-05-27 19:34:31 +0000] [132011] [INFO] Booting worker with pid: 132011
+[2023-05-28 05:56:57 +0000] [132007] [DEBUG] Invalid request from ip=194.165.16.37: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-28 07:10:30 +0000] [132005] [DEBUG] Closing connection. 
+[2023-05-28 08:04:59 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132005)
+[2023-05-28 08:04:59 +0000] [132005] [INFO] Worker exiting (pid: 132005)
+[2023-05-28 08:04:59 +0000] [132013] [INFO] Booting worker with pid: 132013
+[2023-05-28 08:09:54 +0000] [132011] [DEBUG] GET /
+[2023-05-28 11:39:10 +0000] [132013] [DEBUG] GET /
+[2023-05-28 16:33:13 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132013)
+[2023-05-28 16:33:13 +0000] [132013] [INFO] Worker exiting (pid: 132013)
+[2023-05-28 16:33:14 +0000] [132015] [INFO] Booting worker with pid: 132015
+[2023-05-28 19:52:46 +0000] [132007] [DEBUG] GET /
+[2023-05-28 19:52:46 +0000] [132007] [DEBUG] PRI *
+[2023-05-29 00:31:34 +0000] [132011] [DEBUG] Invalid request from ip=194.165.16.10: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-29 03:33:42 +0000] [132007] [DEBUG] GET /
+[2023-05-29 03:33:42 +0000] [132011] [DEBUG] GET /favicon.ico
+[2023-05-29 06:44:10 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132007)
+[2023-05-29 06:44:10 +0000] [132007] [INFO] Worker exiting (pid: 132007)
+[2023-05-29 06:44:10 +0000] [132017] [INFO] Booting worker with pid: 132017
+[2023-05-29 12:42:11 +0000] [132011] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-05-29 14:20:21 +0000] [132017] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP request line: ''
+[2023-05-29 14:20:21 +0000] [132017] [DEBUG] GET /
+[2023-05-29 14:20:21 +0000] [132015] [DEBUG] OPTIONS /
+[2023-05-29 14:20:21 +0000] [132015] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'RTSP/1.0'
+[2023-05-29 14:20:26 +0000] [132011] [DEBUG] Ignored premature client disconnection. No more data after: b'\x80\x00\x00(r\xfe\x1d\x13\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86\xa0\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2023-05-29 14:20:31 +0000] [132011] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03'
+[2023-05-29 14:20:31 +0000] [132011] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP request line: 'HELP'
+[2023-05-29 14:20:37 +0000] [132011] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2023-05-29 14:20:42 +0000] [132017] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-05-29 14:20:47 +0000] [132015] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00qj\x81n0\x81k\xa1\x03\x02\x01\x05\xa2\x03\x02\x01\n\xa4\x81^0\\\xa0\x07\x03\x05\x00P\x80\x00\x10\xa2\x04\x1b\x02NM\xa3\x170\x15\xa0\x03\x02\x01\x00\xa1\x0e0\x0c\x1b\x06krbtgt\x1b\x02NM\xa5\x11\x18\x0f19700101000000Z\xa7\x06\x02\x04\x1f\x1e\xb9\xd9\xa8\x170\x15\x02\x01\x12\x02\x01\x11\x02\x01\x10\x02\x01\x17\x02\x01\x01\x02\x01\x03\x02\x01\x02'
+[2023-05-29 14:20:52 +0000] [132011] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00\xa4\xffSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00'
+[2023-05-29 14:20:57 +0000] [132011] [DEBUG] Ignored premature client disconnection. No more data after: b'l\x00\x0b\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2023-05-29 14:20:57 +0000] [132011] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'SIP/2.0'
+[2023-05-29 14:21:11 +0000] [132011] [DEBUG] GET /
+[2023-05-29 14:21:18 +0000] [132017] [DEBUG] Closing connection. 
+[2023-05-29 14:22:28 +0000] [132015] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-05-29 14:22:31 +0000] [132017] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2023-05-29 16:34:22 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132015)
+[2023-05-29 16:34:22 +0000] [132015] [INFO] Worker exiting (pid: 132015)
+[2023-05-29 16:34:22 +0000] [132019] [INFO] Booting worker with pid: 132019
+[2023-05-29 16:49:47 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132019)
+[2023-05-29 16:49:47 +0000] [132019] [INFO] Worker exiting (pid: 132019)
+[2023-05-29 16:49:47 +0000] [132021] [INFO] Booting worker with pid: 132021
+[2023-05-29 19:07:49 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132017)
+[2023-05-29 19:07:49 +0000] [132017] [INFO] Worker exiting (pid: 132017)
+[2023-05-29 19:07:50 +0000] [132023] [INFO] Booting worker with pid: 132023
+[2023-05-29 20:20:22 +0000] [132021] [DEBUG] Invalid request from ip=45.227.254.48: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-30 00:07:43 +0000] [132023] [DEBUG] GET /
+[2023-05-30 03:02:23 +0000] [132021] [DEBUG] Ignored premature client disconnection. No more data after: b'\n'
+[2023-05-30 03:02:30 +0000] [132011] [DEBUG] Closing connection. 
+[2023-05-30 03:02:37 +0000] [132023] [DEBUG] Ignored premature client disconnection. No more data after: b'{\x01\x00\x1613911111112\xc0\xa8\x01\x01\x13\x90{'
+[2023-05-30 03:02:45 +0000] [132021] [DEBUG] Closing connection. 
+[2023-05-30 03:02:46 +0000] [132011] [DEBUG] GET /
+[2023-05-30 03:02:51 +0000] [132021] [DEBUG] GET /
+[2023-05-30 03:02:55 +0000] [132011] [DEBUG] GET /robots.txt
+[2023-05-30 03:02:55 +0000] [132023] [DEBUG] GET /sitemap.xml
+[2023-05-30 03:05:41 +0000] [132011] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x03\x00\x00\x00'
+[2023-05-30 05:35:08 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132011)
+[2023-05-30 05:35:08 +0000] [132011] [INFO] Worker exiting (pid: 132011)
+[2023-05-30 05:35:08 +0000] [132025] [INFO] Booting worker with pid: 132025
+[2023-05-30 06:16:00 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132023)
+[2023-05-30 06:16:00 +0000] [132023] [INFO] Worker exiting (pid: 132023)
+[2023-05-30 06:16:00 +0000] [132027] [INFO] Booting worker with pid: 132027
+[2023-05-30 10:40:35 +0000] [132025] [DEBUG] Ignoring connection reset
+[2023-05-30 10:40:45 +0000] [132021] [DEBUG] GET /
+[2023-05-30 16:19:18 +0000] [132021] [DEBUG] GET /
+[2023-05-30 16:33:25 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132025)
+[2023-05-30 16:33:25 +0000] [132025] [INFO] Worker exiting (pid: 132025)
+[2023-05-30 16:33:26 +0000] [132029] [INFO] Booting worker with pid: 132029
+[2023-05-30 17:03:15 +0000] [132029] [DEBUG] GET /
+[2023-05-31 02:17:35 +0000] [132029] [DEBUG] GET /
+[2023-05-31 06:09:55 +0000] [132027] [DEBUG] GET /
+[2023-05-31 06:09:55 +0000] [132027] [DEBUG] PRI *
+[2023-05-31 12:41:23 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132027)
+[2023-05-31 12:41:23 +0000] [132027] [INFO] Worker exiting (pid: 132027)
+[2023-05-31 12:41:23 +0000] [132031] [INFO] Booting worker with pid: 132031
+[2023-05-31 16:32:46 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132029)
+[2023-05-31 16:32:46 +0000] [132029] [INFO] Worker exiting (pid: 132029)
+[2023-05-31 16:32:46 +0000] [132033] [INFO] Booting worker with pid: 132033
+[2023-05-31 16:55:50 +0000] [132031] [DEBUG] Invalid request from ip=185.170.144.3: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-05-31 17:40:05 +0000] [132033] [DEBUG] GET /
+[2023-06-01 00:23:06 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132031)
+[2023-06-01 00:23:06 +0000] [132031] [INFO] Worker exiting (pid: 132031)
+[2023-06-01 00:23:06 +0000] [132035] [INFO] Booting worker with pid: 132035
+[2023-06-01 10:11:14 +0000] [132033] [DEBUG] Invalid request from ip=194.165.16.37: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-01 16:31:47 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132033)
+[2023-06-01 16:31:47 +0000] [132033] [INFO] Worker exiting (pid: 132033)
+[2023-06-01 16:31:47 +0000] [132037] [INFO] Booting worker with pid: 132037
+[2023-06-01 16:33:57 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132035)
+[2023-06-01 16:33:57 +0000] [132035] [INFO] Worker exiting (pid: 132035)
+[2023-06-01 16:33:58 +0000] [132039] [INFO] Booting worker with pid: 132039
+[2023-06-01 16:34:28 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132021)
+[2023-06-01 16:34:28 +0000] [132021] [INFO] Worker exiting (pid: 132021)
+[2023-06-01 16:34:28 +0000] [132041] [INFO] Booting worker with pid: 132041
+[2023-06-01 16:34:28 +0000] [132037] [DEBUG] CONNECT smtp.aol.com:25
+[2023-06-01 17:19:02 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132041)
+[2023-06-01 17:19:02 +0000] [132041] [INFO] Worker exiting (pid: 132041)
+[2023-06-01 17:19:03 +0000] [132043] [INFO] Booting worker with pid: 132043
+[2023-06-01 17:19:33 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132039)
+[2023-06-01 17:19:33 +0000] [132039] [INFO] Worker exiting (pid: 132039)
+[2023-06-01 17:19:33 +0000] [132045] [INFO] Booting worker with pid: 132045
+[2023-06-01 17:19:34 +0000] [132043] [DEBUG] CONNECT 85.206.160.115:80
+[2023-06-01 17:47:10 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132045)
+[2023-06-01 17:47:10 +0000] [132045] [INFO] Worker exiting (pid: 132045)
+[2023-06-01 17:47:10 +0000] [132047] [INFO] Booting worker with pid: 132047
+[2023-06-01 19:14:28 +0000] [132037] [DEBUG] GET /
+[2023-06-01 19:14:29 +0000] [132047] [DEBUG] PRI *
+[2023-06-02 00:47:19 +0000] [132037] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-02 03:19:15 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132037)
+[2023-06-02 03:19:15 +0000] [132037] [INFO] Worker exiting (pid: 132037)
+[2023-06-02 03:19:16 +0000] [132049] [INFO] Booting worker with pid: 132049
+[2023-06-02 04:20:54 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132047)
+[2023-06-02 04:20:54 +0000] [132047] [INFO] Worker exiting (pid: 132047)
+[2023-06-02 04:20:55 +0000] [132051] [INFO] Booting worker with pid: 132051
+[2023-06-02 10:23:23 +0000] [132049] [DEBUG] Invalid request from ip=45.227.254.55: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-02 15:08:22 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132049)
+[2023-06-02 15:08:22 +0000] [132049] [INFO] Worker exiting (pid: 132049)
+[2023-06-02 15:08:23 +0000] [132053] [INFO] Booting worker with pid: 132053
+[2023-06-02 16:35:13 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132051)
+[2023-06-02 16:35:13 +0000] [132051] [INFO] Worker exiting (pid: 132051)
+[2023-06-02 16:35:13 +0000] [132055] [INFO] Booting worker with pid: 132055
+[2023-06-02 18:26:32 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132053)
+[2023-06-02 18:26:32 +0000] [132053] [INFO] Worker exiting (pid: 132053)
+[2023-06-02 18:26:32 +0000] [132057] [INFO] Booting worker with pid: 132057
+[2023-06-03 00:53:37 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132055)
+[2023-06-03 00:53:37 +0000] [132055] [INFO] Worker exiting (pid: 132055)
+[2023-06-03 00:53:37 +0000] [132059] [INFO] Booting worker with pid: 132059
+[2023-06-03 07:39:38 +0000] [132043] [DEBUG] Invalid request from ip=80.66.88.215: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-03 08:50:48 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132059)
+[2023-06-03 08:50:48 +0000] [132059] [INFO] Worker exiting (pid: 132059)
+[2023-06-03 08:50:48 +0000] [132061] [INFO] Booting worker with pid: 132061
+[2023-06-03 09:44:56 +0000] [132057] [DEBUG] Invalid request from ip=179.60.147.13: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-03 14:08:05 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132061)
+[2023-06-03 14:08:05 +0000] [132061] [INFO] Worker exiting (pid: 132061)
+[2023-06-03 14:08:05 +0000] [132063] [INFO] Booting worker with pid: 132063
+[2023-06-03 14:15:28 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132063)
+[2023-06-03 14:15:28 +0000] [132063] [INFO] Worker exiting (pid: 132063)
+[2023-06-03 14:15:28 +0000] [132065] [INFO] Booting worker with pid: 132065
+[2023-06-03 14:30:38 +0000] [132065] [DEBUG] GET /
+[2023-06-03 16:34:58 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132043)
+[2023-06-03 16:34:58 +0000] [132043] [INFO] Worker exiting (pid: 132043)
+[2023-06-03 16:34:58 +0000] [132067] [INFO] Booting worker with pid: 132067
+[2023-06-03 18:46:28 +0000] [132065] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x00\xca\x01\x00\x00\xc6\x03\x03O\xeb\x07\x98\xdd<\xf0\xe5\xa6C?\xa0\xe4\xf3\xc0\x95J\x9dmG\x18`\xf8\xdb\xf58[\x8aJ\x03\xb9J\x00\x00h\xcc\x14\xcc\x13\xc0/\xc0+\xc00\xc0,\xc0\x11\xc0\x07\xc0'\xc0#\xc0\x13\xc0\t\xc0(\xc0$\xc0\x14\xc0\n\xcc\x15\x00\x9e\x00\x9f\x00g\x00k\x003\x009\x00\x9c\x00\x9d\x00\x05\x00\x04\x00<\x00=\x00/\x005\xc0\x12\x00\x16\x00\n\x00\x03\x00\x08\x00\x06\x00\x14\x00\x11\x00\x19\x00\x17\x002\xc0\x08\x00\x12\x00\x13\x00\x15\x008\x00@\x00f\x00j\x00\xa2\x00\xa3\x01\x00\x005\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\x08\x00\x06\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x0c\x00\n\x04\x01\x04\x03\x02\x01\x02\x03\x02\x02\xff\x01\x00\x01\x00\x00\x0f\x00\x01\x01"
+[2023-06-03 22:17:15 +0000] [132067] [DEBUG] Closing connection. 
+[2023-06-04 02:36:23 +0000] [132067] [DEBUG] GET /
+[2023-06-04 02:36:23 +0000] [132065] [DEBUG] PRI *
+[2023-06-04 02:43:55 +0000] [132057] [DEBUG] GET /
+[2023-06-04 03:29:07 +0000] [132057] [DEBUG] Invalid request from ip=194.165.16.10: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-04 06:56:11 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132067)
+[2023-06-04 06:56:11 +0000] [132067] [INFO] Worker exiting (pid: 132067)
+[2023-06-04 06:56:11 +0000] [132069] [INFO] Booting worker with pid: 132069
+[2023-06-04 09:25:08 +0000] [132069] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP request line: ''
+[2023-06-04 09:25:08 +0000] [132065] [DEBUG] GET /
+[2023-06-04 09:25:08 +0000] [132057] [DEBUG] OPTIONS /
+[2023-06-04 09:25:08 +0000] [132069] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'RTSP/1.0'
+[2023-06-04 09:25:13 +0000] [132069] [DEBUG] Ignored premature client disconnection. No more data after: b'\x80\x00\x00(r\xfe\x1d\x13\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86\xa0\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2023-06-04 09:25:18 +0000] [132069] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03'
+[2023-06-04 09:25:18 +0000] [132069] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP request line: 'HELP'
+[2023-06-04 09:25:23 +0000] [132069] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2023-06-04 09:25:28 +0000] [132069] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-06-04 09:25:33 +0000] [132057] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00qj\x81n0\x81k\xa1\x03\x02\x01\x05\xa2\x03\x02\x01\n\xa4\x81^0\\\xa0\x07\x03\x05\x00P\x80\x00\x10\xa2\x04\x1b\x02NM\xa3\x170\x15\xa0\x03\x02\x01\x00\xa1\x0e0\x0c\x1b\x06krbtgt\x1b\x02NM\xa5\x11\x18\x0f19700101000000Z\xa7\x06\x02\x04\x1f\x1e\xb9\xd9\xa8\x170\x15\x02\x01\x12\x02\x01\x11\x02\x01\x10\x02\x01\x17\x02\x01\x01\x02\x01\x03\x02\x01\x02'
+[2023-06-04 09:25:38 +0000] [132065] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00\xa4\xffSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00'
+[2023-06-04 09:25:43 +0000] [132057] [DEBUG] Ignored premature client disconnection. No more data after: b'l\x00\x0b\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2023-06-04 09:25:43 +0000] [132065] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'SIP/2.0'
+[2023-06-04 09:25:54 +0000] [132069] [DEBUG] GET /
+[2023-06-04 09:25:56 +0000] [132065] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-06-04 09:26:04 +0000] [132057] [DEBUG] Ignored premature client disconnection. No more data after: b'\x0e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00bbbb0100000001'
+[2023-06-04 09:26:04 +0000] [132065] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2023-06-04 09:26:04 +0000] [132069] [DEBUG] Closing connection. 
+[2023-06-04 09:26:16 +0000] [132057] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-06-04 09:26:25 +0000] [132057] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2023-06-04 09:26:25 +0000] [132065] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-06-04 16:35:30 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132057)
+[2023-06-04 16:35:30 +0000] [132057] [INFO] Worker exiting (pid: 132057)
+[2023-06-04 16:35:30 +0000] [132071] [INFO] Booting worker with pid: 132071
+[2023-06-04 17:11:48 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132065)
+[2023-06-04 17:11:48 +0000] [132065] [INFO] Worker exiting (pid: 132065)
+[2023-06-04 17:11:48 +0000] [132073] [INFO] Booting worker with pid: 132073
+[2023-06-04 23:07:00 +0000] [132073] [DEBUG] Invalid request from ip=194.165.16.37: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-05 10:00:14 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132073)
+[2023-06-05 10:00:14 +0000] [132073] [INFO] Worker exiting (pid: 132073)
+[2023-06-05 10:00:15 +0000] [132075] [INFO] Booting worker with pid: 132075
+[2023-06-05 16:33:14 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132069)
+[2023-06-05 16:33:14 +0000] [132069] [INFO] Worker exiting (pid: 132069)
+[2023-06-05 16:33:15 +0000] [132077] [INFO] Booting worker with pid: 132077
+[2023-06-05 19:27:40 +0000] [132075] [DEBUG] Invalid request from ip=80.66.88.215: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-06 00:50:47 +0000] [132075] [DEBUG] GET /
+[2023-06-06 00:50:47 +0000] [132077] [DEBUG] PRI *
+[2023-06-06 06:50:26 +0000] [132075] [DEBUG] Closing connection. 
+[2023-06-06 11:21:38 +0000] [132077] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-06 16:34:16 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132071)
+[2023-06-06 16:34:16 +0000] [132071] [INFO] Worker exiting (pid: 132071)
+[2023-06-06 16:34:17 +0000] [132079] [INFO] Booting worker with pid: 132079
+[2023-06-06 18:24:13 +0000] [132079] [DEBUG] GET /
+[2023-06-06 22:32:33 +0000] [132077] [DEBUG] Closing connection. 
+[2023-06-07 01:33:51 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132079)
+[2023-06-07 01:33:51 +0000] [132079] [INFO] Worker exiting (pid: 132079)
+[2023-06-07 01:33:52 +0000] [132081] [INFO] Booting worker with pid: 132081
+[2023-06-07 08:14:42 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132075)
+[2023-06-07 08:14:42 +0000] [132075] [INFO] Worker exiting (pid: 132075)
+[2023-06-07 08:14:42 +0000] [132083] [INFO] Booting worker with pid: 132083
+[2023-06-07 08:15:05 +0000] [132081] [DEBUG] Ignored premature client disconnection. No more data after: b'\x05\x01\x00'
+[2023-06-07 08:15:42 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132083)
+[2023-06-07 08:15:42 +0000] [132083] [INFO] Worker exiting (pid: 132083)
+[2023-06-07 08:15:42 +0000] [132085] [INFO] Booting worker with pid: 132085
+[2023-06-07 08:16:12 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132081)
+[2023-06-07 08:16:12 +0000] [132081] [INFO] Worker exiting (pid: 132081)
+[2023-06-07 08:16:13 +0000] [132087] [INFO] Booting worker with pid: 132087
+[2023-06-07 08:16:13 +0000] [132077] [DEBUG] CONNECT smtp.aol.com:25
+[2023-06-07 09:04:43 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132085)
+[2023-06-07 09:04:43 +0000] [132085] [INFO] Worker exiting (pid: 132085)
+[2023-06-07 09:04:43 +0000] [132089] [INFO] Booting worker with pid: 132089
+[2023-06-07 09:05:14 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132087)
+[2023-06-07 09:05:14 +0000] [132087] [INFO] Worker exiting (pid: 132087)
+[2023-06-07 09:05:14 +0000] [132091] [INFO] Booting worker with pid: 132091
+[2023-06-07 09:05:14 +0000] [132077] [DEBUG] CONNECT 85.206.160.115:80
+[2023-06-07 14:10:15 +0000] [132077] [DEBUG] Ignored premature client disconnection. No more data after: b'\n'
+[2023-06-07 14:10:20 +0000] [132077] [DEBUG] Closing connection. 
+[2023-06-07 14:10:26 +0000] [132089] [DEBUG] Ignored premature client disconnection. No more data after: b'{\x01\x00\x1613911111112\xc0\xa8\x01\x01\x13\x90{'
+[2023-06-07 14:10:31 +0000] [132089] [DEBUG] Closing connection. 
+[2023-06-07 14:10:32 +0000] [132089] [DEBUG] GET /
+[2023-06-07 14:10:33 +0000] [132091] [DEBUG] GET /
+[2023-06-07 14:10:33 +0000] [132077] [DEBUG] GET /sitemap.xml
+[2023-06-07 14:10:33 +0000] [132091] [DEBUG] GET /robots.txt
+[2023-06-07 16:31:51 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132089)
+[2023-06-07 16:31:51 +0000] [132089] [INFO] Worker exiting (pid: 132089)
+[2023-06-07 16:31:52 +0000] [132093] [INFO] Booting worker with pid: 132093
+[2023-06-07 16:54:54 +0000] [132091] [DEBUG] GET /
+[2023-06-07 16:54:54 +0000] [132091] [DEBUG] PRI *
+[2023-06-07 17:32:28 +0000] [132093] [DEBUG] Ignoring connection reset
+[2023-06-07 17:32:43 +0000] [132091] [DEBUG] GET /
+[2023-06-07 18:08:54 +0000] [132091] [DEBUG] Invalid request from ip=194.165.16.10: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-07 18:53:47 +0000] [132093] [DEBUG] GET /
+[2023-06-07 22:41:46 +0000] [132077] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-08 02:22:34 +0000] [132091] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x00\xca\x01\x00\x00\xc6\x03\x03\\\xf5&1\x18 \xd1|\x9b>\x00\xf2\x02.\xbe\x1c\xbb\xaaY\xa8\x97u\x1bbJ\x0b\xec\xf0I\xc9\xb0\xd2\x00\x00h\xcc\x14\xcc\x13\xc0/\xc0+\xc00\xc0,\xc0\x11\xc0\x07\xc0'\xc0#\xc0\x13\xc0\t\xc0(\xc0$\xc0\x14\xc0\n\xcc\x15\x00\x9e\x00\x9f\x00g\x00k\x003\x009\x00\x9c\x00\x9d\x00\x05\x00\x04\x00<\x00=\x00/\x005\xc0\x12\x00\x16\x00\n\x00\x03\x00\x08\x00\x06\x00\x14\x00\x11\x00\x19\x00\x17\x002\xc0\x08\x00\x12\x00\x13\x00\x15\x008\x00@\x00f\x00j\x00\xa2\x00\xa3\x01\x00\x005\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\x08\x00\x06\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x0c\x00\n\x04\x01\x04\x03\x02\x01\x02\x03\x02\x02\xff\x01\x00\x01\x00\x00\x0f\x00\x01\x01"
+[2023-06-08 08:59:26 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132077)
+[2023-06-08 08:59:26 +0000] [132077] [INFO] Worker exiting (pid: 132077)
+[2023-06-08 08:59:26 +0000] [132095] [INFO] Booting worker with pid: 132095
+[2023-06-08 13:22:28 +0000] [132093] [DEBUG] Invalid request from ip=194.165.16.73: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-08 16:34:39 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132095)
+[2023-06-08 16:34:39 +0000] [132095] [INFO] Worker exiting (pid: 132095)
+[2023-06-08 16:34:40 +0000] [132097] [INFO] Booting worker with pid: 132097
+[2023-06-08 17:13:47 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132093)
+[2023-06-08 17:13:47 +0000] [132093] [INFO] Worker exiting (pid: 132093)
+[2023-06-08 17:13:47 +0000] [132099] [INFO] Booting worker with pid: 132099
+[2023-06-08 21:00:48 +0000] [132099] [DEBUG] GET /
+[2023-06-09 06:34:06 +0000] [132097] [DEBUG] Ignoring connection reset
+[2023-06-09 06:34:06 +0000] [132091] [DEBUG] GET /
+[2023-06-09 06:34:06 +0000] [132091] [DEBUG] GET /
+[2023-06-09 06:34:07 +0000] [132097] [DEBUG] GET /version
+[2023-06-09 06:34:07 +0000] [132091] [DEBUG] GET /.vscode/sftp.json
+[2023-06-09 06:34:08 +0000] [132099] [DEBUG] GET /about
+[2023-06-09 06:34:08 +0000] [132097] [DEBUG] GET /debug/default/view
+[2023-06-09 06:34:09 +0000] [132091] [DEBUG] GET /v2/_catalog
+[2023-06-09 06:34:09 +0000] [132097] [DEBUG] GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+[2023-06-09 06:34:10 +0000] [132097] [DEBUG] GET /server-status
+[2023-06-09 06:34:10 +0000] [132099] [DEBUG] GET /login.action
+[2023-06-09 06:34:10 +0000] [132099] [DEBUG] GET /_all_dbs
+[2023-06-09 06:34:11 +0000] [132097] [DEBUG] GET /.DS_Store
+[2023-06-09 06:34:11 +0000] [132097] [DEBUG] GET /.env
+[2023-06-09 06:34:12 +0000] [132099] [DEBUG] GET /.git/config
+[2023-06-09 06:34:12 +0000] [132097] [DEBUG] GET /s/135313e2734323e29353e2933313/_/;/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties
+[2023-06-09 06:34:13 +0000] [132097] [DEBUG] GET /config.json
+[2023-06-09 06:34:13 +0000] [132091] [DEBUG] GET /telescope/requests
+[2023-06-09 06:34:14 +0000] [132097] [DEBUG] GET /
+[2023-06-09 08:32:31 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132097)
+[2023-06-09 08:32:31 +0000] [132097] [INFO] Worker exiting (pid: 132097)
+[2023-06-09 08:32:32 +0000] [132101] [INFO] Booting worker with pid: 132101
+[2023-06-09 11:52:03 +0000] [132091] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP request line: ''
+[2023-06-09 11:52:03 +0000] [132101] [DEBUG] GET /
+[2023-06-09 11:52:03 +0000] [132099] [DEBUG] OPTIONS /
+[2023-06-09 11:52:03 +0000] [132099] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'RTSP/1.0'
+[2023-06-09 11:52:08 +0000] [132099] [DEBUG] Ignored premature client disconnection. No more data after: b'\x80\x00\x00(r\xfe\x1d\x13\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86\xa0\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2023-06-09 11:52:13 +0000] [132091] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03'
+[2023-06-09 11:52:13 +0000] [132091] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP request line: 'HELP'
+[2023-06-09 11:52:18 +0000] [132101] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2023-06-09 11:52:23 +0000] [132101] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-06-09 11:52:28 +0000] [132101] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00qj\x81n0\x81k\xa1\x03\x02\x01\x05\xa2\x03\x02\x01\n\xa4\x81^0\\\xa0\x07\x03\x05\x00P\x80\x00\x10\xa2\x04\x1b\x02NM\xa3\x170\x15\xa0\x03\x02\x01\x00\xa1\x0e0\x0c\x1b\x06krbtgt\x1b\x02NM\xa5\x11\x18\x0f19700101000000Z\xa7\x06\x02\x04\x1f\x1e\xb9\xd9\xa8\x170\x15\x02\x01\x12\x02\x01\x11\x02\x01\x10\x02\x01\x17\x02\x01\x01\x02\x01\x03\x02\x01\x02'
+[2023-06-09 11:52:33 +0000] [132101] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00\xa4\xffSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00'
+[2023-06-09 11:52:38 +0000] [132101] [DEBUG] Ignored premature client disconnection. No more data after: b'l\x00\x0b\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2023-06-09 11:52:38 +0000] [132099] [DEBUG] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'SIP/2.0'
+[2023-06-09 11:52:59 +0000] [132099] [DEBUG] Closing connection. 
+[2023-06-09 11:52:59 +0000] [132091] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2023-06-09 11:52:59 +0000] [132099] [DEBUG] Ignored premature client disconnection. No more data after: b'\x0e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00bbbb0100000001'
+[2023-06-09 11:52:59 +0000] [132101] [DEBUG] Closing connection. 
+[2023-06-09 12:29:01 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132091)
+[2023-06-09 12:29:01 +0000] [132091] [INFO] Worker exiting (pid: 132091)
+[2023-06-09 12:29:02 +0000] [132103] [INFO] Booting worker with pid: 132103
+[2023-06-09 14:17:54 +0000] [132103] [DEBUG] Invalid request from ip=194.165.16.73: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-09 16:35:28 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132099)
+[2023-06-09 16:35:28 +0000] [132099] [INFO] Worker exiting (pid: 132099)
+[2023-06-09 16:35:28 +0000] [132105] [INFO] Booting worker with pid: 132105
+[2023-06-09 16:48:39 +0000] [132103] [DEBUG] Ignored premature client disconnection. No more data after: b'\x14\x00\x04\x0e139.59.247.151\x13\x8b\x01\x01\x00'
+[2023-06-09 17:20:36 +0000] [132103] [DEBUG] GET /
+[2023-06-09 17:20:36 +0000] [132101] [DEBUG] PRI *
+[2023-06-09 17:54:49 +0000] [132101] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-09 19:58:30 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132105)
+[2023-06-09 19:58:30 +0000] [132105] [INFO] Worker exiting (pid: 132105)
+[2023-06-09 19:58:30 +0000] [132107] [INFO] Booting worker with pid: 132107
+[2023-06-09 22:19:42 +0000] [132101] [DEBUG] Invalid request from ip=185.170.144.3: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-09 23:05:33 +0000] [132103] [DEBUG] GET /
+[2023-06-10 02:55:58 +0000] [132103] [DEBUG] GET /
+[2023-06-10 10:45:26 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132101)
+[2023-06-10 10:45:26 +0000] [132101] [INFO] Worker exiting (pid: 132101)
+[2023-06-10 10:45:26 +0000] [132109] [INFO] Booting worker with pid: 132109
+[2023-06-10 11:22:50 +0000] [132103] [DEBUG] Invalid request from ip=45.227.254.8: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-10 16:35:23 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132109)
+[2023-06-10 16:35:23 +0000] [132109] [INFO] Worker exiting (pid: 132109)
+[2023-06-10 16:35:24 +0000] [132111] [INFO] Booting worker with pid: 132111
+[2023-06-10 23:42:41 +0000] [132103] [DEBUG] Closing connection. 
+[2023-06-11 00:58:29 +0000] [132111] [DEBUG] Closing connection. 
+[2023-06-11 01:10:34 +0000] [132107] [DEBUG] GET /
+[2023-06-11 08:28:48 +0000] [132111] [DEBUG] Invalid request from ip=45.227.254.8: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-11 10:41:50 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132107)
+[2023-06-11 10:41:50 +0000] [132107] [INFO] Worker exiting (pid: 132107)
+[2023-06-11 10:41:50 +0000] [132113] [INFO] Booting worker with pid: 132113
+[2023-06-11 16:33:50 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132111)
+[2023-06-11 16:33:50 +0000] [132111] [INFO] Worker exiting (pid: 132111)
+[2023-06-11 16:33:51 +0000] [132115] [INFO] Booting worker with pid: 132115
+[2023-06-11 18:40:55 +0000] [132103] [DEBUG] GET /
+[2023-06-11 18:40:56 +0000] [132113] [DEBUG] PRI *
+[2023-06-11 19:09:06 +0000] [132103] [DEBUG] Ignoring connection reset
+[2023-06-11 19:09:09 +0000] [132115] [DEBUG] Ignoring connection reset
+[2023-06-11 19:09:10 +0000] [132113] [DEBUG] GET /
+[2023-06-11 19:09:11 +0000] [132103] [DEBUG] GET /
+[2023-06-11 19:09:11 +0000] [132113] [DEBUG] PRI *
+[2023-06-11 22:11:08 +0000] [132115] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-12 01:48:52 +0000] [132113] [DEBUG] GET /
+[2023-06-12 03:08:24 +0000] [132113] [DEBUG] GET /
+[2023-06-12 04:49:36 +0000] [132103] [DEBUG] Invalid request from ip=45.227.254.8: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-12 09:04:39 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132113)
+[2023-06-12 09:04:39 +0000] [132113] [INFO] Worker exiting (pid: 132113)
+[2023-06-12 09:04:40 +0000] [132117] [INFO] Booting worker with pid: 132117
+[2023-06-12 10:15:36 +0000] [132103] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x00\xee\x01\x00\x00\xea\x03\x03\xaa\x1d\x9f\xc9\x04\xc8\x8f'\xb4\x9d\x82\xcf\xb2\x9e\x93\xf5\xb5\x86\xa4\x9f/l\xda\xbd\x81\xcd*r\xbdB\xad\r \xceg\xb7fP\xdd\xc4\xfcp\xa2^\x8fF\xdd\xa3\x08P\x7f\xac\xc5c\x8f`\xddD\r\x9f\xe1\x8b\xba\x834\x00&\xcc\xa8\xcc\xa9\xc0/\xc00\xc0+\xc0,\xc0\x13\xc0\t\xc0\x14\xc0\n\x00\x9c\x00\x9d\x00/\x005\xc0\x12\x00\n\x13\x03\x13\x01\x13\x02\x01\x00\x00{\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\n\x00\x08\x00\x1d\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x1a\x00\x18\x08\x04\x04\x03\x08\x07\x08\x05\x08\x06\x04\x01\x05\x01\x06\x01\x05\x03\x06\x03\x02\x01\x02\x03\xff\x01\x00\x01\x00\x00\x12\x00\x00\x00+\x00\t\x08\x03\x04\x03\x03\x03\x02\x03\x01\x003\x00&\x00$\x00\x1d\x00 \r\xf4\x98\xa7\x17\xdd\x1b\xdc_\xab\xeb\xb23]4\x11\xb2\x88\xdd]\x9e\xdf#\xfe?\x847\xce\xc4\xa6:Z"
+[2023-06-12 16:33:22 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132117)
+[2023-06-12 16:33:22 +0000] [132117] [INFO] Worker exiting (pid: 132117)
+[2023-06-12 16:33:22 +0000] [132119] [INFO] Booting worker with pid: 132119
+[2023-06-12 22:52:54 +0000] [132115] [DEBUG] Ignored premature client disconnection. No more data after: b'\n'
+[2023-06-12 22:52:59 +0000] [132115] [DEBUG] Closing connection. 
+[2023-06-12 22:53:43 +0000] [132119] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-12 23:41:29 +0000] [132119] [DEBUG] GET /
+[2023-06-13 02:21:25 +0000] [132119] [DEBUG] Invalid request from ip=80.66.88.215: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-13 03:07:18 +0000] [132119] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x01\x00\xee\x01\x00\x00\xea\x03\x03\xea\x878\xac\xd4xL\xfb\xab\xf1\x1flVk$\xa3\x90\x7f`r*\x1a\x9c\x9d\xe5\xb59O\\&\xd4\xc3 \xcc\x0b\x17\x8cgIq\xf1*\xb7\x13\xcf\xd2\xbd\x9aXS\x8a\x1a\xb1\xd4\x96\x08\xb1\xcd\x80\xb6(\xee\xae\xa0\xa1\x00&\xcc\xa8\xcc\xa9\xc0/\xc00\xc0+\xc0,\xc0\x13\xc0\t\xc0\x14\xc0\n\x00\x9c\x00\x9d\x00/\x005\xc0\x12\x00\n\x13\x03\x13\x01\x13\x02\x01\x00\x00{\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\n\x00\x08\x00\x1d\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x1a\x00\x18\x08\x04\x04\x03\x08\x07\x08\x05\x08\x06\x04\x01\x05\x01\x06\x01\x05\x03\x06\x03\x02\x01\x02\x03\xff\x01\x00\x01\x00\x00\x12\x00\x00\x00+\x00\t\x08\x03\x04\x03\x03\x03\x02\x03\x01\x003\x00&\x00$\x00\x1d\x00 \xca&t\x9f\x0b\xc9\x84\xd1\xbdvlLh\x7fXa\x10B\x95\xdb\xc5g\x9d\xa5i~}\xb9\xf4\xa9\xd4\x13'
+[2023-06-13 03:54:18 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132103)
+[2023-06-13 03:54:18 +0000] [132103] [INFO] Worker exiting (pid: 132103)
+[2023-06-13 03:54:19 +0000] [132121] [INFO] Booting worker with pid: 132121
+[2023-06-13 06:11:19 +0000] [132121] [DEBUG] GET /
+[2023-06-13 07:49:19 +0000] [132121] [DEBUG] Invalid request from ip=206.189.226.94: Invalid HTTP request line: 'SSH-2.0-OpenSSH'
+[2023-06-13 11:26:02 +0000] [132121] [DEBUG] GET /
+[2023-06-13 13:46:27 +0000] [132115] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x01\x00\xee\x01\x00\x00\xea\x03\x03\xc5\xd3\x9d\r}\xcf\xdbK@\x12|P\xf1(\xd5\x9a\xf2Z\xe5\x1f\t\xf5\x1c*4~SO\x19\xc1m5 \xf3Hxc\x0f\xee\x9f\x11r\x08`d\xce\x91\xb1\xf7\xeaBC\xaf"\xd7J\xec\xc7\xc7\x9ds\xa9.\xc7\xc2\x00&\xc0/\xc00\xc0+\xc0,\xcc\xa8\xcc\xa9\xc0\x13\xc0\t\xc0\x14\xc0\n\x00\x9c\x00\x9d\x00/\x005\xc0\x12\x00\n\x13\x01\x13\x03\x13\x02\x01\x00\x00{\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\n\x00\x08\x00\x1d\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x1a\x00\x18\x08\x04\x04\x03\x08\x07\x08\x05\x08\x06\x04\x01\x05\x01\x06\x01\x05\x03\x06\x03\x02\x01\x02\x03\xff\x01\x00\x01\x00\x00\x12\x00\x00\x00+\x00\t\x08\x03\x04\x03\x03\x03\x02\x03\x01\x003\x00&\x00$\x00\x1d\x00 \xa6^\x87&\xcd\xbf\x92\xa4\xc9;\xe8p\x9c\x87z\x91\x14\xd15zaZ-\xc07A\x9c\xd3\t\xf4\x8aO'
+[2023-06-13 14:16:33 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132119)
+[2023-06-13 14:16:33 +0000] [132119] [INFO] Worker exiting (pid: 132119)
+[2023-06-13 14:16:33 +0000] [132123] [INFO] Booting worker with pid: 132123
+[2023-06-13 14:17:09 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132121)
+[2023-06-13 14:17:09 +0000] [132121] [INFO] Worker exiting (pid: 132121)
+[2023-06-13 14:17:10 +0000] [132125] [INFO] Booting worker with pid: 132125
+[2023-06-13 15:47:42 +0000] [132123] [DEBUG] GET /
+[2023-06-13 15:47:43 +0000] [132125] [DEBUG] PRI *
+[2023-06-13 16:35:52 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132115)
+[2023-06-13 16:35:52 +0000] [132115] [INFO] Worker exiting (pid: 132115)
+[2023-06-13 16:35:53 +0000] [132127] [INFO] Booting worker with pid: 132127
+[2023-06-13 19:09:24 +0000] [132125] [DEBUG] GET /
+[2023-06-13 21:08:21 +0000] [132125] [DEBUG] GET /
+[2023-06-13 21:15:14 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132125)
+[2023-06-13 21:15:14 +0000] [132125] [INFO] Worker exiting (pid: 132125)
+[2023-06-13 21:15:14 +0000] [132129] [INFO] Booting worker with pid: 132129
+[2023-06-13 21:34:46 +0000] [132123] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-13 22:27:48 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132123)
+[2023-06-13 22:27:48 +0000] [132123] [INFO] Worker exiting (pid: 132123)
+[2023-06-13 22:27:48 +0000] [132131] [INFO] Booting worker with pid: 132131
+[2023-06-13 23:35:34 +0000] [132131] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x00\xee\x01\x00\x00\xea\x03\x03\xb6\xeeX\x05\xeb\xf3DR\xfc\x00&\xd5/\\\xeaG%r\xf7D\x06\xda\x07\xc1\xdd\xbf\xc5C\xaaC\xd7\xfc \x14\x9c\x03\x05:\x1a'}\x89r\t\x19\xc1\x89V\xd9\xf1pmn0\xd1\xd7\xcd\xcb\x02\xc6\x8b6\xcaz\x94\x00&\xc0/\xc00\xc0+\xc0,\xcc\xa8\xcc\xa9\xc0\x13\xc0\t\xc0\x14\xc0\n\x00\x9c\x00\x9d\x00/\x005\xc0\x12\x00\n\x13\x01\x13\x03\x13\x02\x01\x00\x00{\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\n\x00\x08\x00\x1d\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x1a\x00\x18\x08\x04\x04\x03\x08\x07\x08\x05\x08\x06\x04\x01\x05\x01\x06\x01\x05\x03\x06\x03\x02\x01\x02\x03\xff\x01\x00\x01\x00\x00\x12\x00\x00\x00+\x00\t\x08\x03\x04\x03\x03\x03\x02\x03\x01\x003\x00&\x00$\x00\x1d\x00 \xab\xf1\x92\xef\x9b*\rN\xc0\xb9\x99\x8a\xcf\x0f8\x9f\xc65\x17\x12Q'\x8a\x1a\x02\xb2\xd1Yb\xd4\t\x0f"
+[2023-06-14 04:58:21 +0000] [132127] [DEBUG] Invalid request from ip=194.165.17.11: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-14 06:34:23 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132129)
+[2023-06-14 06:34:23 +0000] [132129] [INFO] Worker exiting (pid: 132129)
+[2023-06-14 06:34:23 +0000] [132133] [INFO] Booting worker with pid: 132133
+[2023-06-14 08:58:19 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132127)
+[2023-06-14 08:58:19 +0000] [132127] [INFO] Worker exiting (pid: 132127)
+[2023-06-14 08:58:19 +0000] [132135] [INFO] Booting worker with pid: 132135
+[2023-06-14 09:58:04 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132131)
+[2023-06-14 09:58:04 +0000] [132131] [INFO] Worker exiting (pid: 132131)
+[2023-06-14 09:58:04 +0000] [132137] [INFO] Booting worker with pid: 132137
+[2023-06-14 11:58:53 +0000] [132137] [DEBUG] Ignoring connection reset
+[2023-06-14 11:58:56 +0000] [132133] [DEBUG] Ignoring connection reset
+[2023-06-14 11:58:57 +0000] [132135] [DEBUG] GET /
+[2023-06-14 11:58:58 +0000] [132137] [DEBUG] GET /
+[2023-06-14 11:58:58 +0000] [132133] [DEBUG] PRI *
+[2023-06-14 15:45:40 +0000] [132135] [DEBUG] Invalid request from ip=185.170.144.3: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-14 16:33:49 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132133)
+[2023-06-14 16:33:49 +0000] [132133] [INFO] Worker exiting (pid: 132133)
+[2023-06-14 16:33:49 +0000] [132139] [INFO] Booting worker with pid: 132139
+[2023-06-14 21:00:27 +0000] [132135] [DEBUG] GET /
+[2023-06-14 22:25:14 +0000] [132139] [DEBUG] GET /
+[2023-06-14 23:05:35 +0000] [132135] [DEBUG] Invalid request from ip=45.227.254.48: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-15 01:53:47 +0000] [132137] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x01\x00\x8c\x01\x00\x00\x88\x03\x03\nW\x99F\x0b\x01b\x01\xa8\x01\xb9\xf9\x9b\x91Q\xc3C\xac\x90\xc9\x8bA\xbe{\xb8\xf0\xf1\xb5\x17\xd0\x06\x93\x00\x00\x1a\xc0/\xc0+\xc0\x11\xc0\x07\xc0\x13\xc0\t\xc0\x14\xc0\n\x00\x05\x00/\x005\xc0\x12\x00\n\x01\x00\x00E\x00\x00\x00\x13\x00\x11\x00\x00\x0e139.59.247.151\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\x08\x00\x06\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\n\x00\x08\x04\x01\x04\x03\x02\x01\x02\x03\xff\x01\x00\x01\x00'
+[2023-06-15 02:29:58 +0000] [132139] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-15 08:02:11 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132135)
+[2023-06-15 08:02:11 +0000] [132135] [INFO] Worker exiting (pid: 132135)
+[2023-06-15 08:02:12 +0000] [132141] [INFO] Booting worker with pid: 132141
+[2023-06-15 14:32:09 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132139)
+[2023-06-15 14:32:09 +0000] [132139] [INFO] Worker exiting (pid: 132139)
+[2023-06-15 14:32:09 +0000] [132143] [INFO] Booting worker with pid: 132143
+[2023-06-15 16:35:32 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132143)
+[2023-06-15 16:35:32 +0000] [132143] [INFO] Worker exiting (pid: 132143)
+[2023-06-15 16:35:33 +0000] [132145] [INFO] Booting worker with pid: 132145
+[2023-06-15 16:47:42 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132145)
+[2023-06-15 16:47:42 +0000] [132145] [INFO] Worker exiting (pid: 132145)
+[2023-06-15 16:47:42 +0000] [132147] [INFO] Booting worker with pid: 132147
+[2023-06-15 16:48:37 +0000] [132141] [DEBUG] GET /
+[2023-06-15 22:49:12 +0000] [132137] [DEBUG] GET /
+[2023-06-16 02:42:25 +0000] [132137] [DEBUG] GET /
+[2023-06-16 05:03:47 +0000] [132141] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x00\xca\x01\x00\x00\xc6\x03\x03\x1a\xd2\x9f\xbd\xef\x07\xb8r\x17\xe0/\xc3-\t}\xb9\xe8\xe8\xa6A\x1at\x0f}\xee\xf3\xa5aS@j\x86\x00\x00h\xcc\x14\xcc\x13\xc0/\xc0+\xc00\xc0,\xc0\x11\xc0\x07\xc0'\xc0#\xc0\x13\xc0\t\xc0(\xc0$\xc0\x14\xc0\n\xcc\x15\x00\x9e\x00\x9f\x00g\x00k\x003\x009\x00\x9c\x00\x9d\x00\x05\x00\x04\x00<\x00=\x00/\x005\xc0\x12\x00\x16\x00\n\x00\x03\x00\x08\x00\x06\x00\x14\x00\x11\x00\x19\x00\x17\x002\xc0\x08\x00\x12\x00\x13\x00\x15\x008\x00@\x00f\x00j\x00\xa2\x00\xa3\x01\x00\x005\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\x08\x00\x06\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x0c\x00\n\x04\x01\x04\x03\x02\x01\x02\x03\x02\x02\xff\x01\x00\x01\x00\x00\x0f\x00\x01\x01"
+[2023-06-16 08:37:37 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132137)
+[2023-06-16 08:37:37 +0000] [132137] [INFO] Worker exiting (pid: 132137)
+[2023-06-16 08:37:38 +0000] [132149] [INFO] Booting worker with pid: 132149
+[2023-06-16 11:52:25 +0000] [132149] [DEBUG] Ignoring connection reset
+[2023-06-16 11:52:35 +0000] [132149] [DEBUG] GET /
+[2023-06-16 11:52:48 +0000] [132147] [DEBUG] GET /
+[2023-06-16 11:53:37 +0000] [132147] [DEBUG] GET /
+[2023-06-16 14:17:47 +0000] [132147] [DEBUG] Invalid request from ip=45.227.254.8: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-16 16:32:19 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132149)
+[2023-06-16 16:32:19 +0000] [132149] [INFO] Worker exiting (pid: 132149)
+[2023-06-16 16:32:19 +0000] [132151] [INFO] Booting worker with pid: 132151
+[2023-06-16 16:53:56 +0000] [132147] [DEBUG] GET /
+[2023-06-16 16:53:57 +0000] [132141] [DEBUG] PRI *
+[2023-06-16 19:31:56 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132151)
+[2023-06-16 19:31:56 +0000] [132151] [INFO] Worker exiting (pid: 132151)
+[2023-06-16 19:31:56 +0000] [132153] [INFO] Booting worker with pid: 132153
+[2023-06-17 01:21:03 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132141)
+[2023-06-17 01:21:03 +0000] [132141] [INFO] Worker exiting (pid: 132141)
+[2023-06-17 01:21:03 +0000] [132155] [INFO] Booting worker with pid: 132155
+[2023-06-17 01:22:50 +0000] [132153] [DEBUG] GET /
+[2023-06-17 07:35:52 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132147)
+[2023-06-17 07:35:52 +0000] [132147] [INFO] Worker exiting (pid: 132147)
+[2023-06-17 07:35:53 +0000] [132157] [INFO] Booting worker with pid: 132157
+[2023-06-17 08:14:32 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132157)
+[2023-06-17 08:14:32 +0000] [132157] [INFO] Worker exiting (pid: 132157)
+[2023-06-17 08:14:33 +0000] [132159] [INFO] Booting worker with pid: 132159
+[2023-06-17 09:40:35 +0000] [132155] [DEBUG] Invalid request from ip=80.66.88.211: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-17 16:32:56 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132153)
+[2023-06-17 16:32:56 +0000] [132153] [INFO] Worker exiting (pid: 132153)
+[2023-06-17 16:32:57 +0000] [132161] [INFO] Booting worker with pid: 132161
+[2023-06-17 18:16:46 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132159)
+[2023-06-17 18:16:46 +0000] [132159] [INFO] Worker exiting (pid: 132159)
+[2023-06-17 18:16:46 +0000] [132163] [INFO] Booting worker with pid: 132163
+[2023-06-17 20:51:23 +0000] [132161] [DEBUG] Invalid request from ip=185.170.144.3: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-18 03:08:09 +0000] [132163] [DEBUG] GET /
+[2023-06-18 11:06:17 +0000] [132163] [DEBUG] Invalid request from ip=194.165.16.73: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-18 16:34:43 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132155)
+[2023-06-18 16:34:43 +0000] [132155] [INFO] Worker exiting (pid: 132155)
+[2023-06-18 16:34:43 +0000] [132165] [INFO] Booting worker with pid: 132165
+[2023-06-19 02:27:45 +0000] [132163] [DEBUG] GET /
+[2023-06-19 02:41:06 +0000] [132161] [DEBUG] GET /
+[2023-06-19 02:41:06 +0000] [132165] [DEBUG] PRI *
+[2023-06-19 04:56:55 +0000] [132163] [DEBUG] GET /
+[2023-06-19 07:33:07 +0000] [132165] [DEBUG] Invalid request from ip=194.165.16.78: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2023-06-19 08:42:01 +0000] [132165] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-19 16:33:39 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132163)
+[2023-06-19 16:33:39 +0000] [132163] [INFO] Worker exiting (pid: 132163)
+[2023-06-19 16:33:39 +0000] [132167] [INFO] Booting worker with pid: 132167
+[2023-06-20 08:28:18 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132165)
+[2023-06-20 08:28:18 +0000] [132165] [INFO] Worker exiting (pid: 132165)
+[2023-06-20 08:28:19 +0000] [132169] [INFO] Booting worker with pid: 132169
+[2023-06-20 09:09:57 +0000] [132169] [DEBUG] Closing connection. 
+[2023-06-20 09:09:59 +0000] [132169] [DEBUG] GET /
+[2023-06-20 09:10:24 +0000] [132161] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x00\xee\x01\x00\x00\xea\x03\x03l\xe11\xa7\x82\xc1\x1a;r\xd5\x1d'\x92\x8b\xc1|\x9f\xfc\xce$5\xad\xd7q\xdb\t\xd2\x14E\xb7\xbe\xdb \x05r\xb6Bv\xcc\xb9\xea\r\\\\\xc1\x00\xc8J\x03n\xf1U\x16\xbd,Yhw\x7f\xdb\xb7\xd2\xd0\xc6 \x00&\xc0+\xc0/\xc0,\xc00\xcc\xa9\xcc\xa8\xc0\t\xc0\x13\xc0\n\xc0\x14\x00\x9c\x00\x9d\x00/\x005\xc0\x12\x00\n\x13\x01\x13\x02\x13\x03\x01\x00\x00{\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\n\x00\x08\x00\x1d\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x1a\x00\x18\x08\x04\x04\x03\x08\x07\x08\x05\x08\x06\x04\x01\x05\x01\x06\x01\x05\x03\x06\x03\x02\x01\x02\x03\xff\x01\x00\x01\x00\x00\x12\x00\x00\x00+\x00\t\x08\x03\x04\x03\x03\x03\x02\x03\x01\x003\x00&\x00$\x00\x1d\x00 \xaa\x0b\x12[\xb8.\xee\xc8\x892Q\xe9\xd2\xd6\xfc[\x0c\x9d\x1a\xa3\x15s\\\x91T\xc8\xab\xf0\xf7\xa7wT"
+[2023-06-20 09:10:49 +0000] [132167] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x01\x00\xee\x01\x00\x00\xea\x03\x03!\xfb{\xe3\xc8\x19\xe8\xb0\x8d\x13\x94C\xce\xba\x82\xcahI\xaa\xf0\x87a\xceB\x1c\x1co\xf0\x7f6\x1d_ \x8e\xf5A\xe1P\x90\x91b\xa9\xf4\xf5wf\xe5\x8f\xdd\xfc\xe6\x11\xfe\xe5\t\xcd1Ij\x97g\x1d\xa1\xc3|\x00&\xc0+\xc0/\xc0,\xc00\xcc\xa9\xcc\xa8\xc0\t\xc0\x13\xc0\n\xc0\x14\x00\x9c\x00\x9d\x00/\x005\xc0\x12\x00\n\x13\x01\x13\x02\x13\x03\x01\x00\x00{\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\n\x00\x08\x00\x1d\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x1a\x00\x18\x08\x04\x04\x03\x08\x07\x08\x05\x08\x06\x04\x01\x05\x01\x06\x01\x05\x03\x06\x03\x02\x01\x02\x03\xff\x01\x00\x01\x00\x00\x12\x00\x00\x00+\x00\t\x08\x03\x04\x03\x03\x03\x02\x03\x01\x003\x00&\x00$\x00\x1d\x00 q\x91\xb0?\x81\xdd\x931\xdb\xc1\x96I,\xcet\x1d\x88\xcb\x96;\x90\xdc\x05\x10\xaf\x9b~z\xf9\xde:\x15'
+[2023-06-20 09:11:02 +0000] [132169] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x01\x00\xee\x01\x00\x00\xea\x03\x03tJ0^f\x9a\xa3\xf8I\x90=\x8a\x8e5\xb6\xef\x8c\x0e\x1b\x88\xe1\x9b\xfd\xc6\xb3n\x88\xc3\x86\xbf\x16\xe1 \xa7\x12\xcfA\x19\xfd\xd0\x1fu\x94\xcc;\xe2\r\xf6\xe2|\xd7\xb9ie:\xc6m$\xa9\xd0z\xdb\xef\xcfl\x00&\xc0+\xc0/\xc0,\xc00\xcc\xa9\xcc\xa8\xc0\t\xc0\x13\xc0\n\xc0\x14\x00\x9c\x00\x9d\x00/\x005\xc0\x12\x00\n\x13\x01\x13\x02\x13\x03\x01\x00\x00{\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\n\x00\x08\x00\x1d\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x1a\x00\x18\x08\x04\x04\x03\x08\x07\x08\x05\x08\x06\x04\x01\x05\x01\x06\x01\x05\x03\x06\x03\x02\x01\x02\x03\xff\x01\x00\x01\x00\x00\x12\x00\x00\x00+\x00\t\x08\x03\x04\x03\x03\x03\x02\x03\x01\x003\x00&\x00$\x00\x1d\x00 \xf4\x94\xaa\xbb\x06<m\x0c\xa8\xf4\xa0\x12\x897\xa2\x8eIL\xfd3n\xb2\x94\xe1&\r;\xabSi\xebP'
+[2023-06-20 09:11:58 +0000] [132161] [DEBUG] GET /
+[2023-06-20 09:11:58 +0000] [132167] [DEBUG] GET /favicon.ico
+[2023-06-20 09:11:58 +0000] [132169] [DEBUG] GET /sitemap.xml
+[2023-06-20 09:11:58 +0000] [132161] [DEBUG] GET /robots.txt
+[2023-06-20 16:36:35 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:132169)
+[2023-06-20 16:36:35 +0000] [132169] [INFO] Worker exiting (pid: 132169)
+[2023-06-20 16:36:36 +0000] [132171] [INFO] Booting worker with pid: 132171
+[2023-06-20 18:59:54 +0000] [132171] [DEBUG] GET /
+[2023-06-20 21:03:25 +0000] [132167] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-06-21 02:40:13 +0000] [132161] [DEBUG] GET /
+[2023-06-21 02:40:13 +0000] [132161] [DEBUG] PRI *
+[2023-06-21 03:48:59 +0000] [132171] [DEBUG] GET /
+[2023-06-21 07:08:02 +0000] [132171] [DEBUG] Invalid request from ip=80.66.88.211: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'

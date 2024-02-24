@@ -1,0 +1,1517 @@
+[2023-03-11 07:13:35 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/11-03-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f76c9fff1f0>
+  on_reload: <function OnReload.on_reload at 0x7f76c9fff310>
+  when_ready: <function WhenReady.when_ready at 0x7f76c9fff430>
+  pre_fork: <function Prefork.pre_fork at 0x7f76c9fff550>
+  post_fork: <function Postfork.post_fork at 0x7f76c9fff670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f76c9fff790>
+  worker_int: <function WorkerInt.worker_int at 0x7f76c9fff8b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f76c9fff9d0>
+  pre_exec: <function PreExec.pre_exec at 0x7f76c9fffaf0>
+  pre_request: <function PreRequest.pre_request at 0x7f76c9fffc10>
+  post_request: <function PostRequest.post_request at 0x7f76c9fffca0>
+  child_exit: <function ChildExit.child_exit at 0x7f76c9fffdc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f76c9fffee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f76ca00d040>
+  on_exit: <function OnExit.on_exit at 0x7f76ca00d160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-03-11 07:13:35 +0000] [7] [INFO] Starting gunicorn 20.1.0
+[2023-03-11 07:13:35 +0000] [7] [DEBUG] Arbiter booted
+[2023-03-11 07:13:35 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2023-03-11 07:13:35 +0000] [7] [INFO] Using worker: sync
+[2023-03-11 07:13:35 +0000] [9] [INFO] Booting worker with pid: 9
+[2023-03-11 07:13:35 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-03-11 07:13:35 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-03-11 07:13:35 +0000] [7] [DEBUG] 3 workers
+[2023-03-11 07:15:20 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2010925
+[2023-03-11 07:16:08 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213545
+[2023-03-11 07:18:19 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 07:18:43 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2212703
+[2023-03-11 07:18:46 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2212027
+[2023-03-11 07:18:57 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2213012
+[2023-03-11 07:19:05 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212027
+[2023-03-11 07:19:09 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2213545
+[2023-03-11 07:20:11 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 07:20:48 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213561
+[2023-03-11 07:20:58 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213545
+[2023-03-11 07:21:21 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 07:21:40 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213416
+[2023-03-11 07:21:58 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213545
+[2023-03-11 07:22:13 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213381
+[2023-03-11 07:23:03 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 07:25:52 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 07:27:48 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 07:29:09 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2010925
+[2023-03-11 07:33:06 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213795
+[2023-03-11 07:33:38 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213467
+[2023-03-11 07:33:40 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2213795
+[2023-03-11 07:37:21 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211709
+[2023-03-11 07:41:01 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211629
+[2023-03-11 07:42:03 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2110890
+[2023-03-11 07:43:59 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 07:44:45 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2210517
+[2023-03-11 07:45:51 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2213313
+[2023-03-11 07:46:58 +0000] [10] [DEBUG] POST /api/grader
+student_id = 1813842
+[2023-03-11 07:48:32 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 07:48:55 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 07:50:14 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211873
+[2023-03-11 07:51:18 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213545
+[2023-03-11 07:53:54 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 07:54:44 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1852312
+[2023-03-11 07:55:16 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 07:56:05 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211821
+[2023-03-11 07:57:05 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211893
+[2023-03-11 07:57:11 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1914251
+[2023-03-11 07:59:20 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 08:00:47 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2213545
+[2023-03-11 08:03:33 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213921
+[2023-03-11 08:05:13 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 08:05:38 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212779
+[2023-03-11 08:07:29 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213484
+[2023-03-11 08:07:36 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213732
+[2023-03-11 08:07:48 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213111
+[2023-03-11 08:07:48 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2210517
+[2023-03-11 08:08:21 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212864
+[2023-03-11 08:08:39 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 08:08:41 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 08:09:06 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211054
+[2023-03-11 08:10:18 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213732
+[2023-03-11 08:10:42 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2213795
+[2023-03-11 08:11:06 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2213732
+[2023-03-11 08:12:30 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 08:14:18 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2210517
+[2023-03-11 08:14:41 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211069
+[2023-03-11 08:15:06 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213732
+[2023-03-11 08:17:21 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2213921
+[2023-03-11 08:17:49 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213732
+[2023-03-11 08:21:11 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213218
+[2023-03-11 08:22:43 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 08:23:55 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2212864
+[2023-03-11 08:27:16 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2210517
+[2023-03-11 08:27:48 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1914251
+[2023-03-11 08:30:27 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2213313
+[2023-03-11 08:33:11 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 08:35:19 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 08:35:37 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 08:36:38 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2252526
+[2023-03-11 08:36:51 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213313
+[2023-03-11 08:37:42 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 08:37:47 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213313
+[2023-03-11 08:38:24 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 08:44:47 +0000] [10] [DEBUG] POST /api/grader
+student_id = 1914251
+[2023-03-11 08:44:51 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211412
+[2023-03-11 08:47:54 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2153437
+[2023-03-11 08:48:18 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 08:50:58 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 08:51:18 +0000] [9] [DEBUG] POST /api/grader
+student_id = 1852465
+[2023-03-11 08:52:49 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211412
+[2023-03-11 08:53:30 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2110890
+[2023-03-11 08:55:26 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2110890
+[2023-03-11 08:58:30 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 08:58:51 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2112590
+[2023-03-11 09:00:33 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 09:00:33 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 09:01:42 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 09:01:42 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212345
+[2023-03-11 09:01:42 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 09:01:42 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212345
+Exception in thread Thread-32:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 233, in gradeOneSubmission
+    removeAllFiles(os.path.join(config_directory.abs_grad_sub, student_id)) # clean to save disk space
+  File "/app/grading_app/utils/path.py", line 11, in removeAllFiles
+    os.unlink(os.path.join(root, f))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2115391/output1104'
+Exception in thread Thread-34:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 233, in gradeOneSubmission
+    removeAllFiles(os.path.join(config_directory.abs_grad_sub, student_id)) # clean to save disk space
+  File "/app/grading_app/utils/path.py", line 11, in removeAllFiles
+    os.unlink(os.path.join(root, f))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2212345/tc1058_merlin_pack'
+Exception in thread Thread-32:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2211911/output1041'
+[2023-03-11 09:02:10 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2210517
+[2023-03-11 09:03:49 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 09:03:49 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 09:03:49 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2110890
+[2023-03-11 09:03:49 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 09:03:49 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2110890
+Exception in thread Thread-35:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 221, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 73, in prepareOneSubmission
+    shutil.copytree(src, dst, dirs_exist_ok=True)
+  File "/usr/lib/python3.8/shutil.py", line 557, in copytree
+    return _copytree(entries=entries, src=src, dst=dst, symlinks=symlinks,
+  File "/usr/lib/python3.8/shutil.py", line 513, in _copytree
+    raise Error(errors)
+shutil.Error: [('/app/support-files/testcases-fileinput/1035/tc1035_merlin_pack', '/app/grading_app/temp/grad_sub/2115391/tc1035_merlin_pack', '[Errno 2] No such file or directory')]
+[2023-03-11 09:03:49 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 09:03:49 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2212345
+[2023-03-11 09:03:49 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212345
+[2023-03-11 09:05:37 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 09:05:37 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 09:05:37 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2115391
+Exception in thread Thread-37:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2115391/output1001'
+Exception in thread Thread-27:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2115391/output1001'
+Exception in thread Thread-34:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2115391/output1001'
+Exception in thread Thread-35:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2110890/output1001'
+Exception in thread Thread-38:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2212345/output1001'
+Exception in thread Thread-39:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 233, in gradeOneSubmission
+    removeAllFiles(os.path.join(config_directory.abs_grad_sub, student_id)) # clean to save disk space
+  File "/app/grading_app/utils/path.py", line 11, in removeAllFiles
+    os.unlink(os.path.join(root, f))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2211911/output1104'
+[2023-03-11 09:06:47 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 09:08:56 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 09:09:38 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2212629
+[2023-03-11 09:10:01 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212629
+[2023-03-11 09:10:06 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211379
+[2023-03-11 09:10:36 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2052992
+[2023-03-11 09:10:48 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213313
+[2023-03-11 09:11:48 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211091
+[2023-03-11 09:13:56 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2052992
+[2023-03-11 09:16:23 +0000] [9] [DEBUG] POST /api/grader
+student_id = 2211606
+[2023-03-11 09:22:01 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 09:22:47 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2013879
+[2023-03-11 09:38:33 +0000] [8] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/11-03-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f46758671f0>
+  on_reload: <function OnReload.on_reload at 0x7f4675867310>
+  when_ready: <function WhenReady.when_ready at 0x7f4675867430>
+  pre_fork: <function Prefork.pre_fork at 0x7f4675867550>
+  post_fork: <function Postfork.post_fork at 0x7f4675867670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4675867790>
+  worker_int: <function WorkerInt.worker_int at 0x7f46758678b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f46758679d0>
+  pre_exec: <function PreExec.pre_exec at 0x7f4675867af0>
+  pre_request: <function PreRequest.pre_request at 0x7f4675867c10>
+  post_request: <function PostRequest.post_request at 0x7f4675867ca0>
+  child_exit: <function ChildExit.child_exit at 0x7f4675867dc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f4675867ee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4675875040>
+  on_exit: <function OnExit.on_exit at 0x7f4675875160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-03-11 09:38:33 +0000] [8] [INFO] Starting gunicorn 20.1.0
+[2023-03-11 09:38:33 +0000] [8] [DEBUG] Arbiter booted
+[2023-03-11 09:38:33 +0000] [8] [INFO] Listening at: http://0.0.0.0:5003 (8)
+[2023-03-11 09:38:33 +0000] [8] [INFO] Using worker: sync
+[2023-03-11 09:38:33 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-03-11 09:38:33 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-03-11 09:38:33 +0000] [12] [INFO] Booting worker with pid: 12
+[2023-03-11 09:38:33 +0000] [8] [DEBUG] 3 workers
+[2023-03-11 09:38:36 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211911
+[2023-03-11 09:38:37 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 09:40:39 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211562
+[2023-03-11 09:45:06 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 09:47:18 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2110890
+[2023-03-11 09:48:22 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213781
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2213781/output1001'
+[2023-03-11 09:56:45 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2013037
+[2023-03-11 09:59:43 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211853
+[2023-03-11 10:02:35 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211402
+[2023-03-11 10:03:46 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212864
+[2023-03-11 10:10:43 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252924
+[2023-03-11 10:16:15 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211402
+[2023-03-11 10:18:33 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1914251
+[2023-03-11 10:22:57 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211417
+[2023-03-11 10:32:30 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2053372
+[2023-03-11 10:35:04 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212571
+[2023-03-11 10:39:15 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252658
+[2023-03-11 10:39:25 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2210739
+[2023-03-11 10:52:41 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213331
+[2023-03-11 10:52:48 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2053372
+[2023-03-11 10:56:49 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2153437
+[2023-03-11 10:57:12 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211570
+[2023-03-11 10:59:58 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212766
+[2023-03-11 11:00:48 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212760
+[2023-03-11 11:01:38 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2212760
+[2023-03-11 11:09:10 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212766
+[2023-03-11 11:09:58 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212760
+[2023-03-11 11:16:05 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 11:19:41 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2210739
+[2023-03-11 11:21:41 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211614
+[2023-03-11 11:22:19 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211595
+[2023-03-11 11:23:28 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211526
+[2023-03-11 11:23:56 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2212537
+[2023-03-11 11:27:35 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2252038
+[2023-03-11 11:27:35 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211595
+[2023-03-11 11:34:16 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213807
+[2023-03-11 11:52:11 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-11 11:54:15 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211186
+[2023-03-11 11:55:54 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212537
+[2023-03-11 12:00:18 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212478
+[2023-03-11 12:02:04 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211186
+[2023-03-11 12:03:31 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2252604
+[2023-03-11 12:05:05 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2053372
+[2023-03-11 12:13:12 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 12:15:10 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252604
+[2023-03-11 12:18:57 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211595
+[2023-03-11 12:19:12 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2053372
+[2023-03-11 12:19:33 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211595
+[2023-03-11 12:19:58 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2210739
+[2023-03-11 12:24:32 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213428
+[2023-03-11 12:36:54 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 12:36:54 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212537
+[2023-03-11 12:38:00 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211606
+[2023-03-11 12:38:48 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 12:40:37 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212537
+[2023-03-11 12:44:15 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212804
+[2023-03-11 12:44:40 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211595
+[2023-03-11 12:47:53 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2210739
+[2023-03-11 12:47:54 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211753
+[2023-03-11 12:48:05 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-11 12:49:10 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 12:49:56 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211595
+[2023-03-11 12:50:35 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211629
+[2023-03-11 12:51:10 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213287
+[2023-03-11 12:51:25 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-11 12:52:27 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211625
+[2023-03-11 12:53:34 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211625
+[2023-03-11 12:54:09 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212412
+[2023-03-11 12:54:24 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213730
+[2023-03-11 12:57:40 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211625
+[2023-03-11 12:58:44 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-11 13:01:43 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211606
+[2023-03-11 13:01:49 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211625
+[2023-03-11 13:03:05 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213356
+[2023-03-11 13:04:36 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212412
+[2023-03-11 13:05:06 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 13:06:20 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 13:06:53 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2151217
+[2023-03-11 13:08:18 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213061
+[2023-03-11 13:10:41 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213356
+[2023-03-11 13:12:39 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213356
+[2023-03-11 13:12:56 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212478
+[2023-03-11 13:13:42 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2213061
+[2023-03-11 13:14:38 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 13:15:25 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213061
+[2023-03-11 13:16:52 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1915831
+[2023-03-11 13:18:04 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213061
+[2023-03-11 13:18:32 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211629
+[2023-03-11 13:19:43 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211629
+[2023-03-11 13:21:14 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211753
+[2023-03-11 13:24:00 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2153077
+[2023-03-11 13:24:04 +0000] [10] [DEBUG] POST /api/grader
+student_id = 1915831
+[2023-03-11 13:27:45 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2151217
+[2023-03-11 13:27:58 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211629
+[2023-03-11 13:30:34 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211629
+[2023-03-11 13:30:41 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 13:30:57 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 13:31:50 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211629
+[2023-03-11 13:33:12 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-11 13:33:24 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2211629
+[2023-03-11 13:33:55 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 13:34:21 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2252407
+[2023-03-11 13:35:01 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-11 13:37:19 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 13:37:41 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-11 13:37:43 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2212826
+[2023-03-11 13:39:23 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2210830
+[2023-03-11 13:39:50 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 13:43:10 +0000] [10] [DEBUG] POST /api/grader
+student_id = 2252407
+[2023-03-11 13:43:44 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-11 13:44:08 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:10)
+[2023-03-11 13:44:08 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2023-03-11 13:44:08 +0000] [14530] [INFO] Booting worker with pid: 14530
+[2023-03-11 13:45:37 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 13:47:10 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 13:47:33 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2151217
+[2023-03-11 13:55:08 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2153077
+[2023-03-11 13:58:00 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 14:02:15 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 14:05:22 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 14:06:20 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211402
+[2023-03-11 14:09:05 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 14:09:12 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 14:09:56 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211303
+[2023-03-11 14:10:12 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2151217
+[2023-03-11 14:15:50 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252392
+[2023-03-11 14:17:54 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212801
+[2023-03-11 14:21:52 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 14:22:42 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212760
+[2023-03-11 14:22:55 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 14:27:14 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 14:27:24 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 14:34:09 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211627
+[2023-03-11 14:38:40 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252407
+[2023-03-11 14:39:26 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2151217
+[2023-03-11 14:41:47 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252407
+[2023-03-11 14:43:03 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2153077
+[2023-03-11 14:46:06 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212142
+[2023-03-11 14:47:31 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2153077
+[2023-03-11 14:48:07 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213331
+[2023-03-11 14:50:32 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252407
+[2023-03-11 14:51:12 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211093
+[2023-03-11 14:52:21 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211379
+[2023-03-11 14:55:27 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213467
+[2023-03-11 14:59:39 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211331
+[2023-03-11 15:00:05 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211402
+[2023-03-11 15:01:01 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 15:01:15 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212142
+[2023-03-11 15:01:37 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 15:02:06 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2153077
+[2023-03-11 15:02:24 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1914251
+[2023-03-11 15:03:11 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211379
+[2023-03-11 15:03:54 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1852465
+[2023-03-11 15:08:30 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 15:10:02 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211133
+[2023-03-11 15:12:12 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213467
+[2023-03-11 15:12:53 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1914251
+[2023-03-11 15:17:41 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 15:17:52 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212854
+[2023-03-11 15:17:55 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2152735
+[2023-03-11 15:18:15 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211625
+[2023-03-11 15:18:56 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 15:19:47 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2214061
+[2023-03-11 15:21:56 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2153077
+[2023-03-11 15:22:06 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212142
+[2023-03-11 15:24:40 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212142
+[2023-03-11 15:26:00 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211430
+[2023-03-11 15:27:55 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1914251
+[2023-03-11 15:28:01 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213026
+[2023-03-11 15:28:22 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211254
+[2023-03-11 15:29:10 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 15:31:48 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213711
+[2023-03-11 15:36:55 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952410
+[2023-03-11 15:38:49 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211709
+[2023-03-11 15:40:56 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2210700
+[2023-03-11 15:43:52 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 15:45:28 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2115391
+[2023-03-11 15:47:36 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1952521
+[2023-03-11 15:50:43 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212932
+[2023-03-11 15:52:20 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212760
+[2023-03-11 15:52:31 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 15:53:31 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211594
+[2023-03-11 15:53:38 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211917
+[2023-03-11 15:54:42 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2013907
+[2023-03-11 15:55:14 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252080
+[2023-03-11 15:56:15 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2013037
+[2023-03-11 15:56:49 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213732
+[2023-03-11 15:57:27 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213763
+[2023-03-11 15:58:24 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2210050
+[2023-03-11 15:59:03 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213732
+[2023-03-11 16:01:03 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213732
+[2023-03-11 16:02:20 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 16:04:46 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212571
+[2023-03-11 16:06:28 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212804
+[2023-03-11 16:08:15 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-11 16:08:16 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252617
+[2023-03-11 16:08:41 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211917
+[2023-03-11 16:08:56 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952925
+[2023-03-11 16:10:30 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2053115
+[2023-03-11 16:12:13 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 16:13:24 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2153077
+[2023-03-11 16:14:28 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2053115
+[2023-03-11 16:15:23 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213061
+[2023-03-11 16:16:59 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211873
+[2023-03-11 16:19:26 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211917
+[2023-03-11 16:19:57 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2210186
+[2023-03-11 16:19:57 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211595
+[2023-03-11 16:25:12 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211595
+[2023-03-11 16:28:34 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2011383
+[2023-03-11 16:31:07 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2011383
+[2023-03-11 16:31:07 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211853
+[2023-03-11 16:34:40 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 16:41:22 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952925
+[2023-03-11 16:42:59 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211627
+[2023-03-11 16:47:32 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211917
+[2023-03-11 16:47:49 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213730
+[2023-03-11 16:48:26 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211873
+[2023-03-11 16:49:07 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1952521
+[2023-03-11 16:49:15 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2110368
+[2023-03-11 16:51:44 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213428
+[2023-03-11 16:51:51 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2015036
+[2023-03-11 16:55:22 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2015036
+[2023-03-11 16:56:01 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2015036
+[2023-03-11 16:56:17 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212438
+[2023-03-11 16:56:53 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2114485
+[2023-03-11 16:57:33 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211486
+[2023-03-11 16:58:41 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 17:03:40 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211594
+[2023-03-11 17:08:26 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213897
+[2023-03-11 17:09:55 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213897
+[2023-03-11 17:12:12 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211430
+[2023-03-11 17:13:32 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211853
+[2023-03-11 17:15:02 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211437
+[2023-03-11 17:18:14 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 17:19:07 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213897
+[2023-03-11 17:23:48 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211430
+[2023-03-11 17:25:23 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212764
+[2023-03-11 17:25:46 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2210050
+[2023-03-11 17:29:34 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2053115
+[2023-03-11 17:29:53 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-11 17:32:04 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213331
+[2023-03-11 17:32:17 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211629
+[2023-03-11 17:33:01 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252617
+[2023-03-11 17:33:25 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211594
+[2023-03-11 17:35:53 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211620
+[2023-03-11 17:37:45 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212779
+[2023-03-11 17:40:05 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-11 17:45:45 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211709
+[2023-03-11 17:48:04 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-11 17:49:12 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2053586
+[2023-03-11 17:49:33 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211412
+[2023-03-11 17:50:19 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212366
+[2023-03-11 17:50:32 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211620
+[2023-03-11 17:52:48 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211412
+[2023-03-11 17:53:27 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 18:03:05 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952610
+[2023-03-11 18:05:32 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211648
+[2023-03-11 18:12:36 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 18:15:54 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 18:19:28 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 18:21:47 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252355
+[2023-03-11 18:22:37 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213614
+[2023-03-11 18:24:49 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252355
+[2023-03-11 18:25:32 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 18:31:38 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252355
+[2023-03-11 18:33:29 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211873
+[2023-03-11 18:38:50 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2015070
+[2023-03-11 18:42:16 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211873
+[2023-03-11 18:44:15 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 18:45:40 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 18:47:57 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 18:48:36 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252080
+[2023-03-11 18:49:52 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252355
+[2023-03-11 18:53:55 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 18:55:25 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 18:58:06 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1952521
+Exception in thread Thread-77:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2213781/output1001'
+[2023-03-11 18:59:37 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 19:07:54 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211873
+[2023-03-11 19:09:34 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1952521
+[2023-03-11 19:09:39 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 19:11:10 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1952521
+[2023-03-11 19:19:49 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 19:22:16 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-11 19:26:20 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211873
+[2023-03-11 19:26:59 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-11 19:27:54 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211873
+[2023-03-11 19:28:19 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252083
+[2023-03-11 19:33:36 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 19:37:38 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211873
+[2023-03-11 19:45:06 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1952521
+[2023-03-11 19:48:10 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2210078
+[2023-03-11 19:55:40 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 19:55:58 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-11 19:58:21 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2110368
+[2023-03-11 20:05:26 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 20:07:31 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2110368
+[2023-03-11 20:08:16 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-11 20:09:30 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213781
+Exception in thread Thread-82:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2213781/output1011'
+[2023-03-11 20:10:29 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-11 20:31:56 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2110368
+[2023-03-11 20:40:57 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 20:47:20 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 21:08:06 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 21:17:19 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 21:26:52 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213781
+[2023-03-11 21:27:29 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213781
+Exception in thread Thread-84:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 37, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 231, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2213781/output1001'
+[2023-03-11 22:51:39 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252102
+[2023-03-11 22:53:44 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252096
+[2023-03-11 23:10:43 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-11 23:53:37 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252077
+[2023-03-12 00:07:33 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212142
+[2023-03-12 00:34:32 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213757
+[2023-03-12 00:37:04 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211856
+[2023-03-12 00:44:27 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211694
+[2023-03-12 01:02:31 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2114831
+[2023-03-12 01:03:15 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213757
+[2023-03-12 01:04:01 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212781
+[2023-03-12 01:05:23 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2210707
+[2023-03-12 01:08:29 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2052992
+[2023-03-12 01:14:57 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211610
+[2023-03-12 01:19:52 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211610
+[2023-03-12 01:20:38 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211610
+[2023-03-12 01:24:33 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211620
+[2023-03-12 01:28:12 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213484
+[2023-03-12 01:30:29 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211694
+[2023-03-12 01:32:53 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211853
+[2023-03-12 01:37:29 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212003
+[2023-03-12 01:37:53 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212760
+[2023-03-12 01:38:29 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212003
+[2023-03-12 01:44:13 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211625
+[2023-03-12 01:48:31 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252658
+[2023-03-12 01:49:25 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213686
+[2023-03-12 01:50:51 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2210200
+[2023-03-12 01:55:34 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2015025
+[2023-03-12 01:58:49 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1752241
+[2023-03-12 02:05:08 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212003
+[2023-03-12 02:09:18 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211606
+[2023-03-12 02:17:36 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213307
+[2023-03-12 02:19:30 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212760
+[2023-03-12 02:22:33 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212760
+[2023-03-12 02:23:04 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213500
+[2023-03-12 02:23:24 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 1915831
+[2023-03-12 02:23:32 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212760
+[2023-03-12 02:27:57 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-12 02:32:31 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211620
+[2023-03-12 02:33:19 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212412
+[2023-03-12 02:36:45 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-12 02:37:57 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213572
+[2023-03-12 02:42:31 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2110368
+[2023-03-12 02:42:54 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211627
+[2023-03-12 02:43:58 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2212168
+[2023-03-12 02:47:26 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211909
+[2023-03-12 02:50:33 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252658
+[2023-03-12 02:50:53 +0000] [11] [DEBUG] POST /api/grader
+student_id = 1814009
+[2023-03-12 02:51:52 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211583
+[2023-03-12 02:52:15 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2152735
+[2023-03-12 02:52:45 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2110368
+[2023-03-12 02:53:21 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-12 02:56:48 +0000] [12] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-03-12 02:56:58 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952942
+[2023-03-12 02:57:38 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2110152
+[2023-03-12 03:01:42 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213994
+[2023-03-12 03:02:36 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2211460
+[2023-03-12 03:04:44 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1910955
+[2023-03-12 03:06:55 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213313
+[2023-03-12 03:08:09 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2110368
+[2023-03-12 03:10:25 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2210535
+[2023-03-12 03:11:04 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-12 03:12:13 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211917
+[2023-03-12 03:12:55 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2212612
+[2023-03-12 03:13:20 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2210707
+[2023-03-12 03:13:43 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1952942
+[2023-03-12 03:15:05 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2210184
+[2023-03-12 03:19:22 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2210535
+[2023-03-12 03:19:46 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212047
+[2023-03-12 03:21:37 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2210184
+[2023-03-12 03:25:27 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213484
+[2023-03-12 03:25:37 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2110368
+[2023-03-12 03:27:34 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211670
+[2023-03-12 03:30:53 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213795
+[2023-03-12 03:36:38 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2213757
+[2023-03-12 03:36:42 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2210569
+[2023-03-12 03:37:25 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2252658
+[2023-03-12 03:38:54 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2212366
+[2023-03-12 03:40:38 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213795
+[2023-03-12 03:43:42 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2211402
+[2023-03-12 03:43:42 +0000] [12] [DEBUG] POST /api/grader
+student_id = 1910955
+[2023-03-12 03:43:46 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2213428
+[2023-03-12 03:47:36 +0000] [14530] [DEBUG] POST /api/grader
+student_id = 2252397
+[2023-03-12 03:50:52 +0000] [11] [DEBUG] POST /api/grader
+student_id = 2252604
+[2023-03-12 03:53:21 +0000] [12] [DEBUG] POST /api/grader
+student_id = 2213795
+Exception in thread Thread-139:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 40, in grade_and_update_submission_thread
+    result = db.session.execute(stmt)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/scoping.py", line 709, in execute
+    return self._proxied.execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2229, in execute
+    return self._execute_internal(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2124, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/context.py", line 253, in orm_execute_statement
+    result = conn.execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 1414, in execute
+    return meth(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/sql/elements.py", line 485, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 2325, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 747, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT submissions.student_id, submissions.assignment_id, submissions.scores, submissions.files, submissions.id, submissions.created_at, submissions.updated_at, submissions.deleted_at 
+FROM submissions 
+WHERE submissions.id = %(id_1)s::UUID]
+[parameters: {'id_1': '404f2a6b-7e89-4e51-bc5a-61681b1bab1a'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

@@ -1,0 +1,6 @@
+tc_readfiles/
+testcodes/
+grading_app/temp/grad_sub/
+grading_app/temp/init_grad_sub/
+node_modules/
+output/

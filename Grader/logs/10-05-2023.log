@@ -1,0 +1,2710 @@
+[2023-05-10 18:54:19 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/10-05-2023.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fc3f1fb11f0>
+  on_reload: <function OnReload.on_reload at 0x7fc3f1fb1310>
+  when_ready: <function WhenReady.when_ready at 0x7fc3f1fb1430>
+  pre_fork: <function Prefork.pre_fork at 0x7fc3f1fb1550>
+  post_fork: <function Postfork.post_fork at 0x7fc3f1fb1670>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fc3f1fb1790>
+  worker_int: <function WorkerInt.worker_int at 0x7fc3f1fb18b0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fc3f1fb19d0>
+  pre_exec: <function PreExec.pre_exec at 0x7fc3f1fb1af0>
+  pre_request: <function PreRequest.pre_request at 0x7fc3f1fb1c10>
+  post_request: <function PostRequest.post_request at 0x7fc3f1fb1ca0>
+  child_exit: <function ChildExit.child_exit at 0x7fc3f1fb1dc0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fc3f1fb1ee0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fc3f1fbf040>
+  on_exit: <function OnExit.on_exit at 0x7fc3f1fbf160>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2023-05-10 18:54:19 +0000] [7] [INFO] Starting gunicorn 20.1.0
+[2023-05-10 18:54:19 +0000] [7] [DEBUG] Arbiter booted
+[2023-05-10 18:54:19 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2023-05-10 18:54:19 +0000] [7] [INFO] Using worker: sync
+[2023-05-10 18:54:19 +0000] [9] [INFO] Booting worker with pid: 9
+[2023-05-10 18:54:19 +0000] [10] [INFO] Booting worker with pid: 10
+[2023-05-10 18:54:19 +0000] [11] [INFO] Booting worker with pid: 11
+[2023-05-10 18:54:19 +0000] [7] [DEBUG] 3 workers
+[2023-05-10 18:57:20 +0000] [10] [DEBUG] POST /api/grader
+2210352: start grading
+2210352: graded
+[2023-05-10 19:04:13 +0000] [9] [DEBUG] POST /api/grader
+2213026: start grading
+2213026: graded
+[2023-05-10 19:06:12 +0000] [9] [DEBUG] POST /api/grader
+2252359: start grading
+2252359: graded
+[2023-05-10 19:07:18 +0000] [9] [DEBUG] POST /api/grader
+2212243: start grading
+2212243: graded
+[2023-05-10 19:12:01 +0000] [11] [DEBUG] POST /api/grader
+2213786: start grading
+2213786: graded
+[2023-05-10 19:27:16 +0000] [9] [DEBUG] POST /api/grader
+2212243: start grading
+2212243: graded
+[2023-05-10 19:36:17 +0000] [10] [DEBUG] GET /
+[2023-05-10 19:40:01 +0000] [10] [DEBUG] POST /api/grader
+2211486: start grading
+2211486: graded
+[2023-05-10 19:46:55 +0000] [9] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-10 19:49:12 +0000] [10] [DEBUG] POST /api/grader
+2211228: start grading
+2211228: graded
+[2023-05-10 19:50:20 +0000] [10] [DEBUG] POST /api/grader
+2212282: start grading
+2212282: graded
+[2023-05-10 19:52:43 +0000] [10] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-10 19:55:23 +0000] [9] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-10 19:55:55 +0000] [10] [DEBUG] POST /api/grader
+2211486: start grading
+2211486: graded
+[2023-05-10 19:57:06 +0000] [10] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-10 20:00:53 +0000] [11] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-10 20:09:19 +0000] [9] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-10 20:11:04 +0000] [11] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-10 20:19:34 +0000] [11] [DEBUG] POST /api/grader
+2210034: start grading
+2210034: graded
+[2023-05-10 21:02:05 +0000] [11] [DEBUG] POST /api/grader
+2213545: start grading
+2213545: graded
+[2023-05-10 21:03:48 +0000] [10] [DEBUG] POST /api/grader
+2213545: start grading
+2213545: graded
+[2023-05-10 21:06:54 +0000] [10] [DEBUG] POST /api/grader
+2213545: start grading
+2213545: graded
+[2023-05-10 21:08:06 +0000] [9] [DEBUG] POST /api/grader
+2213545: start grading
+2213545: graded
+[2023-05-10 21:15:46 +0000] [9] [DEBUG] POST /api/grader
+2213545: start grading
+2213545: graded
+[2023-05-10 21:17:47 +0000] [9] [DEBUG] POST /api/grader
+2213545: start grading
+2213545: graded
+[2023-05-10 21:20:16 +0000] [11] [DEBUG] POST /api/grader
+2211253: start grading
+2211253: graded
+[2023-05-10 21:29:42 +0000] [10] [DEBUG] POST /api/grader
+2211253: start grading
+2211253: graded
+[2023-05-10 21:32:18 +0000] [10] [DEBUG] POST /api/grader
+2213545: start grading
+2213545: graded
+[2023-05-10 21:33:24 +0000] [9] [DEBUG] POST /api/grader
+2213545: start grading
+2213545: graded
+[2023-05-10 22:04:29 +0000] [11] [DEBUG] POST /api/grader
+2252034: start grading
+2252034: graded
+[2023-05-10 22:15:09 +0000] [9] [DEBUG] POST /api/grader
+2210290: start grading
+2210290: graded
+[2023-05-10 22:34:17 +0000] [10] [DEBUG] POST /api/grader
+2252034: start grading
+2252034: graded
+[2023-05-10 22:34:28 +0000] [9] [DEBUG] POST /api/grader
+2213187: start grading
+2213187: graded
+[2023-05-10 22:39:08 +0000] [9] [DEBUG] POST /api/grader
+2252034: start grading
+2252034: graded
+[2023-05-10 22:43:39 +0000] [10] [DEBUG] POST /api/grader
+2210140: start grading
+2210140: graded
+[2023-05-10 23:06:21 +0000] [10] [DEBUG] POST /api/grader
+2213187: start grading
+2213187: graded
+[2023-05-10 23:10:07 +0000] [10] [DEBUG] POST /api/grader
+2210140: start grading
+2210140: graded
+[2023-05-10 23:32:40 +0000] [10] [DEBUG] POST /api/grader
+2210969: start grading
+2210969: graded
+[2023-05-10 23:34:30 +0000] [11] [DEBUG] POST /api/grader
+2252508: start grading
+2252508: graded
+[2023-05-10 23:41:02 +0000] [11] [DEBUG] POST /api/grader
+2210969: start grading
+2210969: graded
+[2023-05-10 23:46:12 +0000] [11] [DEBUG] POST /api/grader
+2252610: start grading
+2252610: graded
+[2023-05-10 23:46:58 +0000] [11] [DEBUG] POST /api/grader
+2110826: start grading
+2110826: graded
+[2023-05-10 23:50:50 +0000] [10] [DEBUG] POST /api/grader
+2211606: start grading
+2211606: graded
+[2023-05-11 00:02:39 +0000] [11] [DEBUG] POST /api/grader
+2252280: start grading
+2252280: graded
+[2023-05-11 00:12:16 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x00\xca\x01\x00\x00\xc6\x03\x03\x13\xdb/O1!\x927>(2\xcef\xf6\x85d\xa8oc\x16\xab\xb9\xb5\x83A\x06w\x82\x90\xa6\x82\x10\x00\x00h\xcc\x14\xcc\x13\xc0/\xc0+\xc00\xc0,\xc0\x11\xc0\x07\xc0'\xc0#\xc0\x13\xc0\t\xc0(\xc0$\xc0\x14\xc0\n\xcc\x15\x00\x9e\x00\x9f\x00g\x00k\x003\x009\x00\x9c\x00\x9d\x00\x05\x00\x04\x00<\x00=\x00/\x005\xc0\x12\x00\x16\x00\n\x00\x03\x00\x08\x00\x06\x00\x14\x00\x11\x00\x19\x00\x17\x002\xc0\x08\x00\x12\x00\x13\x00\x15\x008\x00@\x00f\x00j\x00\xa2\x00\xa3\x01\x00\x005\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\x08\x00\x06\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x0c\x00\n\x04\x01\x04\x03\x02\x01\x02\x03\x02\x02\xff\x01\x00\x01\x00\x00\x0f\x00\x01\x01"
+[2023-05-11 00:15:05 +0000] [11] [DEBUG] POST /api/grader
+2252621: start grading
+2252621: graded
+[2023-05-11 00:17:23 +0000] [11] [DEBUG] POST /api/grader
+2252113: start grading
+2252113: graded
+[2023-05-11 00:27:04 +0000] [9] [DEBUG] POST /api/grader
+2211606: start grading
+2211606: graded
+[2023-05-11 00:29:38 +0000] [9] [DEBUG] POST /api/grader
+2114605: start grading
+2114605: graded
+[2023-05-11 00:34:04 +0000] [9] [DEBUG] POST /api/grader
+2252113: start grading
+2252113: graded
+[2023-05-11 00:40:03 +0000] [11] [DEBUG] POST /api/grader
+2110826: start grading
+2110826: graded
+[2023-05-11 00:40:14 +0000] [9] [DEBUG] POST /api/grader
+2252113: start grading
+2252113: graded
+[2023-05-11 00:40:30 +0000] [9] [DEBUG] POST /api/grader
+2110826: start grading
+2110826: graded
+[2023-05-11 00:43:07 +0000] [10] [DEBUG] POST /api/grader
+2252113: start grading
+[2023-05-11 00:43:08 +0000] [9] [DEBUG] POST /api/grader
+2252508: start grading
+2252113: graded
+2252508: graded
+[2023-05-11 00:43:50 +0000] [10] [DEBUG] POST /api/grader
+2110826: start grading
+2110826: graded
+[2023-05-11 00:44:10 +0000] [11] [DEBUG] POST /api/grader
+2252113: start grading
+2252113: graded
+[2023-05-11 00:44:13 +0000] [10] [DEBUG] POST /api/grader
+2110826: start grading
+2110826: graded
+[2023-05-11 00:50:12 +0000] [9] [DEBUG] POST /api/grader
+2252508: start grading
+[2023-05-11 00:50:13 +0000] [10] [DEBUG] POST /api/grader
+2211606: start grading
+2252508: graded
+2211606: graded
+[2023-05-11 00:53:31 +0000] [9] [DEBUG] POST /api/grader
+2210381: start grading
+2210381: graded
+[2023-05-11 00:54:39 +0000] [9] [DEBUG] POST /api/grader
+2213057: start grading
+2213057: graded
+[2023-05-11 00:57:43 +0000] [11] [DEBUG] POST /api/grader
+2213046: start grading
+2213046: graded
+[2023-05-11 00:58:19 +0000] [9] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-11 01:08:05 +0000] [9] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-11 01:15:12 +0000] [9] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-11 01:16:20 +0000] [11] [DEBUG] POST /api/grader
+2211257: start grading
+2211257: graded
+[2023-05-11 01:18:12 +0000] [9] [DEBUG] POST /api/grader
+2212540: start grading
+2212540: graded
+[2023-05-11 01:25:12 +0000] [9] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-11 01:30:41 +0000] [11] [DEBUG] POST /api/grader
+2213261: start grading
+2213261: graded
+[2023-05-11 01:32:34 +0000] [9] [DEBUG] POST /api/grader
+2210509: start grading
+2210509: graded
+[2023-05-11 01:34:22 +0000] [11] [DEBUG] POST /api/grader
+2252556: start grading
+2252556: graded
+[2023-05-11 01:36:28 +0000] [9] [DEBUG] POST /api/grader
+2212854: start grading
+2212854: graded
+[2023-05-11 01:36:36 +0000] [10] [DEBUG] POST /api/grader
+2211234: start grading
+2211234: graded
+[2023-05-11 01:40:55 +0000] [10] [DEBUG] POST /api/grader
+2210961: start grading
+2210961: graded
+[2023-05-11 01:41:20 +0000] [10] [DEBUG] POST /api/grader
+2213367: start grading
+2213367: graded
+[2023-05-11 01:41:43 +0000] [10] [DEBUG] POST /api/grader
+2252097: start grading
+2252097: graded
+[2023-05-11 01:42:56 +0000] [9] [DEBUG] POST /api/grader
+2211807: start grading
+2211807: graded
+[2023-05-11 01:44:12 +0000] [9] [DEBUG] POST /api/grader
+2211234: start grading
+2211234: graded
+[2023-05-11 01:46:13 +0000] [10] [DEBUG] POST /api/grader
+2210961: start grading
+2210961: graded
+[2023-05-11 01:46:31 +0000] [11] [DEBUG] POST /api/grader
+2211523: start grading
+2211523: graded
+[2023-05-11 01:47:15 +0000] [9] [DEBUG] POST /api/grader
+2213001: start grading
+2213001: graded
+[2023-05-11 01:49:55 +0000] [11] [DEBUG] POST /api/grader
+2213367: start grading
+2213367: graded
+[2023-05-11 01:51:26 +0000] [9] [DEBUG] POST /api/grader
+2213057: start grading
+2213057: graded
+[2023-05-11 01:53:02 +0000] [9] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 01:53:12 +0000] [11] [DEBUG] POST /api/grader
+2210754: start grading
+2210754: graded
+[2023-05-11 01:54:56 +0000] [11] [DEBUG] POST /api/grader
+2252428: start grading
+[2023-05-11 01:54:59 +0000] [9] [DEBUG] POST /api/grader
+2213001: start grading
+2213001: graded
+2252428: graded
+[2023-05-11 01:58:24 +0000] [10] [DEBUG] POST /api/grader
+2252775: start grading
+[2023-05-11 01:58:30 +0000] [11] [DEBUG] POST /api/grader
+2211856: start grading
+[2023-05-11 01:58:31 +0000] [10] [DEBUG] POST /api/grader
+2210254: start grading
+2252775: graded
+2211856: graded
+2210254: graded
+[2023-05-11 02:00:11 +0000] [10] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 02:02:14 +0000] [11] [DEBUG] POST /api/grader
+2252444: start grading
+2252444: graded
+[2023-05-11 02:03:27 +0000] [9] [DEBUG] POST /api/grader
+2210671: start grading
+2210671: graded
+[2023-05-11 02:04:17 +0000] [9] [DEBUG] POST /api/grader
+2252428: start grading
+2252428: graded
+[2023-05-11 02:11:21 +0000] [11] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 02:11:30 +0000] [9] [DEBUG] POST /api/grader
+2211234: start grading
+2211234: graded
+[2023-05-11 02:12:05 +0000] [9] [DEBUG] POST /api/grader
+2210335: start grading
+2210335: graded
+[2023-05-11 02:14:45 +0000] [11] [DEBUG] POST /api/grader
+2013055: start grading
+[2023-05-11 02:14:47 +0000] [9] [DEBUG] POST /api/grader
+2252521: start grading
+2013055: graded
+2252521: graded
+[2023-05-11 02:16:04 +0000] [11] [DEBUG] POST /api/grader
+2252508: start grading
+2252508: graded
+[2023-05-11 02:16:34 +0000] [11] [DEBUG] POST /api/grader
+2213298: start grading
+2213298: graded
+[2023-05-11 02:17:06 +0000] [9] [DEBUG] POST /api/grader
+2212135: start grading
+2212135: graded
+[2023-05-11 02:17:23 +0000] [9] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 02:18:35 +0000] [10] [DEBUG] POST /api/grader
+2252022: start grading
+2252022: graded
+[2023-05-11 02:18:41 +0000] [9] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+[2023-05-11 02:19:12 +0000] [11] [DEBUG] POST /api/grader
+2211234: start grading
+2211234: graded
+[2023-05-11 02:19:36 +0000] [11] [DEBUG] POST /api/grader
+2211523: start grading
+2211523: graded
+[2023-05-11 02:20:00 +0000] [11] [DEBUG] POST /api/grader
+2252419: start grading
+2252419: graded
+[2023-05-11 02:20:26 +0000] [10] [DEBUG] POST /api/grader
+2210335: start grading
+[2023-05-11 02:20:29 +0000] [10] [DEBUG] POST /api/grader
+2212429: start grading
+2210335: graded
+2212429: graded
+[2023-05-11 02:21:19 +0000] [11] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 02:21:28 +0000] [10] [DEBUG] POST /api/grader
+2210335: start grading
+2210335: graded
+[2023-05-11 02:22:56 +0000] [11] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 02:24:04 +0000] [11] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-11 02:24:20 +0000] [10] [DEBUG] POST /api/grader
+2212985: start grading
+2212985: graded
+[2023-05-11 02:25:11 +0000] [10] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 02:26:24 +0000] [11] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+[2023-05-11 02:28:43 +0000] [10] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-11 02:29:06 +0000] [11] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 02:29:56 +0000] [11] [DEBUG] POST /api/grader
+2212601: start grading
+2212601: graded
+[2023-05-11 02:30:11 +0000] [9] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-11 02:32:17 +0000] [11] [DEBUG] POST /api/grader
+2211331: start grading
+2211331: graded
+[2023-05-11 02:33:45 +0000] [11] [DEBUG] POST /api/grader
+2213572: start grading
+[2023-05-11 02:33:48 +0000] [11] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+2213572: graded
+[2023-05-11 02:34:29 +0000] [10] [DEBUG] POST /api/grader
+2210335: start grading
+2210335: graded
+[2023-05-11 02:35:15 +0000] [10] [DEBUG] POST /api/grader
+2252280: start grading
+2252280: graded
+[2023-05-11 02:35:21 +0000] [9] [DEBUG] POST /api/grader
+2212429: start grading
+2212429: graded
+[2023-05-11 02:37:51 +0000] [9] [DEBUG] POST /api/grader
+2212985: start grading
+2212985: graded
+[2023-05-11 02:38:16 +0000] [10] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 02:38:31 +0000] [10] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+[2023-05-11 02:39:17 +0000] [11] [DEBUG] POST /api/grader
+2212135: start grading
+[2023-05-11 02:39:20 +0000] [11] [DEBUG] POST /api/grader
+2252521: start grading
+2212135: graded
+2252521: graded
+[2023-05-11 02:39:53 +0000] [11] [DEBUG] POST /api/grader
+2211873: start grading
+[2023-05-11 02:39:56 +0000] [9] [DEBUG] POST /api/grader
+2252521: start grading
+[2023-05-11 02:39:57 +0000] [10] [DEBUG] POST /api/grader
+2212429: start grading
+2212429: graded
+2211873: graded
+2252521: graded
+[2023-05-11 02:40:36 +0000] [10] [DEBUG] POST /api/grader
+2252508: start grading
+[2023-05-11 02:40:38 +0000] [10] [DEBUG] POST /api/grader
+2213572: start grading
+2252508: graded
+2213572: graded
+[2023-05-11 02:40:46 +0000] [9] [DEBUG] POST /api/grader
+2213367: start grading
+2213367: graded
+[2023-05-11 02:43:30 +0000] [9] [DEBUG] POST /api/grader
+2013055: start grading
+2013055: graded
+[2023-05-11 02:44:57 +0000] [9] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+[2023-05-11 02:45:03 +0000] [9] [DEBUG] POST /api/grader
+2252280: start grading
+2252280: graded
+[2023-05-11 02:45:33 +0000] [11] [DEBUG] POST /api/grader
+2252521: start grading
+2252521: graded
+[2023-05-11 02:46:26 +0000] [11] [DEBUG] POST /api/grader
+2210754: start grading
+2210754: graded
+[2023-05-11 02:46:41 +0000] [11] [DEBUG] POST /api/grader
+2210200: start grading
+2210200: graded
+[2023-05-11 02:47:00 +0000] [9] [DEBUG] POST /api/grader
+2212985: start grading
+2212985: graded
+[2023-05-11 02:47:22 +0000] [10] [DEBUG] POST /api/grader
+2211873: start grading
+2211873: graded
+[2023-05-11 02:48:29 +0000] [9] [DEBUG] POST /api/grader
+2211873: start grading
+2211873: graded
+[2023-05-11 02:49:33 +0000] [11] [DEBUG] POST /api/grader
+2211822: start grading
+2211822: graded
+[2023-05-11 02:50:05 +0000] [10] [DEBUG] POST /api/grader
+2252428: start grading
+2252428: graded
+[2023-05-11 02:52:42 +0000] [11] [DEBUG] POST /api/grader
+2252280: start grading
+2252280: graded
+[2023-05-11 02:54:15 +0000] [11] [DEBUG] POST /api/grader
+2211331: start grading
+2211331: graded
+[2023-05-11 02:54:46 +0000] [10] [DEBUG] POST /api/grader
+2210708: start grading
+2210708: graded
+[2023-05-11 02:54:59 +0000] [9] [DEBUG] POST /api/grader
+2111056: start grading
+2111056: graded
+[2023-05-11 02:55:17 +0000] [9] [DEBUG] POST /api/grader
+2252623: start grading
+2252623: graded
+[2023-05-11 02:55:22 +0000] [9] [DEBUG] POST /api/grader
+2252280: start grading
+2252280: graded
+[2023-05-11 03:10:22 +0000] [9] [DEBUG] POST /api/grader
+2211822: start grading
+2211822: graded
+[2023-05-11 03:10:29 +0000] [10] [DEBUG] POST /api/grader
+2252428: start grading
+[2023-05-11 03:10:50 +0000] [9] [DEBUG] POST /api/grader
+2213982: start grading
+2213982: graded
+[2023-05-11 03:11:44 +0000] [9] [DEBUG] POST /api/grader
+2212297: start grading
+2252428: graded
+2212297: graded
+[2023-05-11 03:12:49 +0000] [10] [DEBUG] POST /api/grader
+2213572: start grading
+2213572: graded
+[2023-05-11 03:13:04 +0000] [9] [DEBUG] POST /api/grader
+2252761: start grading
+2252761: graded
+[2023-05-11 03:17:39 +0000] [9] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+[2023-05-11 03:19:59 +0000] [9] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 03:20:07 +0000] [11] [DEBUG] POST /api/grader
+2213982: start grading
+[2023-05-11 03:20:26 +0000] [9] [DEBUG] POST /api/grader
+2213982: start grading
+Exception in thread Thread-52:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 182, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)
+  File "/app/flaskr/grader/grader_views.py", line 38, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 232, in gradeOneSubmission
+    list_scores = reportOneSubmission(list_configs, config_directory, student_id)
+  File "/app/grading_app/utils/report.py", line 52, in reportOneSubmission
+    x = filecmp.cmp(
+  File "/usr/lib/python3.8/filecmp.py", line 51, in cmp
+    s1 = _sig(os.stat(f1))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2213982/output1001'
+2213982: graded
+[2023-05-11 03:21:04 +0000] [9] [DEBUG] POST /api/grader
+2213572: start grading
+2213572: graded
+[2023-05-11 03:21:12 +0000] [11] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+[2023-05-11 03:22:14 +0000] [11] [DEBUG] POST /api/grader
+2211235: start grading
+2211235: graded
+[2023-05-11 03:23:05 +0000] [9] [DEBUG] POST /api/grader
+2211235: start grading
+2211235: graded
+[2023-05-11 03:23:20 +0000] [11] [DEBUG] POST /api/grader
+2212319: start grading
+2212319: graded
+[2023-05-11 03:25:29 +0000] [9] [DEBUG] POST /api/grader
+2211144: start grading
+2211144: graded
+[2023-05-11 03:27:36 +0000] [9] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 03:27:44 +0000] [11] [DEBUG] POST /api/grader
+2212601: start grading
+2212601: graded
+[2023-05-11 03:28:44 +0000] [11] [DEBUG] POST /api/grader
+2252038: start grading
+2252038: graded
+[2023-05-11 03:29:58 +0000] [9] [DEBUG] POST /api/grader
+2211467: start grading
+2211467: graded
+[2023-05-11 03:32:05 +0000] [10] [DEBUG] POST /api/grader
+2211298: start grading
+2211298: graded
+[2023-05-11 03:32:32 +0000] [9] [DEBUG] POST /api/grader
+2213711: start grading
+2213711: graded
+[2023-05-11 03:32:40 +0000] [10] [DEBUG] POST /api/grader
+2252038: start grading
+2252038: graded
+[2023-05-11 03:33:55 +0000] [9] [DEBUG] POST /api/grader
+2013055: start grading
+2013055: graded
+[2023-05-11 03:36:11 +0000] [9] [DEBUG] POST /api/grader
+2213785: start grading
+2213785: graded
+[2023-05-11 03:37:07 +0000] [9] [DEBUG] POST /api/grader
+2213954: start grading
+2213954: graded
+[2023-05-11 03:37:10 +0000] [11] [DEBUG] POST /api/grader
+2212962: start grading
+2212962: graded
+[2023-05-11 03:37:18 +0000] [9] [DEBUG] POST /api/grader
+2212601: start grading
+2212601: graded
+[2023-05-11 03:38:02 +0000] [9] [DEBUG] POST /api/grader
+2252038: start grading
+2252038: graded
+[2023-05-11 03:38:19 +0000] [11] [DEBUG] POST /api/grader
+2252038: start grading
+2252038: graded
+[2023-05-11 03:41:40 +0000] [11] [DEBUG] POST /api/grader
+2013055: start grading
+2013055: graded
+[2023-05-11 03:42:03 +0000] [9] [DEBUG] POST /api/grader
+2213785: start grading
+2213785: graded
+[2023-05-11 03:43:20 +0000] [9] [DEBUG] POST /api/grader
+2013055: start grading
+2013055: graded
+[2023-05-11 03:43:30 +0000] [10] [DEBUG] POST /api/grader
+2210420: start grading
+2210420: graded
+[2023-05-11 03:44:02 +0000] [11] [DEBUG] POST /api/grader
+2211909: start grading
+2211909: graded
+[2023-05-11 03:44:59 +0000] [10] [DEBUG] POST /api/grader
+2250009: start grading
+2250009: graded
+[2023-05-11 03:47:09 +0000] [11] [DEBUG] POST /api/grader
+2213711: start grading
+[2023-05-11 03:47:10 +0000] [10] [DEBUG] POST /api/grader
+2212319: start grading
+2213711: graded
+2212319: graded
+[2023-05-11 03:48:24 +0000] [10] [DEBUG] POST /api/grader
+2212135: start grading
+2212135: graded
+[2023-05-11 03:53:03 +0000] [9] [DEBUG] POST /api/grader
+2212135: start grading
+2212135: graded
+[2023-05-11 03:54:26 +0000] [9] [DEBUG] POST /api/grader
+2013055: start grading
+2013055: graded
+[2023-05-11 03:57:25 +0000] [11] [DEBUG] POST /api/grader
+2212135: start grading
+2212135: graded
+[2023-05-11 03:58:49 +0000] [10] [DEBUG] POST /api/grader
+2212135: start grading
+2212135: graded
+[2023-05-11 03:59:43 +0000] [11] [DEBUG] POST /api/grader
+2210420: start grading
+2210420: graded
+[2023-05-11 04:03:58 +0000] [10] [DEBUG] POST /api/grader
+2013055: start grading
+2013055: graded
+[2023-05-11 04:05:36 +0000] [10] [DEBUG] POST /api/grader
+2013055: start grading
+2013055: graded
+[2023-05-11 04:08:42 +0000] [11] [DEBUG] POST /api/grader
+2013055: start grading
+2013055: graded
+[2023-05-11 04:08:54 +0000] [9] [DEBUG] POST /api/grader
+2211909: start grading
+2211909: graded
+[2023-05-11 04:09:29 +0000] [11] [DEBUG] POST /api/grader
+2210420: start grading
+2210420: graded
+[2023-05-11 04:09:53 +0000] [11] [DEBUG] POST /api/grader
+2212956: start grading
+2212956: graded
+[2023-05-11 04:19:36 +0000] [11] [DEBUG] POST /api/grader
+2212956: start grading
+2212956: graded
+[2023-05-11 04:20:18 +0000] [11] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 04:23:32 +0000] [9] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 04:24:02 +0000] [11] [DEBUG] POST /api/grader
+2211793: start grading
+2211793: graded
+[2023-05-11 04:26:09 +0000] [9] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 04:27:10 +0000] [11] [DEBUG] POST /api/grader
+2212036: start grading
+2212036: graded
+[2023-05-11 04:28:12 +0000] [10] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 04:29:52 +0000] [10] [DEBUG] POST /api/grader
+2250008: start grading
+2250008: graded
+[2023-05-11 04:30:20 +0000] [10] [DEBUG] POST /api/grader
+2213781: start grading
+2213781: graded
+[2023-05-11 04:32:05 +0000] [9] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 04:32:25 +0000] [9] [DEBUG] POST /api/grader
+2252352: start grading
+2252352: graded
+[2023-05-11 04:33:01 +0000] [11] [DEBUG] POST /api/grader
+2212036: start grading
+2212036: graded
+[2023-05-11 04:35:28 +0000] [9] [DEBUG] POST /api/grader
+2212036: start grading
+2212036: graded
+[2023-05-11 04:38:35 +0000] [9] [DEBUG] POST /api/grader
+2212135: start grading
+2212135: graded
+[2023-05-11 04:44:17 +0000] [11] [DEBUG] POST /api/grader
+2212779: start grading
+2212779: graded
+[2023-05-11 04:44:42 +0000] [11] [DEBUG] POST /api/grader
+2252327: start grading
+2252327: graded
+[2023-05-11 04:47:14 +0000] [9] [DEBUG] POST /api/grader
+2211157: start grading
+2211157: graded
+[2023-05-11 04:51:08 +0000] [9] [DEBUG] POST /api/grader
+2211605: start grading
+2211605: graded
+[2023-05-11 04:53:35 +0000] [9] [DEBUG] POST /api/grader
+2211911: start grading
+2211911: graded
+[2023-05-11 05:01:45 +0000] [10] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-11 05:05:31 +0000] [11] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 05:05:51 +0000] [11] [DEBUG] POST /api/grader
+2211605: start grading
+2211605: graded
+[2023-05-11 05:09:29 +0000] [11] [DEBUG] POST /api/grader
+2211911: start grading
+2211911: graded
+[2023-05-11 05:13:30 +0000] [10] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-11 05:17:27 +0000] [9] [DEBUG] POST /api/grader
+2212747: start grading
+2212747: graded
+[2023-05-11 05:18:08 +0000] [10] [DEBUG] POST /api/grader
+2252341: start grading
+2252341: graded
+[2023-05-11 05:24:20 +0000] [10] [DEBUG] POST /api/grader
+2211605: start grading
+2211605: graded
+[2023-05-11 05:25:01 +0000] [10] [DEBUG] POST /api/grader
+2212854: start grading
+2212854: graded
+[2023-05-11 05:25:13 +0000] [11] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 05:26:21 +0000] [10] [DEBUG] POST /api/grader
+2212747: start grading
+2212747: graded
+[2023-05-11 05:27:22 +0000] [10] [DEBUG] POST /api/grader
+2211605: start grading
+2211605: graded
+[2023-05-11 05:27:30 +0000] [11] [DEBUG] POST /api/grader
+2212854: start grading
+2212854: graded
+[2023-05-11 05:28:22 +0000] [11] [DEBUG] POST /api/grader
+2211605: start grading
+2211605: graded
+[2023-05-11 05:29:28 +0000] [11] [DEBUG] POST /api/grader
+2211911: start grading
+2211911: graded
+[2023-05-11 05:33:13 +0000] [9] [DEBUG] POST /api/grader
+2213046: start grading
+2213046: graded
+[2023-05-11 05:33:55 +0000] [9] [DEBUG] POST /api/grader
+2211605: start grading
+2211605: graded
+[2023-05-11 05:36:27 +0000] [10] [DEBUG] POST /api/grader
+2213046: start grading
+2213046: graded
+[2023-05-11 05:39:16 +0000] [10] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-11 05:40:10 +0000] [10] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 05:41:04 +0000] [11] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-11 05:41:25 +0000] [10] [DEBUG] POST /api/grader
+2210290: start grading
+2210290: graded
+[2023-05-11 05:44:59 +0000] [11] [DEBUG] POST /api/grader
+2213779: start grading
+2213779: graded
+[2023-05-11 05:46:52 +0000] [11] [DEBUG] POST /api/grader
+2212338: start grading
+2212338: graded
+[2023-05-11 05:47:02 +0000] [9] [DEBUG] POST /api/grader
+2210754: start grading
+[2023-05-11 05:47:02 +0000] [11] [DEBUG] POST /api/grader
+2210573: start grading
+2210754: graded
+2210573: graded
+[2023-05-11 05:51:25 +0000] [11] [DEBUG] POST /api/grader
+2210443: start grading
+2210443: graded
+[2023-05-11 05:52:23 +0000] [10] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-11 05:53:43 +0000] [11] [DEBUG] POST /api/grader
+2211911: start grading
+2211911: graded
+[2023-05-11 05:55:38 +0000] [11] [DEBUG] POST /api/grader
+2213779: start grading
+2213779: graded
+[2023-05-11 06:06:23 +0000] [11] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 06:10:33 +0000] [10] [DEBUG] POST /api/grader
+2212319: start grading
+2212319: graded
+[2023-05-11 06:17:48 +0000] [10] [DEBUG] POST /api/grader
+2210181: start grading
+2210181: graded
+[2023-05-11 06:19:56 +0000] [11] [DEBUG] POST /api/grader
+2213046: start grading
+2213046: graded
+[2023-05-11 06:20:47 +0000] [11] [DEBUG] POST /api/grader
+2212741: start grading
+2212741: graded
+[2023-05-11 06:21:33 +0000] [11] [DEBUG] POST /api/grader
+2252154: start grading
+2252154: graded
+[2023-05-11 06:24:02 +0000] [11] [DEBUG] POST /api/grader
+2252434: start grading
+2252434: graded
+[2023-05-11 06:25:28 +0000] [9] [DEBUG] POST /api/grader
+2212564: start grading
+2212564: graded
+[2023-05-11 06:29:28 +0000] [11] [DEBUG] POST /api/grader
+2213046: start grading
+2213046: graded
+[2023-05-11 06:37:43 +0000] [11] [DEBUG] POST /api/grader
+2213781: start grading
+2213781: graded
+[2023-05-11 06:38:56 +0000] [9] [DEBUG] POST /api/grader
+2212085: start grading
+2212085: graded
+[2023-05-11 06:42:41 +0000] [9] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 06:46:08 +0000] [11] [DEBUG] POST /api/grader
+2213291: start grading
+2213291: graded
+[2023-05-11 06:49:33 +0000] [9] [DEBUG] POST /api/grader
+2210633: start grading
+2210633: graded
+[2023-05-11 06:50:01 +0000] [11] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 07:07:31 +0000] [11] [DEBUG] POST /api/grader
+2213781: start grading
+2213781: graded
+[2023-05-11 07:09:59 +0000] [11] [DEBUG] POST /api/grader
+2211369: start grading
+2211369: graded
+[2023-05-11 07:14:06 +0000] [10] [DEBUG] POST /api/grader
+2210055: start grading
+2210055: graded
+[2023-05-11 07:14:37 +0000] [11] [DEBUG] POST /api/grader
+2213781: start grading
+2213781: graded
+[2023-05-11 07:15:57 +0000] [9] [DEBUG] POST /api/grader
+2210633: start grading
+2210633: graded
+[2023-05-11 07:17:45 +0000] [11] [DEBUG] POST /api/grader
+2052699: start grading
+2052699: graded
+[2023-05-11 07:22:47 +0000] [10] [DEBUG] POST /api/grader
+2210352: start grading
+2210352: graded
+[2023-05-11 07:23:18 +0000] [10] [DEBUG] POST /api/grader
+2052699: start grading
+2052699: graded
+[2023-05-11 07:27:37 +0000] [9] [DEBUG] POST /api/grader
+2211173: start grading
+2211173: graded
+[2023-05-11 07:28:52 +0000] [10] [DEBUG] POST /api/grader
+2252607: start grading
+2252607: graded
+[2023-05-11 07:28:59 +0000] [9] [DEBUG] POST /api/grader
+2213781: start grading
+2213781: graded
+[2023-05-11 07:35:05 +0000] [10] [DEBUG] POST /api/grader
+2052699: start grading
+2052699: graded
+[2023-05-11 07:35:16 +0000] [11] [DEBUG] POST /api/grader
+2213367: start grading
+2213367: graded
+[2023-05-11 07:38:21 +0000] [10] [DEBUG] POST /api/grader
+2212651: start grading
+[2023-05-11 07:38:23 +0000] [11] [DEBUG] POST /api/grader
+2252524: start grading
+2212651: graded
+2252524: graded
+[2023-05-11 07:40:44 +0000] [10] [DEBUG] POST /api/grader
+2252650: start grading
+2252650: graded
+[2023-05-11 07:44:04 +0000] [10] [DEBUG] POST /api/grader
+2252610: start grading
+2252610: graded
+[2023-05-11 07:46:14 +0000] [11] [DEBUG] POST /api/grader
+2211436: start grading
+2211436: graded
+[2023-05-11 07:46:18 +0000] [10] [DEBUG] POST /api/grader
+2213367: start grading
+2213367: graded
+[2023-05-11 07:48:20 +0000] [9] [DEBUG] POST /api/grader
+2213781: start grading
+2213781: graded
+[2023-05-11 07:53:43 +0000] [11] [DEBUG] POST /api/grader
+2052699: start grading
+2052699: graded
+[2023-05-11 07:56:00 +0000] [9] [DEBUG] POST /api/grader
+2213367: start grading
+2213367: graded
+[2023-05-11 07:56:53 +0000] [11] [DEBUG] POST /api/grader
+2212481: start grading
+2212481: graded
+[2023-05-11 07:59:00 +0000] [10] [DEBUG] POST /api/grader
+2210055: start grading
+2210055: graded
+[2023-05-11 07:59:14 +0000] [9] [DEBUG] POST /api/grader
+2211753: start grading
+2211753: graded
+[2023-05-11 07:59:33 +0000] [10] [DEBUG] POST /api/grader
+2211909: start grading
+2211909: graded
+[2023-05-11 08:07:01 +0000] [10] [DEBUG] POST /api/grader
+2212481: start grading
+2212481: graded
+[2023-05-11 08:08:32 +0000] [10] [DEBUG] POST /api/grader
+2252889: start grading
+[2023-05-11 08:09:23 +0000] [11] [DEBUG] POST /api/grader
+2252524: start grading
+2252524: graded
+[2023-05-11 08:10:05 +0000] [11] [DEBUG] POST /api/grader
+2210352: start grading
+2210352: graded
+2252889: graded
+[2023-05-11 08:11:39 +0000] [10] [DEBUG] POST /api/grader
+2212940: start grading
+2212940: graded
+[2023-05-11 08:12:33 +0000] [11] [DEBUG] POST /api/grader
+2212601: start grading
+2212601: graded
+[2023-05-11 08:12:40 +0000] [10] [DEBUG] POST /api/grader
+2211595: start grading
+2211595: graded
+[2023-05-11 08:13:26 +0000] [11] [DEBUG] POST /api/grader
+2252623: start grading
+2252623: graded
+[2023-05-11 08:14:07 +0000] [10] [DEBUG] POST /api/grader
+2252328: start grading
+2252328: graded
+[2023-05-11 08:15:46 +0000] [10] [DEBUG] POST /api/grader
+2210055: start grading
+2210055: graded
+[2023-05-11 08:20:54 +0000] [9] [DEBUG] POST /api/grader
+2211595: start grading
+2211595: graded
+[2023-05-11 08:25:19 +0000] [9] [DEBUG] POST /api/grader
+2252035: start grading
+2252035: graded
+[2023-05-11 08:28:31 +0000] [10] [DEBUG] POST /api/grader
+2252666: start grading
+2252666: graded
+[2023-05-11 08:32:29 +0000] [9] [DEBUG] POST /api/grader
+2211635: start grading
+2211635: graded
+[2023-05-11 08:32:49 +0000] [9] [DEBUG] POST /api/grader
+2211873: start grading
+2211873: graded
+[2023-05-11 08:36:39 +0000] [10] [DEBUG] POST /api/grader
+2213781: start grading
+2213781: graded
+[2023-05-11 08:37:13 +0000] [10] [DEBUG] POST /api/grader
+2211612: start grading
+2211612: graded
+[2023-05-11 08:37:39 +0000] [10] [DEBUG] POST /api/grader
+2115319: start grading
+2115319: graded
+[2023-05-11 08:38:22 +0000] [10] [DEBUG] POST /api/grader
+2211873: start grading
+2211873: graded
+[2023-05-11 08:38:30 +0000] [9] [DEBUG] POST /api/grader
+2213572: start grading
+2213572: graded
+[2023-05-11 08:39:40 +0000] [10] [DEBUG] POST /api/grader
+2210352: start grading
+2210352: graded
+[2023-05-11 08:39:44 +0000] [10] [DEBUG] POST /api/grader
+2212481: start grading
+2212481: graded
+[2023-05-11 08:41:23 +0000] [10] [DEBUG] POST /api/grader
+2252328: start grading
+2252328: graded
+[2023-05-11 08:42:43 +0000] [9] [DEBUG] POST /api/grader
+2211595: start grading
+[2023-05-11 08:42:43 +0000] [9] [DEBUG] POST /api/grader
+2213781: start grading
+2211595: graded
+2213781: graded
+[2023-05-11 08:46:45 +0000] [9] [DEBUG] POST /api/grader
+2212548: start grading
+2212548: graded
+[2023-05-11 08:47:05 +0000] [10] [DEBUG] POST /api/grader
+2213682: start grading
+2213682: graded
+[2023-05-11 08:47:40 +0000] [10] [DEBUG] POST /api/grader
+2213140: start grading
+[2023-05-11 08:47:41 +0000] [9] [DEBUG] POST /api/grader
+2211331: start grading
+2213140: graded
+2211331: graded
+[2023-05-11 08:48:47 +0000] [11] [DEBUG] POST /api/grader
+2210352: start grading
+2210352: graded
+[2023-05-11 08:49:18 +0000] [10] [DEBUG] POST /api/grader
+2211595: start grading
+2211595: graded
+[2023-05-11 08:49:51 +0000] [9] [DEBUG] POST /api/grader
+2211595: start grading
+2211595: graded
+[2023-05-11 08:50:42 +0000] [9] [DEBUG] POST /api/grader
+2213291: start grading
+2213291: graded
+[2023-05-11 08:50:56 +0000] [10] [DEBUG] POST /api/grader
+2212940: start grading
+2212940: graded
+[2023-05-11 08:52:45 +0000] [10] [DEBUG] POST /api/grader
+2211991: start grading
+2211991: graded
+[2023-05-11 08:53:40 +0000] [10] [DEBUG] POST /api/grader
+2252623: start grading
+2252623: graded
+[2023-05-11 08:57:53 +0000] [10] [DEBUG] POST /api/grader
+2252889: start grading
+2252889: graded
+[2023-05-11 08:59:23 +0000] [10] [DEBUG] POST /api/grader
+2153538: start grading
+[2023-05-11 08:59:26 +0000] [11] [DEBUG] POST /api/grader
+2252623: start grading
+2252623: graded
+2153538: graded
+[2023-05-11 08:59:33 +0000] [11] [DEBUG] POST /api/grader
+2211331: start grading
+2211331: graded
+[2023-05-11 08:59:42 +0000] [11] [DEBUG] POST /api/grader
+2213133: start grading
+2213133: graded
+[2023-05-11 09:00:08 +0000] [10] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 09:02:19 +0000] [9] [DEBUG] POST /api/grader
+2210055: start grading
+2210055: graded
+[2023-05-11 09:06:39 +0000] [9] [DEBUG] POST /api/grader
+2211618: start grading
+2211618: graded
+[2023-05-11 09:07:15 +0000] [10] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 09:07:45 +0000] [9] [DEBUG] POST /api/grader
+2153538: start grading
+2153538: graded
+[2023-05-11 09:07:56 +0000] [10] [DEBUG] POST /api/grader
+2212318: start grading
+2212318: graded
+[2023-05-11 09:08:10 +0000] [9] [DEBUG] POST /api/grader
+2212481: start grading
+2212481: graded
+[2023-05-11 09:08:31 +0000] [9] [DEBUG] POST /api/grader
+2211437: start grading
+2211437: graded
+[2023-05-11 09:09:50 +0000] [10] [DEBUG] POST /api/grader
+2213133: start grading
+2213133: graded
+[2023-05-11 09:10:33 +0000] [10] [DEBUG] POST /api/grader
+2212940: start grading
+2212940: graded
+[2023-05-11 09:11:53 +0000] [9] [DEBUG] POST /api/grader
+2213711: start grading
+2213711: graded
+[2023-05-11 09:16:59 +0000] [11] [DEBUG] POST /api/grader
+2212481: start grading
+2212481: graded
+[2023-05-11 09:17:48 +0000] [9] [DEBUG] POST /api/grader
+2210509: start grading
+2210509: graded
+[2023-05-11 09:20:23 +0000] [11] [DEBUG] POST /api/grader
+2212318: start grading
+2212318: graded
+[2023-05-11 09:20:36 +0000] [10] [DEBUG] POST /api/grader
+2213133: start grading
+2213133: graded
+[2023-05-11 09:23:06 +0000] [10] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 09:29:41 +0000] [11] [DEBUG] POST /api/grader
+2252889: start grading
+2252889: graded
+[2023-05-11 09:29:50 +0000] [10] [DEBUG] POST /api/grader
+2252001: start grading
+2252001: graded
+[2023-05-11 09:30:17 +0000] [11] [DEBUG] POST /api/grader
+2213307: start grading
+2213307: graded
+[2023-05-11 09:30:24 +0000] [10] [DEBUG] POST /api/grader
+2252444: start grading
+2252444: graded
+[2023-05-11 09:32:32 +0000] [11] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+[2023-05-11 09:33:10 +0000] [9] [DEBUG] POST /api/grader
+2252151: start grading
+2252151: graded
+[2023-05-11 09:33:14 +0000] [11] [DEBUG] POST /api/grader
+2211618: start grading
+2211618: graded
+[2023-05-11 09:34:28 +0000] [11] [DEBUG] POST /api/grader
+2211486: start grading
+2211486: graded
+[2023-05-11 09:35:25 +0000] [9] [DEBUG] POST /api/grader
+2212940: start grading
+2212940: graded
+[2023-05-11 09:38:13 +0000] [9] [DEBUG] POST /api/grader
+2211807: start grading
+2211807: graded
+[2023-05-11 09:39:50 +0000] [11] [DEBUG] POST /api/grader
+2252328: start grading
+2252328: graded
+[2023-05-11 09:40:28 +0000] [9] [DEBUG] POST /api/grader
+2212297: start grading
+[2023-05-11 09:40:31 +0000] [9] [DEBUG] POST /api/grader
+2213951: start grading
+2212297: graded
+2213951: graded
+[2023-05-11 09:40:58 +0000] [9] [DEBUG] POST /api/grader
+2212318: start grading
+2212318: graded
+[2023-05-11 09:41:28 +0000] [9] [DEBUG] POST /api/grader
+2252151: start grading
+2252151: graded
+[2023-05-11 09:42:22 +0000] [11] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+[2023-05-11 09:45:41 +0000] [11] [DEBUG] POST /api/grader
+2213515: start grading
+2213515: graded
+[2023-05-11 09:47:20 +0000] [11] [DEBUG] POST /api/grader
+2210443: start grading
+[2023-05-11 09:47:27 +0000] [10] [DEBUG] POST /api/grader
+2210961: start grading
+2210443: graded
+2210961: graded
+[2023-05-11 09:47:50 +0000] [9] [DEBUG] POST /api/grader
+2211234: start grading
+2211234: graded
+[2023-05-11 09:48:13 +0000] [11] [DEBUG] POST /api/grader
+2210961: start grading
+[2023-05-11 09:48:15 +0000] [9] [DEBUG] POST /api/grader
+2212318: start grading
+2210961: graded
+[2023-05-11 09:48:17 +0000] [11] [DEBUG] POST /api/grader
+2213951: start grading
+2212318: graded
+2213951: graded
+[2023-05-11 09:49:38 +0000] [11] [DEBUG] POST /api/grader
+2212656: start grading
+2212656: graded
+[2023-05-11 09:49:54 +0000] [11] [DEBUG] POST /api/grader
+2213951: start grading
+2213951: graded
+[2023-05-11 09:50:34 +0000] [9] [DEBUG] POST /api/grader
+2210573: start grading
+2210573: graded
+[2023-05-11 09:50:39 +0000] [10] [DEBUG] POST /api/grader
+2213526: start grading
+2213526: graded
+[2023-05-11 09:51:37 +0000] [9] [DEBUG] POST /api/grader
+2250008: start grading
+2250008: graded
+[2023-05-11 09:53:58 +0000] [10] [DEBUG] POST /api/grader
+2213951: start grading
+2213951: graded
+[2023-05-11 09:54:11 +0000] [9] [DEBUG] POST /api/grader
+2212297: start grading
+2212297: graded
+[2023-05-11 09:54:19 +0000] [10] [DEBUG] POST /api/grader
+2211082: start grading
+2211082: graded
+[2023-05-11 09:56:12 +0000] [10] [DEBUG] POST /api/grader
+2212318: start grading
+2212318: graded
+[2023-05-11 09:56:28 +0000] [11] [DEBUG] POST /api/grader
+2212656: start grading
+2212656: graded
+[2023-05-11 09:58:56 +0000] [9] [DEBUG] POST /api/grader
+2212383: start grading
+2212383: graded
+[2023-05-11 09:59:04 +0000] [10] [DEBUG] POST /api/grader
+2213951: start grading
+2213951: graded
+[2023-05-11 09:59:14 +0000] [9] [DEBUG] POST /api/grader
+2210446: start grading
+2210446: graded
+[2023-05-11 09:59:33 +0000] [9] [DEBUG] POST /api/grader
+2212940: start grading
+2212940: graded
+[2023-05-11 09:59:39 +0000] [11] [DEBUG] POST /api/grader
+2252328: start grading
+2252328: graded
+[2023-05-11 09:59:44 +0000] [9] [DEBUG] POST /api/grader
+2213950: start grading
+2213950: graded
+[2023-05-11 09:59:48 +0000] [9] [DEBUG] POST /api/grader
+2211486: start grading
+2211486: graded
+[2023-05-11 09:59:56 +0000] [10] [DEBUG] POST /api/grader
+2211949: start grading
+2211949: graded
+[2023-05-11 10:05:02 +0000] [9] [DEBUG] POST /api/grader
+2210509: start grading
+2210509: graded
+[2023-05-11 10:07:05 +0000] [9] [DEBUG] POST /api/grader
+2252280: start grading
+[2023-05-11 10:07:07 +0000] [10] [DEBUG] POST /api/grader
+2210633: start grading
+2252280: graded
+2210633: graded
+[2023-05-11 10:07:48 +0000] [10] [DEBUG] POST /api/grader
+2252378: start grading
+2252378: graded
+[2023-05-11 10:08:45 +0000] [10] [DEBUG] POST /api/grader
+2213950: start grading
+2213950: graded
+[2023-05-11 10:12:31 +0000] [11] [DEBUG] POST /api/grader
+2252328: start grading
+2252328: graded
+[2023-05-11 10:12:45 +0000] [9] [DEBUG] POST /api/grader
+2212383: start grading
+2212383: graded
+[2023-05-11 10:14:09 +0000] [9] [DEBUG] POST /api/grader
+2211894: start grading
+2211894: graded
+[2023-05-11 10:14:47 +0000] [9] [DEBUG] POST /api/grader
+2212383: start grading
+2212383: graded
+[2023-05-11 10:16:01 +0000] [9] [DEBUG] POST /api/grader
+2212548: start grading
+2212548: graded
+[2023-05-11 10:17:17 +0000] [11] [DEBUG] POST /api/grader
+2210185: start grading
+2210185: graded
+[2023-05-11 10:17:24 +0000] [10] [DEBUG] POST /api/grader
+2210509: start grading
+2210509: graded
+[2023-05-11 10:18:37 +0000] [10] [DEBUG] POST /api/grader
+2212383: start grading
+2212383: graded
+[2023-05-11 10:19:23 +0000] [9] [DEBUG] POST /api/grader
+2210768: start grading
+2210768: graded
+[2023-05-11 10:19:28 +0000] [11] [DEBUG] POST /api/grader
+2213291: start grading
+[2023-05-11 10:19:29 +0000] [10] [DEBUG] POST /api/grader
+2211082: start grading
+2213291: graded
+2211082: graded
+[2023-05-11 10:20:47 +0000] [11] [DEBUG] POST /api/grader
+2211743: start grading
+2211743: graded
+[2023-05-11 10:21:06 +0000] [11] [DEBUG] POST /api/grader
+2250009: start grading
+2250009: graded
+[2023-05-11 10:21:47 +0000] [10] [DEBUG] POST /api/grader
+2212383: start grading
+[2023-05-11 10:21:49 +0000] [10] [DEBUG] POST /api/grader
+2210509: start grading
+2212383: graded
+2210509: graded
+[2023-05-11 10:21:54 +0000] [11] [DEBUG] POST /api/grader
+2252217: start grading
+2252217: graded
+[2023-05-11 10:22:21 +0000] [11] [DEBUG] POST /api/grader
+2211327: start grading
+2211327: graded
+[2023-05-11 10:22:56 +0000] [11] [DEBUG] POST /api/grader
+2213506: start grading
+[2023-05-11 10:22:58 +0000] [9] [DEBUG] POST /api/grader
+2210509: start grading
+2213506: graded
+2210509: graded
+[2023-05-11 10:23:26 +0000] [11] [DEBUG] POST /api/grader
+2252889: start grading
+2252889: graded
+[2023-05-11 10:26:14 +0000] [9] [DEBUG] POST /api/grader
+2212781: start grading
+2212781: graded
+[2023-05-11 10:27:11 +0000] [9] [DEBUG] POST /api/grader
+2212864: start grading
+2212864: graded
+[2023-05-11 10:28:54 +0000] [9] [DEBUG] POST /api/grader
+2211743: start grading
+2211743: graded
+[2023-05-11 10:32:10 +0000] [9] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 10:33:30 +0000] [11] [DEBUG] POST /api/grader
+2211190: start grading
+2211190: graded
+[2023-05-11 10:33:43 +0000] [9] [DEBUG] POST /api/grader
+2252328: start grading
+2252328: graded
+[2023-05-11 10:34:20 +0000] [9] [DEBUG] POST /api/grader
+2211327: start grading
+2211327: graded
+[2023-05-11 10:35:08 +0000] [9] [DEBUG] POST /api/grader
+2212548: start grading
+2212548: graded
+[2023-05-11 10:36:24 +0000] [9] [DEBUG] POST /api/grader
+2210185: start grading
+[2023-05-11 10:36:27 +0000] [10] [DEBUG] POST /api/grader
+2252223: start grading
+2210185: graded
+[2023-05-11 10:36:30 +0000] [10] [DEBUG] POST /api/grader
+2252612: start grading
+2252223: graded
+2252612: graded
+[2023-05-11 10:36:51 +0000] [10] [DEBUG] POST /api/grader
+2211327: start grading
+2211327: graded
+[2023-05-11 10:37:34 +0000] [11] [DEBUG] POST /api/grader
+2252889: start grading
+2252889: graded
+[2023-05-11 10:38:30 +0000] [11] [DEBUG] POST /api/grader
+2252061: start grading
+2252061: graded
+[2023-05-11 10:40:36 +0000] [11] [DEBUG] POST /api/grader
+2211327: start grading
+2211327: graded
+[2023-05-11 10:40:45 +0000] [9] [DEBUG] POST /api/grader
+2212854: start grading
+2212854: graded
+[2023-05-11 10:40:56 +0000] [9] [DEBUG] POST /api/grader
+2252419: start grading
+2252419: graded
+[2023-05-11 10:41:10 +0000] [9] [DEBUG] POST /api/grader
+2252858: start grading
+2252858: graded
+[2023-05-11 10:43:58 +0000] [9] [DEBUG] POST /api/grader
+2252328: start grading
+2252328: graded
+[2023-05-11 10:45:06 +0000] [9] [DEBUG] POST /api/grader
+2211327: start grading
+2211327: graded
+[2023-05-11 10:46:23 +0000] [11] [DEBUG] POST /api/grader
+2211327: start grading
+2211327: graded
+[2023-05-11 10:47:17 +0000] [9] [DEBUG] POST /api/grader
+2213869: start grading
+2213869: graded
+[2023-05-11 10:49:29 +0000] [10] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 10:49:55 +0000] [11] [DEBUG] POST /api/grader
+2210055: start grading
+[2023-05-11 10:49:56 +0000] [11] [DEBUG] POST /api/grader
+2210768: start grading
+2210055: graded
+2210768: graded
+[2023-05-11 10:52:31 +0000] [11] [DEBUG] POST /api/grader
+2211157: start grading
+2211157: graded
+[2023-05-11 10:54:21 +0000] [9] [DEBUG] POST /api/grader
+2212413: start grading
+2212413: graded
+[2023-05-11 10:55:43 +0000] [9] [DEBUG] POST /api/grader
+2152406: start grading
+2152406: graded
+[2023-05-11 10:56:22 +0000] [11] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 10:56:33 +0000] [9] [DEBUG] POST /api/grader
+2210768: start grading
+2210768: graded
+[2023-05-11 10:56:54 +0000] [11] [DEBUG] POST /api/grader
+2252223: start grading
+2252223: graded
+[2023-05-11 10:58:52 +0000] [11] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:04:03 +0000] [11] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:07:08 +0000] [10] [DEBUG] POST /api/grader
+2210846: start grading
+2210846: graded
+[2023-05-11 11:08:00 +0000] [10] [DEBUG] POST /api/grader
+2211157: start grading
+2211157: graded
+[2023-05-11 11:08:26 +0000] [11] [DEBUG] POST /api/grader
+2211327: start grading
+2211327: graded
+[2023-05-11 11:09:02 +0000] [11] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 11:09:22 +0000] [10] [DEBUG] POST /api/grader
+2210332: start grading
+2210332: graded
+[2023-05-11 11:09:47 +0000] [9] [DEBUG] POST /api/grader
+2252858: start grading
+2252858: graded
+[2023-05-11 11:09:51 +0000] [10] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:10:25 +0000] [11] [DEBUG] POST /api/grader
+2252114: start grading
+2252114: graded
+[2023-05-11 11:10:39 +0000] [11] [DEBUG] POST /api/grader
+2211327: start grading
+2211327: graded
+[2023-05-11 11:11:14 +0000] [10] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:12:08 +0000] [10] [DEBUG] POST /api/grader
+2210522: start grading
+2210522: graded
+[2023-05-11 11:12:23 +0000] [11] [DEBUG] POST /api/grader
+2252889: start grading
+2252889: graded
+[2023-05-11 11:13:44 +0000] [9] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 11:15:41 +0000] [10] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 11:16:42 +0000] [11] [DEBUG] POST /api/grader
+2211327: start grading
+2211327: graded
+[2023-05-11 11:17:02 +0000] [9] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 11:17:08 +0000] [10] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:18:58 +0000] [10] [DEBUG] POST /api/grader
+2211793: start grading
+2211793: graded
+[2023-05-11 11:19:59 +0000] [9] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 11:20:30 +0000] [9] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:22:46 +0000] [10] [DEBUG] POST /api/grader
+2212263: start grading
+2212263: graded
+[2023-05-11 11:22:56 +0000] [9] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:24:55 +0000] [11] [DEBUG] POST /api/grader
+2210671: start grading
+2210671: graded
+[2023-05-11 11:25:05 +0000] [10] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 11:25:32 +0000] [10] [DEBUG] POST /api/grader
+2013506: start grading
+2013506: graded
+[2023-05-11 11:25:45 +0000] [11] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 11:25:49 +0000] [10] [DEBUG] POST /api/grader
+2212085: start grading
+2212085: graded
+[2023-05-11 11:26:24 +0000] [11] [DEBUG] POST /api/grader
+2211349: start grading
+[2023-05-11 11:26:25 +0000] [10] [DEBUG] POST /api/grader
+2053097: start grading
+2211349: graded
+2053097: graded
+[2023-05-11 11:26:52 +0000] [9] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:26:58 +0000] [11] [DEBUG] POST /api/grader
+2252114: start grading
+2252114: graded
+[2023-05-11 11:27:32 +0000] [11] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 11:27:54 +0000] [11] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 11:29:55 +0000] [10] [DEBUG] POST /api/grader
+2210522: start grading
+2210522: graded
+[2023-05-11 11:30:10 +0000] [11] [DEBUG] POST /api/grader
+2211190: start grading
+2211190: graded
+[2023-05-11 11:30:56 +0000] [10] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:31:20 +0000] [10] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:32:12 +0000] [11] [DEBUG] POST /api/grader
+2114605: start grading
+2114605: graded
+[2023-05-11 11:32:30 +0000] [10] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:32:36 +0000] [9] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 11:33:37 +0000] [11] [DEBUG] POST /api/grader
+2212703: start grading
+2212703: graded
+[2023-05-11 11:34:18 +0000] [11] [DEBUG] POST /api/grader
+2211856: start grading
+2211856: graded
+[2023-05-11 11:34:23 +0000] [9] [DEBUG] POST /api/grader
+2114605: start grading
+2114605: graded
+[2023-05-11 11:34:58 +0000] [10] [DEBUG] POST /api/grader
+2211417: start grading
+2211417: graded
+[2023-05-11 11:35:13 +0000] [9] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 11:35:26 +0000] [11] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 11:36:12 +0000] [11] [DEBUG] POST /api/grader
+2210290: start grading
+2210290: graded
+[2023-05-11 11:36:50 +0000] [10] [DEBUG] POST /api/grader
+2211807: start grading
+2211807: graded
+[2023-05-11 11:37:21 +0000] [10] [DEBUG] POST /api/grader
+2212822: start grading
+2212822: graded
+[2023-05-11 11:40:54 +0000] [11] [DEBUG] POST /api/grader
+2211253: start grading
+2211253: graded
+[2023-05-11 11:45:15 +0000] [11] [DEBUG] POST /api/grader
+2211417: start grading
+2211417: graded
+[2023-05-11 11:46:38 +0000] [10] [DEBUG] POST /api/grader
+2211157: start grading
+2211157: graded
+[2023-05-11 11:47:14 +0000] [9] [DEBUG] POST /api/grader
+2210986: start grading
+2210986: graded
+[2023-05-11 11:48:33 +0000] [10] [DEBUG] POST /api/grader
+2210332: start grading
+2210332: graded
+[2023-05-11 11:49:40 +0000] [10] [DEBUG] POST /api/grader
+2013506: start grading
+2013506: graded
+[2023-05-11 11:50:24 +0000] [10] [DEBUG] POST /api/grader
+2212779: start grading
+2212779: graded
+[2023-05-11 11:52:56 +0000] [10] [DEBUG] POST /api/grader
+2210332: start grading
+2210332: graded
+[2023-05-11 11:53:33 +0000] [10] [DEBUG] POST /api/grader
+2211157: start grading
+2211157: graded
+[2023-05-11 11:54:14 +0000] [10] [DEBUG] POST /api/grader
+2252114: start grading
+2252114: graded
+[2023-05-11 11:55:42 +0000] [10] [DEBUG] POST /api/grader
+2213807: start grading
+2213807: graded
+[2023-05-11 11:59:39 +0000] [11] [DEBUG] POST /api/grader
+2053097: start grading
+2053097: graded
+[2023-05-11 12:00:18 +0000] [11] [DEBUG] POST /api/grader
+2210332: start grading
+2210332: graded
+[2023-05-11 12:00:45 +0000] [11] [DEBUG] POST /api/grader
+2252114: start grading
+2252114: graded
+[2023-05-11 12:03:43 +0000] [11] [DEBUG] POST /api/grader
+2252114: start grading
+2252114: graded
+[2023-05-11 12:09:03 +0000] [11] [DEBUG] POST /api/grader
+2211190: start grading
+2211190: graded
+[2023-05-11 12:10:42 +0000] [11] [DEBUG] POST /api/grader
+2114605: start grading
+2114605: graded
+[2023-05-11 12:11:17 +0000] [10] [DEBUG] POST /api/grader
+2252114: start grading
+2252114: graded
+[2023-05-11 12:11:40 +0000] [10] [DEBUG] POST /api/grader
+2252304: start grading
+2252304: graded
+[2023-05-11 12:12:11 +0000] [11] [DEBUG] POST /api/grader
+2212822: start grading
+2212822: graded
+[2023-05-11 12:16:18 +0000] [11] [DEBUG] POST /api/grader
+2252097: start grading
+2252097: graded
+[2023-05-11 12:16:27 +0000] [9] [DEBUG] POST /api/grader
+2252304: start grading
+2252304: graded
+[2023-05-11 12:17:38 +0000] [9] [DEBUG] POST /api/grader
+2114605: start grading
+2114605: graded
+[2023-05-11 12:17:58 +0000] [9] [DEBUG] POST /api/grader
+2252100: start grading
+[2023-05-11 12:17:58 +0000] [11] [DEBUG] POST /api/grader
+2211190: start grading
+2252100: graded
+2211190: graded
+[2023-05-11 12:19:53 +0000] [10] [DEBUG] POST /api/grader
+2252114: start grading
+2252114: graded
+[2023-05-11 12:21:11 +0000] [10] [DEBUG] POST /api/grader
+2252114: start grading
+2252114: graded
+[2023-05-11 12:21:25 +0000] [9] [DEBUG] POST /api/grader
+2114605: start grading
+2114605: graded
+[2023-05-11 12:22:09 +0000] [11] [DEBUG] POST /api/grader
+2252621: start grading
+[2023-05-11 12:22:09 +0000] [11] [DEBUG] POST /api/grader
+2212822: start grading
+2252621: graded
+2212822: graded
+[2023-05-11 12:24:10 +0000] [11] [DEBUG] POST /api/grader
+2211157: start grading
+2211157: graded
+[2023-05-11 12:24:23 +0000] [10] [DEBUG] POST /api/grader
+2210512: start grading
+[2023-05-11 12:24:53 +0000] [9] [DEBUG] POST /api/grader
+2114605: start grading
+2114605: graded
+2210512: graded
+[2023-05-11 12:26:41 +0000] [11] [DEBUG] POST /api/grader
+2212854: start grading
+[2023-05-11 12:26:47 +0000] [10] [DEBUG] POST /api/grader
+2210446: start grading
+2212854: graded
+2210446: graded
+[2023-05-11 12:29:19 +0000] [9] [DEBUG] POST /api/grader
+2210986: start grading
+2210986: graded
+[2023-05-11 12:29:35 +0000] [10] [DEBUG] POST /api/grader
+2210512: start grading
+2210512: graded
+[2023-05-11 12:32:32 +0000] [9] [DEBUG] POST /api/grader
+2252397: start grading
+2252397: graded
+[2023-05-11 12:32:46 +0000] [11] [DEBUG] POST /api/grader
+2212822: start grading
+2212822: graded
+[2023-05-11 12:33:27 +0000] [9] [DEBUG] POST /api/grader
+2213287: start grading
+2213287: graded
+[2023-05-11 12:33:45 +0000] [11] [DEBUG] POST /api/grader
+2211157: start grading
+[2023-05-11 12:33:47 +0000] [11] [DEBUG] POST /api/grader
+2252895: start grading
+2211157: graded
+2252895: graded
+[2023-05-11 12:34:58 +0000] [10] [DEBUG] POST /api/grader
+2252397: start grading
+2252397: graded
+[2023-05-11 12:38:25 +0000] [11] [DEBUG] POST /api/grader
+2252606: start grading
+2252606: graded
+[2023-05-11 12:40:39 +0000] [9] [DEBUG] POST /api/grader
+2210512: start grading
+2210512: graded
+[2023-05-11 12:42:16 +0000] [9] [DEBUG] POST /api/grader
+2252895: start grading
+2252895: graded
+[2023-05-11 12:42:50 +0000] [11] [DEBUG] POST /api/grader
+2014739: start grading
+2014739: graded
+[2023-05-11 12:43:15 +0000] [11] [DEBUG] POST /api/grader
+2210187: start grading
+2210187: graded
+[2023-05-11 12:44:44 +0000] [11] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 12:45:25 +0000] [9] [DEBUG] POST /api/grader
+2213287: start grading
+2213287: graded
+[2023-05-11 12:45:48 +0000] [10] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 12:46:56 +0000] [9] [DEBUG] POST /api/grader
+2210381: start grading
+2210381: graded
+[2023-05-11 12:47:47 +0000] [9] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 12:48:19 +0000] [9] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-11 12:50:20 +0000] [10] [DEBUG] POST /api/grader
+2211509: start grading
+2211509: graded
+[2023-05-11 12:50:51 +0000] [9] [DEBUG] POST /api/grader
+2211835: start grading
+2211835: graded
+[2023-05-11 12:52:25 +0000] [10] [DEBUG] POST /api/grader
+2211590: start grading
+2211590: graded
+[2023-05-11 12:53:10 +0000] [9] [DEBUG] POST /api/grader
+2211369: start grading
+2211369: graded
+[2023-05-11 12:53:30 +0000] [11] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-11 12:53:45 +0000] [9] [DEBUG] POST /api/grader
+2014739: start grading
+2014739: graded
+[2023-05-11 12:55:51 +0000] [9] [DEBUG] POST /api/grader
+2252612: start grading
+2252612: graded
+[2023-05-11 12:56:58 +0000] [9] [DEBUG] POST /api/grader
+2252114: start grading
+2252114: graded
+[2023-05-11 12:57:20 +0000] [11] [DEBUG] POST /api/grader
+2252102: start grading
+2252102: graded
+[2023-05-11 12:58:25 +0000] [11] [DEBUG] POST /api/grader
+2210187: start grading
+2210187: graded
+[2023-05-11 13:08:58 +0000] [11] [DEBUG] POST /api/grader
+2213287: start grading
+2213287: graded
+[2023-05-11 13:10:12 +0000] [9] [DEBUG] POST /api/grader
+2211595: start grading
+2211595: graded
+[2023-05-11 13:10:28 +0000] [11] [DEBUG] POST /api/grader
+2210777: start grading
+2210777: graded
+[2023-05-11 13:11:22 +0000] [11] [DEBUG] POST /api/grader
+2211595: start grading
+2211595: graded
+[2023-05-11 13:12:06 +0000] [10] [DEBUG] POST /api/grader
+2213187: start grading
+2213187: graded
+[2023-05-11 13:14:08 +0000] [11] [DEBUG] POST /api/grader
+2210446: start grading
+2210446: graded
+[2023-05-11 13:14:57 +0000] [11] [DEBUG] POST /api/grader
+2212826: start grading
+2212826: graded
+[2023-05-11 13:17:47 +0000] [9] [DEBUG] POST /api/grader
+2210055: start grading
+2210055: graded
+[2023-05-11 13:18:08 +0000] [9] [DEBUG] POST /api/grader
+2111056: start grading
+2111056: graded
+[2023-05-11 13:18:12 +0000] [11] [DEBUG] POST /api/grader
+2213572: start grading
+2213572: graded
+[2023-05-11 13:19:44 +0000] [9] [DEBUG] POST /api/grader
+2212631: start grading
+2212631: graded
+[2023-05-11 13:19:49 +0000] [9] [DEBUG] POST /api/grader
+2213187: start grading
+2213187: graded
+[2023-05-11 13:22:54 +0000] [9] [DEBUG] POST /api/grader
+2210512: start grading
+[2023-05-11 13:22:55 +0000] [11] [DEBUG] POST /api/grader
+2252612: start grading
+2210512: graded
+2252612: graded
+[2023-05-11 13:26:58 +0000] [10] [DEBUG] POST /api/grader
+2252223: start grading
+2252223: graded
+[2023-05-11 13:27:58 +0000] [10] [DEBUG] POST /api/grader
+2213187: start grading
+[2023-05-11 13:27:59 +0000] [9] [DEBUG] POST /api/grader
+2212631: start grading
+2213187: graded
+2212631: graded
+[2023-05-11 13:28:29 +0000] [11] [DEBUG] POST /api/grader
+2211173: start grading
+2211173: graded
+[2023-05-11 13:30:49 +0000] [10] [DEBUG] POST /api/grader
+2213187: start grading
+2213187: graded
+[2023-05-11 13:33:23 +0000] [10] [DEBUG] POST /api/grader
+2213187: start grading
+2213187: graded
+[2023-05-11 13:33:54 +0000] [9] [DEBUG] POST /api/grader
+2213982: start grading
+2213982: graded
+[2023-05-11 13:34:50 +0000] [10] [DEBUG] POST /api/grader
+2252223: start grading
+2252223: graded
+[2023-05-11 13:35:50 +0000] [10] [DEBUG] POST /api/grader
+2213187: start grading
+2213187: graded
+[2023-05-11 13:37:11 +0000] [10] [DEBUG] POST /api/grader
+2252097: start grading
+2252097: graded
+[2023-05-11 13:38:05 +0000] [10] [DEBUG] POST /api/grader
+2214061: start grading
+2214061: graded
+[2023-05-11 13:38:32 +0000] [10] [DEBUG] POST /api/grader
+2211821: start grading
+2211821: graded
+[2023-05-11 13:38:58 +0000] [11] [DEBUG] POST /api/grader
+2252416: start grading
+2252416: graded
+[2023-05-11 13:40:29 +0000] [11] [DEBUG] POST /api/grader
+2252621: start grading
+[2023-05-11 13:40:30 +0000] [9] [DEBUG] POST /api/grader
+2213982: start grading
+2252621: graded
+2213982: graded
+[2023-05-11 13:41:13 +0000] [10] [DEBUG] POST /api/grader
+2252650: start grading
+[2023-05-11 13:41:15 +0000] [11] [DEBUG] POST /api/grader
+2252428: start grading
+2252650: graded
+2252428: graded
+[2023-05-11 13:42:59 +0000] [10] [DEBUG] POST /api/grader
+2213982: start grading
+2213982: graded
+[2023-05-11 13:43:11 +0000] [11] [DEBUG] POST /api/grader
+2252621: start grading
+2252621: graded
+[2023-05-11 13:48:13 +0000] [9] [DEBUG] POST /api/grader
+2210187: start grading
+2210187: graded
+[2023-05-11 13:48:51 +0000] [11] [DEBUG] POST /api/grader
+2210078: start grading
+2210078: graded
+[2023-05-11 13:51:15 +0000] [11] [DEBUG] POST /api/grader
+2252428: start grading
+[2023-05-11 13:51:31 +0000] [9] [DEBUG] POST /api/grader
+2211795: start grading
+2211795: graded
+[2023-05-11 13:52:28 +0000] [9] [DEBUG] POST /api/grader
+2252621: start grading
+2252428: graded
+2252621: graded
+[2023-05-11 13:53:01 +0000] [11] [DEBUG] POST /api/grader
+2211821: start grading
+2211821: graded
+[2023-05-11 13:53:58 +0000] [10] [DEBUG] POST /api/grader
+2252034: start grading
+2252034: graded
+[2023-05-11 13:54:38 +0000] [11] [DEBUG] POST /api/grader
+2210573: start grading
+[2023-05-11 13:54:38 +0000] [10] [DEBUG] POST /api/grader
+2211821: start grading
+2210573: graded
+2211821: graded
+[2023-05-11 13:54:48 +0000] [11] [DEBUG] POST /api/grader
+2252637: start grading
+2252637: graded
+[2023-05-11 13:58:02 +0000] [9] [DEBUG] POST /api/grader
+2252586: start grading
+2252586: graded
+[2023-05-11 13:58:11 +0000] [9] [DEBUG] POST /api/grader
+2213129: start grading
+2213129: graded
+[2023-05-11 13:58:24 +0000] [11] [DEBUG] POST /api/grader
+2212826: start grading
+2212826: graded
+[2023-05-11 13:58:28 +0000] [10] [DEBUG] POST /api/grader
+2212741: start grading
+2212741: graded
+[2023-05-11 13:59:29 +0000] [11] [DEBUG] POST /api/grader
+2210078: start grading
+2210078: graded
+[2023-05-11 14:00:39 +0000] [9] [DEBUG] POST /api/grader
+2213129: start grading
+2213129: graded
+[2023-05-11 14:00:59 +0000] [9] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-11 14:01:16 +0000] [9] [DEBUG] POST /api/grader
+2211795: start grading
+[2023-05-11 14:01:17 +0000] [10] [DEBUG] POST /api/grader
+2252045: start grading
+2211795: graded
+2252045: graded
+[2023-05-11 14:01:49 +0000] [11] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-11 14:03:32 +0000] [9] [DEBUG] POST /api/grader
+2212826: start grading
+2212826: graded
+[2023-05-11 14:04:01 +0000] [11] [DEBUG] POST /api/grader
+2211430: start grading
+2211430: graded
+[2023-05-11 14:04:36 +0000] [11] [DEBUG] POST /api/grader
+2252637: start grading
+2252637: graded
+[2023-05-11 14:04:49 +0000] [9] [DEBUG] POST /api/grader
+2211771: start grading
+2211771: graded
+[2023-05-11 14:05:00 +0000] [10] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-11 14:05:36 +0000] [9] [DEBUG] POST /api/grader
+2212527: start grading
+2212527: graded
+[2023-05-11 14:08:13 +0000] [10] [DEBUG] POST /api/grader
+2211185: start grading
+2211185: graded
+[2023-05-11 14:08:57 +0000] [9] [DEBUG] POST /api/grader
+2211771: start grading
+2211771: graded
+[2023-05-11 14:09:11 +0000] [10] [DEBUG] POST /api/grader
+2210238: start grading
+2210238: graded
+[2023-05-11 14:12:35 +0000] [10] [DEBUG] POST /api/grader
+2211937: start grading
+2211937: graded
+[2023-05-11 14:12:52 +0000] [10] [DEBUG] POST /api/grader
+2252683: start grading
+2252683: graded
+[2023-05-11 14:13:19 +0000] [10] [DEBUG] POST /api/grader
+2252023: start grading
+2252023: graded
+[2023-05-11 14:14:02 +0000] [11] [DEBUG] POST /api/grader
+2252637: start grading
+2252637: graded
+[2023-05-11 14:15:17 +0000] [11] [DEBUG] POST /api/grader
+2252037: start grading
+[2023-05-11 14:15:17 +0000] [10] [DEBUG] POST /api/grader
+2252001: start grading
+[2023-05-11 14:15:17 +0000] [11] [DEBUG] POST /api/grader
+2252264: start grading
+2252001: graded
+2252264: graded
+[2023-05-11 14:15:26 +0000] [9] [DEBUG] POST /api/grader
+2213572: start grading
+2252037: graded
+2213572: graded
+[2023-05-11 14:16:14 +0000] [11] [DEBUG] POST /api/grader
+2212601: start grading
+2212601: graded
+[2023-05-11 14:16:51 +0000] [11] [DEBUG] POST /api/grader
+2210187: start grading
+2210187: graded
+[2023-05-11 14:19:11 +0000] [10] [DEBUG] Ignored premature client disconnection. No more data after: b'\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00'
+[2023-05-11 14:19:36 +0000] [11] [DEBUG] POST /api/grader
+2252120: start grading
+[2023-05-11 14:19:41 +0000] [11] [DEBUG] POST /api/grader
+2212495: start grading
+2252120: graded
+2212495: graded
+[2023-05-11 14:19:57 +0000] [11] [DEBUG] POST /api/grader
+2214061: start grading
+2214061: graded
+[2023-05-11 14:22:43 +0000] [9] [DEBUG] POST /api/grader
+2252034: start grading
+2252034: graded
+[2023-05-11 14:23:16 +0000] [10] [DEBUG] POST /api/grader
+2213572: start grading
+2213572: graded
+[2023-05-11 14:23:19 +0000] [9] [DEBUG] POST /api/grader
+2211949: start grading
+2211949: graded
+[2023-05-11 14:23:26 +0000] [9] [DEBUG] POST /api/grader
+2214061: start grading
+2214061: graded
+[2023-05-11 14:24:12 +0000] [10] [DEBUG] POST /api/grader
+2214061: start grading
+2214061: graded
+[2023-05-11 14:25:17 +0000] [10] [DEBUG] POST /api/grader
+2213026: start grading
+2213026: graded
+[2023-05-11 14:25:44 +0000] [9] [DEBUG] POST /api/grader
+2052589: start grading
+2052589: graded
+[2023-05-11 14:26:34 +0000] [11] [DEBUG] POST /api/grader
+2212601: start grading
+2212601: graded
+[2023-05-11 14:27:08 +0000] [10] [DEBUG] POST /api/grader
+2252264: start grading
+2252264: graded
+[2023-05-11 14:27:56 +0000] [11] [DEBUG] POST /api/grader
+2214061: start grading
+[2023-05-11 14:27:58 +0000] [10] [DEBUG] POST /api/grader
+2210512: start grading
+2214061: graded
+2210512: graded
+[2023-05-11 14:28:30 +0000] [9] [DEBUG] POST /api/grader
+2210509: start grading
+2210509: graded
+[2023-05-11 14:29:24 +0000] [10] [DEBUG] POST /api/grader
+2210509: start grading
+2210509: graded
+[2023-05-11 14:30:57 +0000] [11] [DEBUG] POST /api/grader
+2252120: start grading
+2252120: graded
+[2023-05-11 14:31:36 +0000] [9] [DEBUG] POST /api/grader
+2252264: start grading
+2252264: graded
+[2023-05-11 14:32:02 +0000] [11] [DEBUG] POST /api/grader
+2252486: start grading
+2252486: graded
+[2023-05-11 14:32:49 +0000] [11] [DEBUG] POST /api/grader
+2210512: start grading
+2210512: graded
+[2023-05-11 14:33:09 +0000] [9] [DEBUG] POST /api/grader
+2212737: start grading
+2212737: graded
+[2023-05-11 14:33:30 +0000] [9] [DEBUG] POST /api/grader
+2252264: start grading
+2252264: graded
+[2023-05-11 14:33:44 +0000] [10] [DEBUG] POST /api/grader
+2052589: start grading
+2052589: graded
+[2023-05-11 14:34:06 +0000] [10] [DEBUG] POST /api/grader
+2214061: start grading
+2214061: graded
+[2023-05-11 14:34:20 +0000] [9] [DEBUG] POST /api/grader
+2210777: start grading
+[2023-05-11 14:34:27 +0000] [11] [DEBUG] POST /api/grader
+2210238: start grading
+2210777: graded
+2210238: graded
+[2023-05-11 14:36:12 +0000] [10] [DEBUG] POST /api/grader
+2211527: start grading
+2211527: graded
+[2023-05-11 14:37:01 +0000] [10] [DEBUG] POST /api/grader
+2252264: start grading
+[2023-05-11 14:37:04 +0000] [10] [DEBUG] POST /api/grader
+2252681: start grading
+2252264: graded
+2252681: graded
+[2023-05-11 14:37:39 +0000] [9] [DEBUG] POST /api/grader
+2211486: start grading
+2211486: graded
+[2023-05-11 14:40:33 +0000] [9] [DEBUG] POST /api/grader
+2252625: start grading
+[2023-05-11 14:40:52 +0000] [9] [DEBUG] POST /api/grader
+2212826: start grading
+2212826: graded
+2252625: graded
+[2023-05-11 14:42:42 +0000] [11] [DEBUG] POST /api/grader
+2252264: start grading
+2252264: graded
+[2023-05-11 14:43:09 +0000] [11] [DEBUG] POST /api/grader
+2252034: start grading
+2252034: graded
+[2023-05-11 14:43:30 +0000] [9] [DEBUG] POST /api/grader
+2214061: start grading
+2214061: graded
+[2023-05-11 14:45:17 +0000] [11] [DEBUG] POST /api/grader
+2252121: start grading
+2252121: graded
+[2023-05-11 14:46:27 +0000] [10] [DEBUG] POST /api/grader
+2252761: start grading
+2252761: graded
+[2023-05-11 14:46:44 +0000] [10] [DEBUG] POST /api/grader
+2213572: start grading
+2213572: graded
+[2023-05-11 14:49:18 +0000] [11] [DEBUG] POST /api/grader
+2211807: start grading
+2211807: graded
+[2023-05-11 14:50:53 +0000] [9] [DEBUG] POST /api/grader
+2210187: start grading
+2210187: graded
+[2023-05-11 14:51:13 +0000] [11] [DEBUG] POST /api/grader
+2211486: start grading
+2211486: graded
+[2023-05-11 14:51:18 +0000] [9] [DEBUG] POST /api/grader
+2252680: start grading
+2252680: graded
+[2023-05-11 14:51:23 +0000] [11] [DEBUG] POST /api/grader
+2052589: start grading
+2052589: graded
+[2023-05-11 14:52:07 +0000] [9] [DEBUG] POST /api/grader
+2252034: start grading
+2252034: graded
+[2023-05-11 14:53:32 +0000] [11] [DEBUG] POST /api/grader
+2213572: start grading
+2213572: graded
+[2023-05-11 14:54:05 +0000] [9] [DEBUG] POST /api/grader
+2252151: start grading
+2252151: graded
+[2023-05-11 14:54:20 +0000] [9] [DEBUG] POST /api/grader
+2252853: start grading
+2252853: graded
+[2023-05-11 14:56:50 +0000] [10] [DEBUG] POST /api/grader
+2213026: start grading
+2213026: graded
+[2023-05-11 14:58:36 +0000] [9] [DEBUG] POST /api/grader
+2252605: start grading
+[2023-05-11 14:58:36 +0000] [10] [DEBUG] POST /api/grader
+2212826: start grading
+2252605: graded
+2212826: graded
+[2023-05-11 14:58:52 +0000] [9] [DEBUG] POST /api/grader
+2052589: start grading
+2052589: graded
+[2023-05-11 14:59:43 +0000] [9] [DEBUG] POST /api/grader
+2252100: start grading
+2252100: graded
+[2023-05-11 15:00:45 +0000] [10] [DEBUG] POST /api/grader
+2052589: start grading
+2052589: graded
+[2023-05-11 15:03:57 +0000] [10] [DEBUG] POST /api/grader
+2214061: start grading
+2214061: graded
+[2023-05-11 15:04:35 +0000] [10] [DEBUG] POST /api/grader
+2153538: start grading
+[2023-05-11 15:04:39 +0000] [11] [DEBUG] POST /api/grader
+2210754: start grading
+2210754: graded
+2153538: graded
+[2023-05-11 15:06:46 +0000] [9] [DEBUG] POST /api/grader
+2213282: start grading
+2213282: graded
+[2023-05-11 15:07:37 +0000] [9] [DEBUG] POST /api/grader
+2210238: start grading
+2210238: graded
+[2023-05-11 15:07:46 +0000] [10] [DEBUG] POST /api/grader
+2212737: start grading
+2212737: graded
+[2023-05-11 15:08:09 +0000] [11] [DEBUG] POST /api/grader
+2211486: start grading
+[2023-05-11 15:08:11 +0000] [9] [DEBUG] POST /api/grader
+2053105: start grading
+2211486: graded
+2053105: graded
+[2023-05-11 15:08:34 +0000] [9] [DEBUG] POST /api/grader
+2211834: start grading
+2211834: graded
+[2023-05-11 15:10:04 +0000] [9] [DEBUG] POST /api/grader
+2212826: start grading
+2212826: graded
+[2023-05-11 15:11:53 +0000] [10] [DEBUG] POST /api/grader
+2212495: start grading
+2212495: graded
+[2023-05-11 15:11:58 +0000] [9] [DEBUG] POST /api/grader
+2252154: start grading
+2252154: graded
+[2023-05-11 15:12:05 +0000] [10] [DEBUG] POST /api/grader
+2252034: start grading
+2252034: graded
+[2023-05-11 15:12:43 +0000] [9] [DEBUG] POST /api/grader
+2153538: start grading
+2153538: graded
+[2023-05-11 15:13:43 +0000] [10] [DEBUG] POST /api/grader
+2153538: start grading
+2153538: graded
+[2023-05-11 15:13:51 +0000] [9] [DEBUG] POST /api/grader
+2212527: start grading
+[2023-05-11 15:14:59 +0000] [10] [DEBUG] POST /api/grader
+2212021: start grading
+2212021: graded
+2212527: graded
+[2023-05-11 15:15:35 +0000] [10] [DEBUG] POST /api/grader
+2213298: start grading
+[2023-05-11 15:15:36 +0000] [10] [DEBUG] POST /api/grader
+2210187: start grading
+2213298: graded
+2210187: graded
+[2023-05-11 15:17:21 +0000] [10] [DEBUG] POST /api/grader
+2252586: start grading
+[2023-05-11 15:17:23 +0000] [9] [DEBUG] POST /api/grader
+2252059: start grading
+2252586: graded
+2252059: graded
+[2023-05-11 15:18:48 +0000] [10] [DEBUG] POST /api/grader
+2211795: start grading
+2211795: graded
+[2023-05-11 15:19:06 +0000] [10] [DEBUG] POST /api/grader
+2252264: start grading
+2252264: graded
+[2023-05-11 15:19:20 +0000] [11] [DEBUG] POST /api/grader
+2211093: start grading
+2211093: graded
+[2023-05-11 15:19:55 +0000] [11] [DEBUG] POST /api/grader
+2252346: start grading
+2252346: graded
+[2023-05-11 15:20:35 +0000] [10] [DEBUG] POST /api/grader
+2212828: start grading
+2212828: graded
+[2023-05-11 15:22:12 +0000] [9] [DEBUG] POST /api/grader
+2212601: start grading
+[2023-05-11 15:22:13 +0000] [9] [DEBUG] POST /api/grader
+2252346: start grading
+2252346: graded
+2212601: graded
+[2023-05-11 15:24:15 +0000] [11] [DEBUG] POST /api/grader
+2211795: start grading
+2211795: graded
+[2023-05-11 15:24:39 +0000] [9] [DEBUG] POST /api/grader
+2212021: start grading
+[2023-05-11 15:24:39 +0000] [9] [DEBUG] POST /api/grader
+2252059: start grading
+2212021: graded
+2252059: graded
+[2023-05-11 15:25:13 +0000] [9] [DEBUG] POST /api/grader
+2213954: start grading
+2213954: graded
+[2023-05-11 15:26:23 +0000] [10] [DEBUG] POST /api/grader
+2252154: start grading
+2252154: graded
+[2023-05-11 15:26:59 +0000] [10] [DEBUG] POST /api/grader
+2052589: start grading
+2052589: graded
+[2023-05-11 15:27:36 +0000] [10] [DEBUG] POST /api/grader
+2252264: start grading
+2252264: graded
+[2023-05-11 15:29:53 +0000] [10] [DEBUG] POST /api/grader
+2053105: start grading
+2053105: graded
+[2023-05-11 15:30:07 +0000] [10] [DEBUG] POST /api/grader
+2210500: start grading
+2210500: graded
+[2023-05-11 15:31:50 +0000] [11] [DEBUG] POST /api/grader
+2111900: start grading
+2111900: graded
+[2023-05-11 15:32:03 +0000] [9] [DEBUG] POST /api/grader
+2052589: start grading
+2052589: graded
+[2023-05-11 15:32:19 +0000] [9] [DEBUG] POST /api/grader
+2213795: start grading
+2213795: graded
+[2023-05-11 15:32:24 +0000] [11] [DEBUG] POST /api/grader
+2212828: start grading
+2212828: graded
+[2023-05-11 15:32:37 +0000] [9] [DEBUG] POST /api/grader
+2153538: start grading
+2153538: graded
+[2023-05-11 15:32:58 +0000] [10] [DEBUG] POST /api/grader
+2252059: start grading
+2252059: graded
+[2023-05-11 15:33:24 +0000] [11] [DEBUG] POST /api/grader
+2214061: start grading
+[2023-05-11 15:33:26 +0000] [10] [DEBUG] POST /api/grader
+2213711: start grading
+2214061: graded
+2213711: graded
+[2023-05-11 15:35:03 +0000] [9] [DEBUG] POST /api/grader
+2252059: start grading
+2252059: graded
+[2023-05-11 15:36:33 +0000] [9] [DEBUG] POST /api/grader
+2052589: start grading
+[2023-05-11 15:36:33 +0000] [10] [DEBUG] POST /api/grader
+2252853: start grading
+2252853: graded
+2052589: graded
+[2023-05-11 15:36:58 +0000] [10] [DEBUG] POST /api/grader
+2252625: start grading
+2252625: graded
+[2023-05-11 15:39:15 +0000] [9] [DEBUG] POST /api/grader
+2211486: start grading
+2211486: graded
+[2023-05-11 15:40:18 +0000] [9] [DEBUG] POST /api/grader
+2210109: start grading
+2210109: graded
+[2023-05-11 15:41:17 +0000] [10] [DEBUG] POST /api/grader
+2212828: start grading
+2212828: graded
+[2023-05-11 15:42:01 +0000] [9] [DEBUG] POST /api/grader
+2212027: start grading
+2212027: graded
+[2023-05-11 15:42:30 +0000] [10] [DEBUG] POST /api/grader
+2252059: start grading
+2252059: graded
+[2023-05-11 15:48:55 +0000] [9] [DEBUG] POST /api/grader
+1952942: start grading
+1952942: graded
+[2023-05-11 15:50:42 +0000] [11] [DEBUG] POST /api/grader
+2210413: start grading
+2210413: graded
+[2023-05-11 15:51:09 +0000] [11] [DEBUG] POST /api/grader
+2211486: start grading
+2211486: graded
+[2023-05-11 15:51:24 +0000] [11] [DEBUG] POST /api/grader
+2212027: start grading
+2212027: graded
+[2023-05-11 15:51:33 +0000] [10] [DEBUG] POST /api/grader
+2212631: start grading
+2212631: graded
+[2023-05-11 15:51:57 +0000] [10] [DEBUG] POST /api/grader
+2252264: start grading
+2252264: graded
+[2023-05-11 15:52:25 +0000] [10] [DEBUG] POST /api/grader
+2212027: start grading
+2212027: graded
+[2023-05-11 15:52:45 +0000] [11] [DEBUG] POST /api/grader
+2153538: start grading
+2153538: graded
+[2023-05-11 15:53:54 +0000] [10] [DEBUG] POST /api/grader
+2252853: start grading
+2252853: graded
+[2023-05-11 15:55:13 +0000] [11] [DEBUG] POST /api/grader
+2252757: start grading
+2252757: graded
+[2023-05-11 15:57:19 +0000] [11] [DEBUG] POST /api/grader
+2212085: start grading
+2212085: graded
+[2023-05-11 15:58:43 +0000] [11] [DEBUG] POST /api/grader
+2210500: start grading
+2210500: graded
+[2023-05-11 15:59:26 +0000] [11] [DEBUG] POST /api/grader
+2252100: start grading
+2252100: graded
+[2023-05-11 15:59:47 +0000] [10] [DEBUG] POST /api/grader
+2213026: start grading
+2213026: graded
+[2023-05-11 16:01:34 +0000] [10] [DEBUG] POST /api/grader
+2212027: start grading
+2212027: graded
+[2023-05-11 16:02:34 +0000] [11] [DEBUG] POST /api/grader
+2212631: start grading
+2212631: graded
+[2023-05-11 16:08:07 +0000] [11] [DEBUG] POST /api/grader
+2252586: start grading
+2252586: graded
+[2023-05-11 16:10:21 +0000] [10] [DEBUG] POST /api/grader
+2252419: start grading
+2252419: graded
+[2023-05-11 16:13:51 +0000] [10] [DEBUG] POST /api/grader
+2252625: start grading
+2252625: graded
+[2023-05-11 16:15:22 +0000] [10] [DEBUG] POST /api/grader
+2252180: start grading
+2252180: graded
+[2023-05-11 16:15:28 +0000] [11] [DEBUG] POST /api/grader
+1952942: start grading
+1952942: graded
+[2023-05-11 16:19:16 +0000] [11] [DEBUG] POST /api/grader
+2212631: start grading
+2212631: graded
+[2023-05-11 16:20:47 +0000] [10] [DEBUG] POST /api/grader
+2252586: start grading
+2252586: graded
+[2023-05-11 16:21:00 +0000] [9] [DEBUG] POST /api/grader
+2252428: start grading
+2252428: graded
+[2023-05-11 16:22:45 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:10)
+[2023-05-11 16:22:45 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2023-05-11 16:22:46 +0000] [121786] [INFO] Booting worker with pid: 121786
+[2023-05-11 16:25:15 +0000] [9] [DEBUG] POST /api/grader
+1952942: start grading
+1952942: graded
+[2023-05-11 16:27:14 +0000] [121786] [DEBUG] POST /api/grader
+2212737: start grading
+2212737: graded
+[2023-05-11 16:30:07 +0000] [9] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-11 16:30:53 +0000] [121786] [DEBUG] POST /api/grader
+2213892: start grading
+2213892: graded
+[2023-05-11 16:32:03 +0000] [9] [DEBUG] POST /api/grader
+2212714: start grading
+2212714: graded
+[2023-05-11 16:33:31 +0000] [11] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-11 16:33:58 +0000] [9] [DEBUG] POST /api/grader
+2212631: start grading
+[2023-05-11 16:34:00 +0000] [121786] [DEBUG] POST /api/grader
+2252853: start grading
+2212631: graded
+2252853: graded
+[2023-05-11 16:36:31 +0000] [11] [DEBUG] POST /api/grader
+2252681: start grading
+2252681: graded
+[2023-05-11 16:38:17 +0000] [121786] [DEBUG] POST /api/grader
+2212222: start grading
+2212222: graded
+[2023-05-11 16:38:32 +0000] [11] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-11 16:38:48 +0000] [11] [DEBUG] POST /api/grader
+2252681: start grading
+2252681: graded
+[2023-05-11 16:39:45 +0000] [9] [DEBUG] POST /api/grader
+2252586: start grading
+2252586: graded
+[2023-05-11 16:40:49 +0000] [121786] [DEBUG] POST /api/grader
+1952942: start grading
+1952942: graded
+[2023-05-11 16:40:54 +0000] [9] [DEBUG] POST /api/grader
+2211378: start grading
+2211378: graded
+[2023-05-11 16:41:11 +0000] [121786] [DEBUG] POST /api/grader
+2250009: start grading
+2250009: graded
+[2023-05-11 16:42:15 +0000] [11] [DEBUG] POST /api/grader
+2212737: start grading
+2212737: graded
+[2023-05-11 16:42:41 +0000] [11] [DEBUG] POST /api/grader
+2252681: start grading
+2252681: graded
+[2023-05-11 16:43:40 +0000] [121786] [DEBUG] POST /api/grader
+2013565: start grading
+[2023-05-11 16:43:40 +0000] [11] [DEBUG] POST /api/grader
+2212631: start grading
+2013565: graded
+2212631: graded
+[2023-05-11 16:45:07 +0000] [11] [DEBUG] POST /api/grader
+2252680: start grading
+2252680: graded
+[2023-05-11 16:46:14 +0000] [11] [DEBUG] POST /api/grader
+2213026: start grading
+2213026: graded
+[2023-05-11 16:46:34 +0000] [121786] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-11 16:48:20 +0000] [121786] [DEBUG] POST /api/grader
+2213892: start grading
+2213892: graded
+[2023-05-11 16:48:34 +0000] [11] [DEBUG] POST /api/grader
+2252149: start grading
+2252149: graded
+[2023-05-11 16:49:27 +0000] [121786] [DEBUG] POST /api/grader
+2013565: start grading
+[2023-05-11 16:49:28 +0000] [11] [DEBUG] POST /api/grader
+2252680: start grading
+2013565: graded
+2252680: graded
+[2023-05-11 16:50:30 +0000] [11] [DEBUG] POST /api/grader
+2211378: start grading
+2211378: graded
+[2023-05-11 16:51:10 +0000] [11] [DEBUG] POST /api/grader
+2210708: start grading
+2210708: graded
+[2023-05-11 16:52:33 +0000] [11] [DEBUG] POST /api/grader
+2252428: start grading
+2252428: graded
+[2023-05-11 16:54:04 +0000] [9] [DEBUG] POST /api/grader
+2210986: start grading
+2210986: graded
+[2023-05-11 16:55:04 +0000] [121786] [DEBUG] POST /api/grader
+2252045: start grading
+2252045: graded
+[2023-05-11 16:55:13 +0000] [9] [DEBUG] POST /api/grader
+2013565: start grading
+2013565: graded
+[2023-05-11 16:58:07 +0000] [9] [DEBUG] POST /api/grader
+1952942: start grading
+1952942: graded
+[2023-05-11 17:01:12 +0000] [9] [DEBUG] POST /api/grader
+2213892: start grading
+2213892: graded
+[2023-05-11 17:04:23 +0000] [121786] [DEBUG] POST /api/grader
+2252428: start grading
+2252428: graded
+[2023-05-11 17:05:12 +0000] [121786] [DEBUG] POST /api/grader
+2252680: start grading
+2252680: graded
+[2023-05-11 17:05:59 +0000] [9] [DEBUG] POST /api/grader
+2252264: start grading
+2252264: graded
+[2023-05-11 17:06:53 +0000] [9] [DEBUG] POST /api/grader
+2252680: start grading
+2252680: graded
+[2023-05-11 17:08:57 +0000] [121786] [DEBUG] POST /api/grader
+2213781: start grading
+2213781: graded
+[2023-05-11 17:11:03 +0000] [121786] [DEBUG] POST /api/grader
+2213892: start grading
+2213892: graded
+[2023-05-11 17:11:42 +0000] [11] [DEBUG] POST /api/grader
+2252625: start grading
+2252625: graded
+[2023-05-11 17:13:20 +0000] [11] [DEBUG] POST /api/grader
+2211848: start grading
+2211848: graded
+[2023-05-11 17:13:31 +0000] [121786] [DEBUG] POST /api/grader
+2252625: start grading
+2252625: graded
+[2023-05-11 17:14:26 +0000] [9] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 17:15:47 +0000] [121786] [DEBUG] POST /api/grader
+1952942: start grading
+1952942: graded
+[2023-05-11 17:16:19 +0000] [121786] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 17:17:25 +0000] [121786] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 17:18:18 +0000] [11] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 17:22:31 +0000] [9] [DEBUG] POST /api/grader
+2211325: start grading
+2211325: graded
+[2023-05-11 17:24:13 +0000] [121786] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 17:24:50 +0000] [121786] [DEBUG] POST /api/grader
+2212136: start grading
+2212136: graded
+[2023-05-11 17:25:58 +0000] [9] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 17:26:23 +0000] [9] [DEBUG] POST /api/grader
+2252899: start grading
+2252899: graded
+[2023-05-11 17:28:26 +0000] [121786] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 17:30:01 +0000] [121786] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 17:30:09 +0000] [11] [DEBUG] POST /api/grader
+2212136: start grading
+2212136: graded
+[2023-05-11 17:30:15 +0000] [121786] [DEBUG] POST /api/grader
+2211349: start grading
+2211349: graded
+[2023-05-11 17:30:43 +0000] [9] [DEBUG] POST /api/grader
+2213892: start grading
+2213892: graded
+[2023-05-11 17:32:34 +0000] [9] [DEBUG] POST /api/grader
+2211047: start grading
+2211047: graded
+[2023-05-11 17:32:51 +0000] [11] [DEBUG] POST /api/grader
+2211047: start grading
+2211047: graded
+[2023-05-11 17:33:16 +0000] [9] [DEBUG] POST /api/grader
+2211047: start grading
+2211047: graded
+[2023-05-11 17:34:19 +0000] [11] [DEBUG] POST /api/grader
+2211047: start grading
+2211047: graded
+[2023-05-11 17:34:29 +0000] [121786] [DEBUG] POST /api/grader
+2212136: start grading
+2212136: graded
+[2023-05-11 17:34:57 +0000] [121786] [DEBUG] POST /api/grader
+2211047: start grading
+2211047: graded
+[2023-05-11 17:35:08 +0000] [11] [DEBUG] POST /api/grader
+2211047: start grading
+2211047: graded
+[2023-05-11 17:35:52 +0000] [11] [DEBUG] POST /api/grader
+2211047: start grading
+2211047: graded
+[2023-05-11 17:37:21 +0000] [11] [DEBUG] POST /api/grader
+2252887: start grading
+2252887: graded
+[2023-05-11 17:37:42 +0000] [11] [DEBUG] POST /api/grader
+2213892: start grading
+2213892: graded
+[2023-05-11 17:39:54 +0000] [11] [DEBUG] POST /api/grader
+2213892: start grading
+2213892: graded
+[2023-05-11 17:40:17 +0000] [121786] [DEBUG] POST /api/grader
+2252508: start grading
+2252508: graded
+[2023-05-11 17:41:06 +0000] [11] [DEBUG] POST /api/grader
+2213892: start grading
+2213892: graded
+[2023-05-11 17:42:56 +0000] [11] [DEBUG] POST /api/grader
+2252879: start grading
+2252879: graded
+[2023-05-11 17:43:55 +0000] [11] [DEBUG] POST /api/grader
+2212136: start grading
+2212136: graded
+[2023-05-11 17:44:16 +0000] [11] [DEBUG] POST /api/grader
+2210429: start grading
+2210429: graded
+[2023-05-11 17:44:48 +0000] [121786] [DEBUG] POST /api/grader
+2013565: start grading
+2013565: graded
+[2023-05-11 17:46:21 +0000] [121786] [DEBUG] POST /api/grader
+2210754: start grading
+2210754: graded
+[2023-05-11 17:47:26 +0000] [121786] [DEBUG] POST /api/grader
+2252593: start grading
+2252593: graded
+[2023-05-11 17:47:47 +0000] [121786] [DEBUG] POST /api/grader
+2211417: start grading
+2211417: graded
+[2023-05-11 17:49:47 +0000] [121786] [DEBUG] POST /api/grader
+2210978: start grading
+2210978: graded
+[2023-05-11 17:52:17 +0000] [9] [DEBUG] POST /api/grader
+2151217: start grading
+2151217: graded
+[2023-05-11 17:54:19 +0000] [11] [DEBUG] POST /api/grader
+2212982: start grading
+2212982: graded
+[2023-05-11 17:56:44 +0000] [121786] [DEBUG] POST /api/grader
+2252593: start grading
+2252593: graded
+[2023-05-11 17:58:15 +0000] [9] [DEBUG] POST /api/grader
+2211417: start grading
+2211417: graded
+[2023-05-11 17:59:33 +0000] [9] [DEBUG] POST /api/grader
+2252879: start grading
+2252879: graded
+[2023-05-11 18:00:40 +0000] [121786] [DEBUG] POST /api/grader
+2212631: start grading
+2212631: graded
+[2023-05-11 18:04:46 +0000] [9] [DEBUG] POST /api/grader
+2252879: start grading
+2252879: graded
+[2023-05-11 18:05:00 +0000] [121786] [DEBUG] POST /api/grader
+2252880: start grading
+2252880: graded
+[2023-05-11 18:07:01 +0000] [9] [DEBUG] POST /api/grader
+2213892: start grading
+2213892: graded
+[2023-05-11 18:10:40 +0000] [9] [DEBUG] POST /api/grader
+2212631: start grading
+2212631: graded
+[2023-05-11 18:12:23 +0000] [9] [DEBUG] POST /api/grader
+2212631: start grading
+2212631: graded
+[2023-05-11 18:12:31 +0000] [121786] [DEBUG] POST /api/grader
+2053105: start grading
+2053105: graded
+[2023-05-11 18:14:37 +0000] [121786] [DEBUG] POST /api/grader
+2252038: start grading
+2252038: graded
+[2023-05-11 18:21:40 +0000] [9] [DEBUG] POST /api/grader
+2212631: start grading
+2212631: graded
+[2023-05-11 18:22:40 +0000] [9] [DEBUG] POST /api/grader
+2210961: start grading
+2210961: graded
+[2023-05-11 18:24:06 +0000] [121786] [DEBUG] POST /api/grader
+2053105: start grading
+2053105: graded
+[2023-05-11 18:38:21 +0000] [121786] [DEBUG] POST /api/grader
+2211949: start grading
+2211949: graded
+[2023-05-11 18:58:30 +0000] [11] [DEBUG] POST /api/grader
+2211949: start grading
+2211949: graded
