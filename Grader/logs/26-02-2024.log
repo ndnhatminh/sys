@@ -1,0 +1,130 @@
+[2024-02-26 02:08:23 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/26-02-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f5992492550>
+  on_reload: <function OnReload.on_reload at 0x7f5992492670>
+  when_ready: <function WhenReady.when_ready at 0x7f5992492790>
+  pre_fork: <function Prefork.pre_fork at 0x7f59924928b0>
+  post_fork: <function Postfork.post_fork at 0x7f59924929d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f5992492af0>
+  worker_int: <function WorkerInt.worker_int at 0x7f5992492c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5992492d30>
+  pre_exec: <function PreExec.pre_exec at 0x7f5992492e50>
+  pre_request: <function PreRequest.pre_request at 0x7f5992492f70>
+  post_request: <function PostRequest.post_request at 0x7f59924ac040>
+  child_exit: <function ChildExit.child_exit at 0x7f59924ac160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f59924ac280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f59924ac3a0>
+  on_exit: <function OnExit.on_exit at 0x7f59924ac4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f59924ac5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-02-26 02:08:23 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-02-26 02:08:23 +0000] [7] [DEBUG] Arbiter booted
+[2024-02-26 02:08:23 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-02-26 02:08:23 +0000] [7] [INFO] Using worker: sync
+[2024-02-26 02:08:23 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-02-26 02:08:23 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-02-26 02:08:23 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-02-26 02:08:23 +0000] [7] [DEBUG] 3 workers
+[2024-02-26 03:30:57 +0000] [11] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-02-26 05:11:55 +0000] [11] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-02-26 06:08:58 +0000] [9] [DEBUG] Ignoring connection reset
+[2024-02-26 06:08:58 +0000] [9] [DEBUG] GET /
+[2024-02-26 06:09:29 +0000] [11] [DEBUG] GET /
+[2024-02-26 06:12:45 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-02-26 06:12:46 +0000] [10] [DEBUG] GET /
+[2024-02-26 06:13:01 +0000] [11] [DEBUG] GET /
+[2024-02-26 06:24:03 +0000] [9] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-02-26 06:36:37 +0000] [9] [DEBUG] Ignoring connection reset
+[2024-02-26 06:36:38 +0000] [10] [DEBUG] GET /
+[2024-02-26 06:37:04 +0000] [10] [DEBUG] GET /
+[2024-02-26 06:39:43 +0000] [11] [DEBUG] Ignoring connection reset
+[2024-02-26 06:39:44 +0000] [10] [DEBUG] GET /
+[2024-02-26 06:39:48 +0000] [10] [DEBUG] GET /
+[2024-02-26 06:42:23 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-02-26 06:42:23 +0000] [9] [DEBUG] GET /
+[2024-02-26 06:42:35 +0000] [10] [DEBUG] GET /
+[2024-02-26 07:25:47 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b'\n'
+[2024-02-26 07:25:55 +0000] [11] [DEBUG] Closing connection. 
+[2024-02-26 07:26:01 +0000] [9] [DEBUG] Closing connection. 
+[2024-02-26 08:16:26 +0000] [10] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-02-26 09:54:41 +0000] [11] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-02-26 10:53:28 +0000] [10] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-02-26 22:48:53 +0000] [10] [DEBUG] GET /
+[2024-02-27 05:49:28 +0000] [11] [DEBUG] Ignoring connection reset
+[2024-02-27 05:49:28 +0000] [11] [DEBUG] GET /
+[2024-02-27 05:49:40 +0000] [9] [DEBUG] GET /
+[2024-02-27 06:11:15 +0000] [11] [DEBUG] Ignoring connection reset
+[2024-02-27 06:11:15 +0000] [9] [DEBUG] GET /
+[2024-02-27 06:11:20 +0000] [9] [DEBUG] GET /
+[2024-02-27 06:28:07 +0000] [11] [DEBUG] Ignoring connection reset
+[2024-02-27 06:28:08 +0000] [11] [DEBUG] GET /
+[2024-02-27 06:28:22 +0000] [10] [DEBUG] GET /

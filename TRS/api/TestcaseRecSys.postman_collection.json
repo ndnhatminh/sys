@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "f08721bd-69cf-4622-9ec7-1b2d361df42a",
+		"name": "TestcaseRecSys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20360487"
+	},
+	"item": [
+		{
+			"name": "recommend",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "knight.h",
+							"type": "file",
+							"src": "knight.h"
+						},
+						{
+							"key": "knight.cpp",
+							"type": "file",
+							"src": "knight.cpp"
+						},
+						{
+							"key": "student_id",
+							"value": "2053106",
+							"type": "text"
+						},
+						{
+							"key": "assignment_name",
+							"value": "DSA.222.A1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://coderunner.codepractice.net/api/recommend",
+					"protocol": "https",
+					"host": [
+						"coderunner",
+						"codepractice",
+						"net"
+					],
+					"path": [
+						"api",
+						"recommend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-student-list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "liststudents",
+							"type": "file",
+							"src": "/Users/vuvantien/Downloads/CO1027_HK222_ALL Grades-2.xlsx"
+						},
+						{
+							"key": "knight.cpp",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://coderunner.codepractice.net/api/students",
+					"protocol": "https",
+					"host": [
+						"coderunner",
+						"codepractice",
+						"net"
+					],
+					"path": [
+						"api",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-assignment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"DSA.222.A1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://coderunner.codepractice.net/api/assignment",
+					"protocol": "https",
+					"host": [
+						"coderunner",
+						"codepractice",
+						"net"
+					],
+					"path": [
+						"api",
+						"assignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "internal-recommend",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"submission_id\": \"167459f8-3c1d-4729-8a59-995a955dcc68\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://coderunner.codepractice.net/api/internalrecommend",
+					"protocol": "https",
+					"host": [
+						"coderunner",
+						"codepractice",
+						"net"
+					],
+					"path": [
+						"api",
+						"internalrecommend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert_init_submissions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"DSA.222.A1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://coderunner.codepractice.net/api/insert_init_submissions",
+					"protocol": "https",
+					"host": [
+						"coderunner",
+						"codepractice",
+						"net"
+					],
+					"path": [
+						"api",
+						"insert_init_submissions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
