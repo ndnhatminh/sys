@@ -44,7 +44,7 @@ class AccountService:
     except EmailNotValidError:
       raise EmailNotValidError
     except ValueError:
-      raise BadRequestException('INVALID_TOKENa')
+      raise BadRequestException('INVALID_TOKEN')
 
   
   @staticmethod

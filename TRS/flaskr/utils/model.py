@@ -1,6 +1,20 @@
 import numpy as np
 from functools import reduce
 import time
+from keras.models import Sequential
+import tensorflow as tf
+from tensorflow.keras.layers import LSTM, Dense, Dropout, Bidirectional
+
+from tensorflow.keras.optimizers import Adam
+
+import matplotlib.pyplot as plt
+from keras import backend as K
+import os
+
+def root_mean_squared_error(y_true, y_pred):
+    y_true = tf.convert_to_tensor(y_true, dtype=tf.float32)
+    y_pred = tf.convert_to_tensor(y_pred, dtype=tf.float32)
+    return tf.sqrt(tf.reduce_mean(tf.square(y_pred - y_true), axis=-1))
 
 class RSVD:
     def __init__(self, matrix, f=20):
@@ -242,3 +256,89 @@ class timeSVD:
         rmse = np.sqrt(rmse / num_samples)
 
         return rmse
+      
+      
+class LSTMModel:
+  def __init__(self):
+    self.history = None
+    self.model = None
+    
+  def define_model(self, input_shape,learning_rate, hidden_unit=32 ,dropout=0.2, num_lstm_layer=1, direct_dropout=False, is_separated_dropout=False):
+    model = Sequential()
+    if direct_dropout:
+      if num_lstm_layer == 1:
+        model.add(LSTM(hidden_unit, input_shape=input_shape, dropout=dropout))
+        if is_separated_dropout:
+          model.add(LSTM(hidden_unit, dropout=dropout))
+      elif num_lstm_layer == 2:
+        model.add(LSTM(hidden_unit, return_sequences=True, input_shape=input_shape, dropout=dropout))
+        if is_separated_dropout:
+          model.add(Dropout(dropout))
+        model.add(LSTM(hidden_unit, dropout=dropout))
+        if is_separated_dropout:
+          model.add(Dropout(dropout))
+      elif num_lstm_layer == 3: 
+        model.add(LSTM(hidden_unit, return_sequences=True, input_shape=input_shape, dropout=dropout))
+        if is_separated_dropout:
+          model.add(Dropout(dropout))
+        model.add(LSTM(hidden_unit,return_sequences=True,dropout=dropout))
+        if is_separated_dropout:
+          model.add(Dropout(dropout))
+        model.add(LSTM(hidden_unit))
+
+      else:
+        if num_lstm_layer == 1:
+          model.add(LSTM(hidden_unit, input_shape=input_shape))
+          model.add(Dropout(dropout))
+        elif num_lstm_layer == 2:
+          model.add(LSTM(hidden_unit, return_sequences=True, input_shape=input_shape))
+          model.add(Dropout(dropout))
+          model.add(LSTM(hidden_unit))
+          model.add(Dropout(dropout))
+        elif num_lstm_layer == 3: 
+          model.add(LSTM(hidden_unit, return_sequences=True, input_shape=input_shape))
+          model.add(Dropout(dropout))
+          model.add(LSTM(hidden_unit, return_sequences=True))
+          model.add(LSTM(hidden_unit))
+          model.add(Dropout(dropout))
+          
+    model.add(Dense(input_shape[1], activation='sigmoid'))
+    # model.add(Dense(input_shape[1]))
+    
+    # Compile the model with Adam optimizer and RMSE loss
+    optimizer = Adam(learning_rate=learning_rate)
+    
+    model.compile(loss=root_mean_squared_error, optimizer=optimizer)
+    # model.compile(loss=root_mean_squared_error, metrics=['mae'], optimizer=optimizer)
+    self.model = model
+
+  def define_new_model(self, input_shape):
+    model = Sequential()
+    model.add(Bidirectional(LSTM(256, return_sequences=True), input_shape=input_shape))
+    model.add(Dropout(0.3))
+    model.add(Bidirectional(LSTM(128, return_sequences=True)))
+    model.add(Dropout(0.3))
+    model.add(Bidirectional(LSTM(64)))
+    model.add(Dropout(0.3))
+    model.add(Dense(input_shape[1], activation='softmax'))
+    # Compile the model with Adam optimizer and RMSE loss
+    optimizer = Adam(learning_rate=self.learning_rate)
+    model.compile(loss='mean_squared_error', metrics=['mae'], optimizer=optimizer)
+    return model
+  
+  def train(self, X_train, y_train, batch_size, epochs):
+    self.history = self.model.fit(X_train, y_train, batch_size=batch_size, epochs=epochs, shuffle=False)
+  
+  def evaluate(self, X_test, y_test):
+
+    evaluation = self.model.evaluate(X_test, y_test)
+    return evaluation
+  
+  def predict(self, X_test):
+    return self.model.predict(X_test)
+  
+  def summary(self):
+      self.model.summary()
+      
+  def save(self, filename):
+      self.model.save(filename)

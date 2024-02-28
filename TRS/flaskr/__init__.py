@@ -83,7 +83,6 @@ def create_app(test_config=None):
             pass
       
     with app.app_context():
-       pass
       # buildTimeSVD(app)
       # schedule = BackgroundScheduler(deamon=True)
       # schedule.add_job(buildMF, 'cron', args=[app], id='buidMF', hour=0, minute=0) # 7 - 00
@@ -93,6 +92,7 @@ def create_app(test_config=None):
       # schedule.add_job(buildClassification, 'cron', args=[app], id='buidTcClassification', hour=0, minute=0) # 7 - 00
       # schedule.add_job(buildClassification, 'interval', args=[app], id='buidTcClassification', seconds=1) # for testing
       # schedule.start()
+      pass
     
     from datetime import datetime, timedelta
     now = datetime.now()

@@ -20,6 +20,10 @@ from flaskr.utils.limitthread import LimitThread
 
 blueprint = Blueprint('grader', __name__)
 
+@blueprint.route('/api/hello', methods=['GET',])
+def hello():
+  return 'hello'
+
 @blueprint.route('/api/grader', methods=['POST',])
 def grade_and_update_submission():
   # list_fileinfos = request.form.get('list_fileinfos')

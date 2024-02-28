@@ -20,7 +20,7 @@ class Assignment(db.Model):
   author_id = Column(UUID(as_uuid=True), ForeignKey('teachers.id'), nullable=False)
   description = Column(db.String, unique=True, nullable=True)
   students = relationship("Student", secondary="student_on_assignments", back_populates='assignments')
-
+  submission = relationship("Submission", backref='assignment', lazy=True)
   
   description = Column(String, unique=False, nullable=True)
   

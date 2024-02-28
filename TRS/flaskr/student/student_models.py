@@ -16,6 +16,7 @@ class Student(db.Model):
   account = relationship("Account", back_populates="student", uselist=False)
   mssv = Column(String, unique=True, nullable=True)
   assignments = relationship("Assignment", secondary='student_on_assignments', back_populates='students')
+  submissions = relationship("Submission", backref='student', lazy=True)
   
   def __str__(self) -> str:
     s = [

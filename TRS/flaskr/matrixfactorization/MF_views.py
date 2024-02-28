@@ -1,20 +1,78 @@
+import copy
 from flaskr.submission.submission_models import Submission
-from sqlalchemy import select
+from sqlalchemy import not_, select
 from flaskr.database import db
 import pandas as pd
 from surprise import Dataset, Reader, SVD
 from surprise.model_selection import GridSearchCV
+from flaskr.utils.preprocessing import LSTMDataSet
+from flaskr.utils.exceptions import InternalServerException
+from flaskr.assignment.assignment_models import Assignment
+from flaskr.student.student_models import Student
 from flaskr.matrixfactorization.MF_models import MatrixFactorization, saveMatrix, loadMatrix
 from flaskr.utils.time import timeNow
 import numpy as np
 from sqlalchemy.sql import text
 from datetime import datetime
 from flaskr.utils.dataProcessing import Dataset
-from flaskr.utils.model import timeSVD, RSVD
+from flaskr.utils.model import LSTMModel, timeSVD, RSVD
 
 def buidLSTM(app):
-  print('')
-
+  with app.app_context():
+    assignement_id = '0b13d244-785c-4319-b764-16bfb29a42c1'
+    records = Submission.query \
+      .join(Assignment, Assignment.id == assignement_id) \
+      .join(Student, Student.id == Submission.student_id) \
+      .filter(not_(Submission.scores == [])) \
+      .with_entities(
+        Student.id, 
+        Submission.update_at, 
+        Submission.scores
+      )
+    start_date = Assignment.query.filter_by(Assignment.id == assignement_id).with_entities(Assignment.start_date).first()[0]
+    
+    if len(records) == 0: 
+      raise InternalServerException('LSTM_ERROR')
+    if start_date is None:
+      raise InternalServerException('ASSIGNMENT_DO_NOT_START_DATE')
+    df = pd.DataFrame()
+    df['student_id'] = records[0]   #integer
+    df['update_at'] = records[1] #integer
+    df['scores'] = [int(score) for score in records[2]]         #integer 1 or 0
+    dataset = LSTMDataSet(df)
+    
+    from constants import list_testcase_ids as list_tcs
+    model = LSTMModel()
+    X_train, y_train = dataset.train_all()
+    model.define_model(dataset.shape(), 
+                      learning_rate=0.001, 
+                      hidden_unit=50, 
+                      direct_dropout=False, 
+                      dropout= 0.3, num_lstm_layer=1
+                      )
+    model.train(X_train, y_train, 72, 150)
+    
+    db_list_students_id = []
+    
+    db_matrix = []
+    for record in records:
+      student_id = record[0]
+      scores =record[2]
+      latest_submissions = dataset.padding(scores[-(dataset.timesteps+1):])
+      
+      score_predicts = model.predict(latest_submissions)
+      db_matrix.append(score_predicts)
+      db_list_students_id.append(student_id)
+      
+    time_now = timeNow()
+    npz_name = f'{time_now}_mf_LSTM.npz'
+    npz_path = f'files/matries/{npz_name}'
+    db_matrix = np.array(db_matrix)
+    saveMatrix(db_matrix, npz_path)
+    mf = MatrixFactorization(list_student_ids=db_list_students_id, list_testcase_ids=list_tcs, assignment_id=assignement_id, model_name='LSTM', matrix_npz_path=npz_path)
+    mf.save()
+    print('buildMF done')
+  
 def buildRSVD(app):
   with app.app_context():
     assignment_id = '0b13d244-785c-4319-b764-16bfb29a42c1'
