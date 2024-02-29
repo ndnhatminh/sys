@@ -24,7 +24,7 @@ from flaskr.submission.submission_models import Submission
 from flaskr.recsys.recsys_models import Recommendation
 from flaskr.matrixfactorization.MF_models import MatrixFactorization
 from flaskr.form.form_model import Form
-from flaskr.matrixfactorization.MF_views import buildRSVD, buildTimeSVD, exportInitMF
+from flaskr.matrixfactorization.MF_views import buildRSVD, buildTimeSVD, exportInitMF, buidLSTM
 
 # utils
 from flaskr.utils.base_response import BaseResponse
@@ -116,6 +116,7 @@ def register_blueprints(app):
   pass
 
 def register_exception(app):
+  app.register_error_handler(ForbiddenResourceException, CustomExceptionHandler().handle_forbidden_resource)
   app.register_error_handler(MiddlewareException, CustomExceptionHandler().handle_middlewares)
   app.register_error_handler(BadRequestException, CustomExceptionHandler().handle_bad_request_exception)
   app.register_error_handler(NotFoundException, CustomExceptionHandler().handle_not_found_exception)

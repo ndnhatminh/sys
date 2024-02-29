@@ -1,6 +1,6 @@
 from flaskr.teacher.teacher_models import Teacher
 from flaskr.utils.base_response import BaseResponse
-from flaskr.utils.exceptions import BadRequestException
+from flaskr.utils.exceptions import BadRequestException, ForbiddenResourceException
 from flaskr.config import SECRET_KEY
 from flaskr.account.response.account_response import AccountResponse
 from flaskr.student.student_models import Student
@@ -58,9 +58,9 @@ class AccountService:
           request.account = AccountService.verify_token(token)
           return func(*args, **kwargs)
         else:
-          raise BadRequestException('INVALID_TOKEN')
+          raise ForbiddenResourceException('INVALID_TOKEN')
       except  Exception as e:
-        raise BadRequestException('INVALID_TOKEN' + str(e))
+        raise ForbiddenResourceException('INVALID_TOKEN' + str(e))
       # if auth_header and auth_header.startswith('Bearer '):
       #   try:
       #     access_token = auth_header.split(' ')[1]
@@ -76,19 +76,19 @@ class AccountService:
     return wrapper
   
   @staticmethod
-  def create_account(name, email, type):
+  def create_account(name, email, type, mssv=None)-> bool:
     exist_account = Account.query.filter_by(email=email).count()
     if exist_account > 0:
-      raise BadRequestException('The email is existed')
+      return False
     account = Account(name, email, type)
     account.save()
     if type == 'STUDENT':
-      student = Student(account_id=account.id)
+      student = Student(account_id=account.id, mssv=mssv)
       student.save()
     else:
       teacher = Teacher(account_id=account.id)
       teacher.save()
-    return account
+    return True
     
   @staticmethod
   def get_detail(account_id) -> AccountResponse:

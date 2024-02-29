@@ -1,8 +1,9 @@
 from flaskr.database import db
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.sql.sqltypes import DateTime
-from sqlalchemy import CheckConstraint
+from sqlalchemy import CheckConstraint, ForeignKey
 from sqlalchemy.dialects.postgresql import ARRAY
+from sqlalchemy.orm import relationship
 
 class Recommendation(db.Model):
   __tablename__ = 'recommendation'
@@ -18,8 +19,9 @@ class Recommendation(db.Model):
   status = db.Column(db.Integer, unique=False, nullable=False)
   
   # this recommendation is after this submission_id
-  submission_id = db.Column(UUID(as_uuid=True), unique=True, nullable=False)
-  
+  submission_id = db.Column(UUID(as_uuid=True), ForeignKey('submissions.id'), unique=True, nullable=False)
+  submission = relationship("Submission", back_populates="recommendation", uselist=False)
+
   list_testcase_id = db.Column(ARRAY(db.Integer), unique=False, nullable=False)
   list_false_tcids = db.Column(ARRAY(db.Integer), unique=False, nullable=True)
   

@@ -8,6 +8,7 @@ from flaskr.account.account_services import AccountService, Account
 from flaskr.utils.base_response import BaseResponse
 from flaskr.assignment.assignment_models import Assignment
 from datetime import datetime
+import pandas as pd
 date_format = date_format = '%Y-%m-%dT%H:%M:%SZ'  # The format of the date string
 
 
@@ -37,6 +38,22 @@ class AssignmentController:
     
     teacher = Teacher.query.filter_by(account_id=account.id).first()
     AssignmentService.create(request.json.get('name'), start_date, end_date, teacher.id, request.json.get('description'))
+    
+    file = request.files['file']
+    
+    if file and AssignmentService.allowed_file(file.filename): 
+      df = pd.read_excel(file)
+      failed_account = []
+      for index, row in df.iterrows():
+        try:
+          name = row.iloc[0] + ' ' + row[1]
+          mssv = row[2]
+          email = row[5]
+          is_create = AccountService.create_account(name, email, mssv)
+          if not is_create:
+            failed_account.append({ index: index, mssv: mssv, email: email})
+        except:
+          print(f'Assignment: Failed to create account email: {email}, mssv: {mssv}')
     return BaseResponse.ok()
   
   @classmethod
@@ -79,6 +96,7 @@ class AssignmentController:
       ).filter_by(author_id=account.teacher.id).all()]
     print(assignment_list)
     return BaseResponse.of(assignment_list)
+
     
   @classmethod
   @assignment_controller.route('/api/assignments/<string:id>', methods=['PATCH'])
@@ -113,7 +131,6 @@ class AssignmentController:
     '''
     TEACHER & STUDENT
     '''
-    
     if request.account.type.name == 'STUDENT':
       is_on_assignment = StudentOnAssignment.query.filter_by(student_id=request.account.student.id).first()
       if not is_on_assignment:

@@ -12,3 +12,12 @@ class AssignmentService:
       a.save()
     except:
       raise BadRequestException('INVALID_ERROR')
+    
+  @staticmethod
+  def allowed_file(filename):
+    # Define the allowed file extensions
+    allowed_extensions = {'xlsx', 'xls'}
+
+    # Check if the file has an allowed extension
+    return '.' in filename and \
+      filename.rsplit('.', 1)[1].lower() in allowed_extensions
