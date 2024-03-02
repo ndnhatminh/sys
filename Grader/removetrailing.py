@@ -1,4 +1,5 @@
 import os
+from constants import lst_tc_id
 
 def remove_trailing_newlines(directory):
     for filename in os.listdir(directory):
@@ -19,7 +20,7 @@ def remove_trailing_newlines(directory):
 # directory_path = '/root/code-practice/222FPA2-TRS-service-grader/test'
 # remove_trailing_newlines(directory_path)
 
-l = list(range(1001, 1083)) + list(range(2001, 2070))
+l = lst_tc_id
 for tc in l:
-  directory_path = f'/root/code-practice/222FPA2-TRS-service-grader/support-files/testcases-fileinput/{tc}'
+  directory_path = f'/root/sys/Grader/support-files/testcases-fileinput/{tc}'
   remove_trailing_newlines(directory_path)

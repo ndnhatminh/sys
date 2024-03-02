@@ -82,36 +82,36 @@ def prepare(list_configs: List[ConfigTestcase], config_directory: ConfigDirector
 
 def initListConfigTestcases(config_directory: ConfigDirectory):
   list_configs = []
-  for i in range(1, 31): # tc01 - tc30
+  for i in range(1, 360): # tc01 - tc30
     list_configs.append(ConfigTestcase(
       cmd_compile=f'g++ -g -o main{i} main{i}.cpp ConcatStringTree.cpp -I . -std=c++11',
       cmd_run=f'./main{i}',
-      testcode_dir=os.path.join(config_directory.abs_testcodes_dir, f'tc{i}.cpp'),
+      testcode_dir=os.path.join(config_directory.abs_testcodes_dir, f'tc_{i}.cpp'),
       file_compiled_error=f'co_error{i}',
       file_run_error=f'run_error{i}',
       file_output=f'output{i}',
       timelimit=5
     ))
-  for i in range(31, 51): # tc30 - tc50
-    list_configs.append(ConfigTestcase(
-      cmd_compile=f'g++ -g -o main{i} main{i}.cpp ConcatStringTree.cpp -I . -std=c++11',
-      cmd_run=f'./main{i}',
-      testcode_dir=os.path.join(config_directory.abs_testcodes_dir, f'tc{i}.cpp'),
-      file_compiled_error=f'co_error{i}',
-      file_run_error=f'run_error{i}',
-      file_output=f'output{i}',
-      timelimit=5
-    ))
-  for i in range(51, 101): # tc50 - tc100
-    list_configs.append(ConfigTestcase(
-      cmd_compile=f'g++ -g -o main{i} main{i}.cpp ConcatStringTree.cpp -I . -std=c++11',
-      cmd_run=f'./main{i}',
-      testcode_dir=os.path.join(config_directory.abs_testcodes_dir, f'tc{i}.cpp'),
-      file_compiled_error=f'co_error{i}',
-      file_run_error=f'run_error{i}',
-      file_output=f'output{i}',
-      timelimit=5
-    ))
+  # for i in range(31, 51): # tc30 - tc50
+  #   list_configs.append(ConfigTestcase(
+  #     cmd_compile=f'g++ -g -o main{i} main{i}.cpp ConcatStringTree.cpp -I . -std=c++11',
+  #     cmd_run=f'./main{i}',
+  #     testcode_dir=os.path.join(config_directory.abs_testcodes_dir, f'tc_{i}.cpp'),
+  #     file_compiled_error=f'co_error{i}',
+  #     file_run_error=f'run_error{i}',
+  #     file_output=f'output{i}',
+  #     timelimit=5
+  #   ))
+  # for i in range(51, 101): # tc50 - tc100
+  #   list_configs.append(ConfigTestcase(
+  #     cmd_compile=f'g++ -g -o main{i} main{i}.cpp ConcatStringTree.cpp -I . -std=c++11',
+  #     cmd_run=f'./main{i}',
+  #     testcode_dir=os.path.join(config_directory.abs_testcodes_dir, f'tc_{i}.cpp'),
+  #     file_compiled_error=f'co_error{i}',
+  #     file_run_error=f'run_error{i}',
+  #     file_output=f'output{i}',
+  #     timelimit=5
+  #   ))
   # return list_configs[90:101]
   return list_configs
 
@@ -146,7 +146,7 @@ def grade(list_configs: List[ConfigTestcase], config_directory: ConfigDirectory)
   )
   
 def createTcReadfile():
-  for i in range(1, 100+1):
+  for i in range(1, 359+1):
     writeToFile(os.path.join(os.getcwd(), 'tc_readfiles', str(i+1)), str(i+1))
     
 def initConfigDirectory():

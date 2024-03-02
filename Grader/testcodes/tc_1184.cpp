@@ -1,0 +1,8 @@
+void tc_1184()
+{
+    std::cout << "----- Testcase 1184 -----" << std::endl;
+    int E2 = 44, HP1 = 111, EXP1 = 222, M1 = 333;
+    std::cout << "E2: " << E2 << ", HP1: " << HP1 << ", EXP1: " << EXP1 << ", M1: " << M1 << std::endl;
+    int result = traceLuggage(HP1, EXP1, M1, E2);
+    std::cout << "E2: " << E2 << ", HP1: " << HP1 << ", EXP1: " << EXP1 << ", M1: " << M1 << ", result: " << result << std::endl;
+}

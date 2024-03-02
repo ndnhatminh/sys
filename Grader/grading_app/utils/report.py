@@ -50,8 +50,8 @@ def reportOneSubmission(list_configs: List[ConfigTestcase], config_directory: Co
       x = False
     else:
       x = filecmp.cmp(
-        os.path.join(p, config.file_output),
-        os.path.join(config_directory.abs_sol_workspace, config.file_output)
+        os.path.join(p, config.file_output), #'grading_app/temp/grad_sub/output{i}'
+        os.path.join(config_directory.abs_sol_workspace, config.file_output) #solution/workspace/output{i}
       )
     
     list_scores[idx] = x

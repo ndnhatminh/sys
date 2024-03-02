@@ -1,15 +1,22 @@
 from flask import Blueprint, request
+from flaskr.submission.submission_models import Submission
 from flaskr.student.student_models import Student
 from flaskr.assignment.assignment_student_models import StudentOnAssignment
 from flaskr.assignment.assignment_services import AssignmentService
 from flaskr.teacher.teacher_models import Teacher
+from flaskr.recsys.recsys_models import Recommendation
 from flaskr.utils.exceptions import BadRequestException, NotFoundException
 from flaskr.account.account_services import AccountService, Account
 from flaskr.utils.base_response import BaseResponse
+import requests
+from constants import FILE_SUBMISSION_PATH, GRADER_URL
 from flaskr.assignment.assignment_models import Assignment
-from datetime import datetime
-import pandas as pd
-date_format = date_format = '%Y-%m-%dT%H:%M:%SZ'  # The format of the date string
+from datetime import datetime, timezone
+import os
+import csv
+
+
+date_format = date_format ='%Y-%m-%dT%H:%M:%S.%fZ' # The format of the date string
 
 
 class AssignmentController:
@@ -38,22 +45,28 @@ class AssignmentController:
     
     teacher = Teacher.query.filter_by(account_id=account.id).first()
     AssignmentService.create(request.json.get('name'), start_date, end_date, teacher.id, request.json.get('description'))
-    
-    file = request.files['file']
-    
-    if file and AssignmentService.allowed_file(file.filename): 
-      df = pd.read_excel(file)
-      failed_account = []
-      for index, row in df.iterrows():
-        try:
-          name = row.iloc[0] + ' ' + row[1]
-          mssv = row[2]
-          email = row[5]
-          is_create = AccountService.create_account(name, email, mssv)
-          if not is_create:
-            failed_account.append({ index: index, mssv: mssv, email: email})
-        except:
-          print(f'Assignment: Failed to create account email: {email}, mssv: {mssv}')
+    # print('Request', request)
+    # print('json', request.json);
+    # if 'file' not in request.files:
+    #   return 'No file found', 400
+    # else: 
+    #   print('Good')
+    # file = request.files['file']
+    # print('file', file)
+    # if file and AssignmentService.allowed_file(file.filename): 
+    #   df = pd.read_excel(file)
+    #   failed_account = []
+    #   for index, row in df.iterrows():
+    #     print('ROW', row)
+    #     try:
+    #       name = row.iloc[0] + ' ' + row[1]
+    #       mssv = row[2]
+    #       email = row[5]
+    #       is_create = AccountService.create_account(name, email, mssv)
+    #       if not is_create:
+    #         failed_account.append({ index: index, mssv: mssv, email: email})
+    #     except:
+    #       print(f'Assignment: Failed to create account email: {email}, mssv: {mssv}')
     return BaseResponse.ok()
   
   @classmethod
@@ -81,9 +94,7 @@ class AssignmentController:
             Assignment.author_id,
             Account.name.label('author_name'),
         ).all()
-]
-      print(assignment_list)
-      
+]      
     else:
       assignment_list = [
         dict(zip(['id', 'name', 'start_date', 'end_date', 'author_id', 'author_name'], row))
@@ -94,13 +105,104 @@ class AssignmentController:
         Assignment.end_date, 
         Assignment.author_id,
       ).filter_by(author_id=account.teacher.id).all()]
-    print(assignment_list)
     return BaseResponse.of(assignment_list)
 
+  @classmethod
+  @assignment_controller.route('/api/assignments/<string:id>/submission', methods=['POST'])
+  @AccountService.authenticate
+  @AccountService.verify_student
+  def create_submission(id):
+    '''
+    STUDENT
+    '''
+    assignment = StudentOnAssignment.query \
+      .join(Assignment, Assignment.id == StudentOnAssignment.assignment_id) \
+      .filter(StudentOnAssignment.assignment_id == id, StudentOnAssignment.student_id == request.student.id) \
+      .with_entities(
+        Assignment.end_date,
+      ).first()
+    if not assignment:
+      raise NotFoundException('STUDENT_NOT_FOUND')
     
+    # TODO Need to fix timezone
+    # print(datetime.now(timezone.utc))
+    current_time = datetime.now(timezone.utc)
+    if current_time > assignment[0]:
+      raise BadRequestException('DEADLINE_MISSES')
+    print('request', request.files)
+    if 'files[]' not in request.files:
+      return NotFoundException('FILES_NOT_FOUND')
+    
+    files = request.files.getlist('files[]')
+    file_paths_2 = []
+    folder_path = f'/root/sys/TRS/files/test'
+    folder_path_2 = f'/app/files/test'
+    folder_path_2 = folder_path
+    for file in files:  
+      os.makedirs(folder_path, exist_ok=True)
+      
+      current_path = os.path.join(folder_path, f'{request.student.mssv}-{current_time.strftime("%Y-%m-%dT%H-%M-%S")}-{file.filename}')
+      current_path_2 = os.path.join(folder_path_2, f'{request.student.mssv}-{current_time.strftime("%Y-%m-%dT%H-%M-%S")}-{file.filename}')
+      
+      file.save(current_path)
+      file_paths_2.append(current_path_2)
+    # print('File path ne', file_paths)
+
+    submission = Submission(student_id=request.student.id, assignment_id=id, files=file_paths_2)
+    submission.save()
+
+    std_id = request.student.mssv
+
+    # Cham bai vua nop
+    jsondata = {
+      "list_fileinfos": file_paths_2,
+      "student_id": str(std_id),
+      "submission_id": str(submission.id)
+    }
+    
+    requests.post(url=GRADER_URL, json=jsondata)
+    
+    # Tao Recommendation tam
+    recr = Recommendation(status=1, submission_id=submission.id, list_testcase_id=[])
+    recr.save()
+
+    return BaseResponse.ok()
+  
+  @classmethod
+  @assignment_controller.route('/api/assignments/<string:id>/assign-students', methods=['POST'])
+  @AccountService.authenticate
+  @AccountService.verify_teacher
+  def assign_multiple_student(id):
+    assignment = Assignment.query.filter_by(author_id=request.teacher.id)
+    if not assignment:
+      raise BadRequestException('PERMISSION_DENIED')
+    files = request.files.getlist('files[]')
+    for file in files:
+      csv_data = file.read().decode('utf-8')
+      reader = csv.reader(csv_data.splitlines(), delimiter=',')
+      next(reader)
+      reader = list(reader)
+      for row in reader:
+        try:
+          print('name', row[1] + ' ' + row[2])
+          print('mssv', row[3])
+          print('mssv', row[0])
+          status, student = AccountService.create_account((row[1] + ' ' + row[2]), row[3], 'STUDENT', row[0])
+          if status in ['EXIST_STUDENT', 'STUDENT']:
+            print('student ne', student)
+            student_on_assignment = StudentOnAssignment(student_id=student.id, assignment_id=id)
+            print('oke')
+            student_on_assignment.save()
+        except Exception as e:
+          print('row error:', row)
+          print('error: ', str(e))
+    return BaseResponse.ok()
+    
+  
   @classmethod
   @assignment_controller.route('/api/assignments/<string:id>', methods=['PATCH'])
   @AccountService.authenticate
+  @AccountService.verify_teacher
   def assign_student(id):
     '''
     TEACHER
@@ -132,7 +234,7 @@ class AssignmentController:
     TEACHER & STUDENT
     '''
     if request.account.type.name == 'STUDENT':
-      is_on_assignment = StudentOnAssignment.query.filter_by(student_id=request.account.student.id).first()
+      is_on_assignment = StudentOnAssignment.query.filter_by(assignment_id=id, student_id=request.account.student.id).first()
       if not is_on_assignment:
         raise BadRequestException('PERMISSION_DENIED')
     else:
@@ -148,17 +250,21 @@ class AssignmentController:
       ).filter_by(id=id).first()
     if not assignment:
       raise BadRequestException('ASSIGNMENT_NOT_FOUND')
-      
+    
+    student_list = []
     if request.account.type.name == 'TEACHER':
-      
       student_list = [
         dict(zip(['id', 'mssv', 'name' ], row))
         for row in
-        Student.query.join(StudentOnAssignment, StudentOnAssignment.assignment_id == id, is_active= True).with_entities(
-          Student.id,
-          Student.mssv,
-          Student.name,
-        )
+        StudentOnAssignment.query
+          .join(Student, Student.id == StudentOnAssignment.student_id)
+          .join(Account, Account.id == Student.account_id)
+          .filter(StudentOnAssignment.assignment_id == id, StudentOnAssignment.is_active == True)
+          .with_entities(
+            Student.id,
+            Student.mssv,
+            Account.name,
+          ).order_by(Account.name.asc())
       ]
     author_name = Teacher.query.filter_by(id=assignment[3]).first()
     
@@ -166,7 +272,7 @@ class AssignmentController:
       'name': assignment[0],
       'start_date': assignment[1],
       'end_date': assignment[2],
-      'author_name': author_name.name,
-      'description': assignment[3],
-      'student_list': student_list if student_list else []
+      'author_name': author_name.account.name,
+      'description': assignment[4],
+      'student_list': student_list
     }) 

@@ -40,6 +40,13 @@ def runOneFolder_v2(
       abs_file_run_error = os.path.join(abs_dst_dir, config.file_run_error)
       writeToFile(abs_file_run_error, result)
 
+# command = 'g++ -g -o main main.cpp study_in_pink1.cpp -I . -std=c++11'
+# directory = '/root/sys/Grader/grading_app/temp/grad_sub/2000000'
+
+# success, result = runOneFolder_v2(command, directory)
+
+# print(success)
+# print(result)
 def run(list_configs: List[ConfigTestcase], abs_directory_submissions, folder_output, timelimit, file_run_error='run_error#', file_output='output#'):
   '''
   abs_dir_inputs: [001, 002, 003, 004,...]

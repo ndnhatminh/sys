@@ -16,8 +16,9 @@ class Recommendation(db.Model):
   # 3: gợi ý thành công - list_testcase_id sẽ khác rỗng
   # 4: chưa làm đúng tất cả các testcase của lần gợi ý trước
   # 5: đã đạt số lần gợi ý tối đa trong 1 ngày (5)
+  # 6: chưa điền form
   status = db.Column(db.Integer, unique=False, nullable=False)
-  
+
   # this recommendation is after this submission_id
   submission_id = db.Column(UUID(as_uuid=True), ForeignKey('submissions.id'), unique=True, nullable=False)
   submission = relationship("Submission", back_populates="recommendation", uselist=False)
@@ -28,11 +29,11 @@ class Recommendation(db.Model):
   # level: 1-de, 2-TB, 3-kho
   # độ khó tương ứng với performance hiện tại của sinh viên
   level = db.Column(db.Integer, unique=False, nullable=True)
-  
   # url
   # Lần 1 insert: chuỗi rỗng ''
   # lần 2 update
   url = db.Column(db.String, unique=True, nullable=False, default='')
+  is_filled_form = db.Column(db.String, nullable=False, default=False)
   
   def __str__(self) -> str:
     s = [

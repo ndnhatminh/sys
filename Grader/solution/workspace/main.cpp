@@ -1,26 +1,33 @@
-#include "knight2.h"
+/*
+* Ho Chi Minh City University of Technology
+* Faculty of Computer Science and Engineering
+* Initial code for Assignment 1
+* Programming Fundamentals Spring 2023
+* Author: Vu Van Tien
+* Date: 02.02.2023
+*/
 
-int main(int argc, char ** argv) {
-    string file_armyknights, file_events;
-    if (argc == 1) {
-        file_armyknights = "tc40_armyknights"; // hard-code
-        file_events = "tc40_events";
-    }
-    else if (argc == 3) {
-        file_armyknights = argv[1];
-        file_events = argv[2];
-    }
-    else {
-        cout << "Error number of arguments" << endl;
-        exit(1);
-    }
-    
-    KnightAdventure * knightAdventure = new KnightAdventure();
-    knightAdventure->loadArmyKnights(file_armyknights);
-    knightAdventure->loadEvents(file_events);
-    knightAdventure->run();
+//The library here is concretely set, students are not allowed to include any other libraries.
 
-    delete knightAdventure;
+#include "study_in_pink1.h"
+
+using namespace std;
+
+void sa_tc_01() {
+    cout << "----- Sample Testcase 01 -----" << endl;
+    string input_file("sa_tc_01_input");
+    int HP1, HP2, EXP1, EXP2, M1, M2, E1, E2, E3;
+    if (!readFile(input_file, HP1, HP2, EXP1, EXP2, M1, M2, E1, E2, E3)) {
+        return;
+    }
+
+    cout << "EXP1: " << EXP1 << ", EXP2: " << EXP2 << ", E1: " << E1 << endl;
+    int result = firstMeet(EXP1, EXP2, E1);
+    cout << "EXP1: " << EXP1 << ", EXP2: " << EXP2 << ", result: " << result << endl;
+}
+
+int main(int argc, const char * argv[]) {
+    sa_tc_01();
 
     return 0;
 }

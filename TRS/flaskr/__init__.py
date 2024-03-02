@@ -20,11 +20,12 @@ from flaskr.student.student_models import Student
 from flaskr.teacher.teacher_models import Teacher
 from flaskr.assignment.assignment_models import Assignment
 from flaskr.assignment.assignment_student_models import StudentOnAssignment
+# from flaskr.assignment.assignment_teacher_models import TeacherOnAssignment
 from flaskr.submission.submission_models import Submission
 from flaskr.recsys.recsys_models import Recommendation
 from flaskr.matrixfactorization.MF_models import MatrixFactorization
-from flaskr.form.form_model import Form
-from flaskr.matrixfactorization.MF_views import buildRSVD, buildTimeSVD, exportInitMF, buidLSTM
+from flaskr.form.form_models import Form
+from flaskr.matrixfactorization.MF_views import buildRSVD, buildTimeSVD, exportInitMF, buildLSTM
 
 # utils
 from flaskr.utils.base_response import BaseResponse
@@ -60,6 +61,7 @@ def test():
 
 def create_app(test_config=None):
     app = Flask(__name__, template_folder='../templates', instance_relative_config=True)
+    app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
     cors = CORS(app)
 
     if os.getenv('FLASK_ENV') == 'production':
@@ -84,14 +86,14 @@ def create_app(test_config=None):
       
     with app.app_context():
       # buildTimeSVD(app)
-      # schedule = BackgroundScheduler(deamon=True)
-      # schedule.add_job(buildMF, 'cron', args=[app], id='buidMF', hour=0, minute=0) # 7 - 00
-      # schedule.add_job(buildTimeSVD, 'cron', args=[app], id='buidTimeSVD', hour=0, minute=0) # 7 - 00
-      # schedule.add_job(buildLSTM, 'cron', args=[app], id='buidLSTM', hour=0, minute=0) # 7 - 00
+      schedule = BackgroundScheduler(deamon=True)
+      schedule.add_job(buildRSVD, 'cron', args=[app], id='buidRSVD', hour=0, minute=0) # 7 - 00
+      schedule.add_job(buildTimeSVD, 'cron', args=[app], id='buidTimeSVD', hour=0, minute=0) # 7 - 00
+      schedule.add_job(buildLSTM, 'cron', args=[app], id='buidLSTM', hour=0, minute=0) # 7 - 00
       
       # schedule.add_job(buildClassification, 'cron', args=[app], id='buidTcClassification', hour=0, minute=0) # 7 - 00
       # schedule.add_job(buildClassification, 'interval', args=[app], id='buidTcClassification', seconds=1) # for testing
-      # schedule.start()
+      schedule.start()
       pass
     
     from datetime import datetime, timedelta
@@ -105,14 +107,14 @@ def register_blueprints(app):
   app.register_blueprint(AccountController.account_controller)
   from flaskr.assignment.assignment_controllers import AssignmentController
   app.register_blueprint(AssignmentController.assignment_controller)
-  from flaskr.hello.hello_views import blueprint as HelloBP
-  app.register_blueprint(HelloBP)
+  from flaskr.submission.submission_controller import SubmissionController
+  app.register_blueprint(SubmissionController.submission_controller)
   from flaskr.recsys.recsys_views import blueprint as RecBP
   app.register_blueprint(RecBP)
   from flaskr.student.student_views import blueprint as StudentBP
   app.register_blueprint(StudentBP)
-  from flaskr.form.form_view import blueprint as FormBP
-  app.register_blueprint(FormBP)
+  from flaskr.form.form_controllers import FormController
+  app.register_blueprint(FormController.form_controller)
   pass
 
 def register_exception(app):

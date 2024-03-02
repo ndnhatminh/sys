@@ -3,8 +3,8 @@ from flaskr.submission.submission_models import Submission
 from sqlalchemy import not_, select
 from flaskr.database import db
 import pandas as pd
-from surprise import Dataset, Reader, SVD
-from surprise.model_selection import GridSearchCV
+# from surprise import Dataset, Reader, SVD
+# from surprise.model_selection import GridSearchCV
 from flaskr.utils.preprocessing import LSTMDataSet
 from flaskr.utils.exceptions import InternalServerException
 from flaskr.assignment.assignment_models import Assignment
@@ -17,7 +17,7 @@ from datetime import datetime
 from flaskr.utils.dataProcessing import Dataset
 from flaskr.utils.model import LSTMModel, timeSVD, RSVD
 
-def buidLSTM(app):
+def buildLSTM(app):
   with app.app_context():
     assignement_id = '0b13d244-785c-4319-b764-16bfb29a42c1'
     records = Submission.query \
@@ -75,7 +75,7 @@ def buidLSTM(app):
   
 def buildRSVD(app):
   with app.app_context():
-    assignment_id = '0b13d244-785c-4319-b764-16bfb29a42c1'
+    assignment_id = '25a3d3cd-613b-4b06-8109-f4e7f6b4ba0d'
     #Truy vấn tất cả lần nộp bài của sinh viên
     query = '''
     select s2.student_id, max(s2.updated_at) as updated_at, max(scores) as scores 
@@ -101,10 +101,11 @@ def buildRSVD(app):
       # print("TIME: ", list_created_at)
       for sub in list_subs:
         student_id = sub[0]
+        std = Student.query.filter_by(id=student_id).first()
         scores = sub[2]
         
         for idx, sc in enumerate(scores):
-          list_student_ids.append(student_id)
+          list_student_ids.append(int(std.mssv))
           list_testcase_ids.append(list_tcs[idx])
           list_ratings.append(1 if sc else 0)
 
@@ -135,14 +136,15 @@ def buildRSVD(app):
       
       for sub in list_subs:
         student_id = sub[0]
+        std = Student.query.filter_by(id=student_id).first()
         scores = sub[2]
         
-        db_list_students_id.append(student_id)
+        db_list_students_id.append(int(std.mssv))
         scores = [1 if x else 0 for x in scores]
         scores_predict = [None for x in scores]
         
         for idx, sc in enumerate(scores):
-          scores_predict[idx] = model.predict(student_id, db_list_tc_ids[idx])
+          scores_predict[idx] = model.predict(int(std.mssv), db_list_tc_ids[idx])
           
         db_matrix.append(scores_predict)
 
@@ -157,7 +159,7 @@ def buildRSVD(app):
 
 def buildTimeSVD(app):
   with app.app_context():
-    assignment_id = '0b13d244-785c-4319-b764-16bfb29a42c1'
+    assignment_id = '25a3d3cd-613b-4b06-8109-f4e7f6b4ba0d'
     #Truy vấn tất cả lần nộp bài của sinh viên
     query = '''
     SELECT
@@ -183,11 +185,12 @@ def buildTimeSVD(app):
       # print("TIME: ", list_created_at)
       for sub in list_subs:
         student_id = sub[0]
+        std = Student.query.filter_by(id=student_id).first()
         created_at = sub[1].replace(minute=0, second=0, microsecond=0)
         scores = sub[2]
         
         for idx, sc in enumerate(scores):
-          list_student_ids.append(student_id)
+          list_student_ids.append(int(std.mssv))
           list_testcase_ids.append(list_tcs[idx])
           list_ratings.append(1 if sc else 0)
           list_created_at.append(created_at.timestamp())
@@ -221,14 +224,15 @@ def buildTimeSVD(app):
       
       for sub in list_subs:
         student_id = sub[0]
+        std = Student.query.filter_by(id=student_id).first()
         scores = sub[2]
         
-        db_list_students_id.append(student_id)
+        db_list_students_id.append(int(std.mssv))
         scores = [1 if x else 0 for x in scores]
         scores_predict = [None for x in scores]
         
         for idx, sc in enumerate(scores):
-          scores_predict[idx] = model.predict(student_id, db_list_tc_ids[idx], created_at)
+          scores_predict[idx] = model.predict(int(std.mssv), db_list_tc_ids[idx], created_at)
           
         db_matrix.append(scores_predict)
 

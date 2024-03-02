@@ -15,5 +15,7 @@ class Teacher(db.Model):
 
   account_id = Column(UUID(as_uuid=True), ForeignKey('accounts.id'), unique=True, nullable=False)
   account = relationship("Account", back_populates="teacher", uselist=False)
+  # collaborators = relationship("Assignment", secondary="teacher_on_assignments", back_populates='teachers')
+  # assignments = relationship("Assignment", backref='author', lazy=True)
   
-  assignments = relationship("Assignment", backref='teacher', lazy=True)
+  assignments = relationship("Assignment", back_populates='author', lazy=True)

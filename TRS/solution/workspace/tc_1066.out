@@ -1,0 +1,3 @@
+----- Testcase 1066 -----
+EXP1: 40, EXP2: 350, E1: 50
+EXP1: 0, EXP2: 371, result: 371

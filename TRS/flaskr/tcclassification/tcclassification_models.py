@@ -1,7 +1,5 @@
 from flaskr.database import db
 from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy.sql.sqltypes import DateTime
-from sqlalchemy import CheckConstraint
 from sqlalchemy.dialects.postgresql import ARRAY
 
 class TcClassification(db.Model):

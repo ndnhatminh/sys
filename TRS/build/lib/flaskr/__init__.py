@@ -10,7 +10,7 @@ from flask_cors import CORS
 from config.config import DevelopmentConfig
 from constants import DB_INIT
 from apscheduler.schedulers.background import BackgroundScheduler
-from flaskr.matrixfactorization.MF_views import buildMF, exportInitMF
+# from flaskr.matrixfactorization.MF_views import buildMF, exportInitMF
 from flaskr.tcclassification.tcclassification_views import buildClassification
 
 '''
@@ -71,7 +71,7 @@ def create_app(test_config=None):
       
     with app.app_context():
       schedule = BackgroundScheduler(deamon=True)
-      schedule.add_job(buildMF, 'cron', args=[app], id='buidMF', hour=0, minute=0) # 7 - 00
+      # schedule.add_job(buildMF, 'cron', args=[app], id='buidMF', hour=0, minute=0) # 7 - 00
       schedule.add_job(buildClassification, 'cron', args=[app], id='buidTcClassification', hour=0, minute=0) # 7 - 00
       # schedule.add_job(buildClassification, 'interval', args=[app], id='buidTcClassification', seconds=1) # for testing
       schedule.start()

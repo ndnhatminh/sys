@@ -1,8 +1,13 @@
 from flaskr.database import db
 from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy.sql.sqltypes import DateTime
-from sqlalchemy import CheckConstraint
+from sqlalchemy import Column, Enum
 from sqlalchemy.dialects.postgresql import ARRAY
+import enum
+
+class SubmissionStatus(enum.Enum):
+  WAITING = 'WAITING'
+  FAILED = 'FAILED'
+  SUCCESS = 'SUCCESS'
 
 class Submission(db.Model):
   __tablename__ = 'submissions'
@@ -13,6 +18,7 @@ class Submission(db.Model):
   
   # array of multiple testcase with pass/fail = 1/0
   # each number of testcase is differenct from assignments
+  status = Column(Enum(SubmissionStatus), nullable=False, default=SubmissionStatus.WAITING)
   scores = db.Column(ARRAY(db.Boolean), unique=False, nullable=False)
   
   files = db.Column(ARRAY(db.String), unique=False, nullable=False)

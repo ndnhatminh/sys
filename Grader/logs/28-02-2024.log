@@ -99,3 +99,50 @@
 [2024-02-28 16:38:32 +0000] [7] [ERROR] Worker (pid:9) exited with code 1
 [2024-02-28 16:38:32 +0000] [7] [ERROR] Worker (pid:9) exited with code 1.
 [2024-02-28 16:38:32 +0000] [21] [INFO] Booting worker with pid: 21
+[2024-02-29 05:43:48 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-02-29 05:43:49 +0000] [10] [DEBUG] GET /
+[2024-02-29 05:44:01 +0000] [10] [DEBUG] GET /
+[2024-02-29 05:59:57 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-02-29 05:59:57 +0000] [21] [DEBUG] GET /
+[2024-02-29 06:00:06 +0000] [10] [DEBUG] GET /
+[2024-02-29 06:18:51 +0000] [11] [DEBUG] Ignoring connection reset
+[2024-02-29 06:18:53 +0000] [21] [DEBUG] GET /
+[2024-02-29 06:19:03 +0000] [10] [DEBUG] GET /
+[2024-02-29 06:21:49 +0000] [21] [DEBUG] Ignoring connection reset
+[2024-02-29 06:21:49 +0000] [21] [DEBUG] GET /
+[2024-02-29 06:22:05 +0000] [10] [DEBUG] GET /
+[2024-02-29 06:27:34 +0000] [11] [DEBUG] Ignoring connection reset
+[2024-02-29 06:27:34 +0000] [11] [DEBUG] GET /
+[2024-02-29 06:27:49 +0000] [11] [DEBUG] GET /
+[2024-02-29 06:38:29 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-02-29 06:38:29 +0000] [10] [DEBUG] GET /
+[2024-02-29 06:38:46 +0000] [11] [DEBUG] GET /
+[2024-02-29 14:42:31 +0000] [11] [DEBUG] GET /
+[2024-02-29 16:38:50 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:21)
+[2024-02-29 16:38:50 +0000] [21] [INFO] Worker exiting (pid: 21)
+[2024-02-29 16:38:51 +0000] [7] [ERROR] Worker (pid:21) exited with code 1
+[2024-02-29 16:38:51 +0000] [7] [ERROR] Worker (pid:21) exited with code 1.
+[2024-02-29 16:38:51 +0000] [25] [INFO] Booting worker with pid: 25
+[2024-03-01 02:21:53 +0000] [10] [WARNING] Invalid request from ip=139.162.7.59: Invalid HTTP request line: ''
+[2024-03-01 02:21:53 +0000] [10] [DEBUG] GET /
+[2024-03-01 02:21:53 +0000] [25] [DEBUG] OPTIONS /
+[2024-03-01 02:21:53 +0000] [25] [WARNING] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'RTSP/1.0'
+[2024-03-01 02:21:58 +0000] [10] [DEBUG] Ignored premature client disconnection. No more data after: b'\x80\x00\x00(r\xfe\x1d\x13\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86\xa0\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2024-03-01 02:22:03 +0000] [10] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03'
+[2024-03-01 02:22:03 +0000] [10] [WARNING] Invalid request from ip=139.162.7.59: Invalid HTTP request line: 'HELP'
+[2024-03-01 02:22:08 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2024-03-01 02:22:13 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2024-03-01 02:22:18 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00qj\x81n0\x81k\xa1\x03\x02\x01\x05\xa2\x03\x02\x01\n\xa4\x81^0\\\xa0\x07\x03\x05\x00P\x80\x00\x10\xa2\x04\x1b\x02NM\xa3\x170\x15\xa0\x03\x02\x01\x00\xa1\x0e0\x0c\x1b\x06krbtgt\x1b\x02NM\xa5\x11\x18\x0f19700101000000Z\xa7\x06\x02\x04\x1f\x1e\xb9\xd9\xa8\x170\x15\x02\x01\x12\x02\x01\x11\x02\x01\x10\x02\x01\x17\x02\x01\x01\x02\x01\x03\x02\x01\x02'
+[2024-03-01 02:22:23 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00\xa4\xffSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00'
+[2024-03-01 02:22:28 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b'l\x00\x0b\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2024-03-01 02:22:28 +0000] [11] [WARNING] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'SIP/2.0'
+[2024-03-01 02:23:14 +0000] [11] [DEBUG] GET /
+[2024-03-01 02:23:28 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2024-03-01 02:23:28 +0000] [10] [DEBUG] Ignored premature client disconnection. No more data after: b'\x0e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00bbbb0100000001'
+[2024-03-01 02:23:28 +0000] [25] [DEBUG] Closing connection. 
+[2024-03-01 02:23:45 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2024-03-01 06:21:33 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-03-01 06:21:33 +0000] [11] [DEBUG] GET /
+[2024-03-01 06:21:50 +0000] [25] [DEBUG] GET /
+[2024-03-01 06:22:05 +0000] [11] [DEBUG] GET /
+[2024-03-01 06:22:21 +0000] [11] [DEBUG] GET /

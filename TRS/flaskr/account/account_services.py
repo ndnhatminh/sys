@@ -14,6 +14,8 @@ from email_validator import validate_email, EmailNotValidError
 import time
 
 class AccountService:
+  # TODO Create access token riêng, không phụ thuộc vào Google
+  # TODO Vì Account google expire sau 1 tiếng
   # @staticmethod
   # def generate_access_token(account_id, email: str, type):
   #   # Define the expiration time for the access token (1 day from now)
@@ -30,65 +32,83 @@ class AccountService:
   #   secret_key = SECRET_KEY
   #   access_token = jwt.encode(payload, secret_key, algorithm='HS256')
   #   return access_token
+  
   @staticmethod
   def verify_token(token: str):
     try:
       idinfo = id_token.verify_oauth2_token(token, requests.Request())
       if idinfo['exp'] < time.time():
-        raise BadRequestException('TOKEN_EXPIRED')
+        raise ForbiddenResourceException('TOKEN_EXPIRED')
       email = validate_email(idinfo['email']).email
       account = Account.query.filter_by(email = email, is_active=True).first()
       if not account:
-        raise BadRequestException('EMAIL_NOT_FOUND')
+        raise ForbiddenResourceException('EMAIL_NOT_FOUND')
       return account
     except EmailNotValidError:
-      raise EmailNotValidError
+      raise ForbiddenResourceException('EMAIL_NOT_VALID')
     except ValueError:
-      raise BadRequestException('INVALID_TOKEN')
+      raise ForbiddenResourceException('INVALID_TOKEN')
 
   
   @staticmethod
   def authenticate(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-      try:
-        auth_header = request.headers.get('Authorization')
-        if auth_header and auth_header.startswith('Bearer'):
-          token = auth_header.split(' ')[1]
-          request.account = AccountService.verify_token(token)
-          return func(*args, **kwargs)
-        else:
-          raise ForbiddenResourceException('INVALID_TOKEN')
-      except  Exception as e:
-        raise ForbiddenResourceException('INVALID_TOKEN' + str(e))
-      # if auth_header and auth_header.startswith('Bearer '):
-      #   try:
-      #     access_token = auth_header.split(' ')[1]
-      #     secret_key = SECRET_KEY
-      #     decoded_token = jwt.decode(access_token, secret_key, algorithms=['HS256'])
-      #     request.account_id = decoded_token['account_id']
-      #     return func(*args, **kwargs)
-      #   except jwt.ExpiredSignatureError:
-      #     return jsonify({'error': 'Token expired'}), 401
-      #   except jwt.InvalidTokenError:
-      #     return jsonify({'error': 'Invalid token'}), 400
-      # return jsonify({'error': 'Missing token'}), 401
+      auth_header = request.headers.get('Authorization')
+      if auth_header and auth_header.startswith('Bearer'):
+        token = auth_header.split(' ')[1]
+        request.account = AccountService.verify_token(token)
+        return func(*args, **kwargs)
+      else:
+        raise ForbiddenResourceException('INVALID_TOKEN')
     return wrapper
-  
+
   @staticmethod
-  def create_account(name, email, type, mssv=None)-> bool:
-    exist_account = Account.query.filter_by(email=email).count()
-    if exist_account > 0:
-      return False
+  def verify_teacher(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+      if request.account.type.name != 'TEACHER':
+        raise ForbiddenResourceException('PERMISSION_DENIED')
+      teacher = Teacher.query.filter_by(id=request.account.teacher.id).first()
+      request.teacher = teacher
+      return func(*args, **kwargs)
+    return wrapper
+
+
+  @staticmethod
+  def verify_student(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+      if request.account.type.name != 'STUDENT':
+        raise ForbiddenResourceException('PERMISSION_DENIED')
+      student = Student.query.filter_by(id=request.account.student.id).first()
+      request.student = student
+      return func(*args, **kwargs)
+    return wrapper
+
+        
+  @staticmethod
+  def create_account(name, email, type, mssv=None):
+    exist_account = Account.query.filter_by(email=email).first()
+    if exist_account:
+      if exist_account.type.name == 'TEACHER':
+        teacher = Teacher.query.filter_by(account_id=exist_account.id).first()
+        return 'EXIST_TEACHER', teacher
+      else:
+        student = Student.query.filter_by(account_id=exist_account.id).first()
+        return 'EXIST_STUDENT', student
     account = Account(name, email, type)
     account.save()
     if type == 'STUDENT':
       student = Student(account_id=account.id, mssv=mssv)
       student.save()
-    else:
+      student = Student.query.filter_by(account_id=account.id).first()
+      return 'STUDENT', student
+    elif type == 'TEACHER':
       teacher = Teacher(account_id=account.id)
       teacher.save()
-    return True
+      teacher = Teacher.query.filter_by(account_id=account.id).first()
+      return 'TEACHER', teacher
     
   @staticmethod
   def get_detail(account_id) -> AccountResponse:

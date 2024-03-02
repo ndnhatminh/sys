@@ -2,10 +2,13 @@ import logging
 from flask import Blueprint, request, Response
 from flask.globals import current_app
 from flask.json import jsonify
+from flaskr.utils.base_response import BaseResponse
+from flaskr.utils.exceptions import BadRequestException
 from flaskr.utils.file import File
 from constants import FILE_SUBMISSION_PATH, GRADER_URL
 from werkzeug.utils import secure_filename
 import os
+from flaskr.account.account_services import AccountService, Account
 from flaskr.utils.time import timeNow
 from sqlalchemy import select
 from flaskr.database import db
@@ -13,12 +16,10 @@ from flaskr.student.student_models import Student
 from flaskr.submission.submission_models import Submission
 from flaskr.assignment.assignment_models import Assignment
 from flaskr.recsys.recsys_models import Recommendation
-import requests
-import threading
 from flask import copy_current_request_context
 from response import success, fail
 from constants.constants import rec_apr1, rec_apr2, rec_apr3
-from flaskr.recsys.algorithm import recommendation_1, recommendation_2, recommendation_3
+from flaskr.recsys.algorithm import recommendation_1, recommendation_2, recommendation_3, recommendation_4
 from datetime import date, timedelta, time, datetime
 from constants.constants import list_testcase_ids as Clist_testcase_ids
 from flaskr.utils.text import encrypt, decrypt
@@ -28,88 +29,61 @@ from flaskr.utils.limitthread import LimitThread
 
 blueprint = Blueprint('recsys', __name__)
 
-@blueprint.route('/api/hello', methods=['GET',])
-def hello():
-  return 'Hello'
-
-@blueprint.route('/api/recommend', methods=['POST',])
-def receive_file():
-  student_id = request.form.get('student_id')
-  print(f'student_id = {student_id}', flush=True)
-  assignment_name = request.form.get('assignment_name')
+# @blueprint.route('/api/recommend', methods=['POST'])
+# @AccountService.authenticate
+# @AccountService.verify_student
+# def receive_file():
+#   submission_id = request.json.get('submission_id')
+#   submission = Submission.query \
+#     .join(Assignment, Assignment.id == Submission.assignment_id) \
+#     .filter(Submission.id == submission_id, 
+#             Submission.assignment_id == request.json.get('assignment_id')
+#             ) \
+#     .first()
+#   if not submission:
+#     raise BadRequestException('SUBMISSION_NOT_FOUND')
+#   list_fileinfos = submission.files
+#   mssv = request.student.mssv
+#   # Cham bai vua nop
+#   jsondata = {
+#     "list_fileinfos": list_fileinfos,
+#     "student_id": str(mssv),
+#     "submission_id": str(submission_id)
+#   }
+#   requests.post(url=GRADER_URL, json=jsondata)
   
-  # if not File.checkStudentId(student_id):
-  #   return {
-  #     'status': 'fail',
-  #     'data': [],
-  #     'message': f'Invalid student id input in answer box.'
-  #   }
-    
-  # kiem tra std_id co trong danh sach sinh vien
-  stmt = select(Student).where(Student.id == student_id).exists().select()
-  result = db.session.execute(stmt)
-  if not result.scalar():
-    return fail(
-      data=[],
-      message='Student id is not existed. Please contact the lecturer for this error.'
-    )
-    
-  # save all files:
-  time_now = timeNow()
-  list_fileinfos = [] # (filename, filepath)
-  for k in request.files.keys():
-    file = request.files[k]
-    filename = secure_filename(file.filename)
-    filename = f'{time_now}_{student_id}_{filename}'
-    filepath = os.path.join(FILE_SUBMISSION_PATH, filename)
-    list_fileinfos.append((filename, filepath))
-    file.save(filepath)
+#   # Tao Recommendation tam
+#   recr = Recommendation(status=1, submission_id=submission_id, list_testcase_id=[])
+#   recr.save()
   
-  # file info is ok, insert into database
-  ## select assignment_id
-  assignment = db.session.execute(db.select(Assignment).where(Assignment.name==assignment_name)).scalar_one()
-  ## insert new submission
-  list_filepaths = [x[1] for x in list_fileinfos]
-  # print(list_fileinfos)
-  sub = Submission(student_id=student_id, assignment_id=assignment.id, scores=[], files=list_filepaths)
-  sub.save()
-  print("PATH", list_fileinfos)
-
-  # Cham bai vua nop
-  jsondata = {
-    "list_fileinfos": list_fileinfos,
-    "student_id": str(student_id),
-    "submission_id": str(sub.id)
-  }
-  requests.post(url=GRADER_URL, json=jsondata)
+#   # recr_id = recr.id
+#   # encrypt_id = encrypt(recr_id)
+#   # url = f'https://fp232be.codepractice.net/api/testcases/{encrypt_id}'
+#   # recr.url = url
+#   # recr.save()
   
-  # Tao Recommendation tam
-  recr = Recommendation(status=1, submission_id=sub.id, list_testcase_id=[])
-  recr.save()
+#   # message = f'Link:\n{url}'
   
-  recr_id = recr.id
-  encrypt_id = encrypt(recr_id)
-  url = f'http://127.0.0.1:5002/api/testcases/{encrypt_id}'
-  recr.url = url
-  recr.save()
+#   return BaseResponse.ok()
   
-  message = f'Link:\n{url}'
-  
-  return success(
-    message=url
-  )
-  return message
-  
-@blueprint.route('/api/testcases/<encrypted_recr_id>', methods=['GET',])
-def show_recommended_testcases(encrypted_recr_id):
-  recr_id = decrypt(encrypted_recr_id)
-  # recr = db.session.execute(select(Recommendation).where(Recommendation.id == recr_id)).first()
-  recr = Recommendation.query.filter_by(id = recr_id).first()
-  # print('hello', recr_id, recr.submission_id)
-  # tìm student id
-  # stu = db.session.execute(select(Submission).where(Submission.id == recr.submission_id)).first()
-  sub = Submission.query.filter_by(id = recr.submission_id).first()
-  student_id = sub.student_id
+@blueprint.route('/api/testcases', methods=['GET'])
+@AccountService.authenticate
+@AccountService.verify_student
+def show_recommended_testcases():
+  sub_id = request.args.get('submission_id')
+  try:
+    recr = Recommendation.query.filter_by(submission_id = sub_id).first()
+    if not recr:
+      return  BaseResponse({
+        "files": [],
+        "status": None,
+      }, None).to_response()
+  except:
+    return BaseResponse({
+        "files": [],
+        "status": None,
+      }, None).to_response()
+  student_id = request.student.mssv
   
   if recr.status == 1:
     m = 'Hệ thống đang chấm điểm bài của bạn, vui lòng reload lại trang sau khoảng 3-5 phút'
@@ -133,7 +107,6 @@ def show_recommended_testcases(encrypted_recr_id):
     return fail (
       message=m
     )
-    return render_template('noti.html', student_id=student_id, message=m)
   else:
     if recr.status == 4:
       last_recr_status_3 = Recommendation.query.join(Submission, Recommendation.submission_id == Submission.id).filter(Submission.student_id == student_id).filter(Recommendation.status == 3).filter(Recommendation.updated_at < recr.updated_at).order_by(Recommendation.updated_at.desc()).first()
@@ -148,26 +121,17 @@ def show_recommended_testcases(encrypted_recr_id):
     for id in lids:
       dic_t = {
         "id": id,
-        # "input": readall(os.path.join('solution/workspace', f'tc{id}_input')),
-        # "asclepius": readall(os.path.join('solution/workspace', f'tc{id}_asclepius_pack')),
-        # "merlin": readall(os.path.join('solution/workspace', f'tc{id}_merlin_pack')),
-        # "mushghost": readall(os.path.join('solution/workspace', f'tc{id}_mush_ghost')),
-        "events": readall(os.path.join('solution/workspace', f'tc{id}_events')),
-        "armyknights": readall(os.path.join('solution/workspace', f'tc{id}_armyknights')),
-        "expect": readall(os.path.join('solution/workspace', f'output{id}')),
+        "events": readall(os.path.join('solution/workspace', f'tc_{id}')),
+        "expect": readall(os.path.join('solution/workspace', f'tc_{id}.out')),
       }
-
-      
       lfiles.append(dic_t)
     # message = m if m is not None else ''
-    return success({
-      "student_id": str(student_id),
-      "list_testcase_id": lids,
-      "list_fileinfos": lfiles,
-      "message": message
-    })
-    return render_template('rec.html', student_id=student_id, lfiles=lfiles, message=message)
-  return success()
+    return BaseResponse({
+      # "student_id": str(student_id),
+      # "list_testcase_id": lids,
+      "files": lfiles,
+      "status": recr.status,
+    }, message).to_response()
 
 @blueprint.route('/api/internalrecommend', methods=['POST',])
 def internal_recommend():
@@ -175,14 +139,16 @@ def internal_recommend():
   def thread_recommend(dic_data):
     submission_id = dic_data['submission_id']
     student_id = str(dic_data['student_id'])
+    print('dic data: ', dic_data)
     
     # Note: kiem tra nếu kết quả chấm là đúng tất cả lần recommend trước thì mới thực hiện recommend
     # thông báo kết quả này trên trang web như thế nào? dùng bảng recommendation được ko? - được: dùng status = 4
     pass_all = True
     list_false_tcids = []
     
+    student = Student.query.filter_by(mssv=student_id).first()
     # last_r = Recommendation.query.filter(Recommendation.status == 3).order_by(Recommendation.updated_at.desc()).first()
-    last_r = Recommendation.query.join(Submission, Recommendation.submission_id == Submission.id).filter(Submission.student_id == student_id).filter(Recommendation.status == 3).order_by(Recommendation.updated_at.desc()).first()
+    last_r = Recommendation.query.join(Submission, Recommendation.submission_id == Submission.id).filter(Submission.student_id == student.id).filter(Recommendation.status == 3).order_by(Recommendation.updated_at.desc()).first()
     
     if last_r:
       # kiểm tra thử đúng hết tất cả testcase trong last_recommendation không?
@@ -197,21 +163,18 @@ def internal_recommend():
           list_false_tcids.append(tcid)
           pass_all = False
           # break # comment để debug
-        
     if not pass_all:
       r = Recommendation.query.filter(Recommendation.submission_id == submission_id).first()
       r.status = 4
       r.list_false_tcids = list_false_tcids
       r.save()
-      
       return fail(message='not full pass previous recommended testcases')
-      
     
     # Note: kiểm tra nếu trong ngày hôm nay đã có 5 lần req rồi thì không đưa ra gợi ý, status = 5
     today = date.today()
     start = datetime.combine(today, time=time(0,0,0))
     # list_recommendation = Recommendation.query.filter(Recommendation.status == 3).filter(Recommendation.updated_at >= start).order_by(Recommendation.updated_at.desc()).all()
-    list_recommendation = Recommendation.query.join(Submission, Recommendation.submission_id == Submission.id).filter(Submission.student_id == student_id).filter(Recommendation.status == 3).filter(Recommendation.updated_at >= start).order_by(Recommendation.updated_at.desc()).all()
+    list_recommendation = Recommendation.query.join(Submission, Recommendation.submission_id == Submission.id).filter(Submission.student_id == student.id).filter(Recommendation.status == 3).filter(Recommendation.updated_at >= start).order_by(Recommendation.updated_at.desc()).all()
     if len(list_recommendation) >= 5:
       r = db.session.execute(db.select(Recommendation).where(Recommendation.submission_id==submission_id)).scalar_one()
       r.status = 5
@@ -222,14 +185,16 @@ def internal_recommend():
     # bắt đầu gợi ý
     submission_id = dic_data['submission_id']
     student_id = str(dic_data['student_id'])
-    assignment_id = '"0b13d244-785c-4319-b764-16bfb29a42c1"' # hardcode
+
+    sub = Submission.query.filter(Submission.id == submission_id).order_by(Submission.updated_at.desc()).first()
+    assignment_id = sub.assignment_id
       
     if student_id in rec_apr1:
-      recommendation_1(submission_id, assignment_id, student_id)
-    elif student_id in rec_apr2:
       recommendation_2(submission_id, assignment_id, student_id)
-    elif student_id in rec_apr3:
+    elif student_id in rec_apr2:
       recommendation_3(submission_id, assignment_id, student_id)
+    elif student_id in rec_apr3:
+      recommendation_4(submission_id, assignment_id, student_id)
     else:
       print('Error')
       assert(False)

@@ -1,0 +1,1046 @@
+[2024-03-01 06:31:49 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/01-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f2eecdca550>
+  on_reload: <function OnReload.on_reload at 0x7f2eecdca670>
+  when_ready: <function WhenReady.when_ready at 0x7f2eecdca790>
+  pre_fork: <function Prefork.pre_fork at 0x7f2eecdca8b0>
+  post_fork: <function Postfork.post_fork at 0x7f2eecdca9d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f2eecdcaaf0>
+  worker_int: <function WorkerInt.worker_int at 0x7f2eecdcac10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f2eecdcad30>
+  pre_exec: <function PreExec.pre_exec at 0x7f2eecdcae50>
+  pre_request: <function PreRequest.pre_request at 0x7f2eecdcaf70>
+  post_request: <function PostRequest.post_request at 0x7f2eecde3040>
+  child_exit: <function ChildExit.child_exit at 0x7f2eecde3160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f2eecde3280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f2eecde33a0>
+  on_exit: <function OnExit.on_exit at 0x7f2eecde34c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f2eecde35e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-01 06:31:49 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-01 06:31:49 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-01 06:31:49 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-01 06:31:49 +0000] [7] [INFO] Using worker: sync
+[2024-03-01 06:31:49 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-01 06:31:49 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-01 06:31:49 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-01 06:31:49 +0000] [7] [DEBUG] 3 workers
+[2024-03-01 06:33:18 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/01-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fa6c363a550>
+  on_reload: <function OnReload.on_reload at 0x7fa6c363a670>
+  when_ready: <function WhenReady.when_ready at 0x7fa6c363a790>
+  pre_fork: <function Prefork.pre_fork at 0x7fa6c363a8b0>
+  post_fork: <function Postfork.post_fork at 0x7fa6c363a9d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fa6c363aaf0>
+  worker_int: <function WorkerInt.worker_int at 0x7fa6c363ac10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fa6c363ad30>
+  pre_exec: <function PreExec.pre_exec at 0x7fa6c363ae50>
+  pre_request: <function PreRequest.pre_request at 0x7fa6c363af70>
+  post_request: <function PostRequest.post_request at 0x7fa6c3654040>
+  child_exit: <function ChildExit.child_exit at 0x7fa6c3654160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fa6c3654280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fa6c36543a0>
+  on_exit: <function OnExit.on_exit at 0x7fa6c36544c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fa6c36545e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-01 06:33:18 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-01 06:33:18 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-01 06:33:18 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-01 06:33:18 +0000] [7] [INFO] Using worker: sync
+[2024-03-01 06:33:18 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-01 06:33:18 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-01 06:33:18 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-01 06:33:18 +0000] [7] [DEBUG] 3 workers
+[2024-03-01 06:36:03 +0000] [8] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/01-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f467cf48550>
+  on_reload: <function OnReload.on_reload at 0x7f467cf48670>
+  when_ready: <function WhenReady.when_ready at 0x7f467cf48790>
+  pre_fork: <function Prefork.pre_fork at 0x7f467cf488b0>
+  post_fork: <function Postfork.post_fork at 0x7f467cf489d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f467cf48af0>
+  worker_int: <function WorkerInt.worker_int at 0x7f467cf48c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f467cf48d30>
+  pre_exec: <function PreExec.pre_exec at 0x7f467cf48e50>
+  pre_request: <function PreRequest.pre_request at 0x7f467cf48f70>
+  post_request: <function PostRequest.post_request at 0x7f467cf62040>
+  child_exit: <function ChildExit.child_exit at 0x7f467cf62160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f467cf62280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f467cf623a0>
+  on_exit: <function OnExit.on_exit at 0x7f467cf624c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f467cf625e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-01 06:36:03 +0000] [8] [INFO] Starting gunicorn 21.2.0
+[2024-03-01 06:36:03 +0000] [8] [DEBUG] Arbiter booted
+[2024-03-01 06:36:03 +0000] [8] [INFO] Listening at: http://0.0.0.0:5003 (8)
+[2024-03-01 06:36:03 +0000] [8] [INFO] Using worker: sync
+[2024-03-01 06:36:03 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-01 06:36:03 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-01 06:36:03 +0000] [12] [INFO] Booting worker with pid: 12
+[2024-03-01 06:36:03 +0000] [8] [DEBUG] 3 workers
+[2024-03-01 06:37:26 +0000] [10] [DEBUG] GET /
+[2024-03-01 06:45:04 +0000] [10] [DEBUG] GET /api/hello
+[2024-03-01 06:45:06 +0000] [10] [DEBUG] GET /favicon.ico
+[2024-03-01 07:36:35 +0000] [11] [DEBUG] GET /
+[2024-03-01 08:55:29 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 08:59:34 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 08:59:38 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:01 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:01 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:02 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:02 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:02 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:11 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:13 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:13 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:13 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:13 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:14 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:14 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:14 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:14 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:14 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:14 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:14 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:15 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:15 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:15 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:15 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:15 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:15 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:16 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:16 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:16 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+[2024-03-01 09:00:16 +0000] [10] [DEBUG] POST /api/grader
+Exception in thread Thread-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+2000000: start grading
+Exception in thread Thread-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:16 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:17 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:17 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:00:36 +0000] [12] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 09:01:13 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 11:37:58 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-03-01 11:38:08 +0000] [10] [DEBUG] GET /
+[2024-03-01 12:51:20 +0000] [10] [WARNING] Invalid request from ip=185.170.144.3: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-03-01 16:19:34 +0000] [11] [DEBUG] POST /api/grader
+2011436: start grading
+Exception in thread Thread-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 16:37:09 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:10)
+[2024-03-01 16:37:09 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2024-03-01 16:37:09 +0000] [8] [ERROR] Worker (pid:10) exited with code 1
+[2024-03-01 16:37:09 +0000] [8] [ERROR] Worker (pid:10) exited with code 1.
+[2024-03-01 16:37:09 +0000] [58] [INFO] Booting worker with pid: 58
+[2024-03-01 16:40:18 +0000] [8] [CRITICAL] WORKER TIMEOUT (pid:12)
+[2024-03-01 16:40:18 +0000] [12] [INFO] Worker exiting (pid: 12)
+[2024-03-01 16:40:18 +0000] [8] [ERROR] Worker (pid:12) exited with code 1
+[2024-03-01 16:40:18 +0000] [8] [ERROR] Worker (pid:12) exited with code 1.
+[2024-03-01 16:40:18 +0000] [62] [INFO] Booting worker with pid: 62
+[2024-03-01 16:43:49 +0000] [58] [DEBUG] POST /api/grader
+2011436: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 17:14:21 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 225, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 52, in prepareOneSubmission
+    for fname, fpath in list_fileinfos:
+ValueError: too many values to unpack (expected 2)
+[2024-03-01 23:25:09 +0000] [62] [WARNING] Invalid request from ip=139.162.7.59: Invalid HTTP request line: ''
+[2024-03-01 23:25:09 +0000] [62] [DEBUG] GET /
+[2024-03-01 23:25:09 +0000] [62] [DEBUG] OPTIONS /
+[2024-03-01 23:25:09 +0000] [11] [WARNING] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'RTSP/1.0'
+[2024-03-01 23:25:14 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b'\x80\x00\x00(r\xfe\x1d\x13\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x86\xa0\x00\x01\x97|\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2024-03-01 23:25:19 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x1e\x00\x06\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x07version\x04bind\x00\x00\x10\x00\x03'
+[2024-03-01 23:25:19 +0000] [58] [WARNING] Invalid request from ip=139.162.7.59: Invalid HTTP request line: 'HELP'
+[2024-03-01 23:25:24 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'
+[2024-03-01 23:25:29 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2024-03-01 23:25:34 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00qj\x81n0\x81k\xa1\x03\x02\x01\x05\xa2\x03\x02\x01\n\xa4\x81^0\\\xa0\x07\x03\x05\x00P\x80\x00\x10\xa2\x04\x1b\x02NM\xa3\x170\x15\xa0\x03\x02\x01\x00\xa1\x0e0\x0c\x1b\x06krbtgt\x1b\x02NM\xa5\x11\x18\x0f19700101000000Z\xa7\x06\x02\x04\x1f\x1e\xb9\xd9\xa8\x170\x15\x02\x01\x12\x02\x01\x11\x02\x01\x10\x02\x01\x17\x02\x01\x01\x02\x01\x03\x02\x01\x02'
+[2024-03-01 23:25:39 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b'\x00\x00\x00\xa4\xffSMBr\x00\x00\x00\x00\x08\x01@\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x06\x00\x00\x01\x00\x00\x81\x00\x02PC NETWORK PROGRAM 1.0\x00\x02MICROSOFT NETWORKS 1.03\x00\x02MICROSOFT NETWORKS 3.0\x00\x02LANMAN1.0\x00\x02LM1.2X002\x00\x02Samba\x00\x02NT LANMAN 1.0\x00\x02NT LM 0.12\x00'
+[2024-03-01 23:25:44 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b'l\x00\x0b\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+[2024-03-01 23:25:44 +0000] [58] [WARNING] Invalid request from ip=139.162.7.59: Invalid HTTP Version: 'SIP/2.0'
+[2024-03-01 23:26:29 +0000] [11] [DEBUG] GET /
+[2024-03-01 23:26:34 +0000] [58] [DEBUG] Closing connection. 
+[2024-03-01 23:26:42 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x02\x00\x01\x00\x01\xfc\x03\x03L`R\xeb\xe2\x91^\xfarB<\xc0\x97\xbc\xdaf\xc1\t\xb3K6\xac\xf9\x812x{Z\xea\x8a\r{ \xe7\xb2\xd6\x9b\xe0\x90\xbd\xc3\x94\xeb\xf3\x97\x820\xbe\xc1\x18KZ\x01=\tj\xac4t\xbf\xac\x1e\xf0\x81\xb2\x00\x9c\x13\x02\x13\x03\x13\x01\x003\x009\x005\x00/\xc0,\xc00\x00\xa3\x00\x9f\xcc\xa9\xcc\xa8\xcc\xaa\xc0\xaf\xc0\xad\xc0\xa3\xc0\x9f\xc0]\xc0a\xc0W\xc0S\xc0+\xc0/\x00\xa2\x00\x9e\xc0\xae\xc0\xac\xc0\xa2\xc0\x9e\xc0\\\xc0`\xc0V\xc0R\xc0$\xc0(\x00k\x00j\xc0s\xc0w\x00\xc4\x00\xc3\xc0#\xc0'\x00g\x00@\xc0r\xc0v\x00\xbe\x00\xbd\xc0\n\xc0\x14\x008\x00\x88\x00\x87\xc0\t\xc0\x13\x002\x00\x9a\x00\x99\x00E\x00D\x00\x9d\xc0\xa1\xc0\x9d\xc0Q\x00\x9c\xc0\xa0\xc0\x9c\xc0P\x00=\x00\xc0\x00<\x00\xba\x00\x84\x00\x96\x00A\x00\xff\x01\x00\x01\x17\x00\x0b\x00\x04\x03\x00\x01\x02\x00\n\x00\x0c\x00\n\x00\x1d\x00\x17\x00\x1e\x00\x19\x00\x18\x00#\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x16\x00\x00\x00\x17\x00\x00\x00\r\x00*\x00(\x04\x03\x05\x03\x06\x03\x08\x07\x08\x08\x08\t\x08\n\x08\x0b\x08\x04\x08\x05\x08\x06\x04\x01\x05\x01\x06\x01\x03\x03\x03\x01\x03\x02\x04\x02\x05\x02\x06\x02\x00+\x00\x05\x04\x03\x04\x03\x03\x00-\x00\x02\x01\x01\x003\x00&\x00$\x00\x1d\x00 \xc9!?\x94\x97\xb3\xa5R\xa7\xaf\x1d&\xb2w\xbe1qV\xba\xde\x9f\x9eD\xf4\xdd\x83\x9bw\xfcJ\xb5b\x00\x15\x00\x7f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+[2024-03-01 23:26:42 +0000] [62] [DEBUG] Ignored premature client disconnection. No more data after: b'\x0e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00bbbb0100000001'
+[2024-03-01 23:26:49 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00i\x01\x00\x00e\x03\x03U\x1c\xa7\xe4random1random2random3random4\x00\x00\x0c\x00/\x00\n\x00\x13\x009\x00\x04\x00\xff\x01\x00\x000\x00\r\x00,\x00*\x00\x01\x00\x03\x00\x02\x06\x01\x06\x03\x06\x02\x02\x01\x02\x03\x02\x02\x03\x01\x03\x03\x03\x02\x04\x01\x04\x03\x04\x02\x01\x01\x01\x03\x01\x02\x05\x01\x05\x03\x05\x02'
+[2024-03-01 23:26:56 +0000] [58] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x00\x00S\x01\x00\x00O\x03\x00?G\xd7\xf7\xba,\xee\xea\xb2`~\xf3\x00\xfd\x82{\xb9\xd5\x96\xc8w\x9b\xe6\xc4\xdb<=\xdbo\xef\x10n\x00\x00(\x00\x16\x00\x13\x00\n\x00f\x00\x05\x00\x04\x00e\x00d\x00c\x00b\x00a\x00`\x00\x15\x00\x12\x00\t\x00\x14\x00\x11\x00\x08\x00\x06\x00\x03\x01\x00'

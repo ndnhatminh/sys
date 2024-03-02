@@ -34,8 +34,8 @@ class AccountController:
     email = request.json.get('email')
     type = request.json.get('type')
     name = request.json.get('name')
-    is_create = AccountService.create_account(name, email, type)
-    return BaseResponse.of(is_create)
+    AccountService.create_account(name, email, type)
+    return BaseResponse.ok()
     
   @classmethod
   @account_controller.route('/api/accounts', methods=['GET'])

@@ -40,13 +40,14 @@ def grade_and_update_submission():
     submission_id = dic_data['submission_id']
     # cham bai
     list_scores = gradeOneSubmission(dic_data)
+    print(list_scores, flush=True)
     # cap nhat lai submission da co (co san files)
-    stmt = select(Submission).where(Submission.id == submission_id)
-    result = db.session.execute(stmt)
-    sub = result.scalar()
-    
+    sub = Submission.query.filter_by(id=submission_id).first()
+    print('sub', sub, flush=True)
     sub.scores = list_scores
+    sub.status = 'SUCCESS'
     sub.save()
+
     print(f'{dic_data["student_id"]}: graded', flush=True)
     # dua ra goi y: remove - chuyen qua ben kia lam
     # Gui api qua ben backend-core de xu ly
@@ -61,8 +62,10 @@ def grade_and_update_submission():
     "submission_id": request.json.get('submission_id')
   }
   # thread = threading.Thread(target=grade_and_update_submission_thread, args=(dic_data,))
-  thread = LimitThread(target=grade_and_update_submission_thread, args=(dic_data,))
-  thread.start()
+  # thread = LimitThread(target=grade_and_update_submission_thread, args=(dic_data,))
+  # thread.start()
+  
+  grade_and_update_submission_thread(dic_data)
   
   data = {
     'status': 'success',

@@ -49,5 +49,6 @@ COPY ./.env /app/.env
 COPY ./gunicorn.conf.py /app/
 COPY ./wsgi.py /app/
 COPY ./script.sh /app/
+COPY ./script2.sh /app/
 
-ENTRYPOINT ["sh", "script.sh", "-p"]
+ENTRYPOINT ["sh", "script2.sh", "-p"]

@@ -10,7 +10,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from flask_cors import CORS
 from flask_config.config import DevelopmentConfig
-from grading_app.appallsub import insertSubmissionToDB_A2
+# from grading_app.appallsub import insertSubmissionToDB_A2
 
 '''
 Note: for create table, uncomment following code

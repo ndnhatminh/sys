@@ -1,0 +1,3 @@
+----- Testcase 1029 -----
+EXP1: 200, EXP2: 150, E1: 19
+EXP1: 181, EXP2: 174, result: 355

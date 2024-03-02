@@ -1,1 +1,1 @@
-gunicorn wsgi:app
+gunicorn wsgi:app --timeout 600

@@ -1,0 +1,4 @@
+----- Testcase 357 -----
+num_pwds: 5
+arr_pwds = {"Sherlock221B", "cse2023@abc", "cse2023@abc", "qkdj2847&2&", "cse2023@abc"}
+result: -1

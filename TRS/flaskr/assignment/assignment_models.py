@@ -17,12 +17,15 @@ class Assignment(db.Model):
   updated_at = Column(DateTime(timezone=True), default=func.now(), onupdate=db.func.now())
   start_date = Column(DateTime(timezone=True))   # start time of assignment
   end_date = Column(DateTime(timezone=True))     # end time of assignment
-  author_id = Column(UUID(as_uuid=True), ForeignKey('teachers.id'), nullable=False)
   description = Column(db.String, unique=True, nullable=True)
-  students = relationship("Student", secondary="student_on_assignments", back_populates='assignments')
-  submission = relationship("Submission", backref='assignment', lazy=True)
   
-  description = Column(String, unique=False, nullable=True)
+  author_id = Column(UUID(as_uuid=True), ForeignKey('teachers.id'), nullable=False)
+  author = relationship("Teacher", foreign_keys=[author_id], back_populates='assignments')
+  
+  students = relationship("Student", secondary="student_on_assignments", back_populates='assignments')
+  # collaborators = relationship("Teacher", secondary="teacher_on_assignments", back_populates='assignments')
+  submission = relationship("Submission", back_populates='assignment', lazy=True)
+  
   
   def __str__(self):
     s = [

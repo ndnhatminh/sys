@@ -2,7 +2,7 @@ import sys, os
 from typing import List
 sys.path.append(os.getcwd())
 import shutil
-
+from constants import lst_tc_id
 from grading_app.utils.config import ConfigTestcase, ConfigDirectory
 from grading_app.utils.run import runManyFolders, runOneFolder_v2
 from grading_app.utils.path import writeToFile
@@ -49,11 +49,11 @@ def prepareOneSubmission(list_configs: List[ConfigTestcase], config_directory: C
   if not os.path.exists(p):
     os.makedirs(p)
     
-  for fname, fpath in list_fileinfos:
-    if 'knight2.h' in fpath:
-      t = 'knight2.h'
-    elif 'knight2.cpp' in fpath:
-      t = 'knight2.cpp'
+  for fpath in list_fileinfos:
+    if 'study_in_pink1.h' in fpath:
+      t = 'study_in_pink1.h'
+    elif 'study_in_pink1.cpp' in fpath:
+      t = 'study_in_pink1.cpp'
     else:
       print('Error')
       assert(False)
@@ -63,38 +63,37 @@ def prepareOneSubmission(list_configs: List[ConfigTestcase], config_directory: C
     shutil.copy(fpath, dst)
   
   # copy support files to dir
-  for fname in ['main.cpp', 'main.h']:
+  for fname in ['main.cpp', 'main.h', 'tc.h']:
     src = os.path.join(config_directory.abs_support_files, fname)
     dst = os.path.join(config_directory.abs_grad_sub, student_id, fname)
 
     shutil.copy(src, dst)
   # copy testcases to dir
-  for tc_config in list_configs:
-    tc_num = tc_config.tc_num
-    src = os.path.join(config_directory.abs_support_files, 'testcases-fileinput', str(tc_num))
-    dst = os.path.join(config_directory.abs_grad_sub, student_id)
-    shutil.copytree(src, dst, dirs_exist_ok=True)
+  # for tc_config in list_configs:
+  #   tc_num = tc_config.tc_num
+  #   src = os.path.join(config_directory.abs_support_files, 'testcases-fileinput', str(tc_num))
+  #   dst = os.path.join(config_directory.abs_grad_sub, student_id)
+  #   shutil.copytree(src, dst, dirs_exist_ok=True)
   
   
   
 
 def initListConfigTestcases(config_directory: ConfigDirectory):
   list_configs = []
-  l_tc = list(range(1001, 1083)) + list(range(2001, 2070))
-  for i in l_tc: # tc01 - tc30
+  l_tc = lst_tc_id
+  for i in l_tc:
     list_configs.append(ConfigTestcase(
-      cmd_compile=f'g++ -g -o main main.cpp knight2.cpp -I . -std=c++11',
-      cmd_run=['./main', f'tc{i}_armyknights', f'tc{i}_events'],
-      testcode_dir=os.path.join(config_directory.abs_testcodes_dir, f'tc{i}.cpp'),
+      cmd_compile=f'g++ -g -o main main.cpp study_in_pink1.cpp -I . -std=c++11',
+      cmd_run=['./main', f'{i-1000}'],
+      testcode_dir=os.path.join(config_directory.abs_testcodes_dir, f'tc_{i}.cpp'),
       
       file_compiled_error=f'co_error{i}',
       file_run_error=f'run_error{i}',
-      file_output=f'output{i}',
+      file_output=f'tc_{i}.out',
       
       timelimit=5,
       tc_num=i
     ))
-  # return list_configs[90:101]
   return list_configs
 
 def prepareSolutionOutput(list_configs: List[ConfigTestcase], config_directory: ConfigDirectory):
@@ -234,7 +233,7 @@ def gradeOneSubmission(dic_data: dict):
   
   list_scores = reportOneSubmission(list_configs, config_directory, student_id)
   # if student_id != '2210220':
-  removeAllFiles(os.path.join(config_directory.abs_grad_sub, student_id)) # clean to save disk space
+  # removeAllFiles(os.path.join(config_directory.abs_grad_sub, student_id)) # clean to save disk space
   return list_scores
 
 if __name__ == '__main__':

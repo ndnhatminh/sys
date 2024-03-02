@@ -1,0 +1,2804 @@
+[2024-03-02 01:58:49 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f2113e44550>
+  on_reload: <function OnReload.on_reload at 0x7f2113e44670>
+  when_ready: <function WhenReady.when_ready at 0x7f2113e44790>
+  pre_fork: <function Prefork.pre_fork at 0x7f2113e448b0>
+  post_fork: <function Postfork.post_fork at 0x7f2113e449d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f2113e44af0>
+  worker_int: <function WorkerInt.worker_int at 0x7f2113e44c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f2113e44d30>
+  pre_exec: <function PreExec.pre_exec at 0x7f2113e44e50>
+  pre_request: <function PreRequest.pre_request at 0x7f2113e44f70>
+  post_request: <function PostRequest.post_request at 0x7f2113e5e040>
+  child_exit: <function ChildExit.child_exit at 0x7f2113e5e160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f2113e5e280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f2113e5e3a0>
+  on_exit: <function OnExit.on_exit at 0x7f2113e5e4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f2113e5e5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 01:58:49 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 01:58:49 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 01:58:49 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 01:58:49 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 01:58:49 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 01:58:49 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 01:58:49 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 01:58:49 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 02:40:54 +0000] [11] [DEBUG] POST /api/grader
+2011436: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/2011436-2024-03-02T02-40-54-study_in_pink1.h'
+[2024-03-02 05:30:39 +0000] [10] [DEBUG] Closing connection. 
+[2024-03-02 05:40:32 +0000] [9] [DEBUG] Closing connection. 
+[2024-03-02 06:03:01 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-03-02 06:03:02 +0000] [11] [DEBUG] GET /
+[2024-03-02 06:21:42 +0000] [11] [DEBUG] Ignoring connection reset
+[2024-03-02 06:21:42 +0000] [10] [DEBUG] GET /
+[2024-03-02 06:21:54 +0000] [10] [DEBUG] GET /
+[2024-03-02 06:22:39 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-03-02 06:22:39 +0000] [9] [DEBUG] GET /
+[2024-03-02 06:23:00 +0000] [9] [DEBUG] GET /
+[2024-03-02 06:38:12 +0000] [10] [DEBUG] Ignoring connection reset
+[2024-03-02 06:38:12 +0000] [10] [DEBUG] GET /
+[2024-03-02 06:38:28 +0000] [11] [DEBUG] GET /
+[2024-03-02 06:45:41 +0000] [11] [DEBUG] Ignoring connection reset
+[2024-03-02 06:45:42 +0000] [9] [DEBUG] GET /
+[2024-03-02 06:45:55 +0000] [9] [DEBUG] GET /
+[2024-03-02 12:49:25 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fd6e363d550>
+  on_reload: <function OnReload.on_reload at 0x7fd6e363d670>
+  when_ready: <function WhenReady.when_ready at 0x7fd6e363d790>
+  pre_fork: <function Prefork.pre_fork at 0x7fd6e363d8b0>
+  post_fork: <function Postfork.post_fork at 0x7fd6e363d9d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fd6e363daf0>
+  worker_int: <function WorkerInt.worker_int at 0x7fd6e363dc10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fd6e363dd30>
+  pre_exec: <function PreExec.pre_exec at 0x7fd6e363de50>
+  pre_request: <function PreRequest.pre_request at 0x7fd6e363df70>
+  post_request: <function PostRequest.post_request at 0x7fd6e3657040>
+  child_exit: <function ChildExit.child_exit at 0x7fd6e3657160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fd6e3657280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fd6e36573a0>
+  on_exit: <function OnExit.on_exit at 0x7fd6e36574c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fd6e36575e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 12:49:25 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 12:49:25 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 12:49:25 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 12:49:25 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 12:49:25 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 12:49:25 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 12:49:25 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 12:49:25 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 12:55:36 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/2000000-2024-03-02T12-55-36-study_in_pink1.cpp'
+[2024-03-02 12:58:21 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/2000000-2024-03-02T12-58-21-study_in_pink1.cpp'
+[2024-03-02 13:08:43 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb90f151550>
+  on_reload: <function OnReload.on_reload at 0x7fb90f151670>
+  when_ready: <function WhenReady.when_ready at 0x7fb90f151790>
+  pre_fork: <function Prefork.pre_fork at 0x7fb90f1518b0>
+  post_fork: <function Postfork.post_fork at 0x7fb90f1519d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb90f151af0>
+  worker_int: <function WorkerInt.worker_int at 0x7fb90f151c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb90f151d30>
+  pre_exec: <function PreExec.pre_exec at 0x7fb90f151e50>
+  pre_request: <function PreRequest.pre_request at 0x7fb90f151f70>
+  post_request: <function PostRequest.post_request at 0x7fb90f16b040>
+  child_exit: <function ChildExit.child_exit at 0x7fb90f16b160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb90f16b280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb90f16b3a0>
+  on_exit: <function OnExit.on_exit at 0x7fb90f16b4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fb90f16b5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 13:08:43 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 13:08:43 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 13:08:43 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 13:08:43 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 13:08:43 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 13:08:43 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 13:08:43 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 13:08:43 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 13:09:00 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/2000000-2024-03-02T13-09-00-study_in_pink1.cpp'
+[2024-03-02 13:21:24 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f4c2265c550>
+  on_reload: <function OnReload.on_reload at 0x7f4c2265c670>
+  when_ready: <function WhenReady.when_ready at 0x7f4c2265c790>
+  pre_fork: <function Prefork.pre_fork at 0x7f4c2265c8b0>
+  post_fork: <function Postfork.post_fork at 0x7f4c2265c9d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4c2265caf0>
+  worker_int: <function WorkerInt.worker_int at 0x7f4c2265cc10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f4c2265cd30>
+  pre_exec: <function PreExec.pre_exec at 0x7f4c2265ce50>
+  pre_request: <function PreRequest.pre_request at 0x7f4c2265cf70>
+  post_request: <function PostRequest.post_request at 0x7f4c22676040>
+  child_exit: <function ChildExit.child_exit at 0x7f4c22676160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f4c22676280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4c226763a0>
+  on_exit: <function OnExit.on_exit at 0x7f4c226764c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f4c226765e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 13:21:24 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 13:21:24 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 13:21:24 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 13:21:24 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 13:21:24 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 13:21:24 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 13:21:24 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 13:21:24 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 13:21:37 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/2000000-2024-03-02T13-21-37-study_in_pink1.cpp'
+[2024-03-02 13:23:42 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f1170470550>
+  on_reload: <function OnReload.on_reload at 0x7f1170470670>
+  when_ready: <function WhenReady.when_ready at 0x7f1170470790>
+  pre_fork: <function Prefork.pre_fork at 0x7f11704708b0>
+  post_fork: <function Postfork.post_fork at 0x7f11704709d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f1170470af0>
+  worker_int: <function WorkerInt.worker_int at 0x7f1170470c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f1170470d30>
+  pre_exec: <function PreExec.pre_exec at 0x7f1170470e50>
+  pre_request: <function PreRequest.pre_request at 0x7f1170470f70>
+  post_request: <function PostRequest.post_request at 0x7f117048a040>
+  child_exit: <function ChildExit.child_exit at 0x7f117048a160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f117048a280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f117048a3a0>
+  on_exit: <function OnExit.on_exit at 0x7f117048a4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f117048a5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 13:23:42 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 13:23:42 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 13:23:42 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 13:23:42 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 13:23:42 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 13:23:42 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 13:23:42 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 13:23:42 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 13:24:48 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/2000000-2024-03-02T13-24-48-study_in_pink1.cpp'
+[2024-03-02 13:26:50 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f08ef67f550>
+  on_reload: <function OnReload.on_reload at 0x7f08ef67f670>
+  when_ready: <function WhenReady.when_ready at 0x7f08ef67f790>
+  pre_fork: <function Prefork.pre_fork at 0x7f08ef67f8b0>
+  post_fork: <function Postfork.post_fork at 0x7f08ef67f9d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f08ef67faf0>
+  worker_int: <function WorkerInt.worker_int at 0x7f08ef67fc10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f08ef67fd30>
+  pre_exec: <function PreExec.pre_exec at 0x7f08ef67fe50>
+  pre_request: <function PreRequest.pre_request at 0x7f08ef67ff70>
+  post_request: <function PostRequest.post_request at 0x7f08ef699040>
+  child_exit: <function ChildExit.child_exit at 0x7f08ef699160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f08ef699280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f08ef6993a0>
+  on_exit: <function OnExit.on_exit at 0x7f08ef6994c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f08ef6995e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 13:26:50 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 13:26:50 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 13:26:50 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 13:26:50 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 13:26:50 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 13:26:50 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 13:26:50 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 13:26:50 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 13:27:36 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/2000000-2024-03-02T13-27-36-study_in_pink1.cpp'
+[2024-03-02 14:23:19 +0000] [10] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /root/sys/TRS/files/test/2000000-2024-03-02T13-27-36-study_in_pink1.cpp
+2000000: start grading
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'app/files/test/2000000-2024-03-02T14-23-19-study_in_pink1.cpp'
+[2024-03-02 14:24:50 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/app/files/test/2000000-2024-03-02T14-24-50-study_in_pink1.cpp'
+[2024-03-02 14:31:48 +0000] [11] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T14-24-50-study_in_pink1.cpp
+2000000: start grading
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/app/files/test/2000000-2024-03-02T14-31-47-study_in_pink1.cpp'
+[2024-03-02 14:32:29 +0000] [11] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T14-31-47-study_in_pink1.cpp
+2000000: start grading
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/2000000-2024-03-02T14-32-29-study_in_pink1.cpp'
+[2024-03-02 14:35:59 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/app/files/test/2000000-2024-03-02T14-35-59-study_in_pink1.cpp'
+[2024-03-02 14:43:22 +0000] [10] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: app/files/test/2000000-2024-03-02T14-23-19-study_in_pink1.cpp
+2000000: start grading
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/2000000-2024-03-02T14-43-22-study_in_pink1.cpp'
+[2024-03-02 14:44:42 +0000] [11] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /root/sys/TRS/files/test/2000000-2024-03-02T14-32-29-study_in_pink1.cpp
+2000000: start grading
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 44, in grade_and_update_submission_thread
+    sub = Submission.query.filter_by(id=submission_id).first()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2727, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2826, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3258, in connect
+    return self._connection_cls(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 2422, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2024-03-02 14:46:02 +0000] [9] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T14-35-59-study_in_pink1.cpp
+2000000: start grading
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 44, in grade_and_update_submission_thread
+    sub = Submission.query.filter_by(id=submission_id).first()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2727, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2826, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3258, in connect
+    return self._connection_cls(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 2422, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2024-03-02 14:47:05 +0000] [6] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f0edc863550>
+  on_reload: <function OnReload.on_reload at 0x7f0edc863670>
+  when_ready: <function WhenReady.when_ready at 0x7f0edc863790>
+  pre_fork: <function Prefork.pre_fork at 0x7f0edc8638b0>
+  post_fork: <function Postfork.post_fork at 0x7f0edc8639d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f0edc863af0>
+  worker_int: <function WorkerInt.worker_int at 0x7f0edc863c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f0edc863d30>
+  pre_exec: <function PreExec.pre_exec at 0x7f0edc863e50>
+  pre_request: <function PreRequest.pre_request at 0x7f0edc863f70>
+  post_request: <function PostRequest.post_request at 0x7f0edc87d040>
+  child_exit: <function ChildExit.child_exit at 0x7f0edc87d160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f0edc87d280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f0edc87d3a0>
+  on_exit: <function OnExit.on_exit at 0x7f0edc87d4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f0edc87d5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 14:47:05 +0000] [6] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 14:47:05 +0000] [6] [DEBUG] Arbiter booted
+[2024-03-02 14:47:05 +0000] [6] [INFO] Listening at: http://0.0.0.0:5003 (6)
+[2024-03-02 14:47:05 +0000] [6] [INFO] Using worker: sync
+[2024-03-02 14:47:06 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-03-02 14:47:06 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 14:47:06 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 14:47:06 +0000] [6] [DEBUG] 3 workers
+[2024-03-02 14:47:18 +0000] [8] [DEBUG] POST /api/grader
+2000000: start grading
+[2024-03-02 14:47:53 +0000] [9] [DEBUG] POST /api/grader
+2011436: start grading
+[2024-03-02 14:47:54 +0000] [8] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T14-47-18-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T14-47-18-study_in_pink1.h
+2000000: start grading
+[2024-03-02 14:50:53 +0000] [8] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fa1cda9d550>
+  on_reload: <function OnReload.on_reload at 0x7fa1cda9d670>
+  when_ready: <function WhenReady.when_ready at 0x7fa1cda9d790>
+  pre_fork: <function Prefork.pre_fork at 0x7fa1cda9d8b0>
+  post_fork: <function Postfork.post_fork at 0x7fa1cda9d9d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fa1cda9daf0>
+  worker_int: <function WorkerInt.worker_int at 0x7fa1cda9dc10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fa1cda9dd30>
+  pre_exec: <function PreExec.pre_exec at 0x7fa1cda9de50>
+  pre_request: <function PreRequest.pre_request at 0x7fa1cda9df70>
+  post_request: <function PostRequest.post_request at 0x7fa1cdab7040>
+  child_exit: <function ChildExit.child_exit at 0x7fa1cdab7160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fa1cdab7280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fa1cdab73a0>
+  on_exit: <function OnExit.on_exit at 0x7fa1cdab74c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fa1cdab75e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 14:50:53 +0000] [8] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 14:50:53 +0000] [8] [DEBUG] Arbiter booted
+[2024-03-02 14:50:53 +0000] [8] [INFO] Listening at: http://0.0.0.0:5003 (8)
+[2024-03-02 14:50:53 +0000] [8] [INFO] Using worker: sync
+[2024-03-02 14:50:53 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 14:50:53 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 14:50:53 +0000] [12] [INFO] Booting worker with pid: 12
+[2024-03-02 14:50:53 +0000] [8] [DEBUG] 3 workers
+[2024-03-02 14:51:02 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+[2024-03-02 14:54:35 +0000] [8] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fbe55099550>
+  on_reload: <function OnReload.on_reload at 0x7fbe55099670>
+  when_ready: <function WhenReady.when_ready at 0x7fbe55099790>
+  pre_fork: <function Prefork.pre_fork at 0x7fbe550998b0>
+  post_fork: <function Postfork.post_fork at 0x7fbe550999d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fbe55099af0>
+  worker_int: <function WorkerInt.worker_int at 0x7fbe55099c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fbe55099d30>
+  pre_exec: <function PreExec.pre_exec at 0x7fbe55099e50>
+  pre_request: <function PreRequest.pre_request at 0x7fbe55099f70>
+  post_request: <function PostRequest.post_request at 0x7fbe550b2040>
+  child_exit: <function ChildExit.child_exit at 0x7fbe550b2160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fbe550b2280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fbe550b23a0>
+  on_exit: <function OnExit.on_exit at 0x7fbe550b24c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fbe550b25e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 14:54:35 +0000] [8] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 14:54:35 +0000] [8] [DEBUG] Arbiter booted
+[2024-03-02 14:54:35 +0000] [8] [INFO] Listening at: http://0.0.0.0:5003 (8)
+[2024-03-02 14:54:35 +0000] [8] [INFO] Using worker: sync
+[2024-03-02 14:54:35 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 14:54:35 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 14:54:35 +0000] [12] [INFO] Booting worker with pid: 12
+[2024-03-02 14:54:35 +0000] [8] [DEBUG] 3 workers
+[2024-03-02 14:58:10 +0000] [8] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fdf31413550>
+  on_reload: <function OnReload.on_reload at 0x7fdf31413670>
+  when_ready: <function WhenReady.when_ready at 0x7fdf31413790>
+  pre_fork: <function Prefork.pre_fork at 0x7fdf314138b0>
+  post_fork: <function Postfork.post_fork at 0x7fdf314139d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fdf31413af0>
+  worker_int: <function WorkerInt.worker_int at 0x7fdf31413c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fdf31413d30>
+  pre_exec: <function PreExec.pre_exec at 0x7fdf31413e50>
+  pre_request: <function PreRequest.pre_request at 0x7fdf31413f70>
+  post_request: <function PostRequest.post_request at 0x7fdf3142d040>
+  child_exit: <function ChildExit.child_exit at 0x7fdf3142d160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fdf3142d280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fdf3142d3a0>
+  on_exit: <function OnExit.on_exit at 0x7fdf3142d4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fdf3142d5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 14:58:10 +0000] [8] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 14:58:10 +0000] [8] [DEBUG] Arbiter booted
+[2024-03-02 14:58:10 +0000] [8] [INFO] Listening at: http://0.0.0.0:5003 (8)
+[2024-03-02 14:58:10 +0000] [8] [INFO] Using worker: sync
+[2024-03-02 14:58:10 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 14:58:10 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 14:58:10 +0000] [12] [INFO] Booting worker with pid: 12
+[2024-03-02 14:58:10 +0000] [8] [DEBUG] 3 workers
+[2024-03-02 14:58:19 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T14-58-19-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T14-58-19-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "fp232db.codepractice.net" (104.21.88.139), port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "fp232db.codepractice.net" (172.67.180.24), port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "fp232db.codepractice.net" (2606:4700:3036::6815:588b), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "fp232db.codepractice.net" (2606:4700:3030::ac43:b418), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 45, in grade_and_update_submission_thread
+    sub = Submission.query.filter_by(id=submission_id).first()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2727, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2826, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3258, in connect
+    return self._connection_cls(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 2422, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "fp232db.codepractice.net" (104.21.88.139), port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "fp232db.codepractice.net" (172.67.180.24), port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "fp232db.codepractice.net" (2606:4700:3036::6815:588b), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "fp232db.codepractice.net" (2606:4700:3030::ac43:b418), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2024-03-02 15:05:12 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f5cfa1d1550>
+  on_reload: <function OnReload.on_reload at 0x7f5cfa1d1670>
+  when_ready: <function WhenReady.when_ready at 0x7f5cfa1d1790>
+  pre_fork: <function Prefork.pre_fork at 0x7f5cfa1d18b0>
+  post_fork: <function Postfork.post_fork at 0x7f5cfa1d19d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f5cfa1d1af0>
+  worker_int: <function WorkerInt.worker_int at 0x7f5cfa1d1c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5cfa1d1d30>
+  pre_exec: <function PreExec.pre_exec at 0x7f5cfa1d1e50>
+  pre_request: <function PreRequest.pre_request at 0x7f5cfa1d1f70>
+  post_request: <function PostRequest.post_request at 0x7f5cfa1eb040>
+  child_exit: <function ChildExit.child_exit at 0x7f5cfa1eb160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f5cfa1eb280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f5cfa1eb3a0>
+  on_exit: <function OnExit.on_exit at 0x7f5cfa1eb4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f5cfa1eb5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 15:05:12 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 15:05:12 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 15:05:12 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 15:05:12 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 15:05:12 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 15:05:12 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 15:05:12 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 15:05:12 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 15:05:43 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:9)
+[2024-03-02 15:05:43 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:10)
+[2024-03-02 15:05:43 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2024-03-02 15:05:43 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2024-03-02 15:05:43 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:11)
+[2024-03-02 15:05:45 +0000] [7] [ERROR] Worker (pid:9) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:05:45 +0000] [7] [ERROR] Worker (pid:11) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:05:45 +0000] [7] [ERROR] Worker (pid:10) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:05:45 +0000] [15] [INFO] Booting worker with pid: 15
+[2024-03-02 15:05:45 +0000] [7] [DEBUG] 1 workers
+[2024-03-02 15:05:45 +0000] [16] [INFO] Booting worker with pid: 16
+[2024-03-02 15:05:45 +0000] [17] [INFO] Booting worker with pid: 17
+[2024-03-02 15:05:45 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 15:06:15 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:15)
+[2024-03-02 15:06:15 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:16)
+[2024-03-02 15:06:15 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:17)
+[2024-03-02 15:06:15 +0000] [15] [INFO] Worker exiting (pid: 15)
+[2024-03-02 15:06:15 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2024-03-02 15:06:15 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2024-03-02 15:06:16 +0000] [7] [ERROR] Worker (pid:15) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:06:16 +0000] [7] [ERROR] Worker (pid:16) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:06:16 +0000] [7] [ERROR] Worker (pid:17) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:06:16 +0000] [27] [INFO] Booting worker with pid: 27
+[2024-03-02 15:06:17 +0000] [28] [INFO] Booting worker with pid: 28
+[2024-03-02 15:06:17 +0000] [7] [DEBUG] 2 workers
+[2024-03-02 15:06:17 +0000] [29] [INFO] Booting worker with pid: 29
+[2024-03-02 15:06:17 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 15:06:47 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:27)
+[2024-03-02 15:06:47 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:28)
+[2024-03-02 15:06:47 +0000] [7] [CRITICAL] WORKER TIMEOUT (pid:29)
+[2024-03-02 15:06:47 +0000] [28] [INFO] Worker exiting (pid: 28)
+[2024-03-02 15:06:47 +0000] [29] [INFO] Worker exiting (pid: 29)
+[2024-03-02 15:06:47 +0000] [27] [INFO] Worker exiting (pid: 27)
+[2024-03-02 15:06:48 +0000] [7] [ERROR] Worker (pid:27) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:06:48 +0000] [7] [ERROR] Worker (pid:28) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:06:48 +0000] [7] [ERROR] Worker (pid:29) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:06:48 +0000] [39] [INFO] Booting worker with pid: 39
+[2024-03-02 15:06:48 +0000] [40] [INFO] Booting worker with pid: 40
+[2024-03-02 15:06:48 +0000] [41] [INFO] Booting worker with pid: 41
+[2024-03-02 15:06:55 +0000] [40] [DEBUG] POST /api/grader
+[2024-03-02 15:06:55 +0000] [39] [DEBUG] POST /api/grader
+[2024-03-02 15:06:55 +0000] [41] [DEBUG] POST /api/grader
+2000000: start grading
+2000000: start grading
+2000000: start grading
+[2024-03-02 15:06:55 +0000] [39] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-06-17-study_in_pink1.cpp
+2000000: start grading
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 44, in prepareOneSubmission
+    removeAllFiles(os.path.join(config_directory.abs_grad_sub, student_id))
+  File "/app/grading_app/utils/path.py", line 11, in removeAllFiles
+    os.unlink(os.path.join(root, f))
+FileNotFoundError: [Errno 2] No such file or directory: '/app/grading_app/temp/grad_sub/2000000/tc_1059.out'
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-06-14-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-06-14-study_in_pink1.h
+[False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 45, in grade_and_update_submission_thread
+    sub = Submission.query.filter_by(id=submission_id).first()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2727, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2826, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3258, in connect
+    return self._connection_cls(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 2422, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-06-17-study_in_pink1.h
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-06-22-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-06-22-study_in_pink1.h
+[False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 45, in grade_and_update_submission_thread
+    sub = Submission.query.filter_by(id=submission_id).first()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2727, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2826, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3258, in connect
+    return self._connection_cls(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 2422, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 45, in grade_and_update_submission_thread
+    sub = Submission.query.filter_by(id=submission_id).first()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2727, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2826, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3258, in connect
+    return self._connection_cls(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 2422, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2024-03-02 15:14:42 +0000] [41] [WARNING] Invalid request from ip=106.75.98.199: Invalid HTTP request line: 'USER anonymous'
+[2024-03-02 15:15:06 +0000] [39] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-15-06-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-15-06-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/app/flaskr/utils/limitthread.py", line 10, in run
+    super().run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 45, in grade_and_update_submission_thread
+    sub = Submission.query.filter_by(id=submission_id).first()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2727, in first
+    return self.limit(1)._iter().first()  # type: ignore
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/query.py", line 2826, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/orm/session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3258, in connect
+    return self._connection_cls(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 2422, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/base.py", line 3282, in raw_connection
+    return self.pool.connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/usr/local/lib/python3.8/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "127.0.0.1", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2024-03-02 15:16:03 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe7c7ef8550>
+  on_reload: <function OnReload.on_reload at 0x7fe7c7ef8670>
+  when_ready: <function WhenReady.when_ready at 0x7fe7c7ef8790>
+  pre_fork: <function Prefork.pre_fork at 0x7fe7c7ef88b0>
+  post_fork: <function Postfork.post_fork at 0x7fe7c7ef89d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe7c7ef8af0>
+  worker_int: <function WorkerInt.worker_int at 0x7fe7c7ef8c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe7c7ef8d30>
+  pre_exec: <function PreExec.pre_exec at 0x7fe7c7ef8e50>
+  pre_request: <function PreRequest.pre_request at 0x7fe7c7ef8f70>
+  post_request: <function PostRequest.post_request at 0x7fe7c7f12040>
+  child_exit: <function ChildExit.child_exit at 0x7fe7c7f12160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe7c7f12280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe7c7f123a0>
+  on_exit: <function OnExit.on_exit at 0x7fe7c7f124c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fe7c7f125e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 15:16:03 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 15:16:03 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 15:16:03 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 15:16:03 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 15:16:03 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 15:16:03 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 15:16:03 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 15:16:03 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 15:16:19 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-16-19-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-16-19-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+[2024-03-02 15:16:42 +0000] [10] [DEBUG] GET /
+[2024-03-02 15:16:43 +0000] [9] [DEBUG] GET /favicon.ico
+[2024-03-02 15:17:43 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fc0efc65550>
+  on_reload: <function OnReload.on_reload at 0x7fc0efc65670>
+  when_ready: <function WhenReady.when_ready at 0x7fc0efc65790>
+  pre_fork: <function Prefork.pre_fork at 0x7fc0efc658b0>
+  post_fork: <function Postfork.post_fork at 0x7fc0efc659d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fc0efc65af0>
+  worker_int: <function WorkerInt.worker_int at 0x7fc0efc65c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fc0efc65d30>
+  pre_exec: <function PreExec.pre_exec at 0x7fc0efc65e50>
+  pre_request: <function PreRequest.pre_request at 0x7fc0efc65f70>
+  post_request: <function PostRequest.post_request at 0x7fc0efc7f040>
+  child_exit: <function ChildExit.child_exit at 0x7fc0efc7f160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fc0efc7f280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fc0efc7f3a0>
+  on_exit: <function OnExit.on_exit at 0x7fc0efc7f4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fc0efc7f5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 15:17:43 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 15:17:43 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 15:17:43 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 15:17:43 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 15:17:43 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 15:17:43 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 15:17:43 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 15:17:43 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 15:18:27 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-18-27-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-18-27-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+[2024-03-02 15:21:27 +0000] [6] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f7c1b8a0550>
+  on_reload: <function OnReload.on_reload at 0x7f7c1b8a0670>
+  when_ready: <function WhenReady.when_ready at 0x7f7c1b8a0790>
+  pre_fork: <function Prefork.pre_fork at 0x7f7c1b8a08b0>
+  post_fork: <function Postfork.post_fork at 0x7f7c1b8a09d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f7c1b8a0af0>
+  worker_int: <function WorkerInt.worker_int at 0x7f7c1b8a0c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f7c1b8a0d30>
+  pre_exec: <function PreExec.pre_exec at 0x7f7c1b8a0e50>
+  pre_request: <function PreRequest.pre_request at 0x7f7c1b8a0f70>
+  post_request: <function PostRequest.post_request at 0x7f7c1b8ba040>
+  child_exit: <function ChildExit.child_exit at 0x7f7c1b8ba160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f7c1b8ba280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f7c1b8ba3a0>
+  on_exit: <function OnExit.on_exit at 0x7f7c1b8ba4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f7c1b8ba5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 15:21:27 +0000] [6] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 15:21:27 +0000] [6] [DEBUG] Arbiter booted
+[2024-03-02 15:21:27 +0000] [6] [INFO] Listening at: http://0.0.0.0:5003 (6)
+[2024-03-02 15:21:27 +0000] [6] [INFO] Using worker: sync
+[2024-03-02 15:21:27 +0000] [8] [INFO] Booting worker with pid: 8
+[2024-03-02 15:21:27 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 15:21:27 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 15:21:27 +0000] [6] [DEBUG] 3 workers
+[2024-03-02 15:21:38 +0000] [8] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-21-38-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-21-38-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+[2024-03-02 15:21:47 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-21-47-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-21-47-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+[2024-03-02 15:21:58 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-21-58-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-21-58-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+[2024-03-02 15:22:08 +0000] [6] [CRITICAL] WORKER TIMEOUT (pid:8)
+[2024-03-02 15:22:09 +0000] [6] [ERROR] Worker (pid:8) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:22:09 +0000] [617] [INFO] Booting worker with pid: 617
+[2024-03-02 15:22:17 +0000] [6] [CRITICAL] WORKER TIMEOUT (pid:10)
+[2024-03-02 15:22:18 +0000] [6] [ERROR] Worker (pid:10) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:22:18 +0000] [621] [INFO] Booting worker with pid: 621
+[2024-03-02 15:22:29 +0000] [6] [CRITICAL] WORKER TIMEOUT (pid:9)
+[2024-03-02 15:22:30 +0000] [6] [ERROR] Worker (pid:9) was sent SIGKILL! Perhaps out of memory?
+[2024-03-02 15:22:30 +0000] [625] [INFO] Booting worker with pid: 625
+[2024-03-02 15:26:19 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f78a741e550>
+  on_reload: <function OnReload.on_reload at 0x7f78a741e670>
+  when_ready: <function WhenReady.when_ready at 0x7f78a741e790>
+  pre_fork: <function Prefork.pre_fork at 0x7f78a741e8b0>
+  post_fork: <function Postfork.post_fork at 0x7f78a741e9d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f78a741eaf0>
+  worker_int: <function WorkerInt.worker_int at 0x7f78a741ec10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f78a741ed30>
+  pre_exec: <function PreExec.pre_exec at 0x7f78a741ee50>
+  pre_request: <function PreRequest.pre_request at 0x7f78a741ef70>
+  post_request: <function PostRequest.post_request at 0x7f78a7438040>
+  child_exit: <function ChildExit.child_exit at 0x7f78a7438160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f78a7438280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f78a74383a0>
+  on_exit: <function OnExit.on_exit at 0x7f78a74384c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f78a74385e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 15:26:19 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 15:26:19 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 15:26:19 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 15:26:19 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 15:26:19 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 15:26:19 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 15:26:19 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 15:26:20 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 15:28:01 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f067ad78550>
+  on_reload: <function OnReload.on_reload at 0x7f067ad78670>
+  when_ready: <function WhenReady.when_ready at 0x7f067ad78790>
+  pre_fork: <function Prefork.pre_fork at 0x7f067ad788b0>
+  post_fork: <function Postfork.post_fork at 0x7f067ad789d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f067ad78af0>
+  worker_int: <function WorkerInt.worker_int at 0x7f067ad78c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f067ad78d30>
+  pre_exec: <function PreExec.pre_exec at 0x7f067ad78e50>
+  pre_request: <function PreRequest.pre_request at 0x7f067ad78f70>
+  post_request: <function PostRequest.post_request at 0x7f067ad91040>
+  child_exit: <function ChildExit.child_exit at 0x7f067ad91160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f067ad91280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f067ad913a0>
+  on_exit: <function OnExit.on_exit at 0x7f067ad914c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f067ad915e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 15:28:01 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 15:28:01 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 15:28:01 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 15:28:01 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 15:28:01 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 15:28:01 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 15:28:02 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 15:28:02 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 15:28:15 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-28-15-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-28-15-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+[2024-03-02 15:28:47 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T15-28-47-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T15-28-47-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+[2024-03-02 15:30:06 +0000] [9] [WARNING] Invalid request from ip=185.170.144.3: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'

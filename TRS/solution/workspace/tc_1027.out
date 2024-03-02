@@ -1,0 +1,3 @@
+----- Testcase 1027 -----
+EXP1: 500, EXP2: 300, E1: 4
+EXP1: 496, EXP2: 320, result: 816

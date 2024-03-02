@@ -1,0 +1,4 @@
+----- Testcase 1155 -----
+E2: 4, HP1: 666, EXP1: 600, M1: 3000
+
+Command '['./main', '155']' died with <Signals.SIGSEGV: 11>.

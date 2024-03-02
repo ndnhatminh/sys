@@ -15,7 +15,14 @@ def run(command, directory):
     result = e.stdout.decode('utf-8')
     success = False
   return success, result
-  
+
+# command = 'g++ -g -o main main.cpp study_in_pink1.cpp -I . -std=c++11'
+# directory = '/root/sys/Grader/grading_app/temp/grad_sub/2000000'
+
+# success, result = run(command, directory)
+
+# print(success)
+# print(result)
 def runWithTimeout(abs_directory, command, timelimit):
   '''
   '''

@@ -8,10 +8,10 @@ setup(
     # include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'Flask>=1.1.2',
-        'Flask-SQLAlchemy>=2.5.1',
+        'Flask==3.0.2',
+        'Flask-SQLAlchemy==3.1.1',
         # 'kafka-python>=2.0.2',
-        # 'numpy',
+        'numpy==1.26.4',
         'pandas',
         # 'psycopg2',
         'psycopg2-binary',
@@ -24,7 +24,11 @@ setup(
         'Flask-Cors',
         'pytest==6.2.5',
         'scikit-learn',
-        'scikit-surprise',
-        'APScheduler'
+        # 'scikit-surprise==1.1.3',
+        'APScheduler', 
+        'matplotlib',
+        'keras',
+        'tensorflow',
+        # "blinker==1.7.0"
     ],
 )

@@ -19,7 +19,7 @@ import threading
 from flask import copy_current_request_context
 from response import success, fail
 from constants.constants import rec_apr1, rec_apr2, rec_apr3
-from flaskr.recsys.algorithm import recommendation_1, recommendation_2, recommendation_3
+from flaskr.recsys.algorithm import recommendation_4, recommendation_2, recommendation_3
 from datetime import date, timedelta, time, datetime
 from constants.constants import list_testcase_ids as Clist_testcase_ids
 from flaskr.utils.text import encrypt, decrypt
@@ -209,17 +209,20 @@ def internal_recommend():
       
       return fail(message='limit number of request: 5')
     
+    sub = Submission.query.filter(Submission.id == submission_id).order_by(Submission.updated_at.desc()).first()
+
     # bắt đầu gợi ý
     submission_id = dic_data['submission_id']
     student_id = str(dic_data['student_id'])
-    assignment_id = '49107748-1f4e-4dcf-8da2-12b5c3721e67' # hardcode
+    
+    assignment_id = sub.assignment_id
       
     if student_id in rec_apr1:
-      recommendation_1(submission_id, assignment_id, student_id)
-    elif student_id in rec_apr2:
       recommendation_2(submission_id, assignment_id, student_id)
-    elif student_id in rec_apr3:
+    elif student_id in rec_apr2:
       recommendation_3(submission_id, assignment_id, student_id)
+    elif student_id in rec_apr3:
+      recommendation_4(submission_id, assignment_id, student_id)
     else:
       print('Error')
       assert(False)
