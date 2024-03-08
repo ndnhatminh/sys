@@ -36,6 +36,7 @@ def recommendation_1(submission_id, assignment_id, student_id):
   # Cap nhat lai recommendation
   # recommendation = db.session.execute(db.select(Recommendation).where(Recommendation.submission_id==submission_id)).scalar_one()
   recommendation = Recommendation.query.filter_by(submission_id=submission_id).first()
+  print(recommendation)
   # print('submission: ', )
   print('recommendation: ', recommendation)
   print('status: ', status)
@@ -61,7 +62,7 @@ def recommendation_2(submission_id, assignment_id, student_id):
     rec_tc = []
     status = 2
   else:
-    assignment_id = assignment_id.strip('"')
+    # assignment_id = assignment_id.strip('"')
     last_MF = MatrixFactorization.query.filter_by(assignment_id=assignment_id, model_name='RSVD').order_by(MatrixFactorization.created_at.desc()).first()
     
     if not last_MF:
@@ -128,8 +129,6 @@ def recommendation_3(submission_id, assignment_id, student_id):
         idx_student_id = last_MF.list_student_ids.index(student_id)
         mf_matrix = loadMatrix(last_MF.matrix_npz_path)
         list_tc_ratings = np.array(mf_matrix[idx_student_id])
-
-
       else:
         # tinh trung binh
         mf_matrix = loadMatrix(last_MF.matrix_npz_path)
@@ -173,7 +172,8 @@ def recommendation_4(submission_id, assignment_id, student_id):
     rec_tc = []
     status = 2
   else:
-    assignment_id = assignment_id.strip('"')
+    print('LSTM')
+    # assignment_id = assignment_id.strip('"')
     last_MF = MatrixFactorization.query.filter_by(assignment_id=assignment_id, model_name='LSTM').order_by(MatrixFactorization.created_at.desc()).first()
     print("last MF:", last_MF)
     if not last_MF:
@@ -185,14 +185,13 @@ def recommendation_4(submission_id, assignment_id, student_id):
         idx_student_id = last_MF.list_student_ids.index(student_id)
         mf_matrix = loadMatrix(last_MF.matrix_npz_path)
         list_tc_ratings = np.array(mf_matrix[idx_student_id])
-
-
       else:
         # tinh trung binh
         mf_matrix = loadMatrix(last_MF.matrix_npz_path)
         list_tc_ratings = np.mean(mf_matrix, axis=0)
-        
-      false_tc_ratings = list_tc_ratings[tc_scores == False]
+      
+      print('LSTM list tc rating: ', list_tc_ratings)
+      false_tc_ratings = list_tc_ratings[0][tc_scores == False]
       false_tc_rating_id = [(rating, tc_id) for rating, tc_id in zip(false_tc_ratings, false_tc)] # list of (rating, id)
       
       false_tc_rating_id = sorted(false_tc_rating_id, key=lambda x: x[0], reverse=True)

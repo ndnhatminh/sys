@@ -12,6 +12,7 @@ setup(
         'Flask-SQLAlchemy==3.1.1',
         # 'kafka-python>=2.0.2',
         'numpy==1.26.4',
+        'email-validator',
         'pandas',
         # 'psycopg2',
         'psycopg2-binary',

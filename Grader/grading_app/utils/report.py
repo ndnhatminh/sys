@@ -56,4 +56,5 @@ def reportOneSubmission(list_configs: List[ConfigTestcase], config_directory: Co
     
     list_scores[idx] = x
   
+  print('list scores in report:', list_scores)
   return list_scores

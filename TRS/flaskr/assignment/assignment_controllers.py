@@ -11,6 +11,7 @@ from flaskr.utils.base_response import BaseResponse
 import requests
 from constants import FILE_SUBMISSION_PATH, GRADER_URL
 from flaskr.assignment.assignment_models import Assignment
+import time
 from datetime import datetime, timezone
 import os
 import csv
@@ -129,7 +130,6 @@ class AssignmentController:
     current_time = datetime.now(timezone.utc)
     if current_time > assignment[0]:
       raise BadRequestException('DEADLINE_MISSES')
-    print('request', request.files)
     if 'files[]' not in request.files:
       return NotFoundException('FILES_NOT_FOUND')
     
@@ -137,7 +137,8 @@ class AssignmentController:
     file_paths_2 = []
     folder_path = f'/root/sys/TRS/files/test'
     folder_path_2 = f'/app/files/test'
-    folder_path_2 = folder_path
+    folder_path = folder_path_2 #Dong cmt de cham port 5005
+    # folder_path_2 = folder_path
     for file in files:  
       os.makedirs(folder_path, exist_ok=True)
       
@@ -159,12 +160,32 @@ class AssignmentController:
       "student_id": str(std_id),
       "submission_id": str(submission.id)
     }
-    
-    requests.post(url=GRADER_URL, json=jsondata)
-    
-    # Tao Recommendation tam
+
+    print(jsondata)
+
     recr = Recommendation(status=1, submission_id=submission.id, list_testcase_id=[])
     recr.save()
+    received_response = False
+
+    requests.post(url=GRADER_URL, json=jsondata)
+    # while not received_response:
+    #   try:
+    #       response = requests.post(url=GRADER_URL, json=jsondata)
+          
+    #       # Kiểm tra xem response có thành công không
+    #       if response.status_code == 200:
+    #           print('SUCCESS')
+    #           received_response = True
+    #       else:
+    #           # Thử lại sau một khoảng thời gian nếu request không thành công
+    #           print("Request không thành công. Status code:", response.status_code)
+    #           time.sleep(5)  # Chờ 5 giây trước khi thử lại
+    #   except Exception as e:
+    #       # Xử lý các lỗi xảy ra trong quá trình gửi yêu cầu
+    #       print("Lỗi:", str(e))
+    #       time.sleep(5)  # Thử lại sau một khoảng thời gian
+    
+    # Tao Recommendation tam
 
     return BaseResponse.ok()
   

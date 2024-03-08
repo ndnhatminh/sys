@@ -1,7 +1,7 @@
 from flaskr.teacher.teacher_models import Teacher
 from flaskr.utils.base_response import BaseResponse
 from flaskr.utils.exceptions import BadRequestException, ForbiddenResourceException
-from flaskr.config import SECRET_KEY
+# from flaskr.config import SECRET_KEY
 from flaskr.account.response.account_response import AccountResponse
 from flaskr.student.student_models import Student
 from flaskr.account.account_models import db, Account

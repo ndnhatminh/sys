@@ -11,7 +11,7 @@ from sqlalchemy.sql import text
 
 def buildMF(app):
   with app.app_context():
-    assignment_id = '49107748-1f4e-4dcf-8da2-12b5c3721e67'
+    assignment_id = '656f8db9-851e-41db-8fab-11c8c7e2ae23'
     print('start buildMF')
     # load all last submission of each student
     # stmt = select(Submission.student_id, Submission.assignment_id, Submission.scores, db.func.max(Submission.created_at)).where(Submission.assignment_id == assignment_id).group_by(Submission.student_id, Submission.assignment_id, Submission.scores)

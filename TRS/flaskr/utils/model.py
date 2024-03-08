@@ -12,7 +12,7 @@ from keras import backend as K
 import os
 
 def root_mean_squared_error(y_true, y_pred):
-    y_true = tf.convert_to_tensor(y_true, dtype=tf.float32)
+    y_true = tf.cast(y_true, dtype=tf.float32)  # Cast y_true to float32
     y_pred = tf.convert_to_tensor(y_pred, dtype=tf.float32)
     return tf.sqrt(tf.reduce_mean(tf.square(y_pred - y_true), axis=-1))
 
@@ -30,8 +30,8 @@ class RSVD:
             item_id = self.matrix[i, 1]
             self.bi.setdefault(item_id, 0)
             self.bu.setdefault(user_id, 0)
-            self.qi.setdefault(item_id, np.random.generator((self.f, 1)) / 10 * np.sqrt(self.f))
-            self.pu.setdefault(user_id, np.random.generator((self.f, 1)) / 10 * np.sqrt(self.f))
+            self.qi.setdefault(item_id, np.random.random((self.f, 1)) / 10 * np.sqrt(self.f))
+            self.pu.setdefault(user_id, np.random.random((self.f, 1)) / 10 * np.sqrt(self.f))
 
     def predict(self, user_id, item_id):
         self.bi.setdefault(item_id, 0)
@@ -48,24 +48,22 @@ class RSVD:
         return rating
 
 
-    def train(self, steps=60, gamma=0.005, _lambda=0.02):
+    def train(self, steps=60, gamma=0.005, Lambda=0.02):
         for step in range(steps):
 
             rmse = 0.0
-            KK = np.random.Generator(self.matrix.shape[0])
             
             for i in range(self.matrix.shape[0]):
-                j = KK[i]
-                user_id = self.matrix[j, 0]
-                item_id = self.matrix[j, 1]
-                rating = self.matrix[j, 2]
+                user_id = self.matrix[i, 0]
+                item_id = self.matrix[i, 1]
+                rating = self.matrix[i, 2]
                 eui = rating - self.predict(user_id, item_id)
                 rmse += eui ** 2
-                self.bu[user_id] += gamma * (eui - _lambda * self.bu[user_id])
-                self.bi[item_id] += gamma * (eui - _lambda * self.bi[item_id])
+                self.bu[user_id] += gamma * (eui - Lambda * self.bu[user_id])
+                self.bi[item_id] += gamma * (eui - Lambda * self.bi[item_id])
                 tmp = self.qi[item_id]
-                self.qi[item_id] += gamma * (eui * self.pu[user_id] - _lambda * self.qi[item_id])
-                self.pu[user_id] += gamma * (eui * tmp - _lambda * self.pu[user_id])
+                self.qi[item_id] += gamma * (eui * self.pu[user_id] - Lambda * self.qi[item_id])
+                self.pu[user_id] += gamma * (eui * tmp - Lambda * self.pu[user_id])
             gamma = 0.9 * gamma
             rmse = np.sqrt(rmse / self.matrix.shape[0])
 
@@ -145,7 +143,7 @@ class timeSVD:
             self.h_t.setdefault(t, np.random.random((self.f, 1)) / 10 * np.sqrt(self.f))
 
     def preference(self, user_id, item_id, t):
-      return reduce(lambda x, i: x+self.g_u[user_id][i]*self.l_i[item_id][i]*self.h_t[t][i], range(self.f),0)
+      return reduce(lambda x, i: x+self.g_u[user_id][i][0]*self.l_i[item_id][i][0]*self.h_t[t][i][0], range(self.f),0)
 
     def predict(self, user_id, item_id, time):
       self.b_i.setdefault(item_id, 0)
@@ -171,9 +169,9 @@ class timeSVD:
       self.h_t.setdefault(t, np.zeros((self.f, 1)))
 
       rating =  self.avg + self.b_i[item_id] + self.b_u[user_id] + self.b_t[time] + \
-                self.p_u[user_id].T.dot(self.q_i[item_id]) + \
-                self.x_u[user_id].T.dot(self.z_t[t]) + \
-                self.s_i[item_id].T.dot(self.y_w[w]) + \
+                (self.p_u[user_id].T.dot(self.q_i[item_id]))[0][0] + \
+                (self.x_u[user_id].T.dot(self.z_t[t]))[0][0] + \
+                (self.s_i[item_id].T.dot(self.y_w[w]))[0][0] + \
                 self.preference(user_id, item_id, t)
 
       if rating > 1:

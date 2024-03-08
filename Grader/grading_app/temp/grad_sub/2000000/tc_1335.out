@@ -1,3 +1,0 @@
------ Testcase 335 -----
-email: "cse2023@hcmut.edu.vn", s: "0cse2023$%abcB"
-email: "cse2023@hcmut.edu.vn", s: "0cse2023$%abcB", result: -99

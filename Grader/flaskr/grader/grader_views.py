@@ -52,6 +52,7 @@ def grade_and_update_submission():
     # dua ra goi y: remove - chuyen qua ben kia lam
     # Gui api qua ben backend-core de xu ly
     # print(f'{BACKEND_CORE_URL}/api/internalrecommend')
+    # return jsonify(dic_data)
     requests.post(url=f'{BACKEND_CORE_URL}/api/internalrecommend', json=dic_data)
   
   student_id = str(request.json.get('student_id'))
@@ -62,10 +63,10 @@ def grade_and_update_submission():
     "submission_id": request.json.get('submission_id')
   }
   # thread = threading.Thread(target=grade_and_update_submission_thread, args=(dic_data,))
-  # thread = LimitThread(target=grade_and_update_submission_thread, args=(dic_data,))
-  # thread.start()
+  thread = LimitThread(target=grade_and_update_submission_thread, args=(dic_data,))
+  thread.start()
   
-  grade_and_update_submission_thread(dic_data)
+  # grade_and_update_submission_thread(dic_data)
   
   data = {
     'status': 'success',

@@ -101,6 +101,9 @@ class LSTMDataSet:
             temp_train_x, temp_train_y = self.slide_window(len(submissions), submissions)
             X_train = X_train + temp_train_x
             y_train = y_train + temp_train_y
+        X_train = np.array(X_train)
+        y_train = np.array(y_train)
+        self.x_shape = [X_train.shape[1], X_train.shape[2]]
         return X_train, y_train
     
     def padding(self, num_submissions, submissions):

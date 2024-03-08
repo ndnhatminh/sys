@@ -28,6 +28,7 @@ class SubmissionController:
           scores = "Khá"
         elif current_scores < 70:
           scores = 'Cần cải thiện'
+        # print(f'score ne {sum(score == True for score in item[3])}, total: {len(item[3])}')
       return {
         'index': index,
         'id': item[0],

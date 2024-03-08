@@ -1,6 +1,8 @@
 
 from flask import Blueprint, request
 from flaskr.submission.submission_models import Submission
+from sqlalchemy import not_, or_
+from sqlalchemy import false
 from flaskr.utils.base_response import BaseResponse
 from flaskr.form.form_models import Form
 from flaskr.utils.exceptions import BadRequestException, NotFoundException
@@ -22,36 +24,57 @@ class FormController:
     Student need to fill out form first before getting new testcase sample.
     '''
     submission_id = request.json.get('submission_id')
-    used_testcases = request.json.get('used_testcases')
-    ordered_testcases = request.json.get('ordered_testcases')
+    used_testcases = list(request.json.get('used_testcases'))
+    ordered_testcases = list(request.json.get('ordered_testcases'))
+    scores = request.json.get('scores')
     feedback = request.json.get('feedback')
-    submission = (Submission.query
+    last_recommendation = (Recommendation.query
+      .join(Submission, Submission.id == Recommendation.submission_id)
       .join(Student, Student.id == Submission.student_id)
-      .join(Recommendation, Recommendation.submission_id == Submission.id)
-      .filter(Student.id == request.student.id, Recommendation.status == 6)
-      .filter_by(id=submission_id)
-      .with_entities()
+      .order_by(Recommendation.created_at.desc())
+      .filter(
+        Student.id == request.student.id, 
+        Submission.id == submission_id, 
+        Recommendation.is_filled_form == False,
+        (Recommendation.status == 3),
+        )
       .first())
-    if not submission:
-      raise NotFoundException('SUBMISSION_NOT_FOUND')
-    if not request.json.get('scores') or not (0 < int(request.json.get('score')) <= 10):
+    if not last_recommendation:
+      raise NotFoundException('SUBMISSION_NOT_FOUND_OR_NOT_AVAILABLE')
+    if not request.json.get('scores') or not (0 < int(scores) <= 5):
       raise BadRequestException('SCORE_REQUIRED')
     if not ordered_testcases or len(ordered_testcases) <= 0:
       raise BadRequestException('ORDERED_TESTCASE_REQUIRED')
+    if not used_testcases or len(used_testcases) <= 0:
+      raise BadRequestException('USED_TESTCASE_LIST_TESTCASE_REQUIRED')
+    if last_recommendation and len(last_recommendation.list_testcase_id) > 0:
+      for item in used_testcases:
+        if item not in last_recommendation.list_testcase_id:
+          raise BadRequestException('USED_TESTCASE_LIST_NOT_CORRECT')
+      for item in ordered_testcases:
+        if item not in last_recommendation.list_testcase_id:
+          raise BadRequestException('USED_TIMES_TESTCASE_LIST_NOT_CORRECT')
+
+    exist_form = Form.query.filter_by(submission_id=submission_id).first()
+    if exist_form:
+      raise BadRequestException('FORM_IS_EXISTED')
+    
     form = Form(
       submission_id=submission_id,
       list_used_tcids=used_testcases, 
       time_ordered_tcids=ordered_testcases,
+      scores=int(scores),
       feedback=feedback
     )
     form.save()
     
-    # Update current recommendation
+    # Update previous recommendation
     recommendation = Recommendation.query.filter_by(submission_id=submission_id).first()
     recommendation.is_filled_form = True
+    recommendation.save()
     return BaseResponse.ok()
     
-    
+
   
 
     

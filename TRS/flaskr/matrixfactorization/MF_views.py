@@ -19,26 +19,31 @@ from flaskr.utils.model import LSTMModel, timeSVD, RSVD
 
 def buildLSTM(app):
   with app.app_context():
-    assignement_id = '0b13d244-785c-4319-b764-16bfb29a42c1'
+    assignement_id = '656f8db9-851e-41db-8fab-11c8c7e2ae23'
     records = Submission.query \
       .join(Assignment, Assignment.id == assignement_id) \
       .join(Student, Student.id == Submission.student_id) \
       .filter(not_(Submission.scores == [])) \
       .with_entities(
-        Student.id, 
-        Submission.update_at, 
+        Student.mssv,
+        Submission.updated_at, 
         Submission.scores
-      )
-    start_date = Assignment.query.filter_by(Assignment.id == assignement_id).with_entities(Assignment.start_date).first()[0]
-    
+      ).all()
+    assignment = Assignment.query.filter_by(id = assignement_id).with_entities(Assignment.start_date).first()
+    start_date = assignment[0]
+    print('record')
     if len(records) == 0: 
       raise InternalServerException('LSTM_ERROR')
     if start_date is None:
       raise InternalServerException('ASSIGNMENT_DO_NOT_START_DATE')
     df = pd.DataFrame()
-    df['student_id'] = records[0]   #integer
-    df['update_at'] = records[1] #integer
-    df['scores'] = [int(score) for score in records[2]]         #integer 1 or 0
+    df['student_id'] = [record[0] for record in records]
+    print('lst std id', df['student_id'])   # Assigning student_id values
+    df['updated_at'] = [record[1] for record in records]   # Assigning updated_at values
+    # print('record: ', records)
+    df['scores'] = list(map(lambda item: list(map(lambda score: int(score) ,item[2])), records))
+    print('scores', df['scores'])
+    # df['scores'] = [int(score) for record in records for score in record[2]]       #integer 1 or 0
     dataset = LSTMDataSet(df)
     
     from constants import list_testcase_ids as list_tcs
@@ -55,13 +60,18 @@ def buildLSTM(app):
     db_list_students_id = []
     
     db_matrix = []
-    for record in records:
-      student_id = record[0]
-      scores =record[2]
-      latest_submissions = dataset.padding(scores[-(dataset.timesteps+1):])
-      
+    # fla = False
+    # print('list std from Dataset')
+    # for student_id, group in dataset.dataset.groupby('student_id'):
+    #   print(student_id)
+
+    for student_id, group in dataset.dataset.groupby('student_id'):
+      scores = group['scores'].values.tolist()
+      latest_submissions = scores[-(dataset.timesteps):]
+      # print('latest submissions', latest_submissions)
       score_predicts = model.predict(latest_submissions)
       db_matrix.append(score_predicts)
+
       db_list_students_id.append(student_id)
       
     time_now = timeNow()
@@ -75,7 +85,7 @@ def buildLSTM(app):
   
 def buildRSVD(app):
   with app.app_context():
-    assignment_id = '25a3d3cd-613b-4b06-8109-f4e7f6b4ba0d'
+    assignment_id = '656f8db9-851e-41db-8fab-11c8c7e2ae23'
     #Truy vấn tất cả lần nộp bài của sinh viên
     query = '''
     select s2.student_id, max(s2.updated_at) as updated_at, max(scores) as scores 
@@ -103,6 +113,8 @@ def buildRSVD(app):
         student_id = sub[0]
         std = Student.query.filter_by(id=student_id).first()
         scores = sub[2]
+        if not scores:
+          continue
         
         for idx, sc in enumerate(scores):
           list_student_ids.append(int(std.mssv))
@@ -113,10 +125,11 @@ def buildRSVD(app):
       df['student_id'] = list_student_ids   #integer
       df['testcase_id'] = list_testcase_ids #integer
       df['rating'] = list_ratings           #integer 1 or 0
+
       
       # lst = list(map(lambda idx: [list_student_ids[idx], list_testcase_ids[idx], list_ratings[idx], list_created_at[idx]], range(len(list_student_ids))))
       # RSVD
-      dataset = Dataset().load_dataset(df)
+      dataset = Dataset().load_dataset_RSVD(df)
 
       model = RSVD(dataset)
       model.train(steps=10, gamma=0.001, Lambda=0.05)
@@ -138,9 +151,13 @@ def buildRSVD(app):
         student_id = sub[0]
         std = Student.query.filter_by(id=student_id).first()
         scores = sub[2]
-        
+        if not scores:
+          continue
+
         db_list_students_id.append(int(std.mssv))
         scores = [1 if x else 0 for x in scores]
+
+
         scores_predict = [None for x in scores]
         
         for idx, sc in enumerate(scores):
@@ -151,6 +168,7 @@ def buildRSVD(app):
       time_now = timeNow()
       npz_name = f'{time_now}_mf_RSVD.npz'
       npz_path = f'files/matries/{npz_name}'
+      print(db_matrix)
       db_matrix = np.array(db_matrix)
       saveMatrix(db_matrix, npz_path)
       mf = MatrixFactorization(list_student_ids=db_list_students_id, list_testcase_ids=db_list_tc_ids, assignment_id=assignment_id, model_name = 'RSVD', matrix_npz_path=npz_path)
@@ -159,7 +177,7 @@ def buildRSVD(app):
 
 def buildTimeSVD(app):
   with app.app_context():
-    assignment_id = '25a3d3cd-613b-4b06-8109-f4e7f6b4ba0d'
+    assignment_id = '656f8db9-851e-41db-8fab-11c8c7e2ae23'
     #Truy vấn tất cả lần nộp bài của sinh viên
     query = '''
     SELECT
@@ -188,7 +206,9 @@ def buildTimeSVD(app):
         std = Student.query.filter_by(id=student_id).first()
         created_at = sub[1].replace(minute=0, second=0, microsecond=0)
         scores = sub[2]
-        
+        if not scores:
+          continue
+        # print('scores', scores)
         for idx, sc in enumerate(scores):
           list_student_ids.append(int(std.mssv))
           list_testcase_ids.append(list_tcs[idx])
@@ -203,7 +223,7 @@ def buildTimeSVD(app):
       
       # lst = list(map(lambda idx: [list_student_ids[idx], list_testcase_ids[idx], list_ratings[idx], list_created_at[idx]], range(len(list_student_ids))))
       # TimeSVD
-      dataset = Dataset().load_dataset(df)
+      dataset = Dataset().load_dataset_timeSVD(df)
 
       model = timeSVD(dataset)
       model.train(steps=10, gamma=0.001, Lambda=0.05)
@@ -226,19 +246,29 @@ def buildTimeSVD(app):
         student_id = sub[0]
         std = Student.query.filter_by(id=student_id).first()
         scores = sub[2]
+        if not scores:
+          continue
         
-        db_list_students_id.append(int(std.mssv))
         scores = [1 if x else 0 for x in scores]
         scores_predict = [None for x in scores]
-        
+        db_list_students_id.append(int(std.mssv))
+
         for idx, sc in enumerate(scores):
+          sco = model.predict(int(std.mssv), db_list_tc_ids[idx], created_at)
+
+          # if isinstance(sco, np.ndarray):
+          #   scores_predict[idx] = sco[0,0]
+          #   continue
+
           scores_predict[idx] = model.predict(int(std.mssv), db_list_tc_ids[idx], created_at)
+
           
         db_matrix.append(scores_predict)
 
       time_now = timeNow()
       npz_name = f'{time_now}_mf_timeSVD.npz'
       npz_path = f'files/matries/{npz_name}'
+      # print(db_matrix)
       db_matrix = np.array(db_matrix)
       saveMatrix(db_matrix, npz_path)
       mf = MatrixFactorization(list_student_ids=db_list_students_id, list_testcase_ids=db_list_tc_ids, assignment_id=assignment_id, model_name='timeSVD', matrix_npz_path=npz_path)

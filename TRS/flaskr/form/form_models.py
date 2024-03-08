@@ -22,7 +22,6 @@ class Form(db.Model):
   
   def __str__(self) -> str:
     s = [
-      f'student_id = {self.student_id}',
       # f'assignment_id = {self.recommend_id}',
       f'list_used_tcids = {self.list_used_tcids}',
       f'time_ordered_tcids = {self.time_ordered_tcids}',

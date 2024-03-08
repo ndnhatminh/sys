@@ -233,7 +233,7 @@ def gradeOneSubmission(dic_data: dict):
   
   list_scores = reportOneSubmission(list_configs, config_directory, student_id)
   # if student_id != '2210220':
-  # removeAllFiles(os.path.join(config_directory.abs_grad_sub, student_id)) # clean to save disk space
+  removeAllFiles(os.path.join(config_directory.abs_grad_sub, student_id)) # clean to save disk space
   return list_scores
 
 if __name__ == '__main__':

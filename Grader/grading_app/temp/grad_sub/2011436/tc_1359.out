@@ -1,4 +1,0 @@
------ Testcase 359 -----
-num_pwds: 11
-arr_pwds = {"123cbhLm@#", "70@#aj6qE", "70@#aj6qE", "89@#okcneuRY45", "cbw#mc@$7819kcj", "70@#aj6qE", "cbw#mc@$7819kcj", "cbw#mc@$7819kcj", "124cbhKq2#", "70@#aj6qE", "cbw#mc@$7819kcj"}
-result: 0

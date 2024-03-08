@@ -85,14 +85,13 @@ def create_app(test_config=None):
             pass
       
     with app.app_context():
+      # buildRSVD(app)
       # buildTimeSVD(app)
+      # buildLSTM(app)
       schedule = BackgroundScheduler(deamon=True)
-      schedule.add_job(buildRSVD, 'cron', args=[app], id='buidRSVD', hour=0, minute=0) # 7 - 00
-      schedule.add_job(buildTimeSVD, 'cron', args=[app], id='buidTimeSVD', hour=0, minute=0) # 7 - 00
-      schedule.add_job(buildLSTM, 'cron', args=[app], id='buidLSTM', hour=0, minute=0) # 7 - 00
-      
-      # schedule.add_job(buildClassification, 'cron', args=[app], id='buidTcClassification', hour=0, minute=0) # 7 - 00
-      # schedule.add_job(buildClassification, 'interval', args=[app], id='buidTcClassification', seconds=1) # for testing
+      schedule.add_job(buildRSVD, 'cron', args=[app], id='buidRSVD', hour=19, minute=0) # 7 - 00
+      schedule.add_job(buildTimeSVD, 'cron', args=[app], id='buidTimeSVD', hour=19, minute=0) # 7 - 00
+      schedule.add_job(buildLSTM, 'cron', args=[app], id='buidLSTM', hour=19, minute=0) # 7 - 00
       schedule.start()
       pass
     

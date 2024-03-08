@@ -2802,3 +2802,373 @@ dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
 fpath: /app/files/test/2000000-2024-03-02T15-28-47-study_in_pink1.h
 [False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
 [2024-03-02 15:30:06 +0000] [9] [WARNING] Invalid request from ip=185.170.144.3: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-03-02 16:52:27 +0000] [7] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5003']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 600
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: logs/02-03-2024.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f53e4d61550>
+  on_reload: <function OnReload.on_reload at 0x7f53e4d61670>
+  when_ready: <function WhenReady.when_ready at 0x7f53e4d61790>
+  pre_fork: <function Prefork.pre_fork at 0x7f53e4d618b0>
+  post_fork: <function Postfork.post_fork at 0x7f53e4d619d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f53e4d61af0>
+  worker_int: <function WorkerInt.worker_int at 0x7f53e4d61c10>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f53e4d61d30>
+  pre_exec: <function PreExec.pre_exec at 0x7f53e4d61e50>
+  pre_request: <function PreRequest.pre_request at 0x7f53e4d61f70>
+  post_request: <function PostRequest.post_request at 0x7f53e4d7b040>
+  child_exit: <function ChildExit.child_exit at 0x7f53e4d7b160>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f53e4d7b280>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f53e4d7b3a0>
+  on_exit: <function OnExit.on_exit at 0x7f53e4d7b4c0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f53e4d7b5e0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-03-02 16:52:27 +0000] [7] [INFO] Starting gunicorn 21.2.0
+[2024-03-02 16:52:27 +0000] [7] [DEBUG] Arbiter booted
+[2024-03-02 16:52:27 +0000] [7] [INFO] Listening at: http://0.0.0.0:5003 (7)
+[2024-03-02 16:52:27 +0000] [7] [INFO] Using worker: sync
+[2024-03-02 16:52:27 +0000] [9] [INFO] Booting worker with pid: 9
+[2024-03-02 16:52:27 +0000] [10] [INFO] Booting worker with pid: 10
+[2024-03-02 16:52:27 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-03-02 16:52:27 +0000] [7] [DEBUG] 3 workers
+[2024-03-02 17:32:36 +0000] [11] [DEBUG] POST /api/grader
+200000: start grading
+[2024-03-02 17:32:36,207] ERROR in app: Exception on /api/grader [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/flaskr/grader/grader_views.py", line 68, in grade_and_update_submission
+    grade_and_update_submission_thread(dic_data)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/root/sys/TRS/files/test/200000-2024-03-02T17-32-36-study_in_pink1.cpp'
+[2024-03-02 17:36:18 +0000] [10] [DEBUG] POST /api/grader
+200000: start grading
+[2024-03-02 17:36:18,315] ERROR in app: Exception on /api/grader [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/flaskr/grader/grader_views.py", line 68, in grade_and_update_submission
+    grade_and_update_submission_thread(dic_data)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/app/files/test/200000-2024-03-02T17-36-18-study_in_pink1.cpp'
+[2024-03-02 17:40:59 +0000] [11] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/200000/study_in_pink1.cpp
+fpath: /root/sys/TRS/files/test/200000-2024-03-02T17-32-36-study_in_pink1.cpp
+2011436: start grading
+[2024-03-02 17:40:59,340] ERROR in app: Exception on /api/grader [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/dist-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/flaskr/grader/grader_views.py", line 68, in grade_and_update_submission
+    grade_and_update_submission_thread(dic_data)
+  File "/usr/local/lib/python3.8/dist-packages/flask/ctx.py", line 191, in wrapper
+    return ctx.app.ensure_sync(f)(*args, **kwargs)  # type: ignore[union-attr]
+  File "/app/flaskr/grader/grader_views.py", line 42, in grade_and_update_submission_thread
+    list_scores = gradeOneSubmission(dic_data)
+  File "/app/grading_app/app1sub.py", line 224, in gradeOneSubmission
+    prepareOneSubmission(list_configs, config_directory, student_id, list_fileinfos)
+  File "/app/grading_app/app1sub.py", line 63, in prepareOneSubmission
+    shutil.copy(fpath, dst)
+  File "/usr/lib/python3.8/shutil.py", line 418, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.8/shutil.py", line 264, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: '/app/files/test/2011436-2024-03-02T17-40-59-study_in_pink1.h'
+[2024-03-02 17:41:32 +0000] [9] [DEBUG] POST /api/grader
+200000: start grading
+dst: /app/grading_app/temp/grad_sub/200000/study_in_pink1.cpp
+fpath: /app/files/test/200000-2024-03-02T17-41-32-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/200000/study_in_pink1.h
+fpath: /app/files/test/200000-2024-03-02T17-41-32-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+200000: graded
+[2024-03-02 17:42:39 +0000] [9] [DEBUG] POST /api/grader
+200000: start grading
+dst: /app/grading_app/temp/grad_sub/200000/study_in_pink1.cpp
+fpath: /app/files/test/200000-2024-03-02T17-42-39-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/200000/study_in_pink1.h
+fpath: /app/files/test/200000-2024-03-02T17-42-39-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+200000: graded
+[2024-03-02 17:50:15 +0000] [10] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/200000/study_in_pink1.cpp
+fpath: /app/files/test/200000-2024-03-02T17-36-18-study_in_pink1.cpp
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T17-50-15-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T17-50-15-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 17:51:21 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T17-51-21-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T17-51-21-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 17:56:01 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T17-56-01-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T17-56-01-study_in_pink1.h
+[False, True, True, True, True, False, True, True, False, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, True, False, True, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:06:18 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-06-18-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-06-18-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, True, False, False, True, True, True, False, True, False, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, True, False, True, True, True, False, False, True, True, True, False, True, False, True, True, True, True, True, True, True, False, False, False, False, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, False, False, True, False, True, False, True, False, True, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:07:25 +0000] [11] [DEBUG] POST /api/grader
+dst: /app/grading_app/temp/grad_sub/2011436/study_in_pink1.h
+fpath: /app/files/test/2011436-2024-03-02T17-40-59-study_in_pink1.h
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-07-25-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-07-25-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, True, True, False, True, True, True, True, True, False, True, False, True, True, True, False, False, True, True, True, True, True, True, False, False, True, False, True, True, True, False, False, True, True, True, True, True, False, True, True, True, True, True, True, True, False, False, False, False, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, True, True, False, False, True, True, False, True, False, True, False, True, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:14:34 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-14-34-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-14-34-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, False, True, False, False, True, True, True, True, True, False, False, False, False, True, True, True, False, True, True, False, False, True, True, True, False, False, True, True, True, True, True, True, False, False, True, False, True, True, True, False, True, True, True, True, False, True, False, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, False, True, False, False, True, False, True, False, True, False, True, True, True, False, False, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:20:48 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-20-48-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-20-48-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, True, False, False, True, True, True, True, True, True, True, False, False, True, True, False, False, False, True, True, True, True, True, True, False, True, False, True, True, True, False, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, True, False, True, False, True, True, True, False, True, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:22:15 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-22-15-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-22-15-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, False, True, False, False, True, True, True, True, True, False, False, False, False, True, True, True, False, True, True, False, False, False, True, True, False, True, False, True, True, True, True, True, True, False, True, False, True, True, True, False, False, True, True, True, False, True, False, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, True, True, False, False, True, True, False, True, False, True, False, False, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:23:21 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-23-21-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-23-21-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, True, False, False, True, True, True, False, True, False, True, False, False, True, True, False, False, False, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, False, True, False, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, True, True, False, True, False, True, False, True, False, True, False, False, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:27:41 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-27-41-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-27-41-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, True, True, False, True, True, True, False, True, False, False, False, True, True, True, False, False, False, True, True, True, True, True, False, False, False, False, True, True, True, False, True, True, True, True, False, True, False, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, True, True, False, False, False, True, False, True, False, True, False, False, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:29:14 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-29-14-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-29-14-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, True, False, False, True, True, True, False, True, True, True, False, True, True, True, False, True, False, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, False, True, False, True, True, True, True, True, True, True, False, False, False, False, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, True, True, False, False, True, True, False, True, False, True, False, False, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:31:51 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-31-51-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-31-51-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, False, False, False, True, True, True, False, True, False, True, False, False, True, True, False, True, False, True, True, True, True, True, True, False, True, False, True, True, True, False, True, True, True, True, False, True, False, True, True, True, True, True, True, True, False, True, False, False, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, True, True, False, True, False, True, False, True, True, True, False, True, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:33:24 +0000] [10] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-03-02 18:46:34 +0000] [11] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-46-34-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-46-34-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, False, False, False, True, True, True, True, True, True, False, False, False, True, True, False, False, True, True, True, True, True, True, True, False, False, False, True, True, True, False, False, True, True, True, True, True, False, True, True, True, True, True, True, True, False, True, False, False, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, False, False, True, False, True, False, True, False, False, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:48:05 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-48-05-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-48-05-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, True, False, False, True, True, True, False, True, True, False, False, False, True, True, False, True, True, True, True, True, True, True, True, False, False, False, True, True, True, False, True, True, True, True, True, True, False, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, False, True, True, True, True, True, True, True, True, False, True, False, False, True, False, False, False, True, False, True, True, True, False, False, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:49:26 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-02T18-49-26-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-02T18-49-26-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, False, True, False, True, False, False, True, True, True, True, True, False, True, True, False, True, True, True, False, True, False, False, False, True, True, True, False, True, False, True, True, True, True, True, True, False, False, False, True, True, True, False, False, True, True, True, True, True, False, True, True, True, True, True, True, True, False, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, True, True, False, True, False, True, False, True, False, True, False, True, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-02 18:58:56 +0000] [11] [DEBUG] Ignored premature client disconnection. No more data after: b'\x16\x03\x01\x00\xee\x01\x00\x00\xea\x03\x03_X\xebM\x10\x12\x8bA\xc4\xd2;C\x12\x88Z\x80\x06u~\x96\x04\xb814_K`]\xfd\r\xd2: H\x0c\x13\xacG\xdd\xe1\xb1T\x05\x96\xd5\x1d:\xc2^\t}&\xb5\x93g\xa9\xf8`8\xc8\xbf\x16Z\x9a3\x00&\xc0+\xc0/\xc0,\xc00\xcc\xa9\xcc\xa8\xc0\t\xc0\x13\xc0\n\xc0\x14\x00\x9c\x00\x9d\x00/\x005\xc0\x12\x00\n\x13\x01\x13\x02\x13\x03\x01\x00\x00{\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\n\x00\x08\x00\x1d\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x1a\x00\x18\x08\x04\x04\x03\x08\x07\x08\x05\x08\x06\x04\x01\x05\x01\x06\x01\x05\x03\x06\x03\x02\x01\x02\x03\xff\x01\x00\x01\x00\x00\x12\x00\x00\x00+\x00\t\x08\x03\x04\x03\x03\x03\x02\x03\x01\x003\x00&\x00$\x00\x1d\x00 \xb7_\xd3\xc1\x84"\xcd!\xb6&yd\xa0I0\x9b\x88\xc1v\x9c\x99\x18%v\xd1\x05[N}\xc8V['
+[2024-03-02 18:58:56 +0000] [9] [DEBUG] Ignored premature client disconnection. No more data after: b"\x16\x03\x01\x00\xca\x01\x00\x00\xc6\x03\x03\xda\xf0\xe4ox#\x89C\xc3K\x02\x137\xe0\xd8C\xd6\xbcl\xa9\xbf\xc7'\xd5-fbu;\xf2\xae\x84\x00\x00h\xcc\x14\xcc\x13\xc0/\xc0+\xc00\xc0,\xc0\x11\xc0\x07\xc0'\xc0#\xc0\x13\xc0\t\xc0(\xc0$\xc0\x14\xc0\n\xcc\x15\x00\x9e\x00\x9f\x00g\x00k\x003\x009\x00\x9c\x00\x9d\x00\x05\x00\x04\x00<\x00=\x00/\x005\xc0\x12\x00\x16\x00\n\x00\x03\x00\x08\x00\x06\x00\x14\x00\x11\x00\x19\x00\x17\x002\xc0\x08\x00\x12\x00\x13\x00\x15\x008\x00@\x00f\x00j\x00\xa2\x00\xa3\x01\x00\x005\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\n\x00\x08\x00\x06\x00\x17\x00\x18\x00\x19\x00\x0b\x00\x02\x01\x00\x00\r\x00\x0c\x00\n\x04\x01\x04\x03\x02\x01\x02\x03\x02\x02\xff\x01\x00\x01\x00\x00\x0f\x00\x01\x01"
+[2024-03-02 19:22:04 +0000] [9] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-03-02 21:06:17 +0000] [9] [WARNING] Invalid request from ip=179.60.147.13: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-03-02 22:37:09 +0000] [10] [WARNING] Invalid request from ip=185.170.144.3: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-03-02 23:36:01 +0000] [10] [DEBUG] GET /
+[2024-03-02 23:40:44 +0000] [10] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-03-03 00:28:55 +0000] [10] [WARNING] Invalid request from ip=91.191.209.206: Invalid HTTP request line: '\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr'
+[2024-03-03 01:15:53 +0000] [9] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-03T01-15-53-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-03T01-15-53-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, False, False, False, True, True, False, True, False, False, True, True, True, True, True, False, True, True, False, True, True, True, True, True, True, False, False, True, True, True, False, False, False, True, True, True, True, True, True, False, False, False, True, True, True, False, False, True, True, True, False, True, False, True, True, True, True, True, True, True, False, True, False, True, True, True, True, True, False, True, True, True, True, True, True, True, False, False, True, False, False, True, False, False, False, True, False, True, False, True, False, False, False, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, True, True, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-03 01:20:21 +0000] [10] [DEBUG] POST /api/grader
+2000000: start grading
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.cpp
+fpath: /app/files/test/2000000-2024-03-03T01-20-21-study_in_pink1.cpp
+dst: /app/grading_app/temp/grad_sub/2000000/study_in_pink1.h
+fpath: /app/files/test/2000000-2024-03-03T01-20-21-study_in_pink1.h
+[False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, False, True, True, True, True, True, True, True, True, True, True, False, False, True, True, True, True, True, True, True, True, True, False, True, False, False, False, False, False]
+sub Submission[student_id = 90968f31-b971-4488-9ebe-2a94840f67d2, assignment_id = 401f4b1a-1e1d-478d-9dc6-4145671ade90, scores = None]
+2000000: graded
+[2024-03-03 01:59:43 +0000] [10] [DEBUG] GET /

@@ -33,8 +33,13 @@ lt5 = npz_group['lt5']
 rec_apr1 = set([str(x) for x in npz_group['rec_apr1']])
 rec_apr2 = set([str(x) for x in npz_group['rec_apr2']])
 rec_apr3 = set([str(x) for x in npz_group['rec_apr3']])
+if '2011436' in rec_apr3:
+    print('True')
+else:
+    print('False')
 
 list_testcase_ids = list(npz_group['list_testcase_ids']) # theo model, list_testcase_ids gồm các số nguyên, không phải string
+
 list_testcase_ids = [int(x) for x in list_testcase_ids]
 MAX_NO_THREADS = int(env_config['MAX_NO_THREADS'])
 
