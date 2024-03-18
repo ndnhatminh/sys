@@ -1,7 +1,4 @@
-
-
 from flask import Response, jsonify
-
 class BaseResponse:
   def __init__(self, data, message, status=200) -> None:
     self.data = jsonify({

@@ -7,10 +7,6 @@ from tensorflow.keras.layers import LSTM, Dense, Dropout, Bidirectional
 
 from tensorflow.keras.optimizers import Adam
 
-import matplotlib.pyplot as plt
-from keras import backend as K
-import os
-
 def root_mean_squared_error(y_true, y_pred):
     y_true = tf.cast(y_true, dtype=tf.float32)  # Cast y_true to float32
     y_pred = tf.convert_to_tensor(y_pred, dtype=tf.float32)

@@ -1,17 +1,22 @@
 import numpy as np
 from dotenv import dotenv_values
 from pytz import timezone
+from urllib.parse import urlparse
 
 env_config = dotenv_values('.env')
 
 FILE_WITH_ID = env_config['FILE_WITH_ID']
 FILE_SUBMISSION_PATH = env_config['FILE_SUBMISSION_PATH']
 FILE_LIST_STUDENTS_PATH = env_config['FILE_LIST_STUDENTS_PATH']
-
-DB_USER = env_config['DB_USER']
-DB_PWD = env_config['DB_PWD']
-DB_HOST = env_config['DB_HOST']
-DB_NAME = env_config['DB_NAME']
+parse_database_url = urlparse(env_config['DATABASE_URL'])
+DB_USER = parse_database_url.username
+DB_PWD = parse_database_url.password
+DB_HOST = parse_database_url.hostname
+DB_NAME = parse_database_url.path[1:]
+# DB_USER = env_config['DB_USER']
+# DB_PWD = env_config['DB_PWD']
+# DB_HOST = env_config['DB_HOST']
+# DB_NAME = env_config['DB_NAME']
 
 DB_INIT = env_config['DB_INIT'] == 'True'
 

@@ -15,17 +15,18 @@ from apscheduler.schedulers.background import BackgroundScheduler
 '''
 Note: for create table, uncomment following code
 '''
-from flaskr.account.account_models import Account
-from flaskr.student.student_models import Student
-from flaskr.teacher.teacher_models import Teacher
-from flaskr.assignment.assignment_models import Assignment
-from flaskr.assignment.assignment_student_models import StudentOnAssignment
-# from flaskr.assignment.assignment_teacher_models import TeacherOnAssignment
-from flaskr.submission.submission_models import Submission
-from flaskr.recsys.recsys_models import Recommendation
-from flaskr.matrixfactorization.MF_models import MatrixFactorization
-from flaskr.form.form_models import Form
-from flaskr.matrixfactorization.MF_views import buildRSVD, buildTimeSVD, exportInitMF, buildLSTM
+from flaskr.domain.account.account_models import Account
+from flaskr.domain.student.student_models import Student
+from flaskr.domain.teacher.teacher_models import Teacher
+from flaskr.domain.assignment.assignment_models import Assignment
+from flaskr.domain.assignment.assignment_student_models import StudentOnAssignment
+from flaskr.domain.assignment.assignment_teacher_models import TeacherOnAssignment
+from flaskr.domain.matrixfactorization.MF_models import MatrixFactorization
+from flaskr.domain.form.form_models import Form
+from flaskr.domain.submission.submission_models import Submission
+from flaskr.domain.recsys.recsys_models import Recommendation
+
+from flaskr.domain.matrixfactorization.MF_views import buildRSVD, buildTimeSVD, exportInitMF, buildLSTM
 
 # utils
 from flaskr.utils.base_response import BaseResponse
@@ -102,17 +103,17 @@ def create_app(test_config=None):
     return app
 
 def register_blueprints(app):
-  from flaskr.account.account_controllers import AccountController
+  from flaskr.domain.account.account_controllers import AccountController
   app.register_blueprint(AccountController.account_controller)
-  from flaskr.assignment.assignment_controllers import AssignmentController
+  from flaskr.domain.assignment.assignment_controllers import AssignmentController
   app.register_blueprint(AssignmentController.assignment_controller)
-  from flaskr.submission.submission_controller import SubmissionController
+  from flaskr.domain.submission.submission_controller import SubmissionController
   app.register_blueprint(SubmissionController.submission_controller)
-  from flaskr.recsys.recsys_views import blueprint as RecBP
+  from flaskr.domain.recsys.recsys_views import blueprint as RecBP
   app.register_blueprint(RecBP)
-  from flaskr.student.student_views import blueprint as StudentBP
+  from flaskr.domain.student.student_views import blueprint as StudentBP
   app.register_blueprint(StudentBP)
-  from flaskr.form.form_controllers import FormController
+  from flaskr.domain.form.form_controllers import FormController
   app.register_blueprint(FormController.form_controller)
   pass
 
