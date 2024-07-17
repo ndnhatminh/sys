@@ -35,6 +35,7 @@ Welcome to our TESTCASE RECOMMENDATION SYSTEM project.
 ![rcm_ui_1](https://github.com/user-attachments/assets/f5c9c0dd-1a59-414f-a190-7623d6a1df8c)
 ![rcm_ui_2](https://github.com/user-attachments/assets/e1996a67-54e5-4019-af43-2c97b22005aa)
 ![rcm_ui_3](https://github.com/user-attachments/assets/edf27d91-43cd-4036-b658-08ddc46e861f)
+2. Paper at the ICICCT Conference 2024 with the title: [An Evaluation Of Testcase Recommendation Systems Through Feedback Models](https://drive.google.com/file/d/1RtkdyjaSDeSid6nXC4MsagtUOm9hdp1B/view?usp=sharing)
 
 ## :wave: Contributing
 * Nguyen Doan Nhat Minh
