@@ -1,11 +1,12 @@
 # TESTCASE RECOMMENDATION SYSTEM
-Welcome to our [TESTCASE RECOMMENDATION SYSTEM](https://drive.google.com/file/d/1XRPMuQjDPoGy-AVLLSO_u7UR5WnFq_xk/view?usp=sharing) project.
+Welcome to our TESTCASE RECOMMENDATION SYSTEM project.
 
 ## ✋Introduction 
 
  A web app used for Programming Courses to provide support testcases so learners can complete their assignments.
 
 ## Technology Stack
+![System Architecture](https://github.com/user-attachments/assets/4e2e9927-6f17-410f-b55d-7812454716d0)
 * Front-end: NextJS.
 * Back-end: Flask.
 * Database: PostgreSQL.
@@ -31,7 +32,9 @@ Welcome to our [TESTCASE RECOMMENDATION SYSTEM](https://drive.google.com/file/d/
 
 ## 🦫 Results
 1. UI
-![a](https://drive.google.com/file/d/1I8lI1FwpqTwSO_3sXxK94jh30_S09FXK/view?usp=sharing)
+![rcm_ui_1](https://github.com/user-attachments/assets/f5c9c0dd-1a59-414f-a190-7623d6a1df8c)
+![rcm_ui_2](https://github.com/user-attachments/assets/e1996a67-54e5-4019-af43-2c97b22005aa)
+![rcm_ui_3](https://github.com/user-attachments/assets/edf27d91-43cd-4036-b658-08ddc46e861f)
 
 ## :wave: Contributing
 * Nguyen Doan Nhat Minh
