@@ -2,5 +2,6 @@ TRS/files/submissions/*.cpp
 TRS/files/submissions/*.h
 TRS/files/test/*.cpp
 TRS/files/test/*.h
+Grader/testcodes/*.cpp
 TRS/files/liststudents/
 TRS/build/
