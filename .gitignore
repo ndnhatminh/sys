@@ -1,4 +1,6 @@
-TRS/files/submissions/
-TRS/files/test/
+TRS/files/submissions/*.cpp
+TRS/files/submissions/*.h
+TRS/files/test/*.cpp
+TRS/files/test/*.h
 TRS/files/liststudents/
 TRS/build/
